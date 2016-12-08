@@ -1,0 +1,118 @@
+
+sd_20034.png
+size: 357,62
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: false
+  xy: 79, 2
+  size: 8, 10
+  orig: 16, 18
+  offset: 5, 5
+  index: -1
+arm2
+  rotate: false
+  xy: 68, 2
+  size: 9, 10
+  orig: 16, 18
+  offset: 3, 5
+  index: -1
+body
+  rotate: true
+  xy: 218, 2
+  size: 19, 31
+  orig: 70, 44
+  offset: 26, 9
+  index: -1
+body2
+  rotate: false
+  xy: 263, 32
+  size: 46, 30
+  orig: 69, 44
+  offset: 11, 6
+  index: -1
+buki
+  rotate: false
+  xy: 218, 23
+  size: 43, 39
+  orig: 73, 95
+  offset: 17, 23
+  index: -1
+face
+  rotate: false
+  xy: 118, 15
+  size: 48, 47
+  orig: 99, 113
+  offset: 26, 32
+  index: -1
+face_d
+  rotate: false
+  xy: 68, 14
+  size: 48, 48
+  orig: 99, 113
+  offset: 26, 32
+  index: -1
+face_w
+  rotate: true
+  xy: 168, 15
+  size: 47, 48
+  orig: 99, 113
+  offset: 26, 32
+  index: -1
+foot1
+  rotate: false
+  xy: 251, 10
+  size: 8, 11
+  orig: 19, 19
+  offset: 6, 4
+  index: -1
+foot2
+  rotate: false
+  xy: 311, 32
+  size: 8, 11
+  orig: 19, 19
+  offset: 6, 4
+  index: -1
+hair
+  rotate: false
+  xy: 2, 11
+  size: 64, 51
+  orig: 99, 90
+  offset: 16, 22
+  index: -1
+hair2
+  rotate: true
+  xy: 311, 45
+  size: 17, 36
+  orig: 99, 90
+  offset: 26, 16
+  index: -1
+leg1
+  rotate: false
+  xy: 89, 2
+  size: 6, 10
+  orig: 19, 19
+  offset: 5, 4
+  index: -1
+leg2
+  rotate: false
+  xy: 105, 2
+  size: 5, 10
+  orig: 19, 19
+  offset: 7, 3
+  index: -1
+uparm1
+  rotate: false
+  xy: 97, 2
+  size: 6, 10
+  orig: 16, 18
+  offset: 6, 5
+  index: -1
+uparm2
+  rotate: false
+  xy: 349, 51
+  size: 8, 11
+  orig: 15, 18
+  offset: 2, 4
+  index: -1
