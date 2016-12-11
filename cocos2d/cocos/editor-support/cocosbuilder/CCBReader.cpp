@@ -219,12 +219,20 @@ Node* CCBReader::readNodeGraphFromFile(const char *pCCBFileName, Ref *pOwner, co
     {
         strCCBFileName += strSuffix;
     }
-
-    std::string strPath = FileUtils::getInstance()->fullPathForFilename(strCCBFileName);
-
-    auto dataPtr = std::make_shared<Data>(FileUtils::getInstance()->getDataFromFile(strPath));
-    
-    Node *ret =  this->readNodeGraphFromData(dataPtr, pOwner, parentSize);
+    Node *ret = nullptr;
+    if (FileUtils::getInstance()->isFileExist(strCCBFileName))
+    {
+        std::string strPath = FileUtils::getInstance()->fullPathForFilename(strCCBFileName);
+        if ( !strPath.empty() && strPath.length()) {
+            auto dataPtr = std::make_shared<Data>(FileUtils::getInstance()->getDataFromFile(strPath));
+            ret =  this->readNodeGraphFromData(dataPtr, pOwner, parentSize);
+        }
+        else
+            CCLOG("strPath=%s is not exist!!!",strCCBFileName.c_str());
+        
+    }
+    else
+        CCLOG("[ERROR] CCB File=%s is not exist!!!",strCCBFileName.c_str());
     
     return ret;
 }

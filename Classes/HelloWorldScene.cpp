@@ -1,6 +1,8 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
-#include "lyTest.h"
+
+
+
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -65,7 +67,7 @@ bool HelloWorld::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    /*by shixc
+    //*by shixc
      auto sprite = Sprite::create("HelloWorld.png");
      
      // position the sprite on the center of the screen
@@ -74,12 +76,6 @@ bool HelloWorld::init()
      // add the sprite as a child to this layer
      this->addChild(sprite, 0);
      //end*/
-    
-    //byshixc  测试代码
-    lyTest* pTest = lyTest::GetInstance();
-    if (pTest) {
-        pTest->TestScene((Scene*)this);
-    }
     
     
     return true;

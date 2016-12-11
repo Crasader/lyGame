@@ -1,6 +1,13 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
+//add byshixc test
+#include "CCBCustomClassLoaderLibrary.h"
+#include "lySceneManager.h"
+#include "ApplicationManager.h"
+#include "lyResourceUtil.h"
+
+
 USING_NS_CC;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
@@ -74,11 +81,25 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
-
-    // run
-    director->runWithScene(scene);
-
+    
+    bool isTest = true;
+    
+    
+    if (isTest)
+    {
+        FileUtils::getInstance()->setSearchPaths(lyResourceUtil::getResourceSearchPaths());
+        
+        CCBCustomClassLoaderLibrary::getInstance()->registerCustomClassLoader();
+        lySceneManager* sceneMgr = new lySceneManager;
+        ApplicationManager::getInstance()->setSceneManager(sceneMgr);
+        
+        ApplicationManager::getInstance()->runWithScene(SCENE_TEST_SCENE);
+    }
+    else
+    {
+        auto scene = HelloWorld::createScene();
+        director->runWithScene(scene);
+    }
     return true;
 }
 

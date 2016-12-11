@@ -7,7 +7,7 @@
 //
 
 #include "DictUtil.h"
-#include "CCJSONConverter.h"
+#include "lyJsonConverter.h"
 #include "cocos2d.h"
 #include <typeinfo>
 
@@ -15,7 +15,7 @@ USING_NS_CC;
 
 cocos2d::ValueMap DictUtil::cstrToDictionary(const char* chrs)
 {
-    ValueMap dict = CCJSONConverter::getInstance()->dictionaryFrom(chrs);
+    ValueMap dict = lyJsonConverter::getInstance()->dictionaryFrom(chrs);
     
     return dict;
 }
