@@ -1,6 +1,6 @@
 
 #import "ActivityIndicator_objc.h"
-#import "CCEAGLView-ios.h"
+#import "CCEAGLView.h"
 #include <cocos2d.h>
 
 static UIActivityIndicatorView * m_indicatorView = nil;

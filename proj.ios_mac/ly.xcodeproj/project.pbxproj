@@ -107,6 +107,10 @@
 		79E9644A1DFDB55C0091A060 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		79E9644E1DFDB6CB0091A060 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E9644D1DFDB6CB0091A060 /* GameController.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		79E964501DFDB6D90091A060 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E9644F1DFDB6D90091A060 /* GameController.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		79E964571DFDC25A0091A060 /* PlatformUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964551DFDC25A0091A060 /* PlatformUtils.cpp */; };
+		79E9645C1DFDC2640091A060 /* ActivityIndicator_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E964591DFDC2640091A060 /* ActivityIndicator_objc.mm */; };
+		79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E9645A1DFDC2640091A060 /* ActivityIndicator.mm */; };
+		79E9645E1DFDC2640091A060 /* PlatformUtils_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -310,6 +314,13 @@
 		79E9644D1DFDB6CB0091A060 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		79E9644F1DFDB6D90091A060 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		79E964511DFDB74E0091A060 /* ISoundInterfaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISoundInterfaces.h; path = lyInterfaces/ISoundInterfaces.h; sourceTree = "<group>"; };
+		79E964541DFDC25A0091A060 /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityIndicator.h; path = lyBase/Platform/ActivityIndicator.h; sourceTree = "<group>"; };
+		79E964551DFDC25A0091A060 /* PlatformUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlatformUtils.cpp; path = lyBase/Platform/PlatformUtils.cpp; sourceTree = "<group>"; };
+		79E964561DFDC25A0091A060 /* PlatformUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformUtils.h; path = lyBase/Platform/PlatformUtils.h; sourceTree = "<group>"; };
+		79E964581DFDC2640091A060 /* ActivityIndicator_objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityIndicator_objc.h; path = lyBase/Platform/ios/ActivityIndicator_objc.h; sourceTree = "<group>"; };
+		79E964591DFDC2640091A060 /* ActivityIndicator_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ActivityIndicator_objc.mm; path = lyBase/Platform/ios/ActivityIndicator_objc.mm; sourceTree = "<group>"; };
+		79E9645A1DFDC2640091A060 /* ActivityIndicator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ActivityIndicator.mm; path = lyBase/Platform/ios/ActivityIndicator.mm; sourceTree = "<group>"; };
+		79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PlatformUtils_objc.mm; path = lyBase/Platform/ios/PlatformUtils_objc.mm; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -564,6 +575,7 @@
 		79CC9B4A1DDDA35500CD7FB6 /* lyBase */ = {
 			isa = PBXGroup;
 			children = (
+				79E964521DFDC24A0091A060 /* Platform */,
 				79E963D81DFDABB10091A060 /* lyResourceUtil.cpp */,
 				79E963D91DFDABB10091A060 /* lyResourceUtil.h */,
 				79E963DA1DFDABB10091A060 /* PartsBase.cpp */,
@@ -761,6 +773,28 @@
 			name = lyWeb;
 			sourceTree = "<group>";
 		};
+		79E964521DFDC24A0091A060 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				79E964541DFDC25A0091A060 /* ActivityIndicator.h */,
+				79E964551DFDC25A0091A060 /* PlatformUtils.cpp */,
+				79E964561DFDC25A0091A060 /* PlatformUtils.h */,
+				79E964531DFDC24E0091A060 /* ios */,
+			);
+			name = Platform;
+			sourceTree = "<group>";
+		};
+		79E964531DFDC24E0091A060 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				79E964581DFDC2640091A060 /* ActivityIndicator_objc.h */,
+				79E964591DFDC2640091A060 /* ActivityIndicator_objc.mm */,
+				79E9645A1DFDC2640091A060 /* ActivityIndicator.mm */,
+				79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -922,13 +956,17 @@
 				79E963FE1DFDAC190091A060 /* CCBCustomClassLoaderLibrary.cpp in Sources */,
 				79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */,
 				79E9640B1DFDAC2F0091A060 /* CoreCCBLayer.cpp in Sources */,
+				79E964571DFDC25A0091A060 /* PlatformUtils.cpp in Sources */,
 				79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */,
+				79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */,
 				79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */,
 				79E963E21DFDABC30091A060 /* testScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */,
 				79E9640D1DFDAC2F0091A060 /* CoreCCBSprite.cpp in Sources */,
 				79E9640E1DFDAC2F0091A060 /* CoreLayer.cpp in Sources */,
+				79E9645C1DFDC2640091A060 /* ActivityIndicator_objc.mm in Sources */,
+				79E9645E1DFDC2640091A060 /* PlatformUtils_objc.mm in Sources */,
 				794AD6851DED227D00EA3CF5 /* lyWebInterfaceiOS.mm in Sources */,
 				79CC9BD71DDDA78C00CD7FB6 /* StrUtil.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
@@ -1002,7 +1040,10 @@
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
@@ -1031,7 +1072,10 @@
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";

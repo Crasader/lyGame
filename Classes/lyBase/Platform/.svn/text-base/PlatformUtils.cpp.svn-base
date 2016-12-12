@@ -1,11 +1,14 @@
 
 #include "PlatformUtils.h"
 #include "RandomUtil.h"
+#include "ConfigEnvironment.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "PlatformUtils_objc.h"
 #include "platform/android/jni/JniHelper.h"
 #endif
 
+#include "LoginManager.h"
+#include "CommonSDKDef.h"
 #include<sys/timeb.h>
 
 USING_NS_CC;
@@ -44,7 +47,6 @@ std::string PlatformUtils::getResourceVersion()
 
 void PlatformUtils::saveResourceVersion(std::string resourceVersion)
 {
-    /*
     int totalSize = 0;
     int resourceVersionSize = resourceVersion.size();
     
@@ -84,12 +86,10 @@ void PlatformUtils::saveResourceVersion(std::string resourceVersion)
     CC_SAFE_DELETE_ARRAY(sv_buf);
     
     _resourceVersion = resourceVersion;
-     */
 }
 
 void PlatformUtils::loadResourceVersion()
 {
-    /*
     _resourceVersion = "";
 
     std::string writablePath = getDownloadResourcePath();
@@ -124,7 +124,6 @@ void PlatformUtils::loadResourceVersion()
     }
 
     CC_SAFE_DELETE_ARRAY(ld_buf);
-     */
 }
 
 std::string PlatformUtils::getMasterVersion()
@@ -162,7 +161,6 @@ void PlatformUtils::saveMasterVersion(std::string masterVersion)
     CC_SAFE_DELETE_ARRAY(en_buf);
     
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
-    /*
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+MASTER_VERSION;
     FILE* fp = fopen(fileName.c_str(), "wb");
     if (fp) {
@@ -170,7 +168,6 @@ void PlatformUtils::saveMasterVersion(std::string masterVersion)
         fclose(fp);
     }
     CC_SAFE_DELETE_ARRAY(sv_buf);
-     */
     
     _masterVersion = masterVersion;
 }
@@ -178,7 +175,7 @@ void PlatformUtils::saveMasterVersion(std::string masterVersion)
 void PlatformUtils::loadMasterVersion()
 {
     _masterVersion = "";
-    /*
+    
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+MASTER_VERSION;
     
@@ -211,7 +208,6 @@ void PlatformUtils::loadMasterVersion()
         
         CC_SAFE_DELETE_ARRAY(buf);
     }
-     */
 }
 
 void PlatformUtils::set64AccoutId(std::string accoutId)
@@ -299,7 +295,6 @@ void PlatformUtils::calcUUID() {
 }
 
 void PlatformUtils::saveFinishedCheckChangeDevice() {
-    /*
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+CHECK_CHENGE_DEVICE;
     FILE* fp = fopen(fileName.c_str(), "wb");
@@ -307,11 +302,9 @@ void PlatformUtils::saveFinishedCheckChangeDevice() {
         fwrite((void*)0, 0, 1, fp);
         fclose(fp);
     }
-     */
 }
 
 bool PlatformUtils::isFinishedCheckChangeDevice() {
-    /*
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+CHECK_CHENGE_DEVICE;
     
@@ -321,12 +314,10 @@ bool PlatformUtils::isFinishedCheckChangeDevice() {
         free(ld_buf);
         return true;
     }
-     */
     return false;
 }
 
 void PlatformUtils::saveFinishedFirstResourceDownload() {
-    /*
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+FIRST_RESOURCE_DOWNLOAD;
     FILE* fp = fopen(fileName.c_str(), "wb");
@@ -334,11 +325,9 @@ void PlatformUtils::saveFinishedFirstResourceDownload() {
         fwrite((void*)0, 0, 1, fp);
         fclose(fp);
     }
-     */
 }
 
 bool PlatformUtils::isFinishedFirstResourceDownload() {
-    /*
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+FIRST_RESOURCE_DOWNLOAD;
     
@@ -348,12 +337,10 @@ bool PlatformUtils::isFinishedFirstResourceDownload() {
         free(ld_buf);
         return true;
     }
-     */
     return false;
 }
 
 void PlatformUtils::saveUserKeyData(std::string accountId, std::string uuid) {
-    /*
 #ifdef USE_SDK_LOGIN
     UserDefault::getInstance()->setStringForKey(ACOUNTID_KEY, accountId);
 #else
@@ -447,12 +434,10 @@ void PlatformUtils::loadUserKeyData() {
         _uuid = "";
     }
 #endif
-     */
 }
 
 void PlatformUtils::saveDetectedUnmatchVersionResource(bool flg)
 {
-    /*
     auto writablePath = getDownloadResourcePath();
     auto fileName = writablePath + ConfigEnvironment::getInstance()->getConnectedEnvironmentName() + DETECTED_UNMATUCH_VERSION_RESOURCE;
     FILE* fp = fopen(fileName.c_str(), "wb");
@@ -461,12 +446,10 @@ void PlatformUtils::saveDetectedUnmatchVersionResource(bool flg)
         fwrite(&data, 1, 1, fp);
         fclose(fp);
     }
-     */
 }
 
 bool PlatformUtils::isDetectedUnmatchVersionResource()
 {
-    /*
     auto writablePath = getDownloadResourcePath();
     auto fileName = writablePath + ConfigEnvironment::getInstance()->getConnectedEnvironmentName() + DETECTED_UNMATUCH_VERSION_RESOURCE;
     
@@ -478,7 +461,6 @@ bool PlatformUtils::isDetectedUnmatchVersionResource()
         free(ld_buf);
         return flg;
     }
-     */
     return false;
 }
 
@@ -591,7 +573,6 @@ std::string PlatformUtils::decode(const char* dat, int size) {
 }
 
 void PlatformUtils::saveSidData(std::string sid) {
-    /*
     int totalSize = 0;
     int sidSize = sid.size();
     
@@ -627,11 +608,10 @@ void PlatformUtils::saveSidData(std::string sid) {
     }
     
     CC_SAFE_DELETE_ARRAY(sv_buf);
-    */
+    
 }
 
 std::string PlatformUtils::loadSidData() {
-    /*
     std::string writablePath = FileUtils::getInstance()->getWritablePath();
     std::string fileName = writablePath+ConfigEnvironment::getInstance()->getConnectedEnvironmentName().c_str()+SID_FILENAME;
     
@@ -667,7 +647,6 @@ std::string PlatformUtils::loadSidData() {
         
         return sid;
     }
-     */
     return "";
 }
 

@@ -6,7 +6,7 @@
 #include "lySceneManager.h"
 #include "ApplicationManager.h"
 #include "lyResourceUtil.h"
-
+#include "PlatformUtils.h"
 
 USING_NS_CC;
 
@@ -88,6 +88,33 @@ bool AppDelegate::applicationDidFinishLaunching() {
     if (isTest)
     {
         FileUtils::getInstance()->setSearchPaths(lyResourceUtil::getResourceSearchPaths());
+        FileUtils::getInstance()->setSearchResolutionsOrder(lyResourceUtil::getResourceResolutionOrder());
+        /*
+        char fullPath[1024] = {};
+        std::string resourcePath = PlatformUtils::getDownloadResourcePath();
+        PlatformUtils::createDirectoryByFullPath(resourcePath.c_str());
+        sprintf(fullPath, "%s%s", resourcePath.c_str(), "res/");
+        PlatformUtils::createDirectoryByFullPath(fullPath);
+        sprintf(fullPath, "%s%s", resourcePath.c_str(), "ui/");
+        PlatformUtils::createDirectoryByFullPath(fullPath);
+        sprintf(fullPath, "%s%s", resourcePath.c_str(), "images/");
+        PlatformUtils::createDirectoryByFullPath(fullPath);
+        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        PlatformUtils::addDoNotBackupAttribute(resourcePath.c_str());
+#endif
+        / *
+        std::string cachePath = PlatformUtils::getCachePath();
+        PlatformUtils::createDirectoryByFullPath(cachePath.c_str());
+        sprintf(fullPath, "%s%s", cachePath.c_str(), "res/");
+        PlatformUtils::createDirectoryByFullPath(fullPath);
+        sprintf(fullPath, "%s%s", cachePath.c_str(), "ui/");
+        PlatformUtils::createDirectoryByFullPath(fullPath);
+        */
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        //moveDownloadedResources();
+#endif
+        ApplicationManager::getInstance()->preloadImages();
         
         CCBCustomClassLoaderLibrary::getInstance()->registerCustomClassLoader();
         lySceneManager* sceneMgr = new lySceneManager;
@@ -117,4 +144,9 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+}
+
+void AppDelegate::moveDownloadedResources()
+{
+
 }

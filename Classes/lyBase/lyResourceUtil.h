@@ -14,6 +14,9 @@ class lyResourceUtil
 {
 public:
     static std::vector<std::string> getResourceSearchPaths();
+    static std::vector<std::string> getResourceResolutionOrder();
+    
+    
 };
 
 #endif /* defined(ly_lyResourceUtil_h_) */
