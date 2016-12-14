@@ -15,6 +15,7 @@
 #include "editor-support/cocosbuilder/CCParticleSystemQuadLoader.h"
 #include "editor-support/cocosbuilder/CCScrollViewLoader.h"
 
+
 using namespace cocos2d;
 
 namespace cocosbuilder {
@@ -42,6 +43,11 @@ void NodeLoaderLibrary::registerDefaultNodeLoaders() {
     this->registerNodeLoader("CCMenuItemImage", MenuItemImageLoader::loader());
     this->registerNodeLoader("CCControlButton", ControlButtonLoader::loader());
     this->registerNodeLoader("CCParticleSystemQuad", ParticleSystemQuadLoader::loader());
+    
+    //add byshixc
+    this->registerNodeLoader("CCNodeGradient", LayerGradientLoader::loader());
+    this->registerNodeLoader("CCNodeColor", LayerColorLoader::loader());
+    this->registerNodeLoader("CCButton", ControlButtonLoader::loader());
 }
 
 void NodeLoaderLibrary::registerNodeLoader(const char * pClassName, NodeLoader * pNodeLoader) {
@@ -62,8 +68,10 @@ void NodeLoaderLibrary::unregisterNodeLoader(const char * pClassName) {
     }
 }
 
-NodeLoader * NodeLoaderLibrary::getNodeLoader(const char* pClassName) {
+NodeLoader * NodeLoaderLibrary::getNodeLoader(const char* pClassName)
+{
     NodeLoaderMap::iterator ccNodeLoadersIterator = this->_nodeLoaders.find(pClassName);
+    
     assert(ccNodeLoadersIterator != this->_nodeLoaders.end());
     return ccNodeLoadersIterator->second;
 }

@@ -8,14 +8,21 @@
 
 #include "CCBCustomClassLoaderLibrary.h"
 #include "BaseNodeLoader.h"
+
 #include "testScene.h"
+#include "loginLayer.h"
+#include "loadingText.h"
+#include "loginTest.h"
 
 
 static CCBCustomClassLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
 
 CCBCustomClassLoaderLibrary::CCBCustomClassLoaderLibrary() {
     m_customClassEntry = {
-        { "testScene", testSceneLoader::loader()}
+        { "testScene", testSceneLoader::loader()},
+        //{ "loginTest", loginTestLoader::loader()}
+        //{ "loginLayer", loginLayerLoader::loader()},
+        //{ "loadingText", loadingTextLoader::loader()}
         
     };
 }
@@ -27,7 +34,7 @@ void CCBCustomClassLoaderLibrary::registerCustomClassLoader() {
     cocosbuilder::NodeLoaderLibrary *nodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
     
     for (int i=0; i<m_customClassEntry.size(); i++) {
-        CCLOG("registerCustomClassLoader i=%d,name=%s",i,m_customClassEntry[i].pClassName);
+        CCLOG("registerCustomClassLoader i=%d,layername=%s",i,m_customClassEntry[i].pClassName);
         nodeLoaderLibrary->registerNodeLoader(m_customClassEntry[i].pClassName, m_customClassEntry[i].pCCNodeLoader);
     }
 }

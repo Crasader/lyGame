@@ -3,10 +3,12 @@
 
 //add byshixc test
 #include "CCBCustomClassLoaderLibrary.h"
-#include "lySceneManager.h"
+#include "VitaminSceneManager.h"
 #include "ApplicationManager.h"
 #include "lyResourceUtil.h"
-#include "PlatformUtils.h"
+#include "testScene.h"
+
+//#include "PlatformUtils.h"
 
 USING_NS_CC;
 
@@ -59,32 +61,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
 
-    // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
-    auto frameSize = glview->getFrameSize();
-    // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is larger than the height of small size.
-    else if (frameSize.height > smallResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is smaller than the height of medium size.
-    else
-    {        
-        director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
-    }
-
-    register_all_packages();
-
-    // create a scene. it's an autorelease object
-    
     bool isTest = true;
-    
-    
     if (isTest)
     {
         FileUtils::getInstance()->setSearchPaths(lyResourceUtil::getResourceSearchPaths());
@@ -117,13 +94,40 @@ bool AppDelegate::applicationDidFinishLaunching() {
         ApplicationManager::getInstance()->preloadImages();
         
         CCBCustomClassLoaderLibrary::getInstance()->registerCustomClassLoader();
-        lySceneManager* sceneMgr = new lySceneManager;
+        VitaminSceneManager* sceneMgr = new VitaminSceneManager;
         ApplicationManager::getInstance()->setSceneManager(sceneMgr);
-        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        //sceneMgr->_isFade = false;
+#endif
+        //ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN);
         ApplicationManager::getInstance()->runWithScene(SCENE_TEST_SCENE);
+        //ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN_TEST);
+        
+        //director->runWithScene(testScene::create());
     }
     else
     {
+        // Set the design resolution
+        glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+        auto frameSize = glview->getFrameSize();
+        // if the frame's height is larger than the height of medium size.
+        if (frameSize.height > mediumResolutionSize.height)
+        {
+            director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
+        }
+        // if the frame's height is larger than the height of small size.
+        else if (frameSize.height > smallResolutionSize.height)
+        {
+            director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
+        }
+        // if the frame's height is smaller than the height of medium size.
+        else
+        {
+            director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
+        }
+        
+        register_all_packages();
+
         auto scene = HelloWorld::createScene();
         director->runWithScene(scene);
     }
@@ -133,7 +137,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 // This function will be called when the app is inactive. Note, when receiving a phone call it is invoked.
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
-
+    
+    ApplicationManager::getInstance()->pause();
     // if you use SimpleAudioEngine, it must be paused
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
@@ -141,7 +146,8 @@ void AppDelegate::applicationDidEnterBackground() {
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
-
+    
+    ApplicationManager::getInstance()->resume();
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

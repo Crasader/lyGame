@@ -11,10 +11,11 @@
 
 #include "CoreCCBLayer.h"
 #include "Caption.h"
-#include "lySceneManager.h"
+#include "VitaminSceneManager.h"
 #include "cocosbuilder/cocosbuilder.h"
 #include "UISceneID.h"
-
+#include "PartsBase.h"
+#include "VitaminCoreLayerModule.h"
 
 #define RESULT_LOGIN_OTHER_DEVICE 20001
 #define SESSION_PARAM_EXCEPTION 20002

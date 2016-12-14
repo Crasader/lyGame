@@ -64,7 +64,8 @@ void VitaminCoreLayer::onEnter()
 
 void VitaminCoreLayer::onEnterTransitionDidFinish()
 {
-   }
+    CoreLayer::onEnterTransitionDidFinish();
+}
 
 void VitaminCoreLayer::onExit()
 {

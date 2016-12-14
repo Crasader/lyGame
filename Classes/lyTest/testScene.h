@@ -16,14 +16,22 @@
 #include "ApplicationManager.h"
 
 
-class testScene : public VitaminCoreLayer
+struct testSceneParameter : public SceneParameter
+{
+public:
+    testSceneParameter(){};
+};
+
+
+class testScene : public VitaminCoreLayer, public PartsBaseObj
 {
 public:
     testScene();
     virtual ~testScene();
     
     // implement the "static create()" method manually
-    CREATE_WITH_FORMAT_FUNC(testScene);
+    //CREATE_WITH_FORMAT_FUNC(testScene);
+    static testScene* create();
     
     virtual void completedAnimationSequenceNamed(const char *name);
     
@@ -32,6 +40,8 @@ public:
     
     virtual bool onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode) override;
     virtual cocos2d::extension::Control::Handler onResolveCCBCCControlSelector(cocos2d::Ref* pTarget, const char* pSelectorName) override;
+    
+    void setSceneParameter(testSceneParameter *param);
     
     virtual void onEnter();
     

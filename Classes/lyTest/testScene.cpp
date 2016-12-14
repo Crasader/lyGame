@@ -14,7 +14,24 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-
+testScene* testScene::create()
+{
+    //testScene* pRet = new (std::nothrow) testScene();
+    cocosbuilder::CCBReader* reader = new cocosbuilder::CCBReader(cocosbuilder::NodeLoaderLibrary::getInstance());
+    testScene *pRet = (testScene*)reader->readNodeGraphFromFile("testScene", nullptr, Director::getInstance()->getWinSize());
+    //CC_SAFE_DELETE(reader);
+    if (pRet && pRet->init())
+    {
+        pRet->autorelease();
+        return pRet;
+    }
+    else
+    {
+        delete pRet;
+        pRet = nullptr;
+        return nullptr;
+    }
+}
 testScene::testScene()
 : _isMoving(false)
 , _nameLabel(nullptr)
@@ -53,7 +70,10 @@ cocos2d::extension::Control::Handler testScene::onResolveCCBCCControlSelector(Re
     //CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onPressButton", testScene::onClickedButton2);
     return nullptr;
 }
-
+void testScene::setSceneParameter(testSceneParameter *param)
+{
+    
+}
 bool testScene::onTouchBegan(cocos2d::Touch* touches, cocos2d::Event* event)
 {
     

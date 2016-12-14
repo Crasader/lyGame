@@ -91,7 +91,7 @@
 		79E9640E1DFDAC2F0091A060 /* CoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964081DFDAC2F0091A060 /* CoreLayer.cpp */; };
 		79E964281DFDAC590091A060 /* ApplicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E9641F1DFDAC590091A060 /* ApplicationManager.cpp */; };
 		79E964291DFDAC590091A060 /* lyBaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964211DFDAC590091A060 /* lyBaseScene.cpp */; };
-		79E9642A1DFDAC590091A060 /* lySceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964231DFDAC590091A060 /* lySceneManager.cpp */; };
+		79E9642A1DFDAC590091A060 /* VitaminSceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964231DFDAC590091A060 /* VitaminSceneManager.cpp */; };
 		79E9642B1DFDAC590091A060 /* lySoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964251DFDAC590091A060 /* lySoundManager.cpp */; };
 		79E964311DFDB1920091A060 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964301DFDB1920091A060 /* AudioToolbox.framework */; };
 		79E964331DFDB1EC0091A060 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964321DFDB1EC0091A060 /* MediaPlayer.framework */; };
@@ -111,6 +111,12 @@
 		79E9645C1DFDC2640091A060 /* ActivityIndicator_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E964591DFDC2640091A060 /* ActivityIndicator_objc.mm */; };
 		79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E9645A1DFDC2640091A060 /* ActivityIndicator.mm */; };
 		79E9645E1DFDC2640091A060 /* PlatformUtils_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */; };
+		79E9646A1DFE58680091A060 /* loginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964681DFE58680091A060 /* loginLayer.cpp */; };
+		79E9646D1DFE58720091A060 /* loadingText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E9646B1DFE58720091A060 /* loadingText.cpp */; };
+		79E964751DFE9B0D0091A060 /* TransitionFadeCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964731DFE9B0D0091A060 /* TransitionFadeCustom.cpp */; };
+		79E964781DFEB72C0091A060 /* ObserverNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964761DFEB72C0091A060 /* ObserverNode.cpp */; };
+		79E964811DFFA5650091A060 /* loginTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E9647F1DFFA5650091A060 /* loginTest.cpp */; };
+		79E964891DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964871DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -286,15 +292,14 @@
 		79E964151DFDAC3E0091A060 /* INetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INetworkManager.h; path = lyInterfaces/INetworkManager.h; sourceTree = "<group>"; };
 		79E964161DFDAC3E0091A060 /* IObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IObserver.h; path = lyInterfaces/IObserver.h; sourceTree = "<group>"; };
 		79E964171DFDAC3E0091A060 /* ISceneInterfaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISceneInterfaces.h; path = lyInterfaces/ISceneInterfaces.h; sourceTree = "<group>"; };
-		79E964181DFDAC3E0091A060 /* ISceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISceneManager.h; path = lyInterfaces/ISceneManager.h; sourceTree = "<group>"; };
 		79E964191DFDAC3E0091A060 /* ISubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISubject.h; path = lyInterfaces/ISubject.h; sourceTree = "<group>"; };
 		79E9641A1DFDAC3E0091A060 /* IWaitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWaitManager.h; path = lyInterfaces/IWaitManager.h; sourceTree = "<group>"; };
 		79E9641F1DFDAC590091A060 /* ApplicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplicationManager.cpp; path = lyManager/ApplicationManager.cpp; sourceTree = "<group>"; };
 		79E964201DFDAC590091A060 /* ApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationManager.h; path = lyManager/ApplicationManager.h; sourceTree = "<group>"; };
 		79E964211DFDAC590091A060 /* lyBaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyBaseScene.cpp; path = lyManager/lyBaseScene.cpp; sourceTree = "<group>"; };
 		79E964221DFDAC590091A060 /* lyBaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyBaseScene.h; path = lyManager/lyBaseScene.h; sourceTree = "<group>"; };
-		79E964231DFDAC590091A060 /* lySceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lySceneManager.cpp; path = lyManager/lySceneManager.cpp; sourceTree = "<group>"; };
-		79E964241DFDAC590091A060 /* lySceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lySceneManager.h; path = lyManager/lySceneManager.h; sourceTree = "<group>"; };
+		79E964231DFDAC590091A060 /* VitaminSceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VitaminSceneManager.cpp; path = lyManager/VitaminSceneManager.cpp; sourceTree = "<group>"; };
+		79E964241DFDAC590091A060 /* VitaminSceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminSceneManager.h; path = lyManager/VitaminSceneManager.h; sourceTree = "<group>"; };
 		79E964251DFDAC590091A060 /* lySoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lySoundManager.cpp; path = lyManager/lySoundManager.cpp; sourceTree = "<group>"; };
 		79E964261DFDAC590091A060 /* lySoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lySoundManager.h; path = lyManager/lySoundManager.h; sourceTree = "<group>"; };
 		79E964271DFDAC590091A060 /* UISceneID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISceneID.h; path = lyManager/UISceneID.h; sourceTree = "<group>"; };
@@ -321,6 +326,18 @@
 		79E964591DFDC2640091A060 /* ActivityIndicator_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ActivityIndicator_objc.mm; path = lyBase/Platform/ios/ActivityIndicator_objc.mm; sourceTree = "<group>"; };
 		79E9645A1DFDC2640091A060 /* ActivityIndicator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ActivityIndicator.mm; path = lyBase/Platform/ios/ActivityIndicator.mm; sourceTree = "<group>"; };
 		79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PlatformUtils_objc.mm; path = lyBase/Platform/ios/PlatformUtils_objc.mm; sourceTree = "<group>"; };
+		79E964681DFE58680091A060 /* loginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = loginLayer.cpp; path = lyLayer/login/loginLayer.cpp; sourceTree = "<group>"; };
+		79E964691DFE58680091A060 /* loginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginLayer.h; path = lyLayer/login/loginLayer.h; sourceTree = "<group>"; };
+		79E9646B1DFE58720091A060 /* loadingText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = loadingText.cpp; path = lyLayer/loading/loadingText.cpp; sourceTree = "<group>"; };
+		79E9646C1DFE58720091A060 /* loadingText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadingText.h; path = lyLayer/loading/loadingText.h; sourceTree = "<group>"; };
+		79E964731DFE9B0D0091A060 /* TransitionFadeCustom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransitionFadeCustom.cpp; path = lyCore/TransitionFadeCustom.cpp; sourceTree = "<group>"; };
+		79E964741DFE9B0D0091A060 /* TransitionFadeCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionFadeCustom.h; path = lyCore/TransitionFadeCustom.h; sourceTree = "<group>"; };
+		79E964761DFEB72C0091A060 /* ObserverNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObserverNode.cpp; path = lyCore/ObserverNode.cpp; sourceTree = "<group>"; };
+		79E964771DFEB72C0091A060 /* ObserverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObserverNode.h; path = lyCore/ObserverNode.h; sourceTree = "<group>"; };
+		79E9647F1DFFA5650091A060 /* loginTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = loginTest.cpp; path = lyLayer/login/loginTest.cpp; sourceTree = "<group>"; };
+		79E964801DFFA5650091A060 /* loginTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginTest.h; path = lyLayer/login/loginTest.h; sourceTree = "<group>"; };
+		79E964871DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VitaminCoreLayerModule.cpp; path = lyTest/VitaminCoreLayerModule.cpp; sourceTree = "<group>"; };
+		79E964881DFFFC3B0091A060 /* VitaminCoreLayerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminCoreLayerModule.h; path = lyTest/VitaminCoreLayerModule.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -496,6 +513,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				79E9645F1DFE57760091A060 /* lyLayer */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -506,7 +524,6 @@
 				79CC9B511DDDA46100CD7FB6 /* lyDef */,
 				79E963FF1DFDAC250091A060 /* lyDisp */,
 				79E9640F1DFDAC360091A060 /* lyInterfaces */,
-				79E9641D1DFDAC490091A060 /* lyLayer */,
 				79E9641E1DFDAC500091A060 /* lyManager */,
 				79CC9B581DDDA49600CD7FB6 /* lyTest */,
 				79CC9B591DDDA49F00CD7FB6 /* lyUtils */,
@@ -597,6 +614,8 @@
 		79CC9B581DDDA49600CD7FB6 /* lyTest */ = {
 			isa = PBXGroup;
 			children = (
+				79E964871DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp */,
+				79E964881DFFFC3B0091A060 /* VitaminCoreLayerModule.h */,
 				79E963DE1DFDABC30091A060 /* testScene.cpp */,
 				79E963DF1DFDABC30091A060 /* testScene.h */,
 				79E963E01DFDABC30091A060 /* VitaminCoreLayer.cpp */,
@@ -696,6 +715,10 @@
 		79E963EE1DFDAC090091A060 /* lyCore */ = {
 			isa = PBXGroup;
 			children = (
+				79E964761DFEB72C0091A060 /* ObserverNode.cpp */,
+				79E964771DFEB72C0091A060 /* ObserverNode.h */,
+				79E964731DFE9B0D0091A060 /* TransitionFadeCustom.cpp */,
+				79E964741DFE9B0D0091A060 /* TransitionFadeCustom.h */,
 				79E963EF1DFDAC110091A060 /* Caption.cpp */,
 				79E963F01DFDAC110091A060 /* Caption.h */,
 				79E963F11DFDAC110091A060 /* Observer.cpp */,
@@ -735,18 +758,10 @@
 				79E964151DFDAC3E0091A060 /* INetworkManager.h */,
 				79E964161DFDAC3E0091A060 /* IObserver.h */,
 				79E964171DFDAC3E0091A060 /* ISceneInterfaces.h */,
-				79E964181DFDAC3E0091A060 /* ISceneManager.h */,
 				79E964191DFDAC3E0091A060 /* ISubject.h */,
 				79E9641A1DFDAC3E0091A060 /* IWaitManager.h */,
 			);
 			name = lyInterfaces;
-			sourceTree = "<group>";
-		};
-		79E9641D1DFDAC490091A060 /* lyLayer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = lyLayer;
 			sourceTree = "<group>";
 		};
 		79E9641E1DFDAC500091A060 /* lyManager */ = {
@@ -756,8 +771,8 @@
 				79E964201DFDAC590091A060 /* ApplicationManager.h */,
 				79E964211DFDAC590091A060 /* lyBaseScene.cpp */,
 				79E964221DFDAC590091A060 /* lyBaseScene.h */,
-				79E964231DFDAC590091A060 /* lySceneManager.cpp */,
-				79E964241DFDAC590091A060 /* lySceneManager.h */,
+				79E964231DFDAC590091A060 /* VitaminSceneManager.cpp */,
+				79E964241DFDAC590091A060 /* VitaminSceneManager.h */,
 				79E964251DFDAC590091A060 /* lySoundManager.cpp */,
 				79E964261DFDAC590091A060 /* lySoundManager.h */,
 				79E964271DFDAC590091A060 /* UISceneID.h */,
@@ -793,6 +808,35 @@
 				79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */,
 			);
 			name = ios;
+			sourceTree = "<group>";
+		};
+		79E9645F1DFE57760091A060 /* lyLayer */ = {
+			isa = PBXGroup;
+			children = (
+				79E964611DFE57830091A060 /* loading */,
+				79E964601DFE577C0091A060 /* login */,
+			);
+			name = lyLayer;
+			sourceTree = "<group>";
+		};
+		79E964601DFE577C0091A060 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				79E9647F1DFFA5650091A060 /* loginTest.cpp */,
+				79E964801DFFA5650091A060 /* loginTest.h */,
+				79E964681DFE58680091A060 /* loginLayer.cpp */,
+				79E964691DFE58680091A060 /* loginLayer.h */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		79E964611DFE57830091A060 /* loading */ = {
+			isa = PBXGroup;
+			children = (
+				79E9646B1DFE58720091A060 /* loadingText.cpp */,
+				79E9646C1DFE58720091A060 /* loadingText.h */,
+			);
+			name = loading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -955,9 +999,11 @@
 				794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */,
 				79E963FE1DFDAC190091A060 /* CCBCustomClassLoaderLibrary.cpp in Sources */,
 				79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */,
+				79E964751DFE9B0D0091A060 /* TransitionFadeCustom.cpp in Sources */,
 				79E9640B1DFDAC2F0091A060 /* CoreCCBLayer.cpp in Sources */,
 				79E964571DFDC25A0091A060 /* PlatformUtils.cpp in Sources */,
 				79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */,
+				79E964781DFEB72C0091A060 /* ObserverNode.cpp in Sources */,
 				79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */,
 				79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */,
 				79E963E21DFDABC30091A060 /* testScene.cpp in Sources */,
@@ -966,14 +1012,16 @@
 				79E9640D1DFDAC2F0091A060 /* CoreCCBSprite.cpp in Sources */,
 				79E9640E1DFDAC2F0091A060 /* CoreLayer.cpp in Sources */,
 				79E9645C1DFDC2640091A060 /* ActivityIndicator_objc.mm in Sources */,
+				79E9646D1DFE58720091A060 /* loadingText.cpp in Sources */,
 				79E9645E1DFDC2640091A060 /* PlatformUtils_objc.mm in Sources */,
+				79E9646A1DFE58680091A060 /* loginLayer.cpp in Sources */,
 				794AD6851DED227D00EA3CF5 /* lyWebInterfaceiOS.mm in Sources */,
 				79CC9BD71DDDA78C00CD7FB6 /* StrUtil.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				79E9642B1DFDAC590091A060 /* lySoundManager.cpp in Sources */,
 				79E963EB1DFDABF50091A060 /* lyJson.cpp in Sources */,
 				79E963E31DFDABC30091A060 /* VitaminCoreLayer.cpp in Sources */,
-				79E9642A1DFDAC590091A060 /* lySceneManager.cpp in Sources */,
+				79E9642A1DFDAC590091A060 /* VitaminSceneManager.cpp in Sources */,
 				79E963DC1DFDABB10091A060 /* lyResourceUtil.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				79E964291DFDAC590091A060 /* lyBaseScene.cpp in Sources */,
@@ -986,9 +1034,11 @@
 				79E9640C1DFDAC2F0091A060 /* CoreCCBNode.cpp in Sources */,
 				79E963F81DFDAC110091A060 /* Observer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				79E964891DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp in Sources */,
 				79E963EC1DFDABF50091A060 /* lyJsonConverter.cpp in Sources */,
 				79CC9BD51DDDA78C00CD7FB6 /* RandomUtil.cpp in Sources */,
 				79E963F91DFDAC110091A060 /* ObserverController.cpp in Sources */,
+				79E964811DFFA5650091A060 /* loginTest.cpp in Sources */,
 				79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				79E964281DFDAC590091A060 /* ApplicationManager.cpp in Sources */,

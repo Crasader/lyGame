@@ -12,7 +12,6 @@
 #include "extensions/cocos-ext.h"
 #include "cocosbuilder/cocosbuilder.h"
 
-
 /**
  * NodeLoaderクラスの定義マクロ
  */
