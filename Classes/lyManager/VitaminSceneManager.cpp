@@ -13,7 +13,6 @@
 #include "loadingText.h"
 
 #include "testLayer.h"
-#include "loginTest.h"
 
 
 USING_NS_CC;
@@ -179,13 +178,6 @@ cocos2d::Layer* VitaminSceneManager::createTopLayer(SceneID sid, SceneParameter*
             
             
         }
-            break;
-        case SCENE_LOGIN_TEST:
-        {
-            topLayer = loginTest::createWithcocosbuilderFile("login/loginTest", nullptr, Director::getInstance()->getWinSize());
-            PARAM_TYPE_CHECK(params, loginTestParameter);
-        }
-
             break;
             
     }

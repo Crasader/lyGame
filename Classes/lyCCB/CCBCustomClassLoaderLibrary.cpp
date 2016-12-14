@@ -12,7 +12,6 @@
 #include "testLayer.h"
 #include "loginLayer.h"
 #include "loadingText.h"
-#include "loginTest.h"
 
 
 static CCBCustomClassLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
