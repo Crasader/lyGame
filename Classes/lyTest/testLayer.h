@@ -1,13 +1,13 @@
 //
-//  testScene.h
+//  testLayer.h
 //  VitaminProject
 //
 //  Created by Shinji Hiramatsu on 2014/05/24.
 //  Copyright 2014 GCREST,Inc. All rights reserved.
 //
 
-#ifndef __VitaminProject__testScene__
-#define __VitaminProject__testScene__
+#ifndef __VitaminProject__testLayer__
+#define __VitaminProject__testLayer__
 
 #include "VitaminCoreLayer.h"
 #include "cocos2d.h"
@@ -16,22 +16,21 @@
 #include "ApplicationManager.h"
 
 
-struct testSceneParameter : public SceneParameter
+struct testLayerParameter : public SceneParameter
 {
 public:
-    testSceneParameter(){};
+    testLayerParameter(){};
 };
 
 
-class testScene : public VitaminCoreLayer, public PartsBaseObj
+class testLayer : public VitaminCoreLayer, public PartsBaseObj
 {
 public:
-    testScene();
-    virtual ~testScene();
+    testLayer();
+    virtual ~testLayer();
     
     // implement the "static create()" method manually
-    //CREATE_WITH_FORMAT_FUNC(testScene);
-    static testScene* create();
+    CREATE_WITH_FORMAT_FUNC(testLayer);
     
     virtual void completedAnimationSequenceNamed(const char *name);
     
@@ -40,16 +39,16 @@ public:
     
     virtual bool onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode) override;
     virtual cocos2d::extension::Control::Handler onResolveCCBCCControlSelector(cocos2d::Ref* pTarget, const char* pSelectorName) override;
+    virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::Ref * pTarget, const char* pSelectorName) override;
     
-    void setSceneParameter(testSceneParameter *param);
+    void setSceneParameter(testLayerParameter *param);
     
     virtual void onEnter();
+    virtual void onExit();
     
     
-    void onClickedButton1(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
-    void onClickedButton2(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
-    void btnNextLayer(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
-    
+    void onClickedMenuButton(cocos2d::Ref *sender);
+    void onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
     
 private:
     void doFinishScene();
@@ -62,14 +61,14 @@ private:
 
 
 // loader
-class testSceneLoader : public cocosbuilder::LayerLoader {
+class testLayerLoader : public cocosbuilder::LayerLoader {
 public:
-    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(testSceneLoader, loader);
+    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(testLayerLoader, loader);
     
 protected:
-    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(testScene);
+    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(testLayer);
     
 };
 
 
-#endif /* defined(__VitaminProject__testScene__) */
+#endif /* defined(__VitaminProject__testLayer__) */

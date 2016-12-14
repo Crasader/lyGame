@@ -94,7 +94,14 @@ private:
     cocos2d::Sprite *_captionTitleImg;
 };
 
-
-//CREATE_COCOSBUILDER_LOADER_CLASS(CaptionLoader, Caption);
+// loader
+class CaptionLoader : public cocosbuilder::LayerLoader {
+public:
+    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CaptionLoader, loader);
+    
+protected:
+    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(Caption);
+    
+};
 
 #endif /* defined(__VitaminProject__Caption__) */

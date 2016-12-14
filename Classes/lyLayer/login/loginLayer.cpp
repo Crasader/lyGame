@@ -52,6 +52,11 @@ cocos2d::extension::Control::Handler loginLayer::onResolveCCBCCControlSelector(R
     
     return nullptr;
 }
+cocos2d::SEL_MenuHandler loginLayer::onResolveCCBCCMenuItemSelector(cocos2d::Ref * pTarget, const char* pSelectorName)
+{
+    //CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressMenuButton", testLayer::onClickedMenuButton);
+    return nullptr;
+}
 void loginLayer::setSceneParameter(loginLayerParameter *param)
 {
     

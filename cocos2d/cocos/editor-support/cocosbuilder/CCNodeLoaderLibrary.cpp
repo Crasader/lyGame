@@ -50,7 +50,8 @@ void NodeLoaderLibrary::registerDefaultNodeLoaders() {
     this->registerNodeLoader("CCButton", ControlButtonLoader::loader());
 }
 
-void NodeLoaderLibrary::registerNodeLoader(const char * pClassName, NodeLoader * pNodeLoader) {
+void NodeLoaderLibrary::registerNodeLoader(const char * pClassName, NodeLoader * pNodeLoader)
+{
     pNodeLoader->retain();
     this->_nodeLoaders.insert(NodeLoaderMapEntry(pClassName, pNodeLoader));
 }

@@ -9,7 +9,7 @@
 #include "CCBCustomClassLoaderLibrary.h"
 #include "BaseNodeLoader.h"
 
-#include "testScene.h"
+#include "testLayer.h"
 #include "loginLayer.h"
 #include "loadingText.h"
 #include "loginTest.h"
@@ -19,7 +19,7 @@ static CCBCustomClassLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
 
 CCBCustomClassLoaderLibrary::CCBCustomClassLoaderLibrary() {
     m_customClassEntry = {
-        { "testScene", testSceneLoader::loader()},
+        { "testLayer", testLayerLoader::loader()},
         //{ "loginTest", loginTestLoader::loader()}
         //{ "loginLayer", loginLayerLoader::loader()},
         //{ "loadingText", loadingTextLoader::loader()}

@@ -6,13 +6,13 @@
 
 
 #include "VitaminSceneManager.h"
-#include "TransitionFadeCustom.h"
+//#include "TransitionFadeCustom.h"
 #include "Caption.h"
 
 #include "loginLayer.h"
 #include "loadingText.h"
 
-#include "testScene.h"
+#include "testLayer.h"
 #include "loginTest.h"
 
 
@@ -68,7 +68,7 @@ cocos2d::Scene* VitaminSceneManager::setupScene(SceneID sid, SceneParameter* par
 
 void VitaminSceneManager::execSceneChange(const SceneChangeInfo &info)
 {
-    
+    /*
     if (info.fade)
     {
         _sceneChangingStatus = SceneChangingStatus::TRANSITION_EXIT;
@@ -86,7 +86,7 @@ void VitaminSceneManager::execSceneChange(const SceneChangeInfo &info)
         
         info.changeFunc(fader);
     }
-    else
+    else*/
     {
         info.changeFunc(info.pScene);
     }
@@ -160,16 +160,22 @@ cocos2d::Layer* VitaminSceneManager::createTopLayer(SceneID sid, SceneParameter*
         case SCENE_TEST_SCENE:
         {
             //*
-            //topLayer = testScene::createWithcocosbuilderFile("testScene", nullptr, Director::getInstance()->getWinSize());
-            topLayer = testScene::create();
-            //PARAM_TYPE_CHECK(params, testSceneParameter);
-            //dynamic_cast<testScene*>(topLayer)->setSceneParameter((testSceneParameter*) params);
+            topLayer = testLayer::createWithcocosbuilderFile("testScene", nullptr, Director::getInstance()->getWinSize());
+            PARAM_TYPE_CHECK(params, testLayerParameter);
+            dynamic_cast<testLayer*>(topLayer)->setSceneParameter((testLayerParameter*) params);
              //*/
+            
             //topLayer = readcocosbuilder("testScene");
+            
             /*
             cocosbuilder::CCBReader* reader = new cocosbuilder::CCBReader(cocosbuilder::NodeLoaderLibrary::getInstance());
-            topLayer = (testScene*)reader->readNodeGraphFromFile("testScene", nullptr, Director::getInstance()->getWinSize());
+            topLayer = (testLayer*)reader->readNodeGraphFromFile("testLayer", nullptr, Director::getInstance()->getWinSize());
              */
+            
+            /*
+            topLayer = testLayer::create();
+            //*/
+
             
             
         }

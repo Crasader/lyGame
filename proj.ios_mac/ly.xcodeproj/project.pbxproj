@@ -75,7 +75,7 @@
 		79CC9C7C1DDDAA9A00CD7FB6 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C7B1DDDAA9A00CD7FB6 /* images */; };
 		79E963DC1DFDABB10091A060 /* lyResourceUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963D81DFDABB10091A060 /* lyResourceUtil.cpp */; };
 		79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963DA1DFDABB10091A060 /* PartsBase.cpp */; };
-		79E963E21DFDABC30091A060 /* testScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963DE1DFDABC30091A060 /* testScene.cpp */; };
+		79E963E21DFDABC30091A060 /* testLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963DE1DFDABC30091A060 /* testLayer.cpp */; };
 		79E963E31DFDABC30091A060 /* VitaminCoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963E01DFDABC30091A060 /* VitaminCoreLayer.cpp */; };
 		79E963EB1DFDABF50091A060 /* lyJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963E51DFDABF50091A060 /* lyJson.cpp */; };
 		79E963EC1DFDABF50091A060 /* lyJsonConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963E71DFDABF50091A060 /* lyJsonConverter.cpp */; };
@@ -99,7 +99,6 @@
 		79E9643A1DFDB4080091A060 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964391DFDB4080091A060 /* CoreText.framework */; };
 		79E9643C1DFDB4130091A060 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E9643B1DFDB4130091A060 /* Security.framework */; };
 		79E9643E1DFDB41F0091A060 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E9643D1DFDB41F0091A060 /* UIKit.framework */; };
-		79E964401DFDB43C0091A060 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E9643F1DFDB43C0091A060 /* OpenGLES.framework */; };
 		79E964411DFDB45F0091A060 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964341DFDB23F0091A060 /* CoreMotion.framework */; };
 		79E964431DFDB49A0091A060 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964421DFDB49A0091A060 /* GLKit.framework */; };
 		79E964471DFDB5240091A060 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964461DFDB5230091A060 /* MediaPlayer.framework */; };
@@ -113,10 +112,9 @@
 		79E9645E1DFDC2640091A060 /* PlatformUtils_objc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79E9645B1DFDC2640091A060 /* PlatformUtils_objc.mm */; };
 		79E9646A1DFE58680091A060 /* loginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964681DFE58680091A060 /* loginLayer.cpp */; };
 		79E9646D1DFE58720091A060 /* loadingText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E9646B1DFE58720091A060 /* loadingText.cpp */; };
-		79E964751DFE9B0D0091A060 /* TransitionFadeCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964731DFE9B0D0091A060 /* TransitionFadeCustom.cpp */; };
 		79E964781DFEB72C0091A060 /* ObserverNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964761DFEB72C0091A060 /* ObserverNode.cpp */; };
-		79E964811DFFA5650091A060 /* loginTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E9647F1DFFA5650091A060 /* loginTest.cpp */; };
 		79E964891DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964871DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp */; };
+		79E9648D1E0142390091A060 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E9643F1DFDB43C0091A060 /* OpenGLES.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -255,8 +253,8 @@
 		79E963D91DFDABB10091A060 /* lyResourceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyResourceUtil.h; path = lyBase/lyResourceUtil.h; sourceTree = "<group>"; };
 		79E963DA1DFDABB10091A060 /* PartsBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PartsBase.cpp; path = lyBase/PartsBase.cpp; sourceTree = "<group>"; };
 		79E963DB1DFDABB10091A060 /* PartsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartsBase.h; path = lyBase/PartsBase.h; sourceTree = "<group>"; };
-		79E963DE1DFDABC30091A060 /* testScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testScene.cpp; path = lyTest/testScene.cpp; sourceTree = "<group>"; };
-		79E963DF1DFDABC30091A060 /* testScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testScene.h; path = lyTest/testScene.h; sourceTree = "<group>"; };
+		79E963DE1DFDABC30091A060 /* testLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testLayer.cpp; path = lyTest/testLayer.cpp; sourceTree = "<group>"; };
+		79E963DF1DFDABC30091A060 /* testLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testLayer.h; path = lyTest/testLayer.h; sourceTree = "<group>"; };
 		79E963E01DFDABC30091A060 /* VitaminCoreLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VitaminCoreLayer.cpp; path = lyTest/VitaminCoreLayer.cpp; sourceTree = "<group>"; };
 		79E963E11DFDABC30091A060 /* VitaminCoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminCoreLayer.h; path = lyTest/VitaminCoreLayer.h; sourceTree = "<group>"; };
 		79E963E51DFDABF50091A060 /* lyJson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyJson.cpp; path = lyUtils/lyJSON/lyJson.cpp; sourceTree = "<group>"; };
@@ -330,12 +328,8 @@
 		79E964691DFE58680091A060 /* loginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginLayer.h; path = lyLayer/login/loginLayer.h; sourceTree = "<group>"; };
 		79E9646B1DFE58720091A060 /* loadingText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = loadingText.cpp; path = lyLayer/loading/loadingText.cpp; sourceTree = "<group>"; };
 		79E9646C1DFE58720091A060 /* loadingText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loadingText.h; path = lyLayer/loading/loadingText.h; sourceTree = "<group>"; };
-		79E964731DFE9B0D0091A060 /* TransitionFadeCustom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransitionFadeCustom.cpp; path = lyCore/TransitionFadeCustom.cpp; sourceTree = "<group>"; };
-		79E964741DFE9B0D0091A060 /* TransitionFadeCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionFadeCustom.h; path = lyCore/TransitionFadeCustom.h; sourceTree = "<group>"; };
 		79E964761DFEB72C0091A060 /* ObserverNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObserverNode.cpp; path = lyCore/ObserverNode.cpp; sourceTree = "<group>"; };
 		79E964771DFEB72C0091A060 /* ObserverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObserverNode.h; path = lyCore/ObserverNode.h; sourceTree = "<group>"; };
-		79E9647F1DFFA5650091A060 /* loginTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = loginTest.cpp; path = lyLayer/login/loginTest.cpp; sourceTree = "<group>"; };
-		79E964801DFFA5650091A060 /* loginTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginTest.h; path = lyLayer/login/loginTest.h; sourceTree = "<group>"; };
 		79E964871DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VitaminCoreLayerModule.cpp; path = lyTest/VitaminCoreLayerModule.cpp; sourceTree = "<group>"; };
 		79E964881DFFFC3B0091A060 /* VitaminCoreLayerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminCoreLayerModule.h; path = lyTest/VitaminCoreLayerModule.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -355,6 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E9648D1E0142390091A060 /* OpenGLES.framework in Frameworks */,
 				79E9644E1DFDB6CB0091A060 /* GameController.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
@@ -363,7 +358,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				79E964431DFDB49A0091A060 /* GLKit.framework in Frameworks */,
 				79E964411DFDB45F0091A060 /* CoreMotion.framework in Frameworks */,
-				79E964401DFDB43C0091A060 /* OpenGLES.framework in Frameworks */,
 				79E9643E1DFDB41F0091A060 /* UIKit.framework in Frameworks */,
 				79E9643C1DFDB4130091A060 /* Security.framework in Frameworks */,
 				79E9643A1DFDB4080091A060 /* CoreText.framework in Frameworks */,
@@ -616,8 +610,8 @@
 			children = (
 				79E964871DFFFC3B0091A060 /* VitaminCoreLayerModule.cpp */,
 				79E964881DFFFC3B0091A060 /* VitaminCoreLayerModule.h */,
-				79E963DE1DFDABC30091A060 /* testScene.cpp */,
-				79E963DF1DFDABC30091A060 /* testScene.h */,
+				79E963DE1DFDABC30091A060 /* testLayer.cpp */,
+				79E963DF1DFDABC30091A060 /* testLayer.h */,
 				79E963E01DFDABC30091A060 /* VitaminCoreLayer.cpp */,
 				79E963E11DFDABC30091A060 /* VitaminCoreLayer.h */,
 			);
@@ -717,8 +711,6 @@
 			children = (
 				79E964761DFEB72C0091A060 /* ObserverNode.cpp */,
 				79E964771DFEB72C0091A060 /* ObserverNode.h */,
-				79E964731DFE9B0D0091A060 /* TransitionFadeCustom.cpp */,
-				79E964741DFE9B0D0091A060 /* TransitionFadeCustom.h */,
 				79E963EF1DFDAC110091A060 /* Caption.cpp */,
 				79E963F01DFDAC110091A060 /* Caption.h */,
 				79E963F11DFDAC110091A060 /* Observer.cpp */,
@@ -822,8 +814,6 @@
 		79E964601DFE577C0091A060 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				79E9647F1DFFA5650091A060 /* loginTest.cpp */,
-				79E964801DFFA5650091A060 /* loginTest.h */,
 				79E964681DFE58680091A060 /* loginLayer.cpp */,
 				79E964691DFE58680091A060 /* loginLayer.h */,
 			);
@@ -999,14 +989,13 @@
 				794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */,
 				79E963FE1DFDAC190091A060 /* CCBCustomClassLoaderLibrary.cpp in Sources */,
 				79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */,
-				79E964751DFE9B0D0091A060 /* TransitionFadeCustom.cpp in Sources */,
 				79E9640B1DFDAC2F0091A060 /* CoreCCBLayer.cpp in Sources */,
 				79E964571DFDC25A0091A060 /* PlatformUtils.cpp in Sources */,
 				79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */,
 				79E964781DFEB72C0091A060 /* ObserverNode.cpp in Sources */,
 				79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */,
 				79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */,
-				79E963E21DFDABC30091A060 /* testScene.cpp in Sources */,
+				79E963E21DFDABC30091A060 /* testLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */,
 				79E9640D1DFDAC2F0091A060 /* CoreCCBSprite.cpp in Sources */,
@@ -1038,7 +1027,6 @@
 				79E963EC1DFDABF50091A060 /* lyJsonConverter.cpp in Sources */,
 				79CC9BD51DDDA78C00CD7FB6 /* RandomUtil.cpp in Sources */,
 				79E963F91DFDAC110091A060 /* ObserverController.cpp in Sources */,
-				79E964811DFFA5650091A060 /* loginTest.cpp in Sources */,
 				79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				79E964281DFDAC590091A060 /* ApplicationManager.cpp in Sources */,

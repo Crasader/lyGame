@@ -50,7 +50,11 @@ cocos2d::extension::Control::Handler loadingText::onResolveCCBCCControlSelector(
     //CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onPressButton", loadingText::onClickedButton1);
     return nullptr;
 }
-
+cocos2d::SEL_MenuHandler loadingText::onResolveCCBCCMenuItemSelector(cocos2d::Ref * pTarget, const char* pSelectorName)
+{
+    //CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressMenuButton", testLayer::onClickedMenuButton);
+    return nullptr;
+}
 bool loadingText::onTouchBegan(cocos2d::Touch* touches, cocos2d::Event* event)
 {
     
