@@ -1,12 +1,14 @@
 //
-//  VitaminCoreLayer.cpp
-//  vitaminProject
+//  lyBaseLayer.cpp
 //
-//  Created by Shinji Hiramatsu on 2014/05/24.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
-#include "VitaminCoreLayer.h"
+#include "lyBaseLayer.h"
 #include "ApplicationManager.h"
 #include "UISceneID.h"
 #include "cocos2d.h"
@@ -14,7 +16,7 @@
 USING_NS_CC;
 
 
-VitaminCoreLayer::VitaminCoreLayer()    :
+lyBaseLayer::lyBaseLayer()    :
     CoreCCBLayer(),
     _caption(nullptr),
     _fadeLayer(nullptr),
@@ -28,7 +30,7 @@ VitaminCoreLayer::VitaminCoreLayer()    :
 #endif
 }
 
-VitaminCoreLayer::~VitaminCoreLayer()
+lyBaseLayer::~lyBaseLayer()
 {
     for(auto module : _modules)
     {
@@ -36,7 +38,7 @@ VitaminCoreLayer::~VitaminCoreLayer()
     }
 }
 
-void VitaminCoreLayer::onEnter()
+void lyBaseLayer::onEnter()
 {
     CoreLayer::onEnter();
     setAnimationManager();
@@ -62,12 +64,12 @@ void VitaminCoreLayer::onEnter()
     _eventDispatcher->addEventListenerWithFixedPriority(_multiTouchFilter, -1);
 }
 
-void VitaminCoreLayer::onEnterTransitionDidFinish()
+void lyBaseLayer::onEnterTransitionDidFinish()
 {
     CoreLayer::onEnterTransitionDidFinish();
 }
 
-void VitaminCoreLayer::onExit()
+void lyBaseLayer::onExit()
 {
       if (_multiTouchFilter)
     {
@@ -85,12 +87,12 @@ void VitaminCoreLayer::onExit()
     CoreCCBLayer::onExit();
 }
 
-void VitaminCoreLayer::onExitTransitionDidStart()
+void lyBaseLayer::onExitTransitionDidStart()
 {
     CoreLayer::onExitTransitionDidStart();
 }
 
-void VitaminCoreLayer::setCaption(SceneID sid, bool isStatusBarVisible, CaptionDelegate *delegate)
+void lyBaseLayer::setCaption(SceneID sid, bool isStatusBarVisible, CaptionDelegate *delegate)
 {
  
     _caption->setButtonEnable(false);
@@ -99,12 +101,12 @@ void VitaminCoreLayer::setCaption(SceneID sid, bool isStatusBarVisible, CaptionD
     _caption->setDelegate(delegate);
 }
 
-void VitaminCoreLayer::setCaptionEnable(bool enable)
+void lyBaseLayer::setCaptionEnable(bool enable)
 {
     _caption->setButtonEnable(enable);
 }
 
-void VitaminCoreLayer::showCaption()
+void lyBaseLayer::showCaption()
 {
 	if (_caption != nullptr) {
 		_caption->setVisible(true);
@@ -112,14 +114,14 @@ void VitaminCoreLayer::showCaption()
 	}
 }
 
-void VitaminCoreLayer::hideCaption()
+void lyBaseLayer::hideCaption()
 {
     if (_caption) {
         _caption->hide();
     }
 }
 
-void VitaminCoreLayer::hideCaptionTitle()
+void lyBaseLayer::hideCaptionTitle()
 {
     if (_caption) {
         _caption->setCaptionTileImgVisible(false);
@@ -131,83 +133,83 @@ void VitaminCoreLayer::hideCaptionTitle()
 
 #pragma 通信関連
 
-void VitaminCoreLayer::eventConnectionStart(std::string tag){}
+void lyBaseLayer::eventConnectionStart(std::string tag){}
 
-void VitaminCoreLayer::eventConnectionEnd(std::string tag, cocos2d::Ref *config){}
+void lyBaseLayer::eventConnectionEnd(std::string tag, cocos2d::Ref *config){}
 
-void VitaminCoreLayer::eventConnectionReview(){};
+void lyBaseLayer::eventConnectionReview(){};
 
-void VitaminCoreLayer::eventConnectionMaintenance(const cocos2d::ValueMap &data)
+void lyBaseLayer::eventConnectionMaintenance(const cocos2d::ValueMap &data)
 {
 }
 
 
-void VitaminCoreLayer::eventConnectionError(std::string tag, cocos2d::Ref *config)
+void lyBaseLayer::eventConnectionError(std::string tag, cocos2d::Ref *config)
 {
  
 }
 
-void VitaminCoreLayer::eventConnectionRetryNotify(cocos2d::Ref *config, bool retryFlg)
+void lyBaseLayer::eventConnectionRetryNotify(cocos2d::Ref *config, bool retryFlg)
 {
    
 }
 
-void VitaminCoreLayer::waitrunWithScene(const SceneBuildInfo &sceneInfo)
+void lyBaseLayer::waitrunWithScene(const SceneBuildInfo &sceneInfo)
 {
-    CCLOG("VitaminCoreLayer::waitrunWithScene");
+    CCLOG("lyBaseLayer::waitrunWithScene");
     this->stopAllActions();
     this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this, sceneInfo]() {
-        CCLOG("VitaminCoreLayer::waitrunWithScene call runWithScene");
+        CCLOG("lyBaseLayer::waitrunWithScene call runWithScene");
         ApplicationManager::getInstance()->runWithSceneExec(sceneInfo);
     }), NULL));
 }
 
-void VitaminCoreLayer::waitchangeScene(const SceneBuildInfo &sceneInfo)
+void lyBaseLayer::waitchangeScene(const SceneBuildInfo &sceneInfo)
 {
-    CCLOG("VitaminCoreLayer::waitchangeScene");
+    CCLOG("lyBaseLayer::waitchangeScene");
     this->stopAllActions();
     this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this, sceneInfo]() {
-        CCLOG("VitaminCoreLayer::waitchangeScene call changeScene");
+        CCLOG("lyBaseLayer::waitchangeScene call changeScene");
         ApplicationManager::getInstance()->changeSceneExec(sceneInfo);
     }), NULL));
 }
 
-void VitaminCoreLayer::waitPushScene(const SceneBuildInfo &sceneInfo)
+void lyBaseLayer::waitPushScene(const SceneBuildInfo &sceneInfo)
 {
-    CCLOG("VitaminCoreLayer::waitPushScene");
+    CCLOG("lyBaseLayer::waitPushScene");
     this->stopAllActions();
     this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this, sceneInfo]() {
-        CCLOG("VitaminCoreLayer::waitPushScene call pushScene");
+        CCLOG("lyBaseLayer::waitPushScene call pushScene");
         ApplicationManager::getInstance()->pushSceneExec(sceneInfo);
     }), NULL));
 }
 
-void VitaminCoreLayer::waitPopScene()
+void lyBaseLayer::waitPopScene()
 {
-    CCLOG("VitaminCoreLayer::waitPopScene");
+    CCLOG("lyBaseLayer::waitPopScene");
     this->stopAllActions();
     this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this]() {
-        CCLOG("VitaminCoreLayer::waitPopScene call popScene");
+        CCLOG("lyBaseLayer::waitPopScene call popScene");
         ApplicationManager::getInstance()->popScene();
     }), NULL));
 }
 
-void VitaminCoreLayer::waitChangePreviousScene()
+void lyBaseLayer::waitChangePreviousScene()
 {
-    CCLOG("VitaminCoreLayer::waitChangePreviousScene");
+    CCLOG("lyBaseLayer::waitChangePreviousScene");
     this->stopAllActions();
     this->runAction(Sequence::create(DelayTime::create(1.f), CallFunc::create([this]() {
-        CCLOG("VitaminCoreLayer::waitChangePreviousScene call changePreviousScene");
+        CCLOG("lyBaseLayer::waitChangePreviousScene call changePreviousScene");
         ApplicationManager::getInstance()->changePreviousScene();
     }), NULL));
 }
 
-void VitaminCoreLayer::eventConnectionUpdateApplication()
+void lyBaseLayer::eventConnectionUpdateApplication()
 {
    
 }
 
-void VitaminCoreLayer::eventConnectionUpdateResource()
+void lyBaseLayer::eventConnectionUpdateResource()
 {
     
     
@@ -215,12 +217,12 @@ void VitaminCoreLayer::eventConnectionUpdateResource()
     
 }
 
-void VitaminCoreLayer::toResourceDownloadPage(float t)
+void lyBaseLayer::toResourceDownloadPage(float t)
 {
    }
 
 
-cocos2d::Rect VitaminCoreLayer::getMenuRect(const char* objectName) {
+cocos2d::Rect lyBaseLayer::getMenuRect(const char* objectName) {
     cocos2d::Rect menuRect;
     return menuRect;
 }
@@ -228,11 +230,11 @@ cocos2d::Rect VitaminCoreLayer::getMenuRect(const char* objectName) {
 /**
  * メンテナンス画面に遷移
  */
-void VitaminCoreLayer::moveMaintenenceScene()
+void lyBaseLayer::moveMaintenenceScene()
 {
 
 }
-void VitaminCoreLayer::eventConnectionUpdateMaster(bool refreshUserData)
+void lyBaseLayer::eventConnectionUpdateMaster(bool refreshUserData)
 {
 }
 

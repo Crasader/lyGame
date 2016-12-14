@@ -1,9 +1,11 @@
 //
 //  loginLayer.cpp
-//  VitaminProject
 //
-//  Created by Shinji Hiramatsu on 2014/05/24.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 #include "loginLayer.h"
@@ -32,7 +34,7 @@ void loginLayer::completedAnimationSequenceNamed(const char *name)
 
 void loginLayer::onEnter()
 {
-    VitaminCoreLayer::onEnter();
+    lyBaseLayer::onEnter();
     
 }
 

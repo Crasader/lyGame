@@ -1,12 +1,15 @@
 //
 //  CoreCCBLayer.h
 //
-//  Created by loveyur on 2016/12/11.
-//  Copyright 2016 loveyur All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
-#ifndef __client_vitamin__CoreCCBLayer__
-#define __client_vitamin__CoreCCBLayer__
+#ifndef __lyGame__CoreCCBLayer__
+#define __lyGame__CoreCCBLayer__
 
 #include "CoreLayer.h"
 #include "CCBInterfaceHandler.h"
@@ -85,4 +88,4 @@ private:
 CREATE_CCB_LOADER_CLASS(CoreCCBLayer, CoreCCBLayerLoader);
 
 
-#endif /* defined(__client_vitamin__CorecocosbuilderLayer__) */
+#endif /* defined(__lyGame__CorecocosbuilderLayer__) */

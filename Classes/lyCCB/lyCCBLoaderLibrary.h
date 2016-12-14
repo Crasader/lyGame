@@ -1,13 +1,15 @@
 //
-//  CCBCustomClassLoaderLibrary.h
-//  client-vitamin
+//  lyCCBLoaderLibrary.h
 //
-//  Created by 大久保 孝一郎 on 2014/06/26.
+//  ly-Game
+//
+//  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#ifndef __client_vitamin__CCBCustomClassLoaderLibrary__
-#define __client_vitamin__CCBCustomClassLoaderLibrary__
+#ifndef __lyGame__lyCCBLoaderLibrary__
+#define __lyGame__lyCCBLoaderLibrary__
 
 #include "cocosbuilder/CocosBuilder.h"
 
@@ -17,18 +19,18 @@ typedef struct {
     cocosbuilder::NodeLoader *pCCNodeLoader;    //! 登録するローダーのポインタ
 } CustomClassEntry;
 
-class CCBCustomClassLoaderLibrary {
+class lyCCBLoaderLibrary {
 public:
     
-    CCBCustomClassLoaderLibrary();
+    lyCCBLoaderLibrary();
     
-    ~CCBCustomClassLoaderLibrary();
+    ~lyCCBLoaderLibrary();
     
     void registerCustomClassLoader();
     
     void unregisterCustomClassLoader();
     
-    static CCBCustomClassLoaderLibrary * getInstance();
+    static lyCCBLoaderLibrary * getInstance();
     
     static void purgeSharedCustomClassLoaderLibrary();
     
@@ -39,4 +41,4 @@ private:
 };
 
 
-#endif /* defined(__client_vitamin__CCBCustomClassLoaderLibrary__) */
+#endif /* defined(__lyGame__lyCCBLoaderLibrary__) */

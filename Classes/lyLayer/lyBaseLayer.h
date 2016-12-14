@@ -1,37 +1,39 @@
 //
-//  VitaminCoreLayer.h
-//  vitaminProject
+//  lyBaseLayer.h
 //
-//  Created by Shinji Hiramatsu on 2014/05/24.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
-#ifndef __vitaminProject__VitaminCoreLayer__
-#define __vitaminProject__VitaminCoreLayer__
+#ifndef __vitaminProject__lyBaseLayer__
+#define __vitaminProject__lyBaseLayer__
 
 #include "CoreCCBLayer.h"
 #include "Caption.h"
-#include "VitaminSceneManager.h"
+#include "lySceneManger.h"
 #include "cocosbuilder/cocosbuilder.h"
 #include "UISceneID.h"
 #include "PartsBase.h"
-#include "VitaminCoreLayerModule.h"
+#include "lyBaseLayerModule.h"
 
 #define RESULT_LOGIN_OTHER_DEVICE 20001
 #define SESSION_PARAM_EXCEPTION 20002
 
-class VitaminCoreLayerModule;
+class lyBaseLayerModule;
 
 #define REGISTER_MODULE(T) registerModule<T>(#T)
 #define GET_MODULE(T) getModule<T>(#T)
 
-class VitaminCoreLayer : public CoreCCBLayer
+class lyBaseLayer : public CoreCCBLayer
 , public cocosbuilder::NodeLoaderListener
 , public CaptionDelegate
 {
 public:
-    VitaminCoreLayer();
-    virtual ~VitaminCoreLayer();
+    lyBaseLayer();
+    virtual ~lyBaseLayer();
     
     virtual void onEnter();
     virtual void onEnterTransitionDidFinish();
@@ -77,7 +79,7 @@ public:
         _modules[name] = module;
         return module;
     }
-    VitaminCoreLayerModule *getModule(const std::string& name) {
+    lyBaseLayerModule *getModule(const std::string& name) {
         if (_modules.count(name)) return _modules[name];
         return nullptr;
     }
@@ -99,7 +101,7 @@ protected:
   
 
 protected:
-     virtual void keyBackClicked(cocos2d::Event* event) { CCLOG("VitaminCoreLayer::keyBackClicked"); };
+     virtual void keyBackClicked(cocos2d::Event* event) { CCLOG("lyBaseLayer::keyBackClicked"); };
 
     cocos2d::Rect getMenuRect(const char* objectName);
     
@@ -117,8 +119,8 @@ protected:
     
      int _errorCodeNode;
     // モジュール
-    std::unordered_map<std::string, VitaminCoreLayerModule*> _modules;
+    std::unordered_map<std::string, lyBaseLayerModule*> _modules;
     
 };
 
-#endif /* defined(__vitaminProject__VitaminCoreLayer__) */
+#endif /* defined(__vitaminProject__lyBaseLayer__) */

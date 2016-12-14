@@ -1,8 +1,10 @@
 //
 //  StringUtils.h
-//  Gcrest
 //
-//  Created by 横道 晃司 on 2014/08/14.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 

@@ -1,8 +1,10 @@
 //
 //  PositionUtil.h
-//  Donut
 //
-//  Created by 横山 充 on 2014/08/15.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 

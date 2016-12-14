@@ -1,12 +1,15 @@
 //
 //  CCBInterfaceHandler.h
 //
-//  Created by loveyur on 2016/12/11.
-//  Copyright 2016 loveyur All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
-#ifndef __client_vitamin__CCBInterfaceHandler__
-#define __client_vitamin__CCBInterfaceHandler__
+#ifndef __lygame__CCBInterfaceHandler__
+#define __lygame__CCBInterfaceHandler__
 
 #include "cocos2d.h"
 #include "extensions/cocos-ext.h"
@@ -60,4 +63,4 @@ public:
 };
 
 
-#endif /* defined(__client_vitamin__CCBInterfaceHandler__) */
+#endif /* defined(__lygame__CCBInterfaceHandler__) */

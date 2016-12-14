@@ -1,13 +1,15 @@
 //
 //  CoreCCBSprite.h
 //
-//  Created by loveyur on 2016/12/11.
-//  Copyright 2016 loveyur All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#ifndef __client_vitamin__CoreCCBSprite__
-#define __client_vitamin__CoreCCBSprite__
+#ifndef __lyGame__CoreCCBSprite__
+#define __lyGame__CoreCCBSprite__
 
 #include "CCBInterfaceHandler.h"
 #include "cocos2d.h"
@@ -58,4 +60,4 @@ public:
 CREATE_CCB_LOADER_CLASS(CoreCCBSprite, CoreCCBSpriteLoader);
 
 
-#endif /* defined(__client_vitamin__CoreCCBSprite__) */
+#endif /* defined(__lyGame__CoreCCBSprite__) */

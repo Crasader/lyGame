@@ -1,16 +1,20 @@
 //
-//  VitaminSceneManager.h
+//  lySceneManger.h
 //
-//  Created by loveyur on 2016/12/07.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
-#ifndef __ly__VitaminSceneManager__
-#define __ly__VitaminSceneManager__
+#ifndef __ly__lySceneManger__
+#define __ly__lySceneManger__
 
 #include "lyBaseScene.h"
 #include "UISceneID.h"
 
-class VitaminSceneManager   :   public lyBaseScene
+class lySceneManger   :   public lyBaseScene
 {
     virtual cocos2d::Scene* runWithScene(const SceneID sid, SceneParameter* params = nullptr);
     
@@ -25,7 +29,7 @@ class VitaminSceneManager   :   public lyBaseScene
 
 
 public:
-    VitaminSceneManager();
+    lySceneManger();
     UISceneType getCurrentUISceneType();
     std::string getCurrentUISceneTypeToString();
         
@@ -59,4 +63,4 @@ private:
 
 };
 
-#endif /* defined(__ly__VitaminSceneManager__) */
+#endif /* defined(__ly__lySceneManger__) */

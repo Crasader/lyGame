@@ -1,9 +1,11 @@
 //
 //  LocalizedString.cpp
-//  SkeletonX
 //
-//  Created by mac on 11-12-1.
-//  Copyright (c) 2011年 GeekStudio. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 #include "cocos2d.h"

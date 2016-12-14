@@ -1,13 +1,15 @@
 //
 //  CoreCCBNode.h
 //
-//  Created by loveyur on 2016/12/11.
-//  Copyright 2016 loveyur All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#ifndef __client_vitamin__CoreCCBNode__
-#define __client_vitamin__CoreCCBNode__
+#ifndef __lyGame__CoreCCBNode__
+#define __lyGame__CoreCCBNode__
 
 #include "CCBInterfaceHandler.h"
 #include "cocos2d.h"
@@ -72,4 +74,4 @@ private:
 CREATE_CCB_LOADER_CLASS(CoreCCBNode, CoreCCBNodeLoader);
 
 
-#endif /* defined(__client_vitamin__CoreCCBNode__) */
+#endif /* defined(__lyGame__CoreCCBNode__) */

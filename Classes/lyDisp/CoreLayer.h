@@ -1,8 +1,11 @@
 //
 //  CoreLayer.h
 //
-//  Created by loveyur on 2016/12/11.
-//  Copyright 2016 loveyur All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 #ifndef __CoreAppFramework__CoreLayer__

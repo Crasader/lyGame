@@ -1,8 +1,10 @@
 //
 //  BaseNodeLoader.h
-//  Donut
 //
-//  Created by 横道 晃司 on 2014/07/02.
+//  ly-Game
+//
+//  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 

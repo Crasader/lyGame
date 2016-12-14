@@ -1,9 +1,10 @@
 //
 //  ObserverNode.cpp
-//  client-vitamin
 //
-//  Created by Shinji Hiramatsu on 2014/05/24.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 

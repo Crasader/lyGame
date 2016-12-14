@@ -1,8 +1,11 @@
 //
 //  lySoundManager.h
-//  ly-client
-//  UI控件基类
-//  Created by loveyur on 2016/11/11
+//
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 #include "lySoundManager.h"

@@ -1,11 +1,15 @@
 //
-//  VitaminSceneManager.cpp
+//  lySceneManger.cpp
 //
-//  Created by loveyur on 2016/12/07.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 
-#include "VitaminSceneManager.h"
+#include "lySceneManger.h"
 //#include "TransitionFadeCustom.h"
 #include "Caption.h"
 
@@ -17,7 +21,7 @@
 
 USING_NS_CC;
 
-VitaminSceneManager::VitaminSceneManager()
+lySceneManger::lySceneManger()
 : lyBaseScene()
 , _isFade(true)
 , _sceneChangingStatus(SceneChangingStatus::NOT_CHANGING)
@@ -25,7 +29,7 @@ VitaminSceneManager::VitaminSceneManager()
 {
 }
 
-cocos2d::Scene* VitaminSceneManager::setupScene(SceneID sid, SceneParameter* params, const std::function<void(cocos2d::Scene*)> &changeFunc)
+cocos2d::Scene* lySceneManger::setupScene(SceneID sid, SceneParameter* params, const std::function<void(cocos2d::Scene*)> &changeFunc)
 {
     if (_sceneChangingStatus == SceneChangingStatus::TRANSITION_EXIT) {
         CCLOG("TRANSITION_EXIT");
@@ -65,7 +69,7 @@ cocos2d::Scene* VitaminSceneManager::setupScene(SceneID sid, SceneParameter* par
     return pScene;
 }
 
-void VitaminSceneManager::execSceneChange(const SceneChangeInfo &info)
+void lySceneManger::execSceneChange(const SceneChangeInfo &info)
 {
     /*
     if (info.fade)
@@ -80,7 +84,7 @@ void VitaminSceneManager::execSceneChange(const SceneChangeInfo &info)
         
         fader->setOnExitCallback([this]() {
             auto scheduler = Director::getInstance()->getScheduler();
-            scheduler->schedule(schedule_selector(VitaminSceneManager::onSceneChangeFinished), this, 0, 0, 0, false);
+            scheduler->schedule(schedule_selector(lySceneManger::onSceneChangeFinished), this, 0, 0, 0, false);
         });
         
         info.changeFunc(fader);
@@ -91,7 +95,7 @@ void VitaminSceneManager::execSceneChange(const SceneChangeInfo &info)
     }
 }
 
-void VitaminSceneManager::onSceneChangeFinished(float dt)
+void lySceneManger::onSceneChangeFinished(float dt)
 {
     auto beforeStatus = _sceneChangingStatus;
     _sceneChangingStatus = SceneChangingStatus::NOT_CHANGING;
@@ -102,21 +106,21 @@ void VitaminSceneManager::onSceneChangeFinished(float dt)
     }
 }
 
-cocos2d::Scene* VitaminSceneManager::runWithScene(const SceneID sid, SceneParameter* params /* = nullptr */)
+cocos2d::Scene* lySceneManger::runWithScene(const SceneID sid, SceneParameter* params /* = nullptr */)
 {
     return setupScene(sid, params, [](Scene *scene) {
         Director::getInstance()->runWithScene(scene);
     });
 }
 
-cocos2d::Scene* VitaminSceneManager::changeScene(const SceneID sid, SceneParameter* params /* = nullptr */)
+cocos2d::Scene* lySceneManger::changeScene(const SceneID sid, SceneParameter* params /* = nullptr */)
 {
     return setupScene(sid, params, [](Scene *scene) {
         Director::getInstance()->replaceScene(scene);
     });
 }
 
-cocos2d::Scene* VitaminSceneManager::pushScene(SceneID sid, SceneParameter* params)
+cocos2d::Scene* lySceneManger::pushScene(SceneID sid, SceneParameter* params)
 {
     return setupScene(sid, params, [](Scene *scene) {
         Director::getInstance()->pushScene(scene);
@@ -130,7 +134,7 @@ cocos2d::Scene* VitaminSceneManager::pushScene(SceneID sid, SceneParameter* para
 #endif
 
 
-cocos2d::Layer* VitaminSceneManager::createTopLayer(SceneID sid, SceneParameter* params)
+cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* params)
 {
     cocos2d::Layer*  topLayer = NULL;
     
@@ -186,7 +190,7 @@ cocos2d::Layer* VitaminSceneManager::createTopLayer(SceneID sid, SceneParameter*
 }
 
 
-cocos2d::Layer* VitaminSceneManager::readcocosbuilder(const char *fileName)
+cocos2d::Layer* lySceneManger::readcocosbuilder(const char *fileName)
 {
     cocos2d::Layer* layer;
     cocosbuilder::CCBReader* reader = new cocosbuilder::CCBReader(cocosbuilder::NodeLoaderLibrary::getInstance());
@@ -195,12 +199,12 @@ cocos2d::Layer* VitaminSceneManager::readcocosbuilder(const char *fileName)
     return layer;
 }
 
-UISceneType VitaminSceneManager::getCurrentUISceneType()
+UISceneType lySceneManger::getCurrentUISceneType()
 {
     return static_cast<UISceneType>(sceneId);
 }
 
-std::string VitaminSceneManager::getCurrentUISceneTypeToString()
+std::string lySceneManger::getCurrentUISceneTypeToString()
 {
     // シーン定義を文字列として展開
     UISceneType type = getCurrentUISceneType();

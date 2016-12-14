@@ -1,15 +1,17 @@
 //
 //  testLayer.h
-//  VitaminProject
 //
-//  Created by Shinji Hiramatsu on 2014/05/24.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 #ifndef __VitaminProject__testLayer__
 #define __VitaminProject__testLayer__
 
-#include "VitaminCoreLayer.h"
+#include "lyBaseLayer.h"
 #include "cocos2d.h"
 #include "cocostudio/CCActionManagerEx.h"
 #include "ui/UIWidget.h"
@@ -23,7 +25,7 @@ public:
 };
 
 
-class testLayer : public VitaminCoreLayer, public PartsBaseObj
+class testLayer : public lyBaseLayer, public PartsBaseObj
 {
 public:
     testLayer();

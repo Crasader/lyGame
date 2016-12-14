@@ -1,13 +1,15 @@
 //
 //  ScrollingUtil.h
-//  client-vitamin
 //
-//  Created by 大久保 孝一郎 on 2014/08/28.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#ifndef __client_vitamin__ScrollingUtil__
-#define __client_vitamin__ScrollingUtil__
+#ifndef __lyGame__ScrollingUtil__
+#define __lyGame__ScrollingUtil__
 
 #include "cocos2d.h"
 
@@ -207,4 +209,4 @@ public:
     
 };
 
-#endif /* defined(__client_vitamin__ScrollingUtil__) */
+#endif /* defined(__lyGame__ScrollingUtil__) */

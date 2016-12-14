@@ -1,13 +1,15 @@
 //
 //  IWaitManager.h
-//  client-vitamin
 //
-//  Created by 横山 充 on 2015/03/20.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#ifndef client_vitamin_IWaitManager_h
-#define client_vitamin_IWaitManager_h
+#ifndef lyGame_IWaitManager_h
+#define lyGame_IWaitManager_h
 
 #include "cocos2d.h"
 #include "ApplicationManager.h"

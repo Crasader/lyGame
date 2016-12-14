@@ -1,9 +1,11 @@
 //
 //  INetworkManager.h
-//  CoreAppFramework
 //
-//  Created by Mitsuru Yokoyama on 2014/06/10.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 #ifndef __CoreAppFramework__INetworkManager_h

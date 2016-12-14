@@ -1,14 +1,15 @@
 //
 //  ObserverNode.h
-//  client-vitamin
 //
-//  Created by Shinji Hiramatsu on 2014/05/24.
-//  Copyright 2014 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#ifndef __client_vitamin__ObserverNode__
-#define __client_vitamin__ObserverNode__
+#ifndef __lyGame__ObserverNode__
+#define __lyGame__ObserverNode__
 
 #include "IObserver.h"
 #include "cocos2d.h"
@@ -36,4 +37,4 @@ public:
 };
 
 
-#endif /* defined(__client_vitamin__ObserverNode__) */
+#endif /* defined(__lyGame__ObserverNode__) */

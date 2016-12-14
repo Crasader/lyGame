@@ -1,8 +1,10 @@
 //
 //  PartsBase.h
-//  client-vitamin
 //
-//  Created by 井戸 大拙 on 2014/06/04.
+//  ly-Game
+//
+//  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 #ifndef __VitaminProject__PartsBase__

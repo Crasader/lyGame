@@ -1,12 +1,14 @@
 //
-//  CCBCustomClassLoaderLibrary.cpp
-//  client-vitamin
+//  lyCCBLoaderLibrary.cpp
 //
-//  Created by 大久保 孝一郎 on 2014/06/26.
+//  ly-Game
+//
+//  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
 //
 //
 
-#include "CCBCustomClassLoaderLibrary.h"
+#include "lyCCBLoaderLibrary.h"
 #include "BaseNodeLoader.h"
 
 #include "testLayer.h"
@@ -14,9 +16,9 @@
 #include "loadingText.h"
 
 
-static CCBCustomClassLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
+static lyCCBLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
 
-CCBCustomClassLoaderLibrary::CCBCustomClassLoaderLibrary() {
+lyCCBLoaderLibrary::lyCCBLoaderLibrary() {
     m_customClassEntry = {
         { "testLayer", testLayerLoader::loader()},
         //{ "loginTest", loginTestLoader::loader()}
@@ -26,10 +28,10 @@ CCBCustomClassLoaderLibrary::CCBCustomClassLoaderLibrary() {
     };
 }
 
-CCBCustomClassLoaderLibrary::~CCBCustomClassLoaderLibrary() {
+lyCCBLoaderLibrary::~lyCCBLoaderLibrary() {
 }
 
-void CCBCustomClassLoaderLibrary::registerCustomClassLoader() {
+void lyCCBLoaderLibrary::registerCustomClassLoader() {
     cocosbuilder::NodeLoaderLibrary *nodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
     
     for (int i=0; i<m_customClassEntry.size(); i++) {
@@ -38,7 +40,7 @@ void CCBCustomClassLoaderLibrary::registerCustomClassLoader() {
     }
 }
 
-void CCBCustomClassLoaderLibrary::unregisterCustomClassLoader() {
+void lyCCBLoaderLibrary::unregisterCustomClassLoader() {
     cocosbuilder::NodeLoaderLibrary *nodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
     
     for (int i=0; i<m_customClassEntry.size(); i++) {
@@ -46,18 +48,18 @@ void CCBCustomClassLoaderLibrary::unregisterCustomClassLoader() {
     }
 }
 
-CCBCustomClassLoaderLibrary* CCBCustomClassLoaderLibrary::getInstance() {
+lyCCBLoaderLibrary* lyCCBLoaderLibrary::getInstance() {
     if(s_CustomClassLoaderLibrary == NULL) {
-        s_CustomClassLoaderLibrary = new CCBCustomClassLoaderLibrary;
+        s_CustomClassLoaderLibrary = new lyCCBLoaderLibrary;
     }
     return s_CustomClassLoaderLibrary;
 }
 
-void CCBCustomClassLoaderLibrary::purgeSharedCustomClassLoaderLibrary() {
+void lyCCBLoaderLibrary::purgeSharedCustomClassLoaderLibrary() {
     CC_SAFE_DELETE(s_CustomClassLoaderLibrary);
 }
 
-void CCBCustomClassLoaderLibrary::changeRegisterCustomClassLoader(const char* className, cocosbuilder::NodeLoader* loader) {
+void lyCCBLoaderLibrary::changeRegisterCustomClassLoader(const char* className, cocosbuilder::NodeLoader* loader) {
     cocosbuilder::NodeLoaderLibrary *nodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
     for (int i=0; i<m_customClassEntry.size(); i++) {
         if (!strcmp(m_customClassEntry[i].pClassName, className)) {

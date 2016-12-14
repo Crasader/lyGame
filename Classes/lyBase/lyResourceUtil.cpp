@@ -1,8 +1,11 @@
 //
 //  lyResourceUtil.cpp
-//  ly-client
-//  UI控件基类
+//
+//  ly-Game
+//
 //  Created by loveyur on 2016/11/11
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
 

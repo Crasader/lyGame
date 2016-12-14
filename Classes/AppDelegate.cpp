@@ -2,8 +2,8 @@
 #include "HelloWorldScene.h"
 
 //add byshixc test
-#include "CCBCustomClassLoaderLibrary.h"
-#include "VitaminSceneManager.h"
+#include "lyCCBLoaderLibrary.h"
+#include "lySceneManger.h"
 #include "ApplicationManager.h"
 #include "lyResourceUtil.h"
 #include "testLayer.h"
@@ -111,8 +111,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #endif
         ApplicationManager::getInstance()->preloadImages();
         
-        CCBCustomClassLoaderLibrary::getInstance()->registerCustomClassLoader();
-        VitaminSceneManager* sceneMgr = new VitaminSceneManager;
+        lyCCBLoaderLibrary::getInstance()->registerCustomClassLoader();
+        lySceneManger* sceneMgr = new lySceneManger;
         ApplicationManager::getInstance()->setSceneManager(sceneMgr);
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         //sceneMgr->_isFade = false;
