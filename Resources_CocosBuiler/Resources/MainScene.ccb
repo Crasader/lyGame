@@ -538,27 +538,13 @@
 			<key>ext</key>
 			<string>iphone</string>
 			<key>height</key>
-			<integer>320</integer>
+			<integer>480</integer>
 			<key>name</key>
-			<string>iPhone Landscape</string>
+			<string>iPhone Portrait</string>
 			<key>scale</key>
 			<real>1</real>
 			<key>width</key>
-			<integer>480</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>ipad iphonehd</string>
-			<key>height</key>
-			<integer>768</integer>
-			<key>name</key>
-			<string>iPad Landscape</string>
-			<key>scale</key>
-			<real>2</real>
-			<key>width</key>
-			<integer>1024</integer>
+			<integer>320</integer>
 		</dict>
 	</array>
 	<key>sequences</key>

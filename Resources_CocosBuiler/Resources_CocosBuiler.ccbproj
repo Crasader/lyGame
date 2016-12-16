@@ -7,7 +7,7 @@
 	<key>deviceOrientationLandscapeRight</key>
 	<true/>
 	<key>deviceOrientationPortrait</key>
-	<false/>
+	<true/>
 	<key>deviceOrientationUpsideDown</key>
 	<false/>
 	<key>exporter</key>

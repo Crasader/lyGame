@@ -21,9 +21,8 @@ static lyCCBLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
 lyCCBLoaderLibrary::lyCCBLoaderLibrary() {
     m_customClassEntry = {
         { "testLayer", testLayerLoader::loader()},
-        //{ "loginTest", loginTestLoader::loader()}
-        //{ "loginLayer", loginLayerLoader::loader()},
-        //{ "loadingText", loadingTextLoader::loader()}
+        { "loginLayer", loginLayerLoader::loader()},
+        { "loadingText", loadingTextLoader::loader()}
         
     };
 }

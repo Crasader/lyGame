@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>99000_body.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{270,334}}</string>
+                <key>offset</key>
+                <string>{69,188}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{574,364},{270,334}}</string>
+                <key>sourceSize</key>
+                <string>{1280,1438}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>pri_99000_sps.png</string>
+            <key>size</key>
+            <string>{274,338}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:03ca3990a3118435a33c93e3ce94610d:a4cd70a9c19cb30ddfb3969c6d40d941:5e03f443dde7a7e12041fc5261d7bdcc$</string>
+            <key>textureFileName</key>
+            <string>pri_99000_sps.png</string>
+        </dict>
+    </dict>
+</plist>

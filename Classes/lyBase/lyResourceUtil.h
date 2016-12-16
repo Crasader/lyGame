@@ -19,7 +19,8 @@ public:
     static std::vector<std::string> getResourceSearchPaths();
     static std::vector<std::string> getResourceResolutionOrder();
     
-    
+    //资源路径的获取
+    static std::string getCardFacePlistPath(int64_t cardId, bool isZoom);
 };
 
 #endif /* defined(ly_lyResourceUtil_h_) */

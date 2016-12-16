@@ -53,11 +53,9 @@ public:
     void onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
     
 private:
-    void doFinishScene();
     
     bool _isMoving;
     cocos2d::Label *_nameLabel;
-    cocos2d::Sprite * _sprtest;
     
 };
 

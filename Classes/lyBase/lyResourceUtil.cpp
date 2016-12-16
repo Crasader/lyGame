@@ -16,9 +16,12 @@ std::vector<std::string> lyResourceUtil::getResourceSearchPaths()
 {
     std::vector<std::string> searchPath;
     searchPath.push_back("Published-iOS");
+    searchPath.push_back("Published-iOS/ccbResources");
     searchPath.push_back("res");
     searchPath.push_back("ui");
     searchPath.push_back("images");
+    
+    
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     searchPath.push_back("sounds/ios");
@@ -46,4 +49,15 @@ std::vector<std::string> lyResourceUtil::getResourceResolutionOrder()
     resolutionsOrder.push_back("resources-iphonehd/");
     
     return resolutionsOrder;
+}
+std::string lyResourceUtil::getCardFacePlistPath(int64_t cardId, bool isZoom)
+{
+    if(isZoom)
+    {
+        return cocos2d::StringUtils::format("images/prince/pri_%05lld_sps_zoom.plist", cardId);
+    }
+    else
+    {
+        return cocos2d::StringUtils::format("images/prince/pri_%05lld_sps_all.plist", cardId);
+    }
 }

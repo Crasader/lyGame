@@ -56,14 +56,14 @@ void ObserverNode::setNodePosition(cocos2d::Node* node, cocos2d::Point pos)
 float ObserverNode::getDispRatio()
 {
     Size size = Director::getInstance()->getWinSize();
-    float ratio = size.width / DEFAULT_WIDTH;
+    float ratio = size.width / LYGAME_DEFAULT_WIDTH;
     return ratio;
 }
 
 float ObserverNode::getResolution(bool isHigh)
 {
     Size size = Director::getInstance()->getWinSize() * CCDirector::getInstance()->getContentScaleFactor();
-    float  baseWidth = isHigh? DEFAULT_WIDTH: DEFAULT_LOW_WIDTH;
+    float  baseWidth = isHigh? LYGAME_DEFAULT_WIDTH: DEFAULT_LOW_WIDTH;
     return (size.width / baseWidth);
 }
 

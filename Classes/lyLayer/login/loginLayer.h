@@ -45,13 +45,11 @@ public:
     virtual void onEnter();
     
     
-    void onPressButtonWeixin(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
-    void onPressButtonQQ(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
-    void onPressButtonTest(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
+    void onPressButtonWeixin(cocos2d::Ref *sender);
+    void onPressButtonQQ(cocos2d::Ref *sender);
    
     
 private:
-    void doFinishScene();
     
     bool _isMoving;
 

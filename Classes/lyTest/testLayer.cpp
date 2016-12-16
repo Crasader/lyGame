@@ -20,14 +20,12 @@ USING_NS_CC_EXT;
 testLayer::testLayer()
 : _isMoving(false)
 , _nameLabel(nullptr)
-,_sprtest(nullptr)
 {
 }
 
 testLayer::~testLayer()
 {
     CC_SAFE_RELEASE_NULL(_nameLabel);
-    CC_SAFE_RELEASE_NULL(_sprtest);
 }
 
 
@@ -80,33 +78,13 @@ void testLayer::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event)
   
 }
 
-void testLayer::doFinishScene()
-{
-}
 void testLayer::onClickedMenuButton(cocos2d::Ref *sender)
 {
     CCLOG("onClickedMenuButton");
-    if(_sprtest)
-    {
-        Texture2D* aTexture = TextureCache::sharedTextureCache()->addImage("btns/Cmn_Btn_Click.png");
-        _sprtest->createWithTexture(aTexture);
-    }
-    else
-        CCLOG("_sprtest is null");
-
-    //_nameLabel->setString("点击有相应了！！");
+    ApplicationManager::getInstance()->changeScene(SCENE_LOGIN);
 }
 void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent)
 {
     CCLOG("onPressCtrlButton");
-    if(_sprtest)
-    {
-        Texture2D* aTexture = TextureCache::sharedTextureCache()->addImage("btns/Cmn_Btn_Click.png");
-        _sprtest->createWithTexture(aTexture);
-    }
-    else
-        CCLOG("_sprtest is null");
-    
-    //_nameLabel->setString("点击有相应了！！");
 }
 

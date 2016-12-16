@@ -29,7 +29,6 @@ loadingText::~loadingText()
 
 void loadingText::completedAnimationSequenceNamed(const char *name)
 {
-    doFinishScene();
 }
 
 void loadingText::onEnter()
@@ -66,10 +65,6 @@ bool loadingText::onTouchBegan(cocos2d::Touch* touches, cocos2d::Event* event)
 void loadingText::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event)
 {
   
-}
-
-void loadingText::doFinishScene()
-{
 }
 void loadingText::onClickedButton1(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent)
 {

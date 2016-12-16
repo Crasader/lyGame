@@ -43,11 +43,6 @@ void NodeLoaderLibrary::registerDefaultNodeLoaders() {
     this->registerNodeLoader("CCMenuItemImage", MenuItemImageLoader::loader());
     this->registerNodeLoader("CCControlButton", ControlButtonLoader::loader());
     this->registerNodeLoader("CCParticleSystemQuad", ParticleSystemQuadLoader::loader());
-    
-    //add byshixc
-    this->registerNodeLoader("CCNodeGradient", LayerGradientLoader::loader());
-    this->registerNodeLoader("CCNodeColor", LayerColorLoader::loader());
-    this->registerNodeLoader("CCButton", ControlButtonLoader::loader());
 }
 
 void NodeLoaderLibrary::registerNodeLoader(const char * pClassName, NodeLoader * pNodeLoader)
