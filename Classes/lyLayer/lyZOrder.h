@@ -1,13 +1,15 @@
 //
-//  VitaminZOrder.h
-//  vitaminProject
+//  lyZOrder.h
 //
-//  Created by Yasunori Goto on 2015/10/30.
-//  Copyright 2015 GCREST,Inc. All rights reserved.
+//  ly-Game
+//
+//  Created by loveyur on 2016/12/14
+//  Copyright 2016 loveyur. All rights reserved.
+//
 //
 
-#ifndef __vitaminProject__VitaminZOrder__
-#define __vitaminProject__VitaminZOrder__
+#ifndef __lyGame__lyZOrder__
+#define __lyGame__lyZOrder__
 
 #define ZORDER_CAPTION                  (999)
 #define ZORDER_STATUS_BAR               (INT_MAX-10)
@@ -17,4 +19,4 @@
 #define ZORDER_POPUP                    (INT_MAX-1)
 #define ZORDER_MULTI_TOUCH_FILTER       (INT_MAX)
 
-#endif /* defined(__vitaminProject__VitaminZOrder__) */
+#endif /* defined(__lyGame__lyZOrder__) */

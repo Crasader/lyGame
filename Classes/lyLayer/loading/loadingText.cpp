@@ -18,27 +18,26 @@ USING_NS_CC_EXT;
 
 
 loadingText::loadingText()
-: _isMoving(false)
 {
 }
 
 loadingText::~loadingText()
 {
 }
-
-
-void loadingText::completedAnimationSequenceNamed(const char *name)
+loadingText* loadingText::createFromFile()
 {
-}
-
-void loadingText::onEnter()
-{
-    lyBaseLayer::onEnter();
+    auto ccbiPath = "loading/loadingText";
     
+    auto reader = new cocosbuilder::CCBReader(cocosbuilder::NodeLoaderLibrary::getInstance());
+    auto node = dynamic_cast<loadingText*>(reader->readNodeGraphFromFile(ccbiPath));
+    
+    CC_SAFE_DELETE(reader);
+    return node;
 }
-void loadingText::setSceneParameter(loadingTextParameter *param)
-{
- 
+
+void loadingText::onEnter() {
+    PartsBase::onEnter();
+    runAnimationsForSequenceNamed("Default Timeline");
 }
 bool loadingText::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
@@ -56,18 +55,5 @@ cocos2d::SEL_MenuHandler loadingText::onResolveCCBCCMenuItemSelector(cocos2d::Re
     //CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressMenuButton", testLayer::onClickedMenuButton);
     return nullptr;
 }
-bool loadingText::onTouchBegan(cocos2d::Touch* touches, cocos2d::Event* event)
-{
-    
-    return true;
-}
 
-void loadingText::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event)
-{
-  
-}
-void loadingText::onClickedButton1(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent)
-{
-    CCLOG("onClickedButton1");
-}
 

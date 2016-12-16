@@ -22,7 +22,7 @@ lyCCBLoaderLibrary::lyCCBLoaderLibrary() {
     m_customClassEntry = {
         { "testLayer", testLayerLoader::loader()},
         { "loginLayer", loginLayerLoader::loader()},
-        { "loadingText", loadingTextLoader::loader()}
+        { "loadingText",   BaseNodeLoader<loadingText>::loader()}
         
     };
 }

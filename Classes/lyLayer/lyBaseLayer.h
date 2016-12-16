@@ -32,6 +32,12 @@ class lyBaseLayer : public CoreCCBLayer
 , public CaptionDelegate
 {
 public:
+    enum LoadingType {
+        NONE,
+        TIPS,
+        CONNECT,
+        PRINCE,
+    };
     lyBaseLayer();
     virtual ~lyBaseLayer();
     
@@ -68,6 +74,12 @@ public:
     virtual void notifyCaptionStartComplete(Caption *sender){};
     virtual void notifyCaptionEndComplete(Caption *sender){};
 
+    //loading
+    void createLoadingLayer(LoadingType type, float fadeOutTime, float fadeInTime);
+    void showLoadingLayer(float fadeOutTime = 0.2f, float fadeInTime = 0.2f);
+    void hideLoadingLayer(float fadeout=0.2f, float fadein=0.2f);
+    virtual void onFinishedLoadingLayer();
+    
     
       // 機能モジュール
     template<typename T>
@@ -110,6 +122,7 @@ protected:
 protected:
     // キャプション
     Caption *_caption;
+    PartsBase* _loading;
     LayerColor* _fadeLayer;
 
     bool _retryFlg;

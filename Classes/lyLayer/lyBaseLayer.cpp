@@ -12,6 +12,8 @@
 #include "ApplicationManager.h"
 #include "UISceneID.h"
 #include "cocos2d.h"
+#include "lyZOrder.h"
+#include "loadingText.h"
 
 USING_NS_CC;
 
@@ -237,5 +239,112 @@ void lyBaseLayer::moveMaintenenceScene()
 void lyBaseLayer::eventConnectionUpdateMaster(bool refreshUserData)
 {
 }
+void lyBaseLayer::showLoadingLayer(float fadeOutTime, float fadeInTime)
+{
+    createLoadingLayer(LoadingType::NONE, fadeOutTime, fadeInTime);
+}
+void lyBaseLayer::hideLoadingLayer(float fadeOutTime, float fadeInTime)
+{
+    if (_loading && _fadeLayer)
+    {
+        if (fadeOutTime == 0.f && fadeInTime == 0.f)
+        {
+            _loading->setVisible(false);
+            _fadeLayer->runAction(Sequence::create(
+                                                   DelayTime::create(0.f),
+                                                   CallFunc::create([this](){
+                this->onFinishedLoadingLayer();
+            }),
+                                                   nullptr)
+                                  );
+        }
+        else
+        {
+            _fadeLayer->runAction(Sequence::create(
+                                                   FadeTo::create(fadeOutTime, 255),
+                                                   CallFunc::create([this](){
+                _loading->setVisible(false);
+            }),
+                                                   FadeTo::create(fadeInTime, 0),
+                                                   CallFunc::create([this](){
+                this->onFinishedLoadingLayer();
+            }),
+                                                   nullptr)
+                                  );
+        }
+    }
+}
 
-
+void lyBaseLayer::createLoadingLayer(LoadingType type, float fadeOutTime, float fadeInTime)
+{
+    if (_loading)
+    {
+        removeChild(_loading);
+        _loading = nullptr;
+    }
+    
+    if (type == LoadingType::TIPS)
+    {
+    }
+    else if (type == LoadingType::CONNECT)
+    {
+    }
+    else if (type == LoadingType::PRINCE)
+    {
+    }
+    else
+    {
+        _loading = loadingText::createFromFile();
+    }
+    CC_ASSERT(_loading);
+    
+    this->addChild(_loading, ZORDER_LOADING);
+    
+    if (_fadeLayer == nullptr)
+    {
+        Size visibleSize = Director::getInstance()->getVisibleSize();
+        Point origin = Director::getInstance()->getVisibleOrigin();
+        
+        _fadeLayer = LayerColor::create(Color4B(0, 0, 0, 0));
+        _fadeLayer->setAnchorPoint(Point(0, 0));
+        _fadeLayer->setPosition(Point(origin.x, origin.y));
+        _fadeLayer->setContentSize(visibleSize);
+        this->addChild(_fadeLayer, ZORDER_FADE_LOADING);
+    }
+    
+    if (fadeOutTime == 0.f && fadeInTime == 0.f)
+    {
+        _fadeLayer->setOpacity(0);
+        _loading->setVisible(true);
+    }
+    else
+    {
+        if (fadeOutTime == 0.f)
+        {
+            _fadeLayer->setOpacity(255);
+            _loading->setVisible(true);
+        }
+        else
+        {
+            _fadeLayer->setOpacity(0);
+            _loading->setVisible(false);
+        }
+        
+        _fadeLayer->runAction(Sequence::create(
+                                               FadeTo::create(fadeOutTime, 255),
+                                               CallFunc::create([this](){
+            _loading->setVisible(true);
+        }),
+                                               DelayTime::create(0.1f),
+                                               FadeTo::create(fadeInTime, 0),
+                                               nullptr));
+    }
+}
+void lyBaseLayer::onFinishedLoadingLayer()
+{
+    removeChild(_loading);
+    _loading = nullptr;
+    
+    removeChild(_fadeLayer);
+    _fadeLayer = nullptr;
+}

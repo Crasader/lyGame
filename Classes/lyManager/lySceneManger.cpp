@@ -10,12 +10,11 @@
 
 
 #include "lySceneManger.h"
-//#include "TransitionFadeCustom.h"
+#include "TransitionFadeCustom.h"
 #include "Caption.h"
 
 #include "loginLayer.h"
 #include "loadingText.h"
-
 #include "testLayer.h"
 
 
@@ -71,7 +70,6 @@ cocos2d::Scene* lySceneManger::setupScene(SceneID sid, SceneParameter* params, c
 
 void lySceneManger::execSceneChange(const SceneChangeInfo &info)
 {
-    /*
     if (info.fade)
     {
         _sceneChangingStatus = SceneChangingStatus::TRANSITION_EXIT;
@@ -89,7 +87,7 @@ void lySceneManger::execSceneChange(const SceneChangeInfo &info)
         
         info.changeFunc(fader);
     }
-    else*/
+    else
     {
         info.changeFunc(info.pScene);
     }
@@ -150,34 +148,22 @@ cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* param
         case SCENE_LOGIN:
         {
             topLayer = loginLayer::createWithcocosbuilderFile("login/loginLayer", nullptr, Director::getInstance()->getWinSize());
-            //topLayer = readcocosbuilder("login/loginLayer");
             PARAM_TYPE_CHECK(params, loginLayerParameter);
         }
             break;
+        /*
         case SCENE_LOADING_TEXT:
         {
             topLayer = loadingText::createWithcocosbuilderFile("loading/loadingText", nullptr, Director::getInstance()->getWinSize());
             PARAM_TYPE_CHECK(params, loadingTextParameter);
         }
             break;
+         */
         case SCENE_TEST_SCENE:
         {
-            //*
             topLayer = testLayer::createWithcocosbuilderFile("testScene", nullptr, Director::getInstance()->getWinSize());
             PARAM_TYPE_CHECK(params, testLayerParameter);
             dynamic_cast<testLayer*>(topLayer)->setSceneParameter((testLayerParameter*) params);
-             //*/
-            
-            //topLayer = readcocosbuilder("testScene");
-            
-            /*
-            cocosbuilder::CCBReader* reader = new cocosbuilder::CCBReader(cocosbuilder::NodeLoaderLibrary::getInstance());
-            topLayer = (testLayer*)reader->readNodeGraphFromFile("testLayer", nullptr, Director::getInstance()->getWinSize());
-             */
-            
-            /*
-            topLayer = testLayer::create();
-            //*/
 
             
             

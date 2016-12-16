@@ -57,6 +57,8 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
+		792031F11E03D3AB00D476FA /* TransitionFadeCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 792031EF1E03D3AB00D476FA /* TransitionFadeCustom.cpp */; };
+		792031F51E03D46800D476FA /* ApplicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 792031F31E03D46800D476FA /* ApplicationManager.cpp */; };
 		794AD6851DED227D00EA3CF5 /* lyWebInterfaceiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 794AD6831DED227D00EA3CF5 /* lyWebInterfaceiOS.mm */; };
 		794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 794AD6841DED227D00EA3CF5 /* lyWebView.mm */; };
 		79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BAC1DDDA73000CD7FB6 /* CCCrypto.cpp */; };
@@ -88,7 +90,6 @@
 		79E9640C1DFDAC2F0091A060 /* CoreCCBNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964041DFDAC2F0091A060 /* CoreCCBNode.cpp */; };
 		79E9640D1DFDAC2F0091A060 /* CoreCCBSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964061DFDAC2F0091A060 /* CoreCCBSprite.cpp */; };
 		79E9640E1DFDAC2F0091A060 /* CoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964081DFDAC2F0091A060 /* CoreLayer.cpp */; };
-		79E964281DFDAC590091A060 /* ApplicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E9641F1DFDAC590091A060 /* ApplicationManager.cpp */; };
 		79E964291DFDAC590091A060 /* lyBaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964211DFDAC590091A060 /* lyBaseScene.cpp */; };
 		79E9642A1DFDAC590091A060 /* lySceneManger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964231DFDAC590091A060 /* lySceneManger.cpp */; };
 		79E9642B1DFDAC590091A060 /* lySoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E964251DFDAC590091A060 /* lySoundManager.cpp */; };
@@ -215,6 +216,11 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		792031EF1E03D3AB00D476FA /* TransitionFadeCustom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransitionFadeCustom.cpp; path = lyBase/TransitionFadeCustom.cpp; sourceTree = "<group>"; };
+		792031F01E03D3AB00D476FA /* TransitionFadeCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionFadeCustom.h; path = lyBase/TransitionFadeCustom.h; sourceTree = "<group>"; };
+		792031F31E03D46800D476FA /* ApplicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplicationManager.cpp; path = lyLayer/ApplicationManager.cpp; sourceTree = "<group>"; };
+		792031F41E03D46800D476FA /* ApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationManager.h; path = lyLayer/ApplicationManager.h; sourceTree = "<group>"; };
+		792031F61E03D6A000D476FA /* lyZOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyZOrder.h; path = lyLayer/lyZOrder.h; sourceTree = "<group>"; };
 		794AD6821DED227D00EA3CF5 /* lyWebInterfaceiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyWebInterfaceiOS.h; path = ios/lyWeb/lyWebInterfaceiOS.h; sourceTree = SOURCE_ROOT; };
 		794AD6831DED227D00EA3CF5 /* lyWebInterfaceiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = lyWebInterfaceiOS.mm; path = ios/lyWeb/lyWebInterfaceiOS.mm; sourceTree = SOURCE_ROOT; };
 		794AD6841DED227D00EA3CF5 /* lyWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = lyWebView.mm; path = ios/lyWeb/lyWebView.mm; sourceTree = SOURCE_ROOT; };
@@ -290,8 +296,6 @@
 		79E964171DFDAC3E0091A060 /* ISceneInterfaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISceneInterfaces.h; path = lyInterfaces/ISceneInterfaces.h; sourceTree = "<group>"; };
 		79E964191DFDAC3E0091A060 /* ISubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISubject.h; path = lyInterfaces/ISubject.h; sourceTree = "<group>"; };
 		79E9641A1DFDAC3E0091A060 /* IWaitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWaitManager.h; path = lyInterfaces/IWaitManager.h; sourceTree = "<group>"; };
-		79E9641F1DFDAC590091A060 /* ApplicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplicationManager.cpp; path = lyManager/ApplicationManager.cpp; sourceTree = "<group>"; };
-		79E964201DFDAC590091A060 /* ApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationManager.h; path = lyManager/ApplicationManager.h; sourceTree = "<group>"; };
 		79E964211DFDAC590091A060 /* lyBaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyBaseScene.cpp; path = lyManager/lyBaseScene.cpp; sourceTree = "<group>"; };
 		79E964221DFDAC590091A060 /* lyBaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyBaseScene.h; path = lyManager/lyBaseScene.h; sourceTree = "<group>"; };
 		79E964231DFDAC590091A060 /* lySceneManger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lySceneManger.cpp; path = lyManager/lySceneManger.cpp; sourceTree = "<group>"; };
@@ -586,6 +590,8 @@
 		79CC9B4A1DDDA35500CD7FB6 /* lyBase */ = {
 			isa = PBXGroup;
 			children = (
+				792031EF1E03D3AB00D476FA /* TransitionFadeCustom.cpp */,
+				792031F01E03D3AB00D476FA /* TransitionFadeCustom.h */,
 				79E964521DFDC24A0091A060 /* Platform */,
 				79E963D81DFDABB10091A060 /* lyResourceUtil.cpp */,
 				79E963D91DFDABB10091A060 /* lyResourceUtil.h */,
@@ -755,8 +761,6 @@
 		79E9641E1DFDAC500091A060 /* lyManager */ = {
 			isa = PBXGroup;
 			children = (
-				79E9641F1DFDAC590091A060 /* ApplicationManager.cpp */,
-				79E964201DFDAC590091A060 /* ApplicationManager.h */,
 				79E964211DFDAC590091A060 /* lyBaseScene.cpp */,
 				79E964221DFDAC590091A060 /* lyBaseScene.h */,
 				79E964231DFDAC590091A060 /* lySceneManger.cpp */,
@@ -801,6 +805,9 @@
 		79E9645F1DFE57760091A060 /* lyLayer */ = {
 			isa = PBXGroup;
 			children = (
+				792031F61E03D6A000D476FA /* lyZOrder.h */,
+				792031F31E03D46800D476FA /* ApplicationManager.cpp */,
+				792031F41E03D46800D476FA /* ApplicationManager.h */,
 				79E964951E0153200091A060 /* lyBaseLayer.cpp */,
 				79E964961E0153200091A060 /* lyBaseLayer.h */,
 				79E964971E0153200091A060 /* lyBaseLayerModule.cpp */,
@@ -1022,6 +1029,7 @@
 				79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */,
 				79E9640A1DFDAC2F0091A060 /* CCBInterfaceHandler.cpp in Sources */,
 				79E9640C1DFDAC2F0091A060 /* CoreCCBNode.cpp in Sources */,
+				792031F51E03D46800D476FA /* ApplicationManager.cpp in Sources */,
 				79E963F81DFDAC110091A060 /* Observer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				79E963EC1DFDABF50091A060 /* lyJsonConverter.cpp in Sources */,
@@ -1029,8 +1037,8 @@
 				79E963F91DFDAC110091A060 /* ObserverController.cpp in Sources */,
 				79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				79E964281DFDAC590091A060 /* ApplicationManager.cpp in Sources */,
 				79CC9BD31DDDA78C00CD7FB6 /* DictUtil.cpp in Sources */,
+				792031F11E03D3AB00D476FA /* TransitionFadeCustom.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

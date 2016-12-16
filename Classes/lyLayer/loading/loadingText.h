@@ -22,44 +22,22 @@ public:
     loadingTextParameter(){};
 };
 
-class loadingText : public lyBaseLayer, public PartsBaseObj
+class loadingText : public PartsBase
 {
 public:
+    static loadingText* createFromFile();
+    
     loadingText();
     virtual ~loadingText();
     
-    // implement the "static create()" method manually
-    CREATE_WITH_FORMAT_FUNC(loadingText);
+    CREATE_FUNC(loadingText);
     
-    virtual void completedAnimationSequenceNamed(const char *name);
-    
-    virtual bool onTouchBegan(cocos2d::Touch* touches, cocos2d::Event* event);
-    virtual void onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event);
     
     virtual bool onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode) override;
     virtual cocos2d::extension::Control::Handler onResolveCCBCCControlSelector(cocos2d::Ref* pTarget, const char* pSelectorName) override;
     virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::Ref * pTarget, const char* pSelectorName) override;
     
-
-    void setSceneParameter(loadingTextParameter *param);
-    
-    virtual void onEnter();
-    
-    
-    void onClickedButton1(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
-   
-private:
-    bool _isMoving;
-};
-
-
-// loader
-class loadingTextLoader : public cocosbuilder::LayerLoader {
-public:
-    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(loadingTextLoader, loader);
-    
-protected:
-    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(loadingText);
+    virtual void onEnter() override;
     
 };
 

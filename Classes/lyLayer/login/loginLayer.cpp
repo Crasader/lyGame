@@ -75,6 +75,6 @@ void loginLayer::onPressButtonWeixin(cocos2d::Ref *sender)
 void loginLayer::onPressButtonQQ(cocos2d::Ref *sender)
 {
     CCLOG("onPressButtonQQ");
-    ApplicationManager::getInstance()->changeScene(SCENE_LOADING_TEXT);
+    //ApplicationManager::getInstance()->changeScene(SCENE_LOADING_TEXT);
 }
 
