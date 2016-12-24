@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __CoreAppFramework__DictUtil__
-#define __CoreAppFramework__DictUtil__
+#ifndef __lyGame__DictUtil__
+#define __lyGame__DictUtil__
 
 #include "cocos2d.h"
 
@@ -25,4 +25,4 @@ public:
     static bool asBool(const cocos2d::ValueMap& dict, const std::string& keyId);
 };
 
-#endif /* defined(__CoreAppFramework__DictUtil__) */
+#endif /* defined(__lyGame__DictUtil__) */

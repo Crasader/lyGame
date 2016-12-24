@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __CoreAppFramework__StrUtil__
-#define __CoreAppFramework__StrUtil__
+#ifndef __lyGame__StrUtil__
+#define __lyGame__StrUtil__
 
 #include <string>
 #include <vector>
@@ -36,4 +36,4 @@ public:
     static std::string trim(const std::string& string, const char* trimCharacterList = " \t\v\r\n");
 };
 
-#endif /* defined(__CoreAppFramework__StrUtil__) */
+#endif /* defined(__lyGame__StrUtil__) */

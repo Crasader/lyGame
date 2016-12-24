@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef Gcrest_StringUtils_h
-#define Gcrest_StringUtils_h
+#ifndef __lyGame__StringUtils__
+#define __lyGame__StringUtils__
 
 // TODO: とりあえずcocos2d-xのやつよぶ
 #include "deprecated/CCString.h"

@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __vitaminProject__lyBaseLayer__
-#define __vitaminProject__lyBaseLayer__
+#ifndef __lyGame__lyBaseLayer__
+#define __lyGame__lyBaseLayer__
 
 #include "CoreCCBLayer.h"
 #include "Caption.h"
@@ -136,4 +136,4 @@ protected:
     
 };
 
-#endif /* defined(__vitaminProject__lyBaseLayer__) */
+#endif /* defined(__lyGame__lyBaseLayer__) */

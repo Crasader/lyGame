@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __client_vitamin__TransitionFadeCustom__
-#define __client_vitamin__TransitionFadeCustom__
+#ifndef __lyGame__TransitionFadeCustom__
+#define __lyGame__TransitionFadeCustom__
 
 #include "cocos2d.h"
 
@@ -74,4 +74,4 @@ private:
     void changeScene();
 };
 
-#endif /* defined(__client_vitamin__TransitionFadeCustom__) */
+#endif /* defined(__lyGame__TransitionFadeCustom__) */

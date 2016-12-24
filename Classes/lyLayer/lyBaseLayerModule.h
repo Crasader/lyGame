@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef lyBaseLayerModule_h
-#define lyBaseLayerModule_h
+#ifndef __lyGame__lyBaseLayerModule__
+#define __lyGame__lyBaseLayerModule__
 
 #include "cocos2d.h"
 
@@ -26,4 +26,4 @@ protected:
     lyBaseLayer *_parent;
 };
 
-#endif /* lyBaseLayerModule_h */
+#endif /* __lyGame__lyBaseLayerModule__ */

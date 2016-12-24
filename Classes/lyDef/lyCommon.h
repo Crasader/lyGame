@@ -5,8 +5,8 @@
 //  Created by loveyur on 2016/11/10
 //
 
-#ifndef ly_lyCommon_h
-#define ly_lyCommon_h
+#ifndef __lyGame__lyCommon_h
+#define __lyGame__lyCommon_h
 
 #define LYGAME_DEFAULT_WIDTH   640
 #define LYGAME_DEFAULT_HEIGHT  960
@@ -44,4 +44,4 @@ enum quest_age_status {
 
 
 
-#endif /* ly_lyCommon_h */
+#endif /* __lyGame__lyCommon_h */

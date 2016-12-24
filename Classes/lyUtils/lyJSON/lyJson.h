@@ -20,8 +20,8 @@
   THE SOFTWARE.
 */
 
-#ifndef lyJson__h
-#define lyJson__h
+#ifndef __lyGame__lyJson__
+#define __lyGame__lyJson__
 
 #ifdef __cplusplus
 extern "C"

@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef Donut_LotteryUtil_h
-#define Donut_LotteryUtil_h
+#ifndef __lyGame__LotteryUtil__
+#define __lyGame__LotteryUtil__
 
 #include <string>
 #include <list>

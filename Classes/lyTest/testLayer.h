@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __VitaminProject__testLayer__
-#define __VitaminProject__testLayer__
+#ifndef __lyGame__testLayer__
+#define __lyGame__testLayer__
 
 #include "lyBaseLayer.h"
 #include "cocos2d.h"
@@ -71,4 +71,4 @@ protected:
 };
 
 
-#endif /* defined(__VitaminProject__testLayer__) */
+#endif /* defined(__lyGame__testLayer__) */

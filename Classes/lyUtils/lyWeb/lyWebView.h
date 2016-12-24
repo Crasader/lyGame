@@ -5,8 +5,8 @@
 //  Created by loveyur on 2016/11/11
 //
 
-#ifndef ly_lyWebView_h
-#define ly_lyWebView_h
+#ifndef __lyGame__lyWebView__
+#define __lyGame__lyWebView__
 
 #include "cocos2d.h"
 
@@ -20,4 +20,4 @@ public:
     static void openWebView(const char* url);
 };
 
-#endif /* defined(ly_lyWebView_h) */
+#endif /* defined(__lyGame__lyWebView__) */

@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __VitaminProject__loginLayer__
-#define __VitaminProject__loginLayer__
+#ifndef __lyGame__loginLayer__
+#define __lyGame__loginLayer__
 
 #include "lyBaseLayer.h"
 #include "cocos2d.h"
@@ -68,4 +68,4 @@ protected:
 };
 
 
-#endif /* defined(__VitaminProject__loginLayer__) */
+#endif /* defined(__lyGame__loginLayer__) */

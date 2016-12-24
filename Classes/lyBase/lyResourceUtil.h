@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef ly_lyResourceUtil_h_
-#define ly_lyResourceUtil_h_
+#ifndef __lyGame__lyResourceUtil_h_
+#define __lyGame__lyResourceUtil_h_
 
 #include "cocos2d.h"
 
@@ -23,4 +23,4 @@ public:
     static std::string getCardFacePlistPath(int64_t cardId, bool isZoom);
 };
 
-#endif /* defined(ly_lyResourceUtil_h_) */
+#endif /* defined(__lyGame__lyResourceUtil_h_) */

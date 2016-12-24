@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef Donut_ListUtil_h
-#define Donut_ListUtil_h
+#ifndef __lyGame__ListUtil__
+#define __lyGame__ListUtil__
 
 #include <list>
 

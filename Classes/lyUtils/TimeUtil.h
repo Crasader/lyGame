@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __CoreAppFramework__TimeUtil__
-#define __CoreAppFramework__TimeUtil__
+#ifndef __lyGame__TimeUtil__
+#define __lyGame__TimeUtil__
 
 class TimeUtil
 {
@@ -18,4 +18,4 @@ public:
     static double getTime();
 };
 
-#endif /* defined(__CoreAppFramework__TimeUtil__) */
+#endif /* defined(__lyGame__TimeUtil__) */

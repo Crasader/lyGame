@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef Donut_PositionUtil_h
-#define Donut_PositionUtil_h
+#ifndef __lyGame__PositionUtil__
+#define __lyGame__PositionUtil__
 
 #include "cocos2d.h"
 

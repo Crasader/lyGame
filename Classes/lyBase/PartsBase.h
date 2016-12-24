@@ -7,8 +7,8 @@
 //  Copyright 2016 loveyur. All rights reserved.
 //
 //
-#ifndef __VitaminProject__PartsBase__
-#define __VitaminProject__PartsBase__
+#ifndef __lyGame__PartsBase__
+#define __lyGame__PartsBase__
 
 #include "cocos2d.h"
 #include "extensions/cocos-ext.h"
@@ -288,4 +288,4 @@ private:
     //ボタンが押された場合の関数を設定出来る
     CC_SYNTHESIZE(std::function<void(PartsBase* node, Ref* sender, cocos2d::extension::Control::EventType eventType)>, _callbackOnClickBtn, CallbackOnClickBtn);
 };
-#endif /* defined(__VitaminProject__PartsBase__) */
+#endif /* defined(__lyGame__PartsBase__) */

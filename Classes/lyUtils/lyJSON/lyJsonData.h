@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __cocos2d__lyJsonData__
-#define __cocos2d__lyJsonData__
+#ifndef __lyGame__lyJsonData__
+#define __lyGame__lyJsonData__
 
 #include "cocos2d.h"
 USING_NS_CC;
@@ -69,4 +69,4 @@ public:
     }
 };
 
-#endif /* defined(__cocos2d__lyJsonData__) */
+#endif /* defined(__lyGame__lyJsonData__) */

@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __cocos2d_x_jc__lyJsonConverter__
-#define __cocos2d_x_jc__lyJsonConverter__
+#ifndef __lyGame__lyJsonConverter__
+#define __lyGame__lyJsonConverter__
 
 #include "cocos2d.h"
 
@@ -42,4 +42,4 @@ private:
     cocos2d::Value getJsonObj(lyJson * json);
 };
 
-#endif /* defined(__cocos2d_x_jc__lyJsonConverter__) */
+#endif /* defined(__lyGame__lyJsonConverter__) */

@@ -5,8 +5,8 @@
 //  Created by loveyur on 2016/11/10
 //
 
-#ifndef ly_lyChannel_h
-#define ly_lyChannel_h
+#ifndef __lyGame__lyChannel_h
+#define __lyGame__lyChannel_h
 
 
 
@@ -14,4 +14,4 @@
 
 
 
-#endif /* ly_lyChannel_h */
+#endif /* __lyGame__lyChannel_h */

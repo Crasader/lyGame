@@ -8,8 +8,8 @@
 //
 //
 
-#ifndef __VitaminProject__loadingText__
-#define __VitaminProject__loadingText__
+#ifndef __lyGame__loadingText__
+#define __lyGame__loadingText__
 
 #include "lyBaseLayer.h"
 #include "cocos2d.h"
@@ -42,4 +42,4 @@ public:
 };
 
 
-#endif /* defined(__VitaminProject__loadingText__) */
+#endif /* defined(__lyGame__loadingText__) */
