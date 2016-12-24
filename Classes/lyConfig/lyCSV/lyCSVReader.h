@@ -39,10 +39,12 @@ private:
     //获取某一行value
     const MAP_ONE_LINE* getOneLine(std::string strCSVPath, int code);
    
-
+private:
     //读取csv的一行
     void readCSVLine(const char *line, int index);
+
     
+private:
     VEC_COLUMN_NAME m_VectorColumnName;                                          //第一行的vector
     MAP_MUTI_LINE m_mapOneFile;                                       //内容map
     std::map<std::string, MAP_MUTI_LINE> m_mapMutiFile;                   //文件map
