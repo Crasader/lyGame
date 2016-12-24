@@ -14,9 +14,9 @@
 #include "lyInclude.h"
 
 
-#define MAP_LINE std::map<std::string, std::string>          //key为首行字符串, value为此列字符串
-#define MAP_CONTENT std::map<int, MAP_LINE>                  //key为code, value为一行map
-#define VEC_MAP  std::vector<std::pair<std::string, int>>
+#define MAP_ONE_LINE std::map<std::string, std::string>          //key为首行字符串, value为此列字符串
+#define MAP_MUTI_LINE std::map<int, MAP_ONE_LINE>                  //key为code, value为一行map
+#define VEC_COLUMN_NAME  std::vector<std::pair<std::string, int>>
 
 
 class lyCSVReader
@@ -35,17 +35,17 @@ public:
     
 private:
     //获取内容map
-    const MAP_CONTENT* getFile(std::string strCSVPath);
+    const MAP_MUTI_LINE* getOneFile(std::string strCSVPath);
     //获取某一行value
-    const MAP_LINE* getOneLine(std::string strCSVPath, int code);
+    const MAP_ONE_LINE* getOneLine(std::string strCSVPath, int code);
    
 
     //读取csv的一行
     void readCSVLine(const char *line, int index);
     
-    VEC_MAP m_firstVector;                                          //第一行的vector
-    MAP_CONTENT m_contentMap;                                       //内容map
-    std::map<std::string, MAP_CONTENT> m_fileMap;                   //文件map
+    VEC_COLUMN_NAME m_VectorColumnName;                                          //第一行的vector
+    MAP_MUTI_LINE m_mapOneFile;                                       //内容map
+    std::map<std::string, MAP_MUTI_LINE> m_mapMutiFile;                   //文件map
 };
 
 

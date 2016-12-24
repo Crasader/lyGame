@@ -16,9 +16,9 @@ static lyCSVReader* _pInstanceCSVReader = nullptr;
 
 lyCSVReader::lyCSVReader()
 {
-    m_firstVector.clear();
-    m_contentMap.clear();
-    m_fileMap.clear();
+    m_VectorColumnName.clear();
+    m_mapOneFile.clear();
+    m_mapMutiFile.clear();
 }
 
 lyCSVReader::~lyCSVReader()
@@ -34,23 +34,23 @@ lyCSVReader* lyCSVReader::getInstance()
     }
     return _pInstanceCSVReader;
 }
-const MAP_CONTENT* lyCSVReader::getFile(std::string strCSVPath)
+const MAP_MUTI_LINE* lyCSVReader::getOneFile(std::string strCSVPath)
 {
     //如果表数据不在内存中，解析表数据
-    if(m_fileMap.find(strCSVPath) == m_fileMap.end())
+    if(m_mapMutiFile.find(strCSVPath) == m_mapMutiFile.end())
     {
         this->Parse(strCSVPath.c_str());
     }
     //获得表数据
-    if(m_fileMap.find(strCSVPath) != m_fileMap.end())
+    if(m_mapMutiFile.find(strCSVPath) != m_mapMutiFile.end())
     {
-        return &(m_fileMap.find(strCSVPath)->second);
+        return &(m_mapMutiFile.find(strCSVPath)->second);
     }
     return nullptr;
 }
-const MAP_LINE* lyCSVReader::getOneLine(std::string strCSVPath, int code)
+const MAP_ONE_LINE* lyCSVReader::getOneLine(std::string strCSVPath, int code)
 {
-    const MAP_CONTENT* content = getFile(strCSVPath);
+    const MAP_MUTI_LINE* content = getOneFile(strCSVPath);
     if(content && content->find(code) != content->end())
     {
         return &(content->find(code)->second);
@@ -59,7 +59,7 @@ const MAP_LINE* lyCSVReader::getOneLine(std::string strCSVPath, int code)
 }
 int lyCSVReader::getLineNum(std::string strCSVPath)
 {
-    const MAP_CONTENT* content = getFile(strCSVPath);
+    const MAP_MUTI_LINE* content = getOneFile(strCSVPath);
     if(content)
     {
         return (int)content->size();
@@ -68,7 +68,7 @@ int lyCSVReader::getLineNum(std::string strCSVPath)
 }
 const std::string lyCSVReader::getValue(std::string strCSVPath, int nRowId, const std::string &strColumn)
 {
-    const MAP_LINE* line = getOneLine(strCSVPath, nRowId);
+    const MAP_ONE_LINE* line = getOneLine(strCSVPath, nRowId);
     if(line && line->find(strColumn) != line->end())
     {
         return line->find(strColumn)->second;
@@ -77,7 +77,7 @@ const std::string lyCSVReader::getValue(std::string strCSVPath, int nRowId, cons
 }
 void lyCSVReader::Parse(std::string strCSVPath)
 {
-    m_contentMap.clear();       //首先进行清理
+    m_mapOneFile.clear();       //首先进行清理
     
     if(!FileUtils::getInstance()->isFileExist(strCSVPath))
     {
@@ -122,7 +122,7 @@ void lyCSVReader::Parse(std::string strCSVPath)
     *pl = '\0';
     
     //添加到map
-    m_fileMap.insert(std::map<std::string, MAP_CONTENT>::value_type(strCSVPath, m_contentMap));
+    m_mapMutiFile.insert(std::map<std::string, MAP_MUTI_LINE>::value_type(strCSVPath, m_mapOneFile));
 }
 
 void lyCSVReader::readCSVLine(const char *line, int index)
@@ -169,18 +169,18 @@ void lyCSVReader::readCSVLine(const char *line, int index)
     //第一行作为key
     if(index == 2)
     {
-        m_firstVector = tVector;
+        m_VectorColumnName = tVector;
     }
     //第2行为注释
     else if(index > 4)
     {
         //一行的map
         std::map<string, string> tmp;
-        for (int i = 0; i < m_firstVector.size(); i++)
+        for (int i = 0; i < m_VectorColumnName.size(); i++)
         {
-            tmp.insert(std::map<string, string>::value_type(m_firstVector[i].first, tVector[i].first));
+            tmp.insert(std::map<string, string>::value_type(m_VectorColumnName[i].first, tVector[i].first));
         }
-        m_contentMap.insert(std::map<int, MAP_LINE>::value_type(atoi(tVector[0].first.c_str()), tmp));
+        m_mapOneFile.insert(std::map<int, MAP_ONE_LINE>::value_type(atoi(tVector[0].first.c_str()), tmp));
     }
 }
 
