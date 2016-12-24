@@ -11,7 +11,9 @@
 #include "testLayer.h"
 #include "ApplicationManager.h"
 #include "UISceneID.h"
-#include "cocos2d.h"
+
+#include "lyCSVReader.h"
+#include "lyFunc.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -86,5 +88,11 @@ void testLayer::onClickedMenuButton(cocos2d::Ref *sender)
 void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent)
 {
     CCLOG("onPressCtrlButton");
+    //csv表格读取测试
+    lyCSVReader::getInstance()->parse("Table/Texture.csv");
+    
+    std::string strTexturePath = XTable("Texture", 2, "ImgPath");
+    CCLOG("strTexturePath=%s",strTexturePath.c_str());
+    
 }
 

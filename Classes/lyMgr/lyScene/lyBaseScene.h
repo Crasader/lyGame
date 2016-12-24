@@ -12,7 +12,7 @@
 #define __lyGame__SceneManager__
 
 #include "ISceneInterfaces.h"
-#include "cocos2d.h"
+#include "lyInclude.h"
 
 class lyBaseScene  : public cocos2d::Ref, public ISceneInterfaces
 {

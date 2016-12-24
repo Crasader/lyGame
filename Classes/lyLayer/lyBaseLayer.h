@@ -14,7 +14,6 @@
 #include "CoreCCBLayer.h"
 #include "Caption.h"
 #include "lySceneManger.h"
-#include "cocosbuilder/cocosbuilder.h"
 #include "UISceneID.h"
 #include "PartsBase.h"
 #include "lyBaseLayerModule.h"

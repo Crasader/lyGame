@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 特效表【招式特效】 每个ID对应Skill.xls里面的属性 -->
+<Effects>
+  <!-- 特效ID 动画ID 【0为不跟随|1特效盖住角色|-1角色盖住特效|2不跟随，角色盖住特效】  创建时偏移X 创建时偏移Y | maxHit最大碰撞次数，默认为-1，表示没有限制。否则，表示碰撞达到次数时候销毁-->
+<!-- 剑客特效 --> 
+<Effect id="0" aniId="30" bind="1" offsetX="110" offsetY="-350" maxHit="-1"/>		<!-- 剑客GC1特效 -->
+<Effect id="1" aniId="31" bind="-1" offsetX="100" offsetY="-340" maxHit="-1"/>		<!-- 剑客GC2特效 -->
+<Effect id="2" aniId="32" bind="1" offsetX="100" offsetY="-340" maxHit="-1"/>		<!-- 剑客GC3特效 -->
+<Effect id="3" aniId="33" bind="1" offsetX="0" offsetY="-470" maxHit="-1"/>		<!-- 剑客GC4刀光特效 -->
+<Effect id="4" aniId="34" bind="-1" offsetX="0" offsetY="-450" maxHit="-1"/>		<!-- 剑客GC4砸地特效 -->
+
+<Effect id="5" aniId="35" bind="-1" offsetX="0" offsetY="-270" maxHit="-1"/>		<!-- 剑客技能1第一击 -->
+<Effect id="6" aniId="36" bind="-1" offsetX="0" offsetY="-200" maxHit="-1"/>		<!-- 剑客技能1第二击 -->
+<Effect id="7" aniId="37" bind="1" offsetX="-50" offsetY="-230" maxHit="-1"/>		<!-- 剑客技能1第三击 -->
+<Effect id="8" aniId="38" bind="-1" offsetX="0" offsetY="-450" maxHit="-1"/>		<!-- 剑客技能1第一击砸地特效 -->
+<Effect id="12" aniId="40" bind="1" offsetX="110" offsetY="-350" maxHit="-1"/>		<!--  剑客大招特效1-乱舞1、2 -->
+<Effect id="13" aniId="39" bind="1" offsetX="50" offsetY="-330" maxHit="-1"/>		<!--  剑客大招特效1-乱舞3前刺 -->
+<Effect id="14" aniId="41" bind="0" offsetX="50" offsetY="-230" maxHit="-1"/>		<!--  剑客大招特效1-乱舞4地上 -->
+<Effect id="15" aniId="42" bind="-1" offsetX="50" offsetY="-230" maxHit="-1"/>		<!--  剑客大招特效1-乱舞4地面 -->
+<Effect id="16" aniId="43" bind="1" offsetX="20" offsetY="-330" maxHit="-1"/>		<!--  剑客大招特效1-乱舞5 -->
+<Effect id="17" aniId="44" bind="1" offsetX="20" offsetY="-120" maxHit="-1"/>		<!--  剑客大招特效1-乱舞6跳起 -->
+
+<Effect id="18" aniId="45" bind="0" offsetX="120" offsetY="-270" maxHit="-1"/>		<!--  剑客大招特效1-乱舞7飞刀 -->
+<Effect id="19" aniId="46" bind="0" offsetX="200" offsetY="-450" maxHit="-1"/>		<!--  剑客大招特效1-飞刀砸地地上 -->
+<Effect id="20" aniId="47" bind="2" offsetX="200" offsetY="-450" maxHit="-1"/>		<!--  剑客大招特效1-飞刀砸地地面 -->
+<Effect id="21" aniId="48" bind="1" offsetX="0" offsetY="-450" maxHit="-1"/>		<!--  剑客大招冲砸地地面 -->
+<Effect id="22" aniId="49" bind="1" offsetX="0" offsetY="-450" maxHit="-1"/>		<!--  剑客大招弹剑 -->
+
+<Effect id="23" aniId="50" bind="0" offsetX="300" offsetY="-280" maxHit="-1"/>		<!--  剑客技能2冲刺 -->
+<Effect id="24" aniId="51" bind="2" offsetX="0" offsetY="-150" maxHit="-1"/>		<!--  剑客技能2冲刺砸地 -->
+<Effect id="25" aniId="52" bind="0" offsetX="0" offsetY="-500" maxHit="-1"/>		<!--  剑客技能2第二击 -->
+<Effect id="26" aniId="53" bind="2" offsetX="100" offsetY="-300" maxHit="-1"/>		<!--  剑客技能2第二击砸地 -->
+
+<Effect id="27" aniId="54" bind="1" offsetX="0" offsetY="-300" maxHit="-1"/>		<!--  剑客技能3上挑 -->
+<Effect id="28" aniId="55" bind="1" offsetX="-20" offsetY="-330" maxHit="-1"/>		<!--  剑客技能3下砍 -->
+<Effect id="29" aniId="56" bind="0" offsetX="50" offsetY="-250" maxHit="-1"/>		<!--  剑客技能3飞行道具 -->
+
+<!-- 拳师特效 --> 
+<Effect id="50" aniId="130" bind="1" offsetX="50" offsetY="130" maxHit="-1"/>		<!-- 拳师GC1特效 -->
+<Effect id="51" aniId="131" bind="1" offsetX="60" offsetY="-100" maxHit="-1"/>		<!-- 拳师GC2特效 -->
+<Effect id="52" aniId="132" bind="1" offsetX="150" offsetY="-90" maxHit="-1"/>		<!-- 拳师GC3特效 -->
+<Effect id="53" aniId="133" bind="1" offsetX="0" offsetY="-220" maxHit="-1"/>		<!-- 拳师GC4特效 -->
+
+<Effect id="56" aniId="134" bind="1" offsetX="-40" offsetY="-120" maxHit="-1"/>		<!-- 拳师技能1回旋踢特效2 -->
+<Effect id="57" aniId="135" bind="1" offsetX="-40" offsetY="-120" maxHit="-1"/>		<!-- 拳师技能1回旋踢特效2 -->
+
+<Effect id="58" aniId="136" bind="1" offsetX="30" offsetY="-100" maxHit="-1"/>		<!-- 拳师技能1上踢特效 -->
+<Effect id="59" aniId="137" bind="2" offsetX="-250" offsetY="-300" maxHit="-1"/>		<!-- 拳师技能1砸地特效 -->
+
+<Effect id="60" aniId="138" bind="1" offsetX="20" offsetY="-230" maxHit="-1"/>		<!-- 拳师技能2乱舞第1击特效 -->
+<Effect id="61" aniId="139" bind="1" offsetX="30" offsetY="-100" maxHit="-1"/>		<!-- 拳师技能2上踢特效 -->
+<Effect id="62" aniId="140" bind="1" offsetX="0" offsetY="0" maxHit="-1"/>		<!-- 拳师技能2前踢特效 -->
+<Effect id="63" aniId="147" bind="1" offsetX="20" offsetY="-210" maxHit="-1"/>		<!-- 拳师技能2乱舞第2击特效 -->
+<Effect id="64" aniId="148" bind="1" offsetX="20" offsetY="-210" maxHit="-1"/>		<!-- 拳师技能2乱舞第3击特效 -->
+<Effect id="65" aniId="149" bind="1" offsetX="20" offsetY="-210" maxHit="-1"/>		<!-- 拳师技能2乱舞第4击特效 -->
+
+<Effect id="66" aniId="144" bind="1" offsetX="0" offsetY="-130" maxHit="-1"/>		<!-- 拳师技能4起手特效 -->
+<Effect id="67" aniId="145" bind="1" offsetX="30" offsetY="-100" maxHit="-1"/>		<!-- 拳师技能4上踢特效 -->
+<Effect id="68" aniId="146" bind="2" offsetX="-250" offsetY="-300" maxHit="-1"/>		<!-- 拳师技能4砸地特效 -->
+
+<Effect id="69" aniId="141" bind="1" offsetX="-30" offsetY="-210" maxHit="-1"/>		<!-- 拳师技能3拳风 -->
+<Effect id="70" aniId="142" bind="0" offsetX="-50" offsetY="-260" maxHit="-1"/>		<!-- 拳师技能3小飞行道具 -->
+<Effect id="71" aniId="143" bind="0" offsetX="-100" offsetY="-220" maxHit="-1"/>		<!-- 拳师技能3大飞行道具 -->
+
+<Effect id="72" aniId="143" bind="0" offsetX="-100" offsetY="-220" maxHit="-1"/>		<!-- 拳师技能4大飞行道具 -->
+<Effect id="73" aniId="150" bind="0" offsetX="70" offsetY="30" maxHit="-1"/>		<!-- 拳师技能4乱舞1、2击 -->
+<Effect id="74" aniId="151" bind="0" offsetX="-10" offsetY="-230" maxHit="-1"/>		<!-- 拳师技能4乱舞3击 -->
+<Effect id="75" aniId="152" bind="0" offsetX="-10" offsetY="-230" maxHit="-1"/>		<!-- 拳师技能4乱舞4击 -->
+<Effect id="76" aniId="153" bind="0" offsetX="150" offsetY="-90" maxHit="-1"/>		<!-- 拳师技能4乱舞5击 -->
+<Effect id="77" aniId="154" bind="0" offsetX="-10" offsetY="-230" maxHit="-1"/>		<!-- 拳师技能4乱舞6击 -->
+
+<!-- 暗夜使者特效 --> 
+<Effect id="100" aniId="230" bind="1" offsetX="20" offsetY="-30" maxHit="-1"/>		<!-- 暗夜GC1特效 -->
+<Effect id="101" aniId="231" bind="1" offsetX="-15" offsetY="-60" maxHit="-1"/>		<!-- 暗夜GC2特效 -->
+<Effect id="102" aniId="232" bind="1" offsetX="-5" offsetY="-32" maxHit="-1"/>		<!-- 暗夜GC3特效 -->
+<Effect id="103" aniId="233" bind="1" offsetX="-40" offsetY="-60" maxHit="-1"/>		<!-- 暗夜GC4特效 -->
+
+<Effect id="104" aniId="237" bind="0" offsetX="20" offsetY="-30" maxHit="-1"/>		<!-- 暗夜技能1飞刀1 -->
+<Effect id="105" aniId="238" bind="0" offsetX="20" offsetY="-30" maxHit="-1"/>		<!-- 暗夜技能1飞刀2 -->
+
+<Effect id="106" aniId="239" bind="1" offsetX="70" offsetY="-170" maxHit="-1"/>		<!-- 暗夜技能2第一击 -->
+<Effect id="107" aniId="240" bind="1" offsetX="70" offsetY="-170" maxHit="-1"/>		<!-- 暗夜技能2第二击 -->
+<Effect id="108" aniId="241" bind="0" offsetX="40" offsetY="-330" maxHit="-1"/>		<!-- 暗夜技能2第三击 -->
+
+<Effect id="109" aniId="242" bind="1" offsetX="0" offsetY="-250" maxHit="-1"/>		<!-- 暗夜技能3第一阶段 -->
+<Effect id="110" aniId="243" bind="0" offsetX="90" offsetY="-250" maxHit="-1"/>		<!-- 暗夜技能3第二阶段 -->
+
+<Effect id="111" aniId="244" bind="0" offsetX="110" offsetY="-250" maxHit="-1"/>		<!-- 暗夜技能3第一阶段正向 -->
+<Effect id="112" aniId="245" bind="0" offsetX="-60" offsetY="-250" maxHit="-1"/>		<!-- 暗夜技能3第一阶段反向 -->
+<Effect id="113" aniId="246" bind="0" offsetX="5" offsetY="-400" maxHit="-1"/>		<!-- 暗夜技能3第二阶段反向 -->
+
+<!-- 魔法师特效 --> 
+<Effect id="150" aniId="330" bind="0" offsetX="30" offsetY="-300" maxHit="-1"/>		<!-- 魔法师GC1特效 -->
+<Effect id="151" aniId="331" bind="0" offsetX="50" offsetY="-350" maxHit="-1"/>		<!-- 魔法师GC2特效 -->
+<Effect id="152" aniId="332" bind="1" offsetX="0" offsetY="-300" maxHit="-1"/>		<!-- 魔法师GC3身上特效 -->
+<Effect id="153" aniId="333" bind="0" offsetX="0" offsetY="-330" maxHit="-1"/>		<!-- 魔法师GC3打击特效 -->
+<Effect id="154" aniId="334" bind="1" offsetX="20" offsetY="-300" maxHit="-1"/>		<!-- 魔法师GC4特效 -->
+
+<Effect id="155" aniId="335" bind="0" offsetX="20" offsetY="-340" maxHit="-1"/>		<!-- 魔法师技能1地面1 -->
+<Effect id="156" aniId="335" bind="0" offsetX="220" offsetY="-340" maxHit="-1"/>		<!-- 魔法师技能1地面2 -->
+<Effect id="157" aniId="335" bind="0" offsetX="420" offsetY="-340" maxHit="-1"/>		<!-- 魔法师技能1地面3 -->
+<Effect id="158" aniId="336" bind="0" offsetX="170" offsetY="-200" maxHit="-1"/>		<!-- 魔法师技能1冰爆1 -->
+<Effect id="159" aniId="336" bind="0" offsetX="370" offsetY="-200" maxHit="-1"/>		<!-- 魔法师技能1冰爆2 -->
+<Effect id="160" aniId="336" bind="0" offsetX="570" offsetY="-200" maxHit="-1"/>		<!-- 魔法师技能1冰爆3 -->
+
+<Effect id="161" aniId="337" bind="0" offsetX="200" offsetY="-220" maxHit="-1"/>		<!-- 魔法师技能2砸地1 -->
+<Effect id="162" aniId="338" bind="0" offsetX="50" offsetY="-350" maxHit="-1"/>		<!-- 魔法师技能2砸地2 -->
+
+<Effect id="163" aniId="339" bind="0" offsetX="100" offsetY="-200" maxHit="-1"/>		<!-- 魔法师技能3飞行道具 -->
+
+<Effect id="164" aniId="340" bind="0" offsetX="250" offsetY="-150" maxHit="-1"/>		<!-- 魔法师技能4冰块 -->
+
+<Effect id="165" aniId="341" bind="2" offsetX="250" offsetY="-30" maxHit="-1"/>		<!-- 魔法师技能4冰剑1 -->
+<Effect id="166" aniId="342" bind="2" offsetX="280" offsetY="0" maxHit="-1"/>		<!-- 魔法师技能4冰剑2 -->
+<Effect id="167" aniId="343" bind="2" offsetX="240" offsetY="50" maxHit="-1"/>		<!-- 魔法师技能4冰剑3 -->
+<Effect id="168" aniId="344" bind="2" offsetX="210" offsetY="0" maxHit="-1"/>		<!-- 魔法师技能4冰剑4 -->
+<Effect id="169" aniId="345" bind="2" offsetX="240" offsetY="-30" maxHit="-1"/>		<!-- 魔法师技能4冰剑5 -->
+
+<Effect id="170" aniId="346" bind="0" offsetX="250" offsetY="-150" maxHit="-1"/>		<!-- 魔法师技能4冰块最终爆 -->
+<!-- 以下为怪物特效 -->
+
+<!-- 蜥蜴人特效 --> 
+<Effect id="500" aniId="7630" bind="1" offsetX="0" offsetY="0" maxHit="-1"/>		<!-- 准备动作 --> 
+<Effect id="501" aniId="7631" bind="1" offsetX="0" offsetY="0" maxHit="-1"/>		<!-- 生效 -->
+
+<!-- 寒冰虎特效 --> 
+<Effect id="505" aniId="7680" bind="1" offsetX="70" offsetY="-100" maxHit="-1"/> 
+
+<!-- 墓地骷髅特效 --> 
+<Effect id="510" aniId="7730" bind="1" offsetX="0" offsetY="0" maxHit="-1"/> 
+
+<!-- 牛头人特效 --> 
+<Effect id="515" aniId="7780" bind="1" offsetX="0" offsetY="0" maxHit="-1"/>
+
+<!-- 巨力锤使特效 --> 
+<Effect id="520" aniId="7830" bind="-1" offsetX="-10" offsetY="-100" maxHit="-1"/>
+
+<!-- 石巨人特效 --> 
+<Effect id="525" aniId="7880" bind="1" offsetX="0" offsetY="-110" maxHit="-1"/>
+<!-- 铁锤石巨人特效 --> 
+<Effect id="530" aniId="7930" bind="0" offsetX="0" offsetY="-120" maxHit="-1"/>		<!-- 抬手动作 --> 
+<Effect id="531" aniId="7931" bind="0" offsetX="-600" offsetY="30" maxHit="1"/>		<!-- 飞行道具 --> 
+
+<!-- 石刃拉泽尔特效 --> 
+<Effect id="535" aniId="7980" bind="1" offsetX="0" offsetY="-150" maxHit="-1"/>
+
+<!-- 哥布林矿工特效 --> 
+<Effect id="540" aniId="8030" bind="1" offsetX="-10" offsetY="-115" maxHit="-1"/>
+
+<!-- 驱逐者特效 --> 
+<Effect id="545" aniId="8080" bind="1" offsetX="30" offsetY="-95" maxHit="-1"/>
+
+<!-- 饥饿僵尸特效 --> 
+<Effect id="550" aniId="8180" bind="1" offsetX="30" offsetY="-95" maxHit="2"/>
+
+<!-- 哥布林射手特效 --> 
+<Effect id="555" aniId="8880" bind="0" offsetX="30" offsetY="0" maxHit="1"/>
+
+<!-- 天之驱逐者特效 --> 
+<Effect id="560" aniId="8230" bind="1" offsetX="50" offsetY="-100" maxHit="-1"/>
+<!-- 牛头卫兵特效 --> 
+<Effect id="565" aniId="9030" bind="-1" offsetX="-10" offsetY="-100" maxHit="-1"/>
+<!-- 湛蓝兽妖特效 --> 
+<Effect id="570" aniId="9530" bind="-1" offsetX="-10" offsetY="-100" maxHit="-1"/>
+<!-- 冰蛇特效 --> 
+<Effect id="575" aniId="9480" bind="-1" offsetX="-10" offsetY="-100" maxHit="-1"/>
+<!-- 雪猿特效 --> 
+<Effect id="580" aniId="9330" bind="1" offsetX="-10" offsetY="-100" maxHit="-1"/>
+<!-- 美人鱼战士攻击特效 --> 
+<Effect id="585" aniId="8280" bind="0" offsetX="80" offsetY="-170" maxHit="1"/>
+<!-- 美人鱼战士施法特效 --> 
+<Effect id="586" aniId="8281" bind="2" offsetX="0" offsetY="-130" maxHit="1"/>
+<!-- 蛇妖战士特效 --> 
+<Effect id="590" aniId="9080" bind="1" offsetX="0" offsetY="-130" maxHit="-1"/>
+<!-- 长戟蛇妖特效 --> 
+<Effect id="595" aniId="9130" bind="1" offsetX="0" offsetY="-130" maxHit="-1"/>
+<!-- 骷髅卫兵特效 --> 
+<Effect id="600" aniId="8480" bind="1" offsetX="0" offsetY="-130" maxHit="-1"/>
+<!-- 骷髅盾兵特效 --> 
+<Effect id="605" aniId="8430" bind="1" offsetX="0" offsetY="-130" maxHit="-1"/>
+<!-- 摄魂者攻击特效 --> 
+<Effect id="610" aniId="8930" bind="0" offsetX="80" offsetY="-250" maxHit="-1"/>
+<!-- 摄魂者施法特效 --> 
+<Effect id="611" aniId="8931" bind="-1" offsetX="0" offsetY="-160" maxHit="-1"/>
+<!-- 溶解怪攻击特效 --> 
+<Effect id="615" aniId="8980" bind="0" offsetX="50" offsetY="-200" maxHit="1"/>
+<!-- 溶解怪施法特效 --> 
+<Effect id="616" aniId="8981" bind="2" offsetX="0" offsetY="-130" maxHit="1"/>
+<!-- 食梦蚁特效 --> 
+<Effect id="620" aniId="8530" bind="1" offsetX="-10" offsetY="-110" maxHit="-1"/>
+<!-- 杀人蜂特效 --> 
+<Effect id="625" aniId="8580" bind="1" offsetX="0" offsetY="-100" maxHit="-1"/>
+<!-- 鱼人战士特效 --> 
+<Effect id="630" aniId="8830" bind="1" offsetX="0" offsetY="-100" maxHit="-1"/>
+<!-- 铁锤巨鳄特效 --> 
+<Effect id="635" aniId="8380" bind="-1" offsetX="-10" offsetY="-100" maxHit="-1"/>
+<!-- 刀锋之影特效 --> 
+<Effect id="640" aniId="8630" bind="-1" offsetX="0" offsetY="-110" maxHit="-1"/>
+<!-- 梦魇精灵特效 --> 
+<Effect id="645" aniId="9180" bind="1" offsetX="0" offsetY="-75" maxHit="-1"/>
+<!-- 黄金妖使攻击特效 --> 
+<Effect id="650" aniId="8130" bind="-1" offsetX="80" offsetY="-170" maxHit="1"/>
+<!-- 黄金妖使施法特效 --> 
+<Effect id="651" aniId="8131" bind="-1" offsetX="0" offsetY="-110" maxHit="-1"/>
+<!-- 大精灵法师特效 --> 
+<!-- 扒手特效 --> 
+<Effect id="660" aniId="9280" bind="-1" offsetX="0" offsetY="-110" maxHit="-1"/>
+<!-- 无法者特效 --> 
+<Effect id="665" aniId="9380" bind="-1" offsetX="0" offsetY="-100" maxHit="-1"/>
+<!-- 无法者技能特效 --> 
+<Effect id="666" aniId="9381" bind="1" offsetX="0" offsetY="-100" maxHit="-1"/>
+
+<!-- 帝国祭祀特效 --> 
+<Effect id="670" aniId="9580" bind="-1" offsetX="150" offsetY="-170" maxHit="-1"/>
+<!-- 丛林猎手特效 --> 
+<Effect id="675" aniId="9430" bind="0" offsetX="0" offsetY="38" maxHit="1"/>
+<!-- 野蛮武士特效 --> 
+<Effect id="680" aniId="8330" bind="-1" offsetX="30" offsetY="-100" maxHit="-1"/>
+<!-- 花仙子特效 --> 
+<Effect id="685" aniId="8780" bind="2" offsetX="0" offsetY="-300" maxHit="1"/>
+<!-- 龙人护卫特效 --> 
+<Effect id="690" aniId="8680" bind="-1" offsetX="0" offsetY="-110" maxHit="-1"/>
+
+
+
+<!-- 以下为精英怪物特效 -->
+<!-- 爆炎巨兽攻击特效 -->
+<Effect id="1000" aniId="15030" bind="1" offsetX="30" offsetY="40" maxHit="-1"/>
+<!-- 爆炎巨兽技能特效 -->
+<Effect id="1001" aniId="15031" bind="0" offsetX="180" offsetY="-20" maxHit="-1"/>
+
+<!-- 雪巨人攻击特效 -->
+<Effect id="1005" aniId="15330" bind="1" offsetX="30" offsetY="40" maxHit="-1"/>
+<!-- 雪巨人技能特效 -->
+<Effect id="1006" aniId="15331" bind="1" offsetX="-10" offsetY="-20" maxHit="-1"/>
+
+<!-- 噬魂怪攻击特效 -->
+<Effect id="1010" aniId="15280" bind="1" offsetX="150" offsetY="-30" maxHit="-1"/>
+<!-- 噬魂怪技能特效 -->
+<Effect id="1011" aniId="15281" bind="1" offsetX="110" offsetY="30" maxHit="-1"/>
+
+<!-- 血蝴蝶攻击特效 -->
+<Effect id="1015" aniId="15180" bind="1" offsetX="70" offsetY="50" maxHit="-1"/>
+<!-- 血蝴蝶技能特效1 -->
+<Effect id="1016" aniId="15181" bind="1" offsetX="40" offsetY="100" maxHit="3"/>
+<!-- 血蝴蝶技能特效2针刺 -->
+<Effect id="1017" aniId="15182" bind="1" offsetX="40" offsetY="60" maxHit="3"/>
+
+<!-- 龙人·卡姆拉攻击特效 -->
+<Effect id="1020" aniId="15380" bind="1" offsetX="100" offsetY="80" maxHit="-1"/>
+<!-- 龙人·卡姆拉技能特效 -->
+<Effect id="1021" aniId="15381" bind="1" offsetX="0" offsetY="-200" maxHit="-1"/>
+
+<!-- 空间守卫者拉攻击特效 -->
+<Effect id="1025" aniId="15130" bind="1" offsetX="180" offsetY="60" maxHit="-1"/>
+<!-- 空间守卫者技能1特效-瞬移 -->
+<Effect id="1026" aniId="15131" bind="-1" offsetX="-80" offsetY="-20" maxHit="3"/>
+<!-- 空间守卫者技能2特效-喷火 -->
+<Effect id="1027" aniId="15132" bind="0" offsetX="195" offsetY="-40" maxHit="-1"/>
+
+<!-- 炽炎拳·波迪尔攻击特效 -->
+<Effect id="1030" aniId="15430" bind="1" offsetX="120" offsetY="80" maxHit="-1"/>
+<!-- 炽炎拳·波迪尔技能特效 -->
+<Effect id="1031" aniId="15431" bind="1" offsetX="170" offsetY="30" maxHit="-1"/>
+
+<!-- 夜煞暴龙攻击特效 -->
+<Effect id="1035" aniId="15230" bind="-1" offsetX="210" offsetY="20" maxHit="-1"/>
+<!-- 夜煞暴龙技能特效 -->
+<Effect id="1036" aniId="15231" bind="0" offsetX="250" offsetY="-470" maxHit="-1"/>
+
+<!-- 人鱼前锋攻击特效 -->
+<Effect id="1040" aniId="15480" bind="1" offsetX="50" offsetY="55" maxHit="-1"/>
+<!-- 人鱼前锋技能特效 -->
+<Effect id="1041" aniId="15481" bind="1" offsetX="50" offsetY="-130" maxHit="-1"/>
+
+<!-- 暴戾祭祀瞬移特效-光柱 -->
+<Effect id="1045" aniId="15080" bind="1" offsetX="0" offsetY="-30" maxHit="-1"/>
+<!-- 暴戾祭祀瞬移特效-底座 -->
+<Effect id="1046" aniId="15081" bind="-1" offsetX="0" offsetY="-20" maxHit="-1"/>
+<!-- 暴戾祭祀技能特效 -->
+<Effect id="1047" aniId="15082" bind="0" offsetX="150" offsetY="100" maxHit="-1"/>
+
+<!-- 龙骑士特效1 -->
+<Effect id="1050" aniId="20031" bind="0" offsetX="-100" offsetY="-350" maxHit="-1"/>
+
+
+
+
+
+
+
+
+<!-- BOSS技能特效 -->
+<!-- 光之城主技能1特效 -->
+<Effect id="2000" aniId="20180" bind="1" offsetX="-10" offsetY="-60" maxHit="-1"/>
+<!-- 光之城主技能2特效 -->
+<Effect id="2001" aniId="20181" bind="1" offsetX="60" offsetY="-140" maxHit="-1"/>
+
+<!-- 寒冰石妖技能1特效 -->
+<Effect id="2010" aniId="20330" bind="1" offsetX="40" offsetY="-50" maxHit="-1"/>
+
+<!-- 寒冰石妖技能2旋转特效 -->
+<Effect id="2011" aniId="20331" bind="1" offsetX="0" offsetY="-110" maxHit="-1"/>
+
+<!-- 寒冰石妖技能2冰锥特效 -->
+<Effect id="2012" aniId="20332" bind="0" offsetX="0" offsetY="-150" maxHit="-1"/>
+
+<!-- 寒冰石妖技能3冰锥特效 -->
+<Effect id="2013" aniId="20333" bind="1" offsetX="0" offsetY="-50" maxHit="-1"/>
+
+<!-- 哥布林族长技能1特效 -->
+<Effect id="2020" aniId="20030" bind="1" offsetX="0" offsetY="-50" maxHit="-1"/>
+
+<!-- 哥布林族长技能2特效1 -->
+<Effect id="2021" aniId="20031" bind="0" offsetX="-120" offsetY="-350" maxHit="-1"/>
+<!-- 哥布林族长技能2特效2 -->
+<Effect id="2022" aniId="20031" bind="0" offsetX="0" offsetY="-350" maxHit="-1"/>
+<!-- 哥布林族长技能2特效3 -->
+<Effect id="2023" aniId="20031" bind="0" offsetX="120" offsetY="-350" maxHit="-1"/>
+
+<!-- 万兽之王技能1特效 -->
+<Effect id="2030" aniId="20630" bind="1" offsetX="0" offsetY="-100" maxHit="-1"/>
+<!-- 万兽之王技能2起跳特效 -->
+<Effect id="2031" aniId="20631" bind="1" offsetX="20" offsetY="-170" maxHit="-1"/>
+<!-- 万兽之王技能2攻击特效 -->
+<Effect id="2032" aniId="20632" bind="0" offsetX="20" offsetY="-300" maxHit="-1"/>
+<!-- 万兽之王技能2落地特效 -->
+<Effect id="2033" aniId="20633" bind="1" offsetX="0" offsetY="-200" maxHit="-1"/>
+
+<!-- 凛冬咆哮技能1特效 -->
+<Effect id="2040" aniId="20430" bind="-1" offsetX="-10" offsetY="-60" maxHit="-1"/>
+
+<!-- 凛冬咆哮技能2特效 -->
+<Effect id="2041" aniId="20431" bind="1" offsetX="-10" offsetY="-60" maxHit="-1"/>
+<!-- 凛冬咆哮技能3特效 -->
+<Effect id="2042" aniId="20432" bind="1" offsetX="20" offsetY="-200" maxHit="-1"/>
+
+<!-- 铁鳞巨鳄攻击特效 -->
+<Effect id="2050" aniId="20280" bind="1" offsetX="0" offsetY="-250" maxHit="-1"/>
+<!-- 铁鳞巨鳄技能1特效 -->
+<Effect id="2051" aniId="20281" bind="1" offsetX="0" offsetY="-230" maxHit="-1"/>
+<!-- 铁鳞巨鳄技能2特效 -->
+<Effect id="2052" aniId="20282" bind="0" offsetX="-20" offsetY="-450" maxHit="-1"/>
+<!-- 铁鳞巨鳄技能3特效 -->
+<Effect id="2053" aniId="20283" bind="1" offsetX="-20" offsetY="-200" maxHit="-1"/>
+<!-- 铁鳞巨鳄技能2身上特效 -->
+<Effect id="2054" aniId="20284" bind="-1" offsetX="-100" offsetY="-400" maxHit="-1"/>
+
+<!-- 征服者技能1刀光特效 -->
+<Effect id="2060" aniId="20530" bind="1" offsetX="-20" offsetY="-70" maxHit="-1"/>
+<!-- 征服者技能1飞行道具特效 -->
+<Effect id="2061" aniId="20531" bind="0" offsetX="70" offsetY="-260" maxHit="-1"/>
+<!-- 征服者技能2刀光特效 -->
+<Effect id="2062" aniId="20532" bind="1" offsetX="-20" offsetY="-120" maxHit="-1"/>
+<!-- 征服者技能2刀光特效 -->
+<Effect id="2063" aniId="20533" bind="1" offsetX="-20" offsetY="-120" maxHit="-1"/>
+<!-- 征服者技能3身上特效 -->
+<Effect id="2064" aniId="20534" bind="1" offsetX="0" offsetY="-40" maxHit="-1"/>
+<!-- 征服者技能3打击特效 -->
+<Effect id="2065" aniId="20535" bind="0" offsetX="0" offsetY="-280" maxHit="-1"/>
+
+<!-- 混沌支配者技能1刀光特效 -->
+<Effect id="2070" aniId="20580" bind="1" offsetX="-50" offsetY="-130" maxHit="-1"/>
+<!-- 混沌支配者技能1飞行道具特效 -->
+<Effect id="2071" aniId="20581" bind="0" offsetX="-50" offsetY="-400" maxHit="-1"/>
+<!-- 混沌支配者技能2身上光特效 -->
+<Effect id="2072" aniId="20582" bind="1" offsetX="-20" offsetY="-150" maxHit="-1"/>
+<!-- 混沌支配者技能2打击特效 -->
+<Effect id="2073" aniId="20583" bind="0" offsetX="20" offsetY="-200" maxHit="-1"/>
+<!-- 混沌支配者技能3特效 -->
+<Effect id="2074" aniId="20584" bind="0" offsetX="25" offsetY="-560" maxHit="-1"/>
+<!-- 混沌支配者技能4特效 -->
+<Effect id="2075" aniId="20585" bind="0" offsetX="20" offsetY="-500" maxHit="-1"/>
+
+<!-- 牛头械王技能1刀光特效 -->
+<Effect id="2080" aniId="20380" bind="-1" offsetX="10" offsetY="-80" maxHit="-1"/>
+<!-- 牛头械王技能2特效 -->
+<Effect id="2081" aniId="20381" bind="1" offsetX="-100" offsetY="-80" maxHit="-1"/>
+
+<!-- 机械臂·捷克攻击特效 -->
+<Effect id="2085" aniId="20230" bind="1" offsetX="10" offsetY="-50" maxHit="-1"/>
+<!-- 机械臂·捷克技能1特效 -->
+<Effect id="2086" aniId="20231" bind="2" offsetX="-10" offsetY="-320" maxHit="-1"/>
+<!-- 机械臂·捷克技能2特效 -->
+<Effect id="2087" aniId="20232" bind="1" offsetX="20" offsetY="-50" maxHit="-1"/>
+
+<!-- 世界BOSS技能1特效 -->
+<Effect id="2090" aniId="22580" bind="1" offsetX="-50" offsetY="-800" maxHit="-1"/>
+
+<!-- 世界BOSS技能2特效 -->
+<Effect id="2091" aniId="22581" bind="1" offsetX="250" offsetY="-700" maxHit="-1"/>
+
+<!-- 世界BOSS攻击特效 -->
+<Effect id="2092" aniId="22582" bind="-1" offsetX="500" offsetY="-400" maxHit="-1"/>
+
+<!-- 骷髅大帝攻击特效 -->
+<Effect id="2095" aniId="20080" bind="1" offsetX="20" offsetY="20" maxHit="-1"/>
+<!-- 骷髅大帝技能特效 -->
+<Effect id="2096" aniId="20081" bind="1" offsetX="-70" offsetY="-140" maxHit="-1"/>
+
+<!-- 死亡祭祀攻击特效 -->
+<Effect id="2100" aniId="20480" bind="1" offsetX="150" offsetY="0" maxHit="-1"/>
+
+<!-- 死亡祭祀技能爆炸特效 -->
+<Effect id="2101" aniId="20481" bind="1" offsetX="340" offsetY="100" maxHit="-1"/>
+
+<!-- 死亡祭祀技能飞行特效 -->
+<Effect id="2102" aniId="20482" bind="1" offsetX="600" offsetY="-130" maxHit="-1"/>
+
+<!-- 蝶妖王攻击特效 -->
+<Effect id="2105" aniId="20130" bind="1" offsetX="0" offsetY="-50" maxHit="-1"/>
+<!-- 蝶妖王技能1特效 -->
+<Effect id="2106" aniId="20131" bind="1" offsetX="0" offsetY="-20" maxHit="-1"/>
+<!-- 蝶妖王技能2特效 -->
+<Effect id="2107" aniId="20132" bind="1" offsetX="-100" offsetY="-40" maxHit="-1"/>
+
+<!-- 以下为通用特效 -->
+<!--主城特效-->
+<Effect id="2500" aniId="25000" bind="2" offsetX="0" offsetY="0" maxHit="-1"/> 
+<Effect id="2505" aniId="25005" bind="2" offsetX="0" offsetY="0" maxHit="-1"/> 
+<Effect id="2575" aniId="25075" bind="2" offsetX="0" offsetY="0" maxHit="-1"/> 
+
+<!-- 受创特效 -->
+<Effect id="2600" aniId="26000" bind="1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 升级 -->
+<Effect id="2601" aniId="26051" bind="1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 复活特效 -->
+<Effect id="2602" aniId="26078" bind="1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 补给特效 -->
+<Effect id="2603" aniId="26097" bind="1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 点击地面特效 -->
+<Effect id="2604" aniId="26050" bind="1" offsetX="0" offsetY="0" maxHit="-1"/> 
+
+
+<!-- 以下为场景陷阱特效 -->
+<!-- 空帧特效-地图陷阱-固定地刺用 -->
+<Effect id="2650" aniId="26085" bind="-1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 图腾喷火特效 -->
+<Effect id="2651" aniId="26086" bind="-1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 空帧特效-地图陷阱-滚木痛用 -->
+<Effect id="2652" aniId="26087" bind="-1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 空帧特效-怪物派生触发器-->
+<Effect id="2653" aniId="26090" bind="-1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 空帧特效-鸡腿派生触发器-->
+<Effect id="2654" aniId="26091" bind="-1" offsetX="0" offsetY="0" maxHit="-1"/> 
+<!-- 怪物出生特效-->
+<Effect id="2655" aniId="26092" bind="1" offsetX="0" offsetY="-50" maxHit="-1"/> 
+<!-- 空帧特效-地图陷阱-固定地刺用 -->
+<Effect id="2656" aniId="26099" bind="1" offsetX="0" offsetY="-50" maxHit="-1"/> 
+<!-- 空帧特效-滚筒 -->
+<Effect id="2657" aniId="26100" bind="1" offsetX="0" offsetY="-50" maxHit="1"/> 
+<!-- -滚筒影子 -->
+<Effect id="2658" aniId="26101" bind="-1" offsetX="0" offsetY="-50" maxHit="-1"/> 
+<!-- -陨石降落 -->
+<Effect id="2659" aniId="26102" bind="0" offsetX="210" offsetY="0" maxHit="-1"/> 
+<!-- -陨石影子 -->
+<Effect id="2660" aniId="26103" bind="2" offsetX="100" offsetY="0" maxHit="-1"/> 
+
+
+</Effects>

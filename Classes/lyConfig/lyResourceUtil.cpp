@@ -20,6 +20,7 @@ std::vector<std::string> lyResourceUtil::getResourceSearchPaths()
     searchPath.push_back("res");
     searchPath.push_back("ui");
     searchPath.push_back("images");
+    searchPath.push_back("Table");
     
     
     
