@@ -26,19 +26,21 @@ public:
     ~lyCSVReader();
 
     static lyCSVReader* getInstance();
-    //解析csv. fileName.csv文件名,
-    void parse(const char *fileName);
-    
-    //获取内容map. filename:文件名
-    const MAP_CONTENT* getContentMap(std::string filename);
-    //获取一行map.filename:文件名， code一行code
-    const MAP_LINE* getLineMap(std::string filename, int code);
-    //获取表数据的行数map.filename:文件名
-    int getLineCountMap(std::string filename);
+    //解析csv
+    void Parse(std::string strCSVPath);
+    //获取某CSV表的行数
+    int getLineNum(std::string strCSVPath);
     //获取某行某列的值
-    const std::string getByCode(std::string filename, int code, const std::string &key);
+    const std::string getValue(std::string strCSVPath, int nRowId, const std::string &strColumn);
+    
 private:
-    //读取csv的一行.line:一行的内容
+    //获取内容map
+    const MAP_CONTENT* getFile(std::string strCSVPath);
+    //获取某一行value
+    const MAP_LINE* getOneLine(std::string strCSVPath, int code);
+   
+
+    //读取csv的一行
     void readCSVLine(const char *line, int index);
     
     VEC_MAP m_firstVector;                                          //第一行的vector

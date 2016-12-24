@@ -16,17 +16,12 @@ using namespace std;
 
 
 //通过table取得数据
-#define lyTableName(tName, nId, strKey)\
-lyCSVReader::getInstance()->getByCode(string("Table/")+tName+".csv", nId, strKey)
-//获得table
-#define lyTablePath(tPath, nId, strKey)\
-lyCSVReader::getInstance()->getByCode(tPath, nId, strKey)
+#define lyTableValue(strCSVPath, nId, strKey)\
+lyCSVReader::getInstance()->getValue(strCSVPath, nId, strKey)
+
 //通过table取得数据条数
-#define lyTableLineCount(tName)\
-lyCSVReader::getInstance()->getLineCountMap(string("Table/")+tName+".csv")
-//获得table数据条数
-#define lyTablePathLineCount(tPath)\
-lyCSVReader::getInstance()->getLineCountMap(tPath)
+#define lyTableLines(strCSVPath)\
+lyCSVReader::getInstance()->getLineNum(strCSVPath)
 
 
 

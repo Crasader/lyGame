@@ -89,34 +89,18 @@ void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Cont
 {
     //CCLOG("onPressCtrlButton");
     //csv表格读取测试
-    lyCSVReader::getInstance()->parse("Table/Texture.csv");
-   /*
-    //通过table取得数据
-    #define lyTable(tName, nId, strKey)\
-    lyCSVReader::getInstance()->getByCode(string("Table/")+tName+".csv", nId, strKey)
-    //获得table
-    #define lyTablePath(tPath, nId, strKey)\
-    lyCSVReader::getInstance()->getByCode(tPath, nId, strKey)
-    //通过table取得数据条数
-    #define lyTableLineCount(tName)\
-    lyCSVReader::getInstance()->getLineCountMap(string("Table/")+tName+".csv")
-    //获得table数据条数
-    #define lyTablePathLineCount(tPath)\
-    lyCSVReader::getInstance()->getLineCountMap(tPath)
-    */
     
-    
-    std::string strPath1 = lyTableName("Map", 2, "MSPath");
+    std::string strPath1 = lyTableValue("Table/Map.csv", 2, "MSPath");
     CCLOG("------------------------------");
     CCLOG("strPath1=%s",strPath1.c_str());
     
-    std::string SprId = lyTablePath(strPath1, 0, "SprId");
+    std::string SprId = lyTableValue(strPath1, 0, "SprId");
     CCLOG("SprId=%s",SprId.c_str());
     
-    int Line1 = lyTableLineCount("Map");
+    int Line1 = lyTableLines("Table/Map.csv");
     CCLOG("Map Line1=%d",Line1);
     
-    int Line2 = lyTablePathLineCount(strPath1);
+    int Line2 = lyTableLines(strPath1);
     CCLOG("strPath1=%s,Line2=%d",strPath1.c_str(),Line2);
     
     

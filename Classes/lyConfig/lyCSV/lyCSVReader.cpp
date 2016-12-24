@@ -34,67 +34,58 @@ lyCSVReader* lyCSVReader::getInstance()
     }
     return _pInstanceCSVReader;
 }
-
-//获取内容map. filename:文件名
-const MAP_CONTENT* lyCSVReader::getContentMap(std::string filename)
+const MAP_CONTENT* lyCSVReader::getFile(std::string strCSVPath)
 {
     //如果表数据不在内存中，解析表数据
-    if(m_fileMap.find(filename) == m_fileMap.end())
+    if(m_fileMap.find(strCSVPath) == m_fileMap.end())
     {
-        parse(filename.c_str());
+        this->Parse(strCSVPath.c_str());
     }
     //获得表数据
-    if(m_fileMap.find(filename) != m_fileMap.end())
+    if(m_fileMap.find(strCSVPath) != m_fileMap.end())
     {
-        return &(m_fileMap.find(filename)->second);
+        return &(m_fileMap.find(strCSVPath)->second);
     }
     return nullptr;
 }
-//获取一行map.filename:文件名， code一行code
-const MAP_LINE* lyCSVReader::getLineMap(std::string filename, int code)
+const MAP_LINE* lyCSVReader::getOneLine(std::string strCSVPath, int code)
 {
-    const MAP_CONTENT* content = getContentMap(filename);
+    const MAP_CONTENT* content = getFile(strCSVPath);
     if(content && content->find(code) != content->end())
     {
         return &(content->find(code)->second);
     }
     return nullptr;
 }
-//获取表数据的行数map.filename:文件名
-int lyCSVReader::getLineCountMap(std::string filename)
+int lyCSVReader::getLineNum(std::string strCSVPath)
 {
-    const MAP_CONTENT* content = getContentMap(filename);
+    const MAP_CONTENT* content = getFile(strCSVPath);
     if(content)
     {
         return (int)content->size();
     }
     return 0;
 }
-
-//获取某行某列的值
-const std::string lyCSVReader::getByCode(std::string filename, int code, const std::string &key)
+const std::string lyCSVReader::getValue(std::string strCSVPath, int nRowId, const std::string &strColumn)
 {
-    const MAP_LINE* line = getLineMap(filename, code);
-    if(line && line->find(key) != line->end())
+    const MAP_LINE* line = getOneLine(strCSVPath, nRowId);
+    if(line && line->find(strColumn) != line->end())
     {
-        return line->find(key)->second;
+        return line->find(strColumn)->second;
     }
     return "";
 }
-
-//解析csv. fileName:csv文件名,
-void lyCSVReader::parse(const char *fileName)
+void lyCSVReader::Parse(std::string strCSVPath)
 {
     m_contentMap.clear();       //首先进行清理
-    std::string path = fileName;
     
-    if(!FileUtils::getInstance()->isFileExist(path))
+    if(!FileUtils::getInstance()->isFileExist(strCSVPath))
     {
-        CCLOG("CSV file %s is not exist!!", path.c_str());
+        CCLOG("CSV file %s is not exist!!", strCSVPath.c_str());
         return;
     }
     unsigned long size = 0;
-    std::string strData = FileUtils::getInstance()->getStringFromFile(path.c_str());
+    std::string strData = FileUtils::getInstance()->getStringFromFile(strCSVPath);
     const char* data = strData.c_str();
     
     char line[32768];   //一行最多字节数
@@ -131,10 +122,9 @@ void lyCSVReader::parse(const char *fileName)
     *pl = '\0';
     
     //添加到map
-    m_fileMap.insert(std::map<std::string, MAP_CONTENT>::value_type(fileName, m_contentMap));
+    m_fileMap.insert(std::map<std::string, MAP_CONTENT>::value_type(strCSVPath, m_contentMap));
 }
 
-//读取csv的一行.line:一行的内容
 void lyCSVReader::readCSVLine(const char *line, int index)
 {
     char value[32768];  //一行最多字节数
