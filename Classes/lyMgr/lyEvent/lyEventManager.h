@@ -11,13 +11,25 @@
 #ifndef __lyGame__lyEventManager__
 #define __lyGame__lyEventManager__
 
+#include "lyEvent.h"
+
 class lyEventManager
 {
 public:
     lyEventManager();
-    virtual ~lyEventManager();
+    ~lyEventManager();
+
+    static lyEventManager* ShareInstance();
+    
+    static void RegEventCPP(XEventType byType,XEventCallBack pCallBackFunc, long dwObjID );
+    static void ExecuteEventCPP(XEventType byType, long dwObjID ,long dwParam = 0 );
+    
+    static void ClearEvents(int eventID, long objGuid);
     
 private:
+    static lyEventManager* m_EventInstance;
+    
+    static lyLinkMgr<lyEvent> m_objEventMgr;
 };
 
 

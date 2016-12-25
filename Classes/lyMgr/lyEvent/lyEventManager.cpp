@@ -19,6 +19,56 @@ lyEventManager::lyEventManager()
 
 lyEventManager::~lyEventManager()
 {
+    if (m_EventInstance)
+    {
+        delete m_EventInstance;
+    }
 }
 
 
+lyEventManager* lyEventManager::m_EventInstance = 0;
+lyLinkMgr<lyEvent> lyEventManager::m_objEventMgr;
+
+
+lyEventManager* lyEventManager::ShareInstance()
+{
+    if (!m_EventInstance)
+    {
+        m_EventInstance = new lyEventManager();
+    }
+    return m_EventInstance;
+}
+void lyEventManager::RegEventCPP( XEventType byType,XEventCallBack pCallBackFunc, long dwObjID )
+{
+    
+    lyEvent* pEvent = lyEvent::Create();
+    if (pEvent)
+    {
+        pEvent->m_byType = byType;
+        pEvent->m_dwObjID = dwObjID;
+        pEvent->m_CallBackFunc = pCallBackFunc;
+        m_objEventMgr.AddLinkItem(pEvent);
+    }
+    
+}
+void lyEventManager::ExecuteEventCPP( XEventType byType, long dwObjID ,long dwParam /*= 0 */ )
+{
+    lyEvent* pEvent = m_objEventMgr.GetHeader();
+    while (1)
+    {
+        if (!pEvent)
+        {
+            return;
+        }
+        if ( pEvent  && pEvent->m_byType == byType && pEvent->m_dwObjID == dwObjID)
+        {
+            pEvent->m_CallBackFunc(dwObjID);
+            return;
+        }
+        pEvent = m_objEventMgr.GetNextItem(pEvent);
+    }
+}
+void lyEventManager::ClearEvents( int eventID, long objGuid )
+{
+
+}

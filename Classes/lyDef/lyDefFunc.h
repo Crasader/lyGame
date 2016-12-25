@@ -1,5 +1,5 @@
 //
-//  lyFunc.h
+//  lyDefFunc.h
 //  lyGame
 //	函数宏定义头文件
 //  Created by loveyur on 2016/11/24

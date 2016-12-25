@@ -17,6 +17,7 @@
 template<class T> class lyLinkMgr;
 
 template<class T>
+
 class lyLinkItem
 {
 public:
