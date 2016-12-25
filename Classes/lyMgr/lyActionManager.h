@@ -11,15 +11,21 @@
 #ifndef __lyGame__lyActionManager__
 #define __lyGame__lyActionManager__
 
+#include "lyActionGroup.h"
+
 class lyActionManager
 {
 public:
     lyActionManager();
     virtual ~lyActionManager();
     
-    
+    static lyActionManager* GetInstance();
+    void AddGroup( lyActionGroup* pActGroup, unsigned int nGroupId );
+    lyActionGroup* GetGroup( unsigned int nGroupId );
     
 private:
+    static lyActionGroup*		m_szGroupObj[SZ_MAX_ACT_GROUP];
+    static lyActionManager*     m_pInstance;
 };
 
 

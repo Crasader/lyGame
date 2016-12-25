@@ -80,7 +80,6 @@
 		795D2E6E1E0EA9A3001AEEF4 /* lyBaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E671E0EA9A3001AEEF4 /* lyBaseScene.cpp */; };
 		795D2E6F1E0EA9A3001AEEF4 /* lySceneManger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E691E0EA9A3001AEEF4 /* lySceneManger.cpp */; };
 		795D2E761E0EAA82001AEEF4 /* lyAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E701E0EAA82001AEEF4 /* lyAction.cpp */; };
-		795D2E771E0EAA82001AEEF4 /* lyActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E721E0EAA82001AEEF4 /* lyActionManager.cpp */; };
 		795D2E781E0EAA82001AEEF4 /* lyFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E741E0EAA82001AEEF4 /* lyFrame.cpp */; };
 		795D2E7D1E0EAA8D001AEEF4 /* lyEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E791E0EAA8D001AEEF4 /* lyEvent.cpp */; };
 		795D2E7E1E0EAA8D001AEEF4 /* lyEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E7B1E0EAA8D001AEEF4 /* lyEventManager.cpp */; };
@@ -92,6 +91,11 @@
 		795D2E9C1E0F644A001AEEF4 /* lyLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E991E0F644A001AEEF4 /* lyLog.cpp */; };
 		795D2EA71E0F77C6001AEEF4 /* lyStringOper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EA51E0F77C6001AEEF4 /* lyStringOper.cpp */; };
 		795D2EAB1E0F9F71001AEEF4 /* lyMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EA91E0F9F71001AEEF4 /* lyMemory.cpp */; };
+		795D2EB11E0FA97D001AEEF4 /* lyEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EAD1E0FA97D001AEEF4 /* lyEffect.cpp */; };
+		795D2EB21E0FA97D001AEEF4 /* lyRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EAF1E0FA97D001AEEF4 /* lyRole.cpp */; };
+		795D2EB61E0FAA10001AEEF4 /* lyBaseCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EB41E0FAA10001AEEF4 /* lyBaseCtrl.cpp */; };
+		795D2EBC1E0FB00D001AEEF4 /* lyActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EBA1E0FB00D001AEEF4 /* lyActionManager.cpp */; };
+		795D2EBF1E0FB01A001AEEF4 /* lyActionGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EBD1E0FB01A001AEEF4 /* lyActionGroup.cpp */; };
 		79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BAC1DDDA73000CD7FB6 /* CCCrypto.cpp */; };
 		79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB21DDDA75D00CD7FB6 /* sha1.cpp */; };
 		79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB51DDDA76900CD7FB6 /* md5.c */; };
@@ -285,8 +289,6 @@
 		795D2E6C1E0EA9A3001AEEF4 /* UISceneID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISceneID.h; path = lyMgr/lyScene/UISceneID.h; sourceTree = "<group>"; };
 		795D2E701E0EAA82001AEEF4 /* lyAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyAction.cpp; path = lyMgr/lyAction/lyAction.cpp; sourceTree = "<group>"; };
 		795D2E711E0EAA82001AEEF4 /* lyAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyAction.h; path = lyMgr/lyAction/lyAction.h; sourceTree = "<group>"; };
-		795D2E721E0EAA82001AEEF4 /* lyActionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyActionManager.cpp; path = lyMgr/lyAction/lyActionManager.cpp; sourceTree = "<group>"; };
-		795D2E731E0EAA82001AEEF4 /* lyActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyActionManager.h; path = lyMgr/lyAction/lyActionManager.h; sourceTree = "<group>"; };
 		795D2E741E0EAA82001AEEF4 /* lyFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyFrame.cpp; path = lyMgr/lyAction/lyFrame.cpp; sourceTree = "<group>"; };
 		795D2E751E0EAA82001AEEF4 /* lyFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyFrame.h; path = lyMgr/lyAction/lyFrame.h; sourceTree = "<group>"; };
 		795D2E791E0EAA8D001AEEF4 /* lyEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyEvent.cpp; path = lyMgr/lyEvent/lyEvent.cpp; sourceTree = "<group>"; };
@@ -312,6 +314,17 @@
 		795D2EA61E0F77C6001AEEF4 /* lyStringOper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyStringOper.h; path = lyHelper/lyStringOper.h; sourceTree = "<group>"; };
 		795D2EA91E0F9F71001AEEF4 /* lyMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyMemory.cpp; path = lyMgr/lyMemory/lyMemory.cpp; sourceTree = "<group>"; };
 		795D2EAA1E0F9F71001AEEF4 /* lyMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyMemory.h; path = lyMgr/lyMemory/lyMemory.h; sourceTree = "<group>"; };
+		795D2EAD1E0FA97D001AEEF4 /* lyEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyEffect.cpp; path = lyRole/lyEffect.cpp; sourceTree = "<group>"; };
+		795D2EAE1E0FA97D001AEEF4 /* lyEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyEffect.h; path = lyRole/lyEffect.h; sourceTree = "<group>"; };
+		795D2EAF1E0FA97D001AEEF4 /* lyRole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyRole.cpp; path = lyRole/lyRole.cpp; sourceTree = "<group>"; };
+		795D2EB01E0FA97D001AEEF4 /* lyRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyRole.h; path = lyRole/lyRole.h; sourceTree = "<group>"; };
+		795D2EB41E0FAA10001AEEF4 /* lyBaseCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyBaseCtrl.cpp; path = lyUI/lyBaseCtrl.cpp; sourceTree = "<group>"; };
+		795D2EB51E0FAA10001AEEF4 /* lyBaseCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyBaseCtrl.h; path = lyUI/lyBaseCtrl.h; sourceTree = "<group>"; };
+		795D2EBA1E0FB00D001AEEF4 /* lyActionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyActionManager.cpp; path = lyMgr/lyActionManager.cpp; sourceTree = "<group>"; };
+		795D2EBB1E0FB00D001AEEF4 /* lyActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyActionManager.h; path = lyMgr/lyActionManager.h; sourceTree = "<group>"; };
+		795D2EBD1E0FB01A001AEEF4 /* lyActionGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyActionGroup.cpp; path = lyMgr/lyAction/lyActionGroup.cpp; sourceTree = "<group>"; };
+		795D2EBE1E0FB01A001AEEF4 /* lyActionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyActionGroup.h; path = lyMgr/lyAction/lyActionGroup.h; sourceTree = "<group>"; };
+		795D2EC01E0FB0B4001AEEF4 /* lyEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyEnum.h; path = lyDef/lyEnum.h; sourceTree = "<group>"; };
 		79CC9B7C1DDDA66A00CD7FB6 /* lyChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyChannel.h; path = lyDef/lyChannel.h; sourceTree = "<group>"; };
 		79CC9B7D1DDDA66A00CD7FB6 /* lyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyCommon.h; path = lyDef/lyCommon.h; sourceTree = "<group>"; };
 		79CC9B7E1DDDA66A00CD7FB6 /* lyInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyInclude.h; path = lyDef/lyInclude.h; sourceTree = "<group>"; };
@@ -557,11 +570,13 @@
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				79CC9B4A1DDDA35500CD7FB6 /* lyBase */,
-				795D2E7F1E0EB206001AEEF4 /* lyHelper */,
 				79CC9B511DDDA46100CD7FB6 /* lyDef */,
+				795D2E7F1E0EB206001AEEF4 /* lyHelper */,
 				795D2E371E0EA8DB001AEEF4 /* lyLayer */,
 				795D2E2E1E0EA852001AEEF4 /* lyMgr */,
+				795D2EAC1E0FA970001AEEF4 /* lyRole */,
 				79CC9B581DDDA49600CD7FB6 /* lyTest */,
+				795D2EB31E0FAA07001AEEF4 /* lyUI */,
 				79CC9B591DDDA49F00CD7FB6 /* lyUtils */,
 			);
 			name = Classes;
@@ -628,6 +643,8 @@
 		795D2E2E1E0EA852001AEEF4 /* lyMgr */ = {
 			isa = PBXGroup;
 			children = (
+				795D2EBA1E0FB00D001AEEF4 /* lyActionManager.cpp */,
+				795D2EBB1E0FB00D001AEEF4 /* lyActionManager.h */,
 				795D2EA81E0F9F62001AEEF4 /* lyMemory */,
 				795D2E2F1E0EA86C001AEEF4 /* lyAction */,
 				795D2E301E0EA874001AEEF4 /* lyCCB */,
@@ -643,10 +660,10 @@
 		795D2E2F1E0EA86C001AEEF4 /* lyAction */ = {
 			isa = PBXGroup;
 			children = (
+				795D2EBD1E0FB01A001AEEF4 /* lyActionGroup.cpp */,
+				795D2EBE1E0FB01A001AEEF4 /* lyActionGroup.h */,
 				795D2E701E0EAA82001AEEF4 /* lyAction.cpp */,
 				795D2E711E0EAA82001AEEF4 /* lyAction.h */,
-				795D2E721E0EAA82001AEEF4 /* lyActionManager.cpp */,
-				795D2E731E0EAA82001AEEF4 /* lyActionManager.h */,
 				795D2E741E0EAA82001AEEF4 /* lyFrame.cpp */,
 				795D2E751E0EAA82001AEEF4 /* lyFrame.h */,
 			);
@@ -800,6 +817,26 @@
 			name = lyMemory;
 			sourceTree = "<group>";
 		};
+		795D2EAC1E0FA970001AEEF4 /* lyRole */ = {
+			isa = PBXGroup;
+			children = (
+				795D2EAD1E0FA97D001AEEF4 /* lyEffect.cpp */,
+				795D2EAE1E0FA97D001AEEF4 /* lyEffect.h */,
+				795D2EAF1E0FA97D001AEEF4 /* lyRole.cpp */,
+				795D2EB01E0FA97D001AEEF4 /* lyRole.h */,
+			);
+			name = lyRole;
+			sourceTree = "<group>";
+		};
+		795D2EB31E0FAA07001AEEF4 /* lyUI */ = {
+			isa = PBXGroup;
+			children = (
+				795D2EB41E0FAA10001AEEF4 /* lyBaseCtrl.cpp */,
+				795D2EB51E0FAA10001AEEF4 /* lyBaseCtrl.h */,
+			);
+			name = lyUI;
+			sourceTree = "<group>";
+		};
 		79CC9B4A1DDDA35500CD7FB6 /* lyBase */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +862,7 @@
 		79CC9B511DDDA46100CD7FB6 /* lyDef */ = {
 			isa = PBXGroup;
 			children = (
+				795D2EC01E0FB0B4001AEEF4 /* lyEnum.h */,
 				795D2E831E0EBB6D001AEEF4 /* lyDefFunc.h */,
 				79CC9B7C1DDDA66A00CD7FB6 /* lyChannel.h */,
 				79CC9B7D1DDDA66A00CD7FB6 /* lyCommon.h */,
@@ -1111,7 +1149,6 @@
 			files = (
 				795D2E5A1E0EA989001AEEF4 /* CoreCCBSprite.cpp in Sources */,
 				795D2E6F1E0EA9A3001AEEF4 /* lySceneManger.cpp in Sources */,
-				795D2E771E0EAA82001AEEF4 /* lyActionManager.cpp in Sources */,
 				794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */,
 				795D2E3E1E0EA94B001AEEF4 /* loginLayer.cpp in Sources */,
 				79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */,
@@ -1122,6 +1159,7 @@
 				79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */,
 				795D2E291E0EA848001AEEF4 /* Caption.cpp in Sources */,
 				79E963E21DFDABC30091A060 /* testLayer.cpp in Sources */,
+				795D2EBC1E0FB00D001AEEF4 /* lyActionManager.cpp in Sources */,
 				795D2E9C1E0F644A001AEEF4 /* lyLog.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */,
@@ -1143,6 +1181,7 @@
 				795D2EA71E0F77C6001AEEF4 /* lyStringOper.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				795D2E4C1E0EA97E001AEEF4 /* lyCCBLoaderLibrary.cpp in Sources */,
+				795D2EB61E0FAA10001AEEF4 /* lyBaseCtrl.cpp in Sources */,
 				79CC9BD41DDDA78C00CD7FB6 /* LocalizedString.cpp in Sources */,
 				79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */,
 				79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */,
@@ -1150,9 +1189,11 @@
 				795D2E421E0EA95A001AEEF4 /* loadingText.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				795D2E2B1E0EA848001AEEF4 /* ObserverController.cpp in Sources */,
+				795D2EB11E0FA97D001AEEF4 /* lyEffect.cpp in Sources */,
 				795D2E581E0EA989001AEEF4 /* CoreCCBLayer.cpp in Sources */,
 				795D2E6E1E0EA9A3001AEEF4 /* lyBaseScene.cpp in Sources */,
 				795D2E481E0EA961001AEEF4 /* lyBaseLayerModule.cpp in Sources */,
+				795D2EBF1E0FB01A001AEEF4 /* lyActionGroup.cpp in Sources */,
 				795D2E761E0EAA82001AEEF4 /* lyAction.cpp in Sources */,
 				795D2E5B1E0EA989001AEEF4 /* CoreLayer.cpp in Sources */,
 				795D2E911E0F6402001AEEF4 /* lyCSVReader.cpp in Sources */,
@@ -1160,6 +1201,7 @@
 				795D2E571E0EA989001AEEF4 /* CCBInterfaceHandler.cpp in Sources */,
 				795D2E9B1E0F644A001AEEF4 /* lyCounter.cpp in Sources */,
 				79CC9BD51DDDA78C00CD7FB6 /* RandomUtil.cpp in Sources */,
+				795D2EB21E0FA97D001AEEF4 /* lyRole.cpp in Sources */,
 				79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				79CC9BD31DDDA78C00CD7FB6 /* DictUtil.cpp in Sources */,
@@ -1344,6 +1386,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/network",
 					"$(SRCROOT)/../cocos2d/cocos/audio/include",
 					"$(SRCROOT)/../cocos2d/cocos/editor-support",
+					"$(SRCROOT)/../cocos2d/cocos/deprecated",
 					"$(SRCROOT)/../Classes/lyBase",
 					"$(SRCROOT)/../Classes/lyMgr",
 					"$(SRCROOT)/../Classes/lyDef",
@@ -1379,6 +1422,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/network",
 					"$(SRCROOT)/../cocos2d/cocos/audio/include",
 					"$(SRCROOT)/../cocos2d/cocos/editor-support",
+					"$(SRCROOT)/../cocos2d/cocos/deprecated",
 					"$(SRCROOT)/../Classes/lyBase",
 					"$(SRCROOT)/../Classes/lyMgr",
 					"$(SRCROOT)/../Classes/lyDef",

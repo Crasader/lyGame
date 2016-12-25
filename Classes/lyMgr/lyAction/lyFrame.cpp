@@ -20,5 +20,17 @@ lyFrame::lyFrame()
 lyFrame::~lyFrame()
 {
 }
+lyFrame* lyFrame::Create()
+{
+    return new lyFrame();
+}
 
+void lyFrame::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
+{
+    setPosition(ccp(fx,fy));
+    setScaleX( fScale );
+    setScaleY( fScale );
+    setOpacity( alpha );
+    visit();
+}
 

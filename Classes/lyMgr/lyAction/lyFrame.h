@@ -11,11 +11,23 @@
 #ifndef __lyGame__lyFrame__
 #define __lyGame__lyFrame__
 
-class lyFrame
+#include "lyLink.h"
+#include "cocos2d.h"
+using namespace cocos2d;
+
+#define SZ_ACT_MAX 50
+
+class lyFrame:
+public CCSprite,
+public lyLinkItem<lyFrame>
 {
 public:
     lyFrame();
-    virtual ~lyFrame();
+    ~lyFrame();
+    
+    static lyFrame* Create();
+    
+    void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
     
 private:
 };
