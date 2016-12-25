@@ -18,13 +18,15 @@ public:
 	~lyRole();
 	static lyRole* Create();
 
-	virtual void OnFrame(float fDeltaTime);
-	virtual void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
-
-	void SetRoleId(unsigned int nRoleId);
-	unsigned int GetRoleId(void);
-	void SetActGroupId(unsigned int Id);
-	void SetActState( unsigned char byState );
+    virtual void onEnter();
+    virtual void onExit();
+    virtual void update(float delta);
+    
+    
+	void setRoleId(unsigned int nRoleId);
+	unsigned int getRoleId(void);
+	void setGroupId(unsigned int Id);
+	void setActState( unsigned char byState );
 
 
 protected:

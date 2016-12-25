@@ -53,36 +53,6 @@ void lyBaseCtrl::SetPosition( float fx, float fy )
 	m_fCtrlY = fy;
 }
 
-bool lyBaseCtrl::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
-{
-	if(!m_bIsCtrlVisible)
-		return false;
-
-	CCPoint pos = pTouch->getLocationInView();
-	if(pos.x < m_fCtrlX || pos.x > m_fCtrlX + m_fCtrlW)
-		return false;
-	if(pos.y < m_fCtrlY || pos.y > m_fCtrlY + m_fCtrlH)
-		return false;
-
-	if(!m_bCtrlEnable)
-		return true;
-
-	m_bIsTouchDown = true;
-	return true;
-}
-bool lyBaseCtrl::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
-{
-	return false;
-}
-bool lyBaseCtrl::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
-{
-	if(!m_bIsTouchDown)
-		return false;
-
-	m_bIsTouchDown = false;
-	return true;
-}
-
 void lyBaseCtrl::DrawTestRect(float x,float y,ccColor3B& color)
 {
 	ccDrawColor4B(color.r,color.g,color.b,255);
@@ -100,30 +70,29 @@ void lyBaseCtrl::SetCtrlVisible( bool bVisible )
 	m_bIsCtrlVisible = bVisible;
 }
 
-void lyBaseCtrl::visit()
+void lyBaseCtrl::onEnter()
 {
-
+    Layer::onEnter();
 }
 
-void lyBaseCtrl::OnFrame( float fDeltaTime )
+void lyBaseCtrl::onExit()
 {
-	lyBaseCtrl* pCtrl = GetHeader();
-	while(pCtrl)
-	{
-		pCtrl->OnFrame(fDeltaTime);
-		pCtrl = GetNextItem(pCtrl);
-	}
+    Layer::onExit();
 }
 
-void lyBaseCtrl::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
+void lyBaseCtrl::update(float delta)
 {
-	lyBaseCtrl* pCtrl = GetHeader();
-	while(pCtrl)
-	{
-		pCtrl->OnDraw(fx, fy,fScale, alpha);
-		pCtrl = GetNextItem(pCtrl);
-	}
-
+    if(!_children.empty())
+    {
+        for (auto& child : _children)
+        {
+            Node* childWin = dynamic_cast<Node*>(child);
+            if(childWin)
+            {
+                childWin->update(delta);
+            }
+        }
+    }
 }
 
 void lyBaseCtrl::addChild( lyBaseCtrl* pCtrl )

@@ -15,6 +15,12 @@
 #include "lyCSVReader.h"
 #include "lyDefFunc.h"
 
+#include "lyActionGroup.h"
+#include "lyActionManager.h"
+#include "lyPlistManager.h"
+//#include "lyRole.h"
+
+
 USING_NS_CC;
 USING_NS_CC_EXT;
 
@@ -22,12 +28,14 @@ USING_NS_CC_EXT;
 testLayer::testLayer()
 : _isMoving(false)
 , _nameLabel(nullptr)
+,_myRole(nullptr)
 {
 }
 
 testLayer::~testLayer()
 {
     CC_SAFE_RELEASE_NULL(_nameLabel);
+    CC_SAFE_RELEASE_NULL(_myRole);
 }
 
 
@@ -50,6 +58,8 @@ void testLayer::onExit()
 bool testLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_nameLabel", cocos2d::Label*, _nameLabel);
+    //CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_myRole", cocos2d::Node*, _myRole);
+    
     //CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_sprtest", cocos2d::Sprite *, _sprtest);
     return false;
 }
@@ -85,6 +95,9 @@ void testLayer::onClickedMenuButton(cocos2d::Ref *sender)
     CCLOG("onClickedMenuButton");
     ApplicationManager::getInstance()->changeScene(SCENE_LOGIN);
 }
+
+
+
 void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent)
 {
     //CCLOG("onPressCtrlButton");
@@ -104,9 +117,35 @@ void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Cont
     CCLOG("strPath1=%s,Line2=%d",strPath1.c_str(),Line2);
     
     
+    lyPlistManager::getInstance()->loadRolePlist("Texture_Role_ant");
+    /*
+    lyActionGroup* pActGroup = lyActionGroup::Create();
+    if ( pActGroup )
+    {
+        lyAction* pAction = lyAction::Create();
+        if (pAction)
+        {
+            for ( unsigned char byIndex = 0; byIndex < 10; byIndex++ )
+            {
+                char szName[50];
+                memset(szName, 0, sizeof(char)*50 );
+                sprintf(szName, "Role/1/Stand/%03d.png",byIndex);
+                pAction->AddFrame(szName);
+            }
+            pActGroup->AddAction(pAction, 0);
+        }
+        lyActionManager::GetInstance()->AddGroup(pActGroup, 1);
+    }
     
-    
-    
+    lyRole* pRole = lyRole::Create();
+    if (_myRole && pRole) {
+        
+        pRole->setRoleId(0);
+        pRole->setGroupId(0);
+        pRole->SetPosition(100, 100);
+        _myRole->addChild(pRole);
+    }
+    //*/
     
 }
 

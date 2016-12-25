@@ -25,6 +25,7 @@ lyRole* lyRole::Create()
 {
 	return new lyRole();
 }
+/*
 
 void lyRole::OnFrame( float fDeltaTime )
 {
@@ -48,8 +49,23 @@ void lyRole::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
 		m_pCurrFrame->OnDraw( fx + m_fCtrlX, fy + m_fCtrlY, fScale, alpha );
 	}
 }
+ */
+void lyRole::onEnter()
+{
+    lyBaseCtrl::onEnter();
+}
 
-void lyRole::SetRoleId( unsigned int nRoleId )
+void lyRole::onExit()
+{
+    lyBaseCtrl::onExit();
+}
+
+void lyRole::update(float delta)
+{
+    lyBaseCtrl::update(delta);
+}
+
+void lyRole::setRoleId( unsigned int nRoleId )
 {
 	if (nRoleId < 0 || nRoleId == (unsigned int)-1 )
 	{
@@ -58,12 +74,12 @@ void lyRole::SetRoleId( unsigned int nRoleId )
 	m_nRoleId = nRoleId;
 }
 
-unsigned int lyRole::GetRoleId( void )
+unsigned int lyRole::getRoleId( void )
 {
 	return m_nRoleId;
 }
 
-void lyRole::SetActGroupId( unsigned int Id )
+void lyRole::setGroupId( unsigned int Id )
 {
 	m_nActionGroupId = Id;
 	lyActionGroup* pActGroup = lyActionManager::GetInstance()->GetGroup(m_nActionGroupId);
@@ -73,7 +89,7 @@ void lyRole::SetActGroupId( unsigned int Id )
 	}
 }
 
-void lyRole::SetActState( unsigned char byState )
+void lyRole::setActState( unsigned char byState )
 {
 	lyActionGroup* pActGroup = lyActionManager::GetInstance()->GetGroup(m_nActionGroupId);
 	if (pActGroup)

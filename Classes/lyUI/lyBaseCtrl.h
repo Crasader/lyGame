@@ -20,7 +20,7 @@ USING_NS_CC;
 extern bool gShowTestCollition;
 #endif
 
-class lyBaseCtrl : public CCObject,
+class lyBaseCtrl : public Layer,
 	public lyLinkItem<lyBaseCtrl>,
 	public lyLinkMgr<lyBaseCtrl>
 {
@@ -30,13 +30,10 @@ public:
 
 	static lyBaseCtrl* Create();
 
-	virtual void OnFrame(float fDeltaTime);
-	virtual void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
-	void visit();
-
-	virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
-	virtual bool ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
-	virtual bool ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void onEnter();
+    virtual void onExit();
+    virtual void update(float delta);
+    
 
 	void addChild(lyBaseCtrl* pCtrl);
 	void removeChild(lyBaseCtrl* pCtrl);
