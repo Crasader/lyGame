@@ -70,11 +70,13 @@ void loginLayer::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event)
 void loginLayer::onPressButtonWeixin(cocos2d::Ref *sender)
 {
     CCLOG("onPressButtonWeixin");
-    ApplicationManager::getInstance()->changeScene(SCENE_TEST_SCENE);
+    ApplicationManager::getInstance()->changeScene(SCENE_MAIN_TOP);
+    
+    
 }
 void loginLayer::onPressButtonQQ(cocos2d::Ref *sender)
 {
     CCLOG("onPressButtonQQ");
-    //ApplicationManager::getInstance()->changeScene(SCENE_LOADING_TEXT);
+    ApplicationManager::getInstance()->changeScene(SCENE_MAIN_TOP);
 }
 

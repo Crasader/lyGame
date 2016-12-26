@@ -48,7 +48,7 @@ cocos2d::extension::Control::Handler battleTopLayer::onResolveCCBCCControlSelect
 }
 cocos2d::SEL_MenuHandler battleTopLayer::onResolveCCBCCMenuItemSelector(cocos2d::Ref * pTarget, const char* pSelectorName)
 {
-    //CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressButtonQQ", battleTopLayer::onPressButtonQQ);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onClickMenuItem01", battleTopLayer::onClickMenuItem01);
     //CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressButtonWeixin", battleTopLayer::onPressButtonWeixin);
     return nullptr;
 }
@@ -67,14 +67,9 @@ void battleTopLayer::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event
   
 }
 
-void battleTopLayer::onPressButtonWeixin(cocos2d::Ref *sender)
+void battleTopLayer::onClickMenuItem01(cocos2d::Ref *sender)
 {
-    CCLOG("onPressButtonWeixin");
-    ApplicationManager::getInstance()->changeScene(SCENE_TEST_SCENE);
-}
-void battleTopLayer::onPressButtonQQ(cocos2d::Ref *sender)
-{
-    CCLOG("onPressButtonQQ");
-    //ApplicationManager::getInstance()->changeScene(SCENE_LOADING_TEXT);
+    CCLOG("onClickMenuItem01");
+    ApplicationManager::getInstance()->changeScene(SCENE_MAIN_TOP);
 }
 

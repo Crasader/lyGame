@@ -46,8 +46,7 @@ public:
     virtual void onEnter();
     
     
-    void onPressButtonWeixin(cocos2d::Ref *sender);
-    void onPressButtonQQ(cocos2d::Ref *sender);
+    void onClickMenuItem01(cocos2d::Ref *sender);
    
     
 private:

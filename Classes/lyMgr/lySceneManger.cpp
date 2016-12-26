@@ -8,13 +8,19 @@
 //
 //
 
-
+#include "lyChannel.h"
 #include "lySceneManger.h"
 #include "TransitionFadeCustom.h"
 #include "Caption.h"
 
 #include "loginLayer.h"
 #include "loadingText.h"
+#include "mainTopLayer.h"
+#include "battleTopLayer.h"
+
+
+
+
 #include "testLayer.h"
 
 
@@ -151,6 +157,18 @@ cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* param
             PARAM_TYPE_CHECK(params, loginLayerParameter);
         }
             break;
+        case SCENE_MAIN_TOP:
+        {
+            topLayer = loginLayer::createWithcocosbuilderFile("ccbi/main/mainTopLayer", nullptr, Director::getInstance()->getWinSize());
+            PARAM_TYPE_CHECK(params, mainTopLayerParameter);
+        }
+            break;
+        case SCENE_BATTLE_TOP:
+        {
+            topLayer = loginLayer::createWithcocosbuilderFile("ccbi/quest/battleTopLayer", nullptr, Director::getInstance()->getWinSize());
+            PARAM_TYPE_CHECK(params, battleTopLayerParameter);
+        }
+            break;
         /*
         case SCENE_LOADING_TEXT:
         {
@@ -164,9 +182,6 @@ cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* param
             topLayer = testLayer::createWithcocosbuilderFile("ccbi/main/testScene", nullptr, Director::getInstance()->getWinSize());
             PARAM_TYPE_CHECK(params, testLayerParameter);
             dynamic_cast<testLayer*>(topLayer)->setSceneParameter((testLayerParameter*) params);
-
-            
-            
         }
             break;
             

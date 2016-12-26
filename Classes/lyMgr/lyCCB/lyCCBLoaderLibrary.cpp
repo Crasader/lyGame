@@ -14,7 +14,8 @@
 #include "testLayer.h"
 #include "loginLayer.h"
 #include "loadingText.h"
-#include "lyBaseLayer.h"
+#include "mainTopLayer.h"
+#include "battleTopLayer.h"
 
 
 static lyCCBLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
@@ -25,7 +26,10 @@ lyCCBLoaderLibrary::lyCCBLoaderLibrary() {
 
         { "testLayer", testLayerLoader::loader()},
         { "loginLayer", loginLayerLoader::loader()},
-        { "loadingText",   lyCCBNodeBaseLoader<loadingText>::loader()}
+        { "loadingText",   lyCCBNodeBaseLoader<loadingText>::loader()},
+        
+        { "mainTopLayer", mainTopLayerLoader::loader()},
+        { "battleTopLayer", battleTopLayerLoader::loader()}
         
     };
 }

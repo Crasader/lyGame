@@ -1,13 +1,12 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 
-//add byshixc test
 #include "lyCommon.h"
 #include "lyCCBLoaderLibrary.h"
 #include "lySceneManger.h"
 #include "ApplicationManager.h"
 #include "lyResourceUtil.h"
-#include "testLayer.h"
+#include "lyChannel.h"
 
 //#include "PlatformUtils.h"
 
@@ -123,11 +122,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         //sceneMgr->_isFade = false;
 #endif
-        //ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN);
+
+#ifdef APP_TEST
         ApplicationManager::getInstance()->runWithScene(SCENE_TEST_SCENE);
-        //ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN_TEST);
-        
-        //director->runWithScene(testLayer::create());
+#else
+        ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN);
+#endif
     }
     else
     {

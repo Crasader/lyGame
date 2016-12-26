@@ -1,7 +1,7 @@
 //
 //  lyChannel.h
-//  ly-client
-//	渠道id头文件
+//
+//
 //  Created by loveyur on 2016/11/10
 //
 
@@ -12,6 +12,10 @@
 
 #define SDK_CHANNEL_ID
 
+
+
+//测试宏
+#define APP_TEST
 
 
 #endif /* __lyGame__lyChannel_h */
