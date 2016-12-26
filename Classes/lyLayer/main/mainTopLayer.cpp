@@ -94,6 +94,7 @@ void mainTopLayer::onClickMenuItem04(cocos2d::Ref *sender)
 void mainTopLayer::onClickMenuItem05(cocos2d::Ref *sender)
 {
     CCLOG("onClickMenuItem05");
+    ApplicationManager::getInstance()->changeScene(SCENE_LOGIN);
     
 }
 void mainTopLayer::onClickMenuItem06(cocos2d::Ref *sender)

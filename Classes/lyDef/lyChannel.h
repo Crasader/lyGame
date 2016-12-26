@@ -15,7 +15,7 @@
 
 
 //测试宏
-#define APP_TEST
+//#define APP_TEST
 
 
 #endif /* __lyGame__lyChannel_h */
