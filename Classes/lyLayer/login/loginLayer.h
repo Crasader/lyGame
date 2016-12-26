@@ -12,8 +12,9 @@
 #define __lyGame__loginLayer__
 
 #include "lyBaseLayer.h"
+#include "lyInclude.h"
 #include "cocos2d.h"
-#include "cocostudio/CCActionManagerEx.h"
+
 #include "ui/UIWidget.h"
 #include "ApplicationManager.h"
 

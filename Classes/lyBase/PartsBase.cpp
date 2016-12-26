@@ -96,7 +96,7 @@ void PartsBase::onExit()
 void PartsBase::cleanup()
 {
     clearAnimationManagerDelegate();
-    CoreCCBNode::cleanup();
+    lyCCBNode::cleanup();
 }
 
 //_animationManagerのdelegateのクリア

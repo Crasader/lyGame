@@ -19,7 +19,7 @@
 #include "cocosbuilder/CCBReader.h"
 #include "cocosbuilder/CCNodeLoader.h"
 #include "cocosbuilder/CCNodeLoaderLibrary.h"
-#include "CoreCCBNode.h"
+#include "lyCCBNode.h"
 
 class PartsBaseObj
 {
@@ -197,7 +197,7 @@ private:
 };
 
 class PartsBase
-: public CoreCCBNode
+: public lyCCBNode
 , public PartsBaseObj
 {
 public:

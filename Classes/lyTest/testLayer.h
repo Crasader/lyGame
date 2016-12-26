@@ -56,7 +56,7 @@ private:
     
     bool _isMoving;
     cocos2d::Label *_nameLabel;
-    cocos2d::Node* _myRole;
+    cocos2d::Layer* _rolelayer;
     
 };
 

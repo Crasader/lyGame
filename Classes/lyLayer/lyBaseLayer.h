@@ -11,12 +11,14 @@
 #ifndef __lyGame__lyBaseLayer__
 #define __lyGame__lyBaseLayer__
 
-#include "CoreCCBLayer.h"
+#include "lyCCBLayer.h"
 #include "Caption.h"
 #include "lySceneManger.h"
 #include "UISceneID.h"
 #include "PartsBase.h"
 #include "lyBaseLayerModule.h"
+#include "lyLink.h"
+#include "lyCCBLayer.h"
 
 #define RESULT_LOGIN_OTHER_DEVICE 20001
 #define SESSION_PARAM_EXCEPTION 20002
@@ -26,9 +28,11 @@ class lyBaseLayerModule;
 #define REGISTER_MODULE(T) registerModule<T>(#T)
 #define GET_MODULE(T) getModule<T>(#T)
 
-class lyBaseLayer : public CoreCCBLayer
+class lyBaseLayer : public lyCCBLayer
 , public cocosbuilder::NodeLoaderListener
 , public CaptionDelegate
+, public lyLinkItem<lyBaseLayer>
+, public lyLinkMgr<lyBaseLayer>
 {
 public:
     enum LoadingType {

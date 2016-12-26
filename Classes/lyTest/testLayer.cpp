@@ -18,7 +18,7 @@
 #include "lyActionGroup.h"
 #include "lyActionManager.h"
 #include "lyPlistManager.h"
-//#include "lyRole.h"
+//#include "lyUIRole.h"
 
 
 USING_NS_CC;
@@ -28,14 +28,14 @@ USING_NS_CC_EXT;
 testLayer::testLayer()
 : _isMoving(false)
 , _nameLabel(nullptr)
-,_myRole(nullptr)
+,_rolelayer(nullptr)
 {
 }
 
 testLayer::~testLayer()
 {
     CC_SAFE_RELEASE_NULL(_nameLabel);
-    CC_SAFE_RELEASE_NULL(_myRole);
+    CC_SAFE_RELEASE_NULL(_rolelayer);
 }
 
 
@@ -58,7 +58,7 @@ void testLayer::onExit()
 bool testLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_nameLabel", cocos2d::Label*, _nameLabel);
-    //CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_myRole", cocos2d::Node*, _myRole);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_rolelayer", cocos2d::Layer*, _rolelayer);
     
     //CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_sprtest", cocos2d::Sprite *, _sprtest);
     return false;
@@ -117,7 +117,7 @@ void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Cont
     CCLOG("strPath1=%s,Line2=%d",strPath1.c_str(),Line2);
     
     
-    lyPlistManager::getInstance()->loadRolePlist("Texture_Role_ant");
+    lyPlistManager::getInstance()->loadRolePlist("ant");
     /*
     lyActionGroup* pActGroup = lyActionGroup::Create();
     if ( pActGroup )
@@ -137,7 +137,7 @@ void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Cont
         lyActionManager::GetInstance()->AddGroup(pActGroup, 1);
     }
     
-    lyRole* pRole = lyRole::Create();
+    lyUIRole* pRole = lyUIRole::Create();
     if (_myRole && pRole) {
         
         pRole->setRoleId(0);

@@ -9,20 +9,23 @@
 //
 
 #include "lyCCBLoaderLibrary.h"
-#include "BaseNodeLoader.h"
+#include "lyCCBNodeBaseLoader.h"
 
 #include "testLayer.h"
 #include "loginLayer.h"
 #include "loadingText.h"
+#include "lyBaseLayer.h"
 
 
 static lyCCBLoaderLibrary *s_CustomClassLoaderLibrary = nullptr;
 
 lyCCBLoaderLibrary::lyCCBLoaderLibrary() {
     m_customClassEntry = {
+        //{ "lyBaseLayer", lyCCBNodeBaseLoader<lyBaseLayer>::loader()},
+
         { "testLayer", testLayerLoader::loader()},
         { "loginLayer", loginLayerLoader::loader()},
-        { "loadingText",   BaseNodeLoader<loadingText>::loader()}
+        { "loadingText",   lyCCBNodeBaseLoader<loadingText>::loader()}
         
     };
 }
@@ -32,7 +35,7 @@ lyCCBLoaderLibrary::~lyCCBLoaderLibrary() {
 
 void lyCCBLoaderLibrary::registerCustomClassLoader() {
     cocosbuilder::NodeLoaderLibrary *nodeLoaderLibrary = cocosbuilder::NodeLoaderLibrary::getInstance();
-    
+     
     for (int i=0; i<m_customClassEntry.size(); i++) {
         CCLOG("registerCustomClassLoader i=%d,layername=%s",i,m_customClassEntry[i].pClassName);
         nodeLoaderLibrary->registerNodeLoader(m_customClassEntry[i].pClassName, m_customClassEntry[i].pCCNodeLoader);

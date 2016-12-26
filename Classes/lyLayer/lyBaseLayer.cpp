@@ -19,7 +19,7 @@ USING_NS_CC;
 
 
 lyBaseLayer::lyBaseLayer()    :
-    CoreCCBLayer(),
+    lyCCBLayer(),
     _caption(nullptr),
     _fadeLayer(nullptr),
     _multiTouchFilter(nullptr),
@@ -86,7 +86,7 @@ void lyBaseLayer::onExit()
     }
 #endif
 
-    CoreCCBLayer::onExit();
+    lyCCBLayer::onExit();
 }
 
 void lyBaseLayer::onExitTransitionDidStart()

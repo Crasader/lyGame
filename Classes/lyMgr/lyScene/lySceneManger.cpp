@@ -147,7 +147,7 @@ cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* param
             break;
         case SCENE_LOGIN:
         {
-            topLayer = loginLayer::createWithcocosbuilderFile("login/loginLayer", nullptr, Director::getInstance()->getWinSize());
+            topLayer = loginLayer::createWithcocosbuilderFile("ccbi/login/loginLayer", nullptr, Director::getInstance()->getWinSize());
             PARAM_TYPE_CHECK(params, loginLayerParameter);
         }
             break;
@@ -161,7 +161,7 @@ cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* param
          */
         case SCENE_TEST_SCENE:
         {
-            topLayer = testLayer::createWithcocosbuilderFile("testScene", nullptr, Director::getInstance()->getWinSize());
+            topLayer = testLayer::createWithcocosbuilderFile("ccbi/main/testScene", nullptr, Director::getInstance()->getWinSize());
             PARAM_TYPE_CHECK(params, testLayerParameter);
             dynamic_cast<testLayer*>(topLayer)->setSceneParameter((testLayerParameter*) params);
 
