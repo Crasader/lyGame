@@ -13,6 +13,7 @@
 #include "cocosbuilder/CocosBuilder.h"
 #include "editor-support/spine/spine-cocos2dx.h"
 
+#include "lyFunc.h"
 
 
 using namespace tinyxml2;

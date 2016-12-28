@@ -1,26 +1,26 @@
 
 /***************************************************************
-*	lySprite
+*	lyCocosSprite
 *	by Shixc 2014-05-05
 ***************************************************************/
 
-#ifndef _lySprite_H_
-#define _lySprite_H_
+#ifndef _lyCocosSprite_H_
+#define _lyCocosSprite_H_
 
 
 #include "lyInclude.h"
 #include "lyLink.h"
 
-class lySprite
+class lyCocosSprite
 	: public CCSprite,
-	public lyLinkItem<lySprite>
+	public lyLinkItem<lyCocosSprite>
 {
 public:
-	lySprite();
-	~lySprite();
-	static lySprite* Create();
+	lyCocosSprite();
+	~lyCocosSprite();
+	static lyCocosSprite* Create();
 
 
 };
 
-#endif //_lySprite_H_
+#endif //_lyCocosSprite_H_

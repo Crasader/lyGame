@@ -9,8 +9,7 @@
 
 #include "lyLink.h"
 #include "lyInclude.h"
-#include "CoreLayer.h"
-#include "lyCCBInterface.h"
+#include "lyCocosNode.h"
 
 USING_NS_CC;
 
@@ -22,8 +21,7 @@ extern bool gShowTestCollition;
 #endif
 
 class lyUIBase :
-public CoreLayer
-,   public lyCCBInterface
+public lyCocosNode
 , public lyLinkItem<lyUIBase>
 , public lyLinkMgr<lyUIBase>
 {
@@ -38,33 +36,17 @@ public:
     virtual void update(float delta);
     
 
-	void addChild(lyUIBase* pCtrl);
-	void removeChild(lyUIBase* pCtrl);
-
 	void SetCtrlName(const char* strCtrlName);
-	void SetCtrlSize(float fw, float fh);
-	void SetPosition(float fx, float fy);
-
-
-	void SetCtrlVisible(bool bVisible );
-	bool IsCtrlVisible( );
 	long GetObjID();
 
 
 
 protected:
-	void DrawTestRect(float x,float y,ccColor3B& color);
-
-	float m_fCtrlX;
-	float m_fCtrlY;
-	float m_fCtrlW;
-	float m_fCtrlH;
 
 	bool    m_bIsCtrlVisible;
 	bool    m_bIsTouchDown;
 	bool    m_bCtrlEnable;
 	bool    m_bAdjustCtrlSpr;
-	bool    m_bTouchEnable;
 	char	m_szCtrlName[CTRL_NAME_SIZE];
 
 

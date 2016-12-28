@@ -47,6 +47,8 @@ public:
     
     
     void onClickMenuItem01(cocos2d::Ref *sender);
+    void onClickDecRole(cocos2d::Ref *sender);
+    void onClickAddRole(cocos2d::Ref *sender);
    
     
 private:
@@ -54,6 +56,7 @@ private:
     bool _isMoving;
 
     cocos2d::extension::ControlButton* _buttonTest;
+    cocos2d::Node* _roleArea;
 };
 
 

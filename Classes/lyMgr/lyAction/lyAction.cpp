@@ -20,6 +20,10 @@ lyAction::lyAction()
 lyAction::~lyAction()
 {
 }
+bool lyAction::init()
+{
+    return true;
+}
 lyAction* lyAction::Create()
 {
     return new lyAction();

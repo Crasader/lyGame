@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/lyMgr/lyAction/lyAction.cpp"
-            timestampString = "504342563.454673"
+            filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
+            timestampString = "504587195.873753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "lyAction::GetNextFrame( lyFrame* pSpr )"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "battleTopLayer::onClickAddRole(cocos2d::Ref *sender)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

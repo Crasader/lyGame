@@ -112,7 +112,7 @@ inline bool lyIsEqual(double a, double b)
 }
 
 //
-inline bool lyInRange(double start, double end, double val)
+inline bool InRange(double start, double end, double val)
 {
     if (start < end)
     {

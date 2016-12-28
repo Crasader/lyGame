@@ -97,6 +97,8 @@
 		795D2EFA1E111431001AEEF4 /* mainTopLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EF81E111431001AEEF4 /* mainTopLayer.cpp */; };
 		795D2EFD1E111439001AEEF4 /* battleTopLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EFB1E111439001AEEF4 /* battleTopLayer.cpp */; };
 		795D2F001E1117D2001AEEF4 /* lySceneManger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EFE1E1117D2001AEEF4 /* lySceneManger.cpp */; };
+		795D2F0D1E117BB5001AEEF4 /* lyCocosNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2F091E117BB5001AEEF4 /* lyCocosNode.cpp */; };
+		795D2F0E1E117BB5001AEEF4 /* lyCocosSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2F0B1E117BB5001AEEF4 /* lyCocosSprite.cpp */; };
 		79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BAC1DDDA73000CD7FB6 /* CCCrypto.cpp */; };
 		79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB21DDDA75D00CD7FB6 /* sha1.cpp */; };
 		79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB51DDDA76900CD7FB6 /* md5.c */; };
@@ -328,6 +330,10 @@
 		795D2EFC1E111439001AEEF4 /* battleTopLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = battleTopLayer.h; path = lyLayer/quest/battleTopLayer.h; sourceTree = "<group>"; };
 		795D2EFE1E1117D2001AEEF4 /* lySceneManger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lySceneManger.cpp; path = lyMgr/lySceneManger.cpp; sourceTree = "<group>"; };
 		795D2EFF1E1117D2001AEEF4 /* lySceneManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lySceneManger.h; path = lyMgr/lySceneManger.h; sourceTree = "<group>"; };
+		795D2F091E117BB5001AEEF4 /* lyCocosNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyCocosNode.cpp; path = lyCocos/lyCocosNode.cpp; sourceTree = "<group>"; };
+		795D2F0A1E117BB5001AEEF4 /* lyCocosNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyCocosNode.h; path = lyCocos/lyCocosNode.h; sourceTree = "<group>"; };
+		795D2F0B1E117BB5001AEEF4 /* lyCocosSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyCocosSprite.cpp; path = lyCocos/lyCocosSprite.cpp; sourceTree = "<group>"; };
+		795D2F0C1E117BB5001AEEF4 /* lyCocosSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyCocosSprite.h; path = lyCocos/lyCocosSprite.h; sourceTree = "<group>"; };
 		79CC9B7C1DDDA66A00CD7FB6 /* lyChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyChannel.h; path = lyDef/lyChannel.h; sourceTree = "<group>"; };
 		79CC9B7D1DDDA66A00CD7FB6 /* lyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyCommon.h; path = lyDef/lyCommon.h; sourceTree = "<group>"; };
 		79CC9B7E1DDDA66A00CD7FB6 /* lyInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyInclude.h; path = lyDef/lyInclude.h; sourceTree = "<group>"; };
@@ -747,13 +753,13 @@
 			isa = PBXGroup;
 			children = (
 				795D2EED1E101D05001AEEF4 /* CoreLayer.cpp */,
+				795D2E431E0EA961001AEEF4 /* lyBaseLayer.cpp */,
+				795D2E451E0EA961001AEEF4 /* lyBaseLayerModule.cpp */,
 				795D2EEE1E101D05001AEEF4 /* CoreLayer.h */,
+				795D2E441E0EA961001AEEF4 /* lyBaseLayer.h */,
+				795D2E461E0EA961001AEEF4 /* lyBaseLayerModule.h */,
 				795D2E3F1E0EA951001AEEF4 /* loading */,
 				795D2E3B1E0EA941001AEEF4 /* login */,
-				795D2E431E0EA961001AEEF4 /* lyBaseLayer.cpp */,
-				795D2E441E0EA961001AEEF4 /* lyBaseLayer.h */,
-				795D2E451E0EA961001AEEF4 /* lyBaseLayerModule.cpp */,
-				795D2E461E0EA961001AEEF4 /* lyBaseLayerModule.h */,
 				795D2EF71E111420001AEEF4 /* main */,
 				795D2EF51E11141A001AEEF4 /* quest */,
 			);
@@ -828,6 +834,10 @@
 		795D2EC61E0FC622001AEEF4 /* lyCocos */ = {
 			isa = PBXGroup;
 			children = (
+				795D2F091E117BB5001AEEF4 /* lyCocosNode.cpp */,
+				795D2F0A1E117BB5001AEEF4 /* lyCocosNode.h */,
+				795D2F0B1E117BB5001AEEF4 /* lyCocosSprite.cpp */,
+				795D2F0C1E117BB5001AEEF4 /* lyCocosSprite.h */,
 			);
 			name = lyCocos;
 			sourceTree = "<group>";
@@ -1164,6 +1174,7 @@
 				795D2E3E1E0EA94B001AEEF4 /* loginLayer.cpp in Sources */,
 				79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */,
 				79E964571DFDC25A0091A060 /* PlatformUtils.cpp in Sources */,
+				795D2F0D1E117BB5001AEEF4 /* lyCocosNode.cpp in Sources */,
 				79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */,
 				79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */,
 				79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */,
@@ -1197,6 +1208,7 @@
 				795D2EFA1E111431001AEEF4 /* mainTopLayer.cpp in Sources */,
 				795D2E4C1E0EA97E001AEEF4 /* lyCCBLoaderLibrary.cpp in Sources */,
 				795D2ECF1E1003B0001AEEF4 /* lyUIBase.cpp in Sources */,
+				795D2F0E1E117BB5001AEEF4 /* lyCocosSprite.cpp in Sources */,
 				79CC9BD41DDDA78C00CD7FB6 /* LocalizedString.cpp in Sources */,
 				79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */,
 				79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */,

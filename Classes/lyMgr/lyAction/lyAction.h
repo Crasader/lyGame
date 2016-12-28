@@ -18,7 +18,7 @@ class lyAction
 public:
     lyAction();
     virtual ~lyAction();
-    
+    virtual bool init();
     static lyAction* Create();
 
     void OnFrame(float fDeltaTime);
