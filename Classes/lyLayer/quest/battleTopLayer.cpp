@@ -82,6 +82,14 @@ void battleTopLayer::onClickMenuItem01(cocos2d::Ref *sender)
 void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickDecRole");
+    if (_roleArea) {
+        for(const auto& child: _roleArea->getChildren())
+        {
+            _roleArea->removeChild(child);
+            child->release();
+            return;
+        }
+    }
 }
 
 
