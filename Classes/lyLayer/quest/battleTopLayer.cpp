@@ -83,11 +83,12 @@ void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickDecRole");
     if (_roleArea) {
-        for(const auto& child: _roleArea->getChildren())
-        {
-            _roleArea->removeChild(child);
-            child->release();
-            return;
+        if (_roleArea->getChildren().size()) {
+            for(const auto& child: _roleArea->getChildren())
+            {
+                _roleArea->removeChild(child,true);
+                return;
+            }
         }
     }
 }
