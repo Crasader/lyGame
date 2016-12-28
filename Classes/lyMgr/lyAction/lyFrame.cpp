@@ -20,11 +20,23 @@ lyFrame::lyFrame()
 lyFrame::~lyFrame()
 {
 }
+/*
 lyFrame* lyFrame::Create()
 {
     return new lyFrame();
 }
-
+ */
+lyFrame* lyFrame::create(const std::string& filename)
+{
+    lyFrame *sprite = new (std::nothrow) lyFrame();
+    if (sprite && sprite->initWithFile(filename))
+    {
+        sprite->autorelease();
+        return sprite;
+    }
+    CC_SAFE_DELETE(sprite);
+    return nullptr;
+}
 void lyFrame::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
 {
     setPosition(ccp(fx,fy));

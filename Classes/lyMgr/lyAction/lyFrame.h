@@ -25,7 +25,8 @@ public:
     lyFrame();
     ~lyFrame();
     
-    static lyFrame* Create();
+    static lyFrame* create(const std::string& filename);
+    
     
     void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
     

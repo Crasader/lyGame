@@ -93,7 +93,7 @@ void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
     }
 }
 
-
+#include "lyFrame.h"
 void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickAddRole");
@@ -114,7 +114,7 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
     
     lyUIBase* pUI = lyUIBase::Create();
     if (pUI) {
-        CCSprite* pSpr = CCSprite::create("images/head/pri_00024_s.png");
+        lyFrame* pSpr = lyFrame::create("images/head/pri_00024_s.png");
         if (pSpr) {
             pSpr->setPosition(0,0);
             pUI->addChild(pSpr);

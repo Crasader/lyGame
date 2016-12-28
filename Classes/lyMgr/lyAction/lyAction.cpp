@@ -31,14 +31,10 @@ lyAction* lyAction::Create()
 
 void lyAction::AddFrame( const char* pszImg )
 {
-    lyFrame* pFrame = lyFrame::Create();
+    lyFrame* pFrame = lyFrame::create(pszImg);
     if (pFrame)
     {
-        bool bRes = pFrame->initWithFile(pszImg);
-        if (bRes)
-        {
-            m_ObjFrames.AddLinkItem(pFrame);
-        }
+        m_ObjFrames.AddLinkItem(pFrame);
     }
 }
 
