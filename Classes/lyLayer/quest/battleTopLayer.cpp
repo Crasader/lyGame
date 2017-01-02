@@ -13,7 +13,9 @@
 #include "UISceneID.h"
 #include "cocos2d.h"
 #include "lyUIBase.h"
-
+#include "lyDefFunc.h"
+#include "lySoundID.h"
+#include "lyActionManager.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -22,12 +24,14 @@ USING_NS_CC_EXT;
 battleTopLayer::battleTopLayer()
 : _isMoving(false)
 ,_roleArea(nullptr)
+,m_pMyRole(nullptr)
 {
 }
 
 battleTopLayer::~battleTopLayer()
 {
     CC_SAFE_RELEASE_NULL(_roleArea);
+    CC_SAFE_RELEASE_NULL(m_pMyRole);
 }
 
 
@@ -38,7 +42,6 @@ void battleTopLayer::completedAnimationSequenceNamed(const char *name)
 void battleTopLayer::onEnter()
 {
     lyBaseLayer::onEnter();
-    
 }
 
 bool battleTopLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
@@ -56,7 +59,8 @@ cocos2d::SEL_MenuHandler battleTopLayer::onResolveCCBCCMenuItemSelector(cocos2d:
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onClickMenuItem01", battleTopLayer::onClickMenuItem01);
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onClickDecRole", battleTopLayer::onClickDecRole);
     CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onClickAddRole", battleTopLayer::onClickAddRole);
-    //CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressButtonWeixin", battleTopLayer::onPressButtonWeixin);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onClickAction1", battleTopLayer::onClickAction1);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onClickActionSkill", battleTopLayer::onClickActionSkill);
     return nullptr;
 }
 void battleTopLayer::setSceneParameter(battleTopLayerParameter *param)
@@ -93,39 +97,94 @@ void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
     }
 }
 
-#include "lyFrame.h"
+#include "lyUIDrag.h"
+
 void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickAddRole");
-    float fStartX = 0;
-    float fStartY = 0;
-    float fEndX = 0;
-    float fEndY = 0;
-    if (_roleArea)
-    {
-        fStartX = _roleArea->getPositionX();
-        fStartY = _roleArea->getPositionY();
-        fEndX = fStartX + _roleArea->getContentSize().width;
-        fEndY = fStartY + _roleArea->getContentSize().height;
-    }
-    int posX = lyRandInt(fStartX,fEndX);
-    int posY = lyRandInt(fStartY,fEndY);
     
-    
+    //playSe(SE_TOUCH);
+    /*
     lyUIBase* pUI = lyUIBase::Create();
     if (pUI) {
         lyFrame* pSpr = lyFrame::create("images/head/pri_00024_s.png");
         if (pSpr) {
+            pSpr->retain();
             pSpr->setPosition(0,0);
             pUI->addChild(pSpr);
         }
         pUI->setContentSize(Size(10,10));
-        pUI->setPosition(posX, posY);
+        pUI->setPosition(randPosX(), randPosY());
         _roleArea->addChild(pUI);
     }
-    
-    
-    
+     */
+    lyUIDrag* pUI = lyUIDrag::Create();
+    if (pUI) {
+        pUI->setContentSize(Size(75,75));
+        pUI->InitSpr("images/head/pri_00024_s.png");
+        pUI->setPosition(randPosX(), randPosY());
+        CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
+        _roleArea->addChild(pUI);
+    }
+
     
 }
+void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
+{
+    CCLOG("onClickAction1");
+    if (m_pMyRole)
+    {
+        m_pMyRole->setAction(0);
+        return;
+    }
+    else
+    {
+        m_pMyRole = lyUIRole::Create();
+    }
+     if (_roleArea && m_pMyRole) {
+         m_pMyRole->setRoleId(0);
+         m_pMyRole->setGroupId(0);
+         m_pMyRole->setContentSize(Size(10,10));
+         m_pMyRole->setPosition(randPosX(), randPosY());
+         m_pMyRole->setTag(UIROLE_INDEX);
+         CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
+         _roleArea->addChild(m_pMyRole);
+     }
 
+}
+void battleTopLayer::onClickActionSkill(cocos2d::Ref *sender)
+{
+    CCLOG("onClickActionSkill");
+    if (m_pMyRole) {
+        m_pMyRole->setAction(1);
+    }
+}
+int battleTopLayer::randPosX()
+{
+    float fStartX = 0;
+    float fEndX = 0;
+    int nPosX = 0;
+    if (_roleArea)
+    {
+        fStartX = _roleArea->getPositionX();
+        fEndX = fStartX + _roleArea->getContentSize().width;
+    }
+    
+    nPosX = lyRandInt(fStartX,fEndX);
+    CCLOG("randPosX=%d",nPosX);
+}
+int battleTopLayer::randPosY()
+{
+   
+    float fStartY = 0;
+    float fEndY = 0;
+    int nPosY = 0;
+    if (_roleArea)
+    {
+        fStartY = _roleArea->getPositionY();
+        fEndY = fStartY + _roleArea->getContentSize().height;
+    }
+    nPosY = lyRandInt(fStartY,fEndY);
+    CCLOG("randPosY=%d",nPosY);
+    return nPosY;
+}

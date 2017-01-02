@@ -9,11 +9,9 @@
 
 
 #include "lyInclude.h"
-#include "lyLink.h"
 
 class lyCocosSprite
-	: public CCSprite,
-	public lyLinkItem<lyCocosSprite>
+	: public CCSprite
 {
 public:
 	lyCocosSprite();

@@ -24,12 +24,12 @@ public lyLinkItem<lyFrame>
 public:
     lyFrame();
     ~lyFrame();
-    
+
     static lyFrame* create(const std::string& filename);
     
-    
-    void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
-    
+    virtual void update(float delta) override;
+
+    void lyVisit();
 private:
 };
 

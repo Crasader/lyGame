@@ -14,35 +14,23 @@ USING_NS_CC;
 
 
 lyFrame::lyFrame()
+:CCSprite()
 {
 }
 
 lyFrame::~lyFrame()
 {
 }
-/*
-lyFrame* lyFrame::Create()
-{
-    return new lyFrame();
-}
- */
 lyFrame* lyFrame::create(const std::string& filename)
 {
-    lyFrame *sprite = new (std::nothrow) lyFrame();
-    if (sprite && sprite->initWithFile(filename))
-    {
-        sprite->autorelease();
-        return sprite;
-    }
-    CC_SAFE_DELETE(sprite);
-    return nullptr;
+    return (lyFrame*)CCSprite::create(filename);
 }
-void lyFrame::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
+void lyFrame::update(float delta)
 {
-    setPosition(ccp(fx,fy));
-    setScaleX( fScale );
-    setScaleY( fScale );
-    setOpacity( alpha );
-    visit();
+    CCSprite::update(delta);
 }
 
+void lyFrame::lyVisit()
+{
+    CCSprite::visit();
+}

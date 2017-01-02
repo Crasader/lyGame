@@ -10,6 +10,8 @@
 #include "lyAction.h"
 #include "lyFrame.h"
 
+#define UIROLE_INDEX 99
+
 class lyUIRole
 	:public lyUIBase
 {
@@ -18,15 +20,18 @@ public:
 	~lyUIRole();
 	static lyUIRole* Create();
 
-    virtual void onEnter();
-    virtual void onExit();
-    virtual void update(float delta);
+    virtual void onEnter() override;
+    virtual void onExit() override;
+    virtual void update(float delta) override;
+    virtual void visit(Renderer *renderer, const Mat4 &parentTransform, uint32_t parentFlags) override;
+    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
     
-    
+ 
 	void setRoleId(unsigned int nRoleId);
 	unsigned int getRoleId(void);
 	void setGroupId(unsigned int Id);
-	void setActState( unsigned char byState );
+	void setAction( unsigned char byState );
+    void updateNextAction();
 
 
 protected:
@@ -34,12 +39,14 @@ protected:
 private:
 
 private:
-	unsigned int	m_nRoleId;
-	unsigned int	m_nActionGroupId;
-	lyAction*		m_pAction;
-	lyFrame*		m_pCurrFrame;
+	unsigned int        m_nRoleId;
+	unsigned int        m_nActionGroupId;
+	lyAction*           m_pAction;
+	lyFrame*            m_pCurrFrame;
 	unsigned char		m_byInterval;
 	unsigned char		m_byCurrInterval;
+    int                 m_nCurrState;
+    int                 m_nNextState;
 	//end*/
 
 };

@@ -2,6 +2,7 @@
 #include "lyCocosNode.h"
 
 lyCocosNode::lyCocosNode()
+:CCNode()
 {
 
 }
@@ -25,64 +26,45 @@ lyCocosNode* lyCocosNode::Create()
         return NULL;
     }
 }
+bool lyCocosNode::init()
+{
+    Node::init();
+    /*
+     auto dispatcher = Director::getInstance()->getEventDispatcher();
+     auto touchListener = EventListenerTouchOneByOne::create();
+     touchListener->setSwallowTouches(true);
+     touchListener->onTouchBegan = CC_CALLBACK_2(lyCocosNode::onTouchBegan, this);
+     touchListener->onTouchMoved = CC_CALLBACK_2(lyCocosNode::onTouchMoved, this);
+     touchListener->onTouchEnded = CC_CALLBACK_2(lyCocosNode::onTouchEnded, this);
+     touchListener->onTouchCancelled = CC_CALLBACK_2(lyCocosNode::onTouchCancelled, this);
+     
+     dispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+     //*/
 
+    return true;
+}
 void lyCocosNode::onEnter()
 {
-	CCNode::onEnter();
+	Node::onEnter();
 }
 
 void lyCocosNode::onExit()
 {
-	CCNode::onExit();
+	Node::onExit();
 
 }
 void lyCocosNode::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t parentFlags)
 {
+    Node::visit(renderer, parentTransform, parentFlags);
     if (!_visible)
     {
         return;
     }
-    uint32_t flags = processParentFlags(parentTransform, parentFlags);
-    
-    if(!_children.empty())
-    {
-        sortAllChildren();
-        int i = 0;
-        for( ; i < _children.size(); i++ )
-        {
-            auto node = _children.at(i);
-                node->visit(renderer, _modelViewTransform, flags);
-        }
-        this->draw(renderer, _modelViewTransform, flags);
-        
-        for(auto it=_children.cbegin()+i; it != _children.cend(); ++it)
-            (*it)->visit(renderer, _modelViewTransform, flags);
-    }
-
-    
 }
 void lyCocosNode::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 {
+    Node::draw(renderer, transform, flags);
 }
 
-void lyCocosNode::OnFrame( float fDeltaTime )
-{
-    if(!_children.empty())
-    {
-        for (auto& child : _children)
-        {
-            Node* childWin = dynamic_cast<Node*>(child);
-            if(childWin)
-            {
-                childWin->update(fDeltaTime);
-            }
-        }
-    }
-}
-
-void lyCocosNode::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
-{
-    
-}
 
 

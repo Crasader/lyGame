@@ -2,8 +2,8 @@
 		通用函数定义类
 		by Shixc 2014-04-10
 ***************************************************************/
-#ifndef _XFUNCDEFINE_H_
-#define _XFUNCDEFINE_H_
+#ifndef __lyGame__lyFunc__
+#define __lyGame__lyFunc__
 
 const double   Pi        = 3.14159;
 const double   TwoPi     = Pi * 2;
@@ -159,4 +159,4 @@ inline double lyRandFloat()
 }
 
 
-#endif  //_XFUNCDEFINE_H_
+#endif  //__lyGame__lyFunc__

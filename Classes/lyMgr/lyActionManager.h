@@ -20,7 +20,14 @@ public:
     virtual ~lyActionManager();
     
     static lyActionManager* GetInstance();
+    void LoadActionGroupLibrary();
+    
+    //先构造动作组，再添加到管理类中
     void AddGroup( lyActionGroup* pActGroup, unsigned int nGroupId );
+    //添加动作组id为x的动作组到管理类
+    void AddGroup(int nGroupId);
+    void LoadOneAction(std::map<std::string,int> map, int nId);
+    
     lyActionGroup* GetGroup( unsigned int nGroupId );
     
 private:

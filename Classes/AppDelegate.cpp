@@ -7,6 +7,7 @@
 #include "ApplicationManager.h"
 #include "lyResourceUtil.h"
 #include "lyChannel.h"
+#include "lyActionManager.h"
 
 //#include "PlatformUtils.h"
 
@@ -122,6 +123,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         //sceneMgr->_isFade = false;
 #endif
+        lyActionManager::GetInstance()->LoadActionGroupLibrary();
 
 #ifdef APP_TEST
         ApplicationManager::getInstance()->runWithScene(SCENE_TEST_SCENE);

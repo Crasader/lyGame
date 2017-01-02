@@ -18,6 +18,8 @@
 #include "ui/UIWidget.h"
 #include "ApplicationManager.h"
 
+#include "lyUIRole.h"
+
 class battleTopLayerParameter : public SceneParameter
 {
 public:
@@ -49,14 +51,20 @@ public:
     void onClickMenuItem01(cocos2d::Ref *sender);
     void onClickDecRole(cocos2d::Ref *sender);
     void onClickAddRole(cocos2d::Ref *sender);
+    void onClickAction1(cocos2d::Ref *sender);
+    void onClickActionSkill(cocos2d::Ref *sender);
+    
    
     
 private:
+    int randPosX();
+    int randPosY();
+ 
     
-    bool _isMoving;
-
-    cocos2d::extension::ControlButton* _buttonTest;
-    cocos2d::Node* _roleArea;
+private:
+    bool            _isMoving;
+    cocos2d::Node*  _roleArea;
+    lyUIRole*       m_pMyRole;
 };
 
 

@@ -12,6 +12,7 @@
 #define __lyGame__lyAction__
 
 #include "lyFrame.h"
+#include "lylink.h"
 
 class lyAction
 {
@@ -21,16 +22,30 @@ public:
     virtual bool init();
     static lyAction* Create();
 
-    void OnFrame(float fDeltaTime);
-    //void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
-
+ 
     void AddFrame(const char* pszImg);
-    
+ 
     lyFrame* GetNextFrame(lyFrame* pSpr);
+    lyFrame* GetHeaderFrame();
+    lyFrame* GetTailFrame();
     
+    lyLinkMgr<lyFrame> getFrames()
+    {
+        return m_ObjFrames;
+    };
+    
+    //
+    void setDelay(bool is)
+    {
+        m_bDelay = is;
+    };
+    bool isDelay()
+    {
+        return m_bDelay;
+    };
 private:
-    //XSprite* m_pCurrFrame;
-    lyLinkMgr<lyFrame> m_ObjFrames;
+    lyLinkMgr<lyFrame>  m_ObjFrames;
+    bool                m_bDelay;   //true 播放完当前动作才能播放下一个动作，false，立即切换动作
 };
 
 

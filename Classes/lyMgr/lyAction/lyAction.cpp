@@ -14,6 +14,7 @@ USING_NS_CC;
 
 
 lyAction::lyAction()
+:m_bDelay(false)
 {
 }
 
@@ -34,35 +35,10 @@ void lyAction::AddFrame( const char* pszImg )
     lyFrame* pFrame = lyFrame::create(pszImg);
     if (pFrame)
     {
+        pFrame->retain();
         m_ObjFrames.AddLinkItem(pFrame);
     }
 }
-
-// void lyAction::OnFrame( float fDeltaTime )
-// {
-// 	if ( m_pCurrFrame )
-// 	{
-// 		m_pCurrFrame = m_ObjFrames.XML_GetNextItem(m_pCurrFrame);
-// 		if (!m_pCurrFrame)
-// 		{
-// 			m_pCurrFrame = m_ObjFrames.XLM_GetHeader();
-// 		}
-// 	}
-// }
-
-// void lyAction::OnDraw( float fx,float fy,float fScale,unsigned char alpha )
-// {
-// 	if ( m_pCurrFrame )
-// 	{
-// 		m_pCurrFrame->setPosition(ccp(fx,fy));
-// 		m_pCurrFrame->setScaleX( fScale );
-// 		m_pCurrFrame->setScaleY( fScale );
-// 		m_pCurrFrame->setOpacity( alpha );
-// 		m_pCurrFrame->visit();
-// 	}
-//
-// }
-
 
 lyFrame* lyAction::GetNextFrame( lyFrame* pSpr )
 {
@@ -80,4 +56,12 @@ lyFrame* lyAction::GetNextFrame( lyFrame* pSpr )
         }
     }
     return pNextSpr;
+}
+lyFrame* lyAction::GetHeaderFrame()
+{
+   return m_ObjFrames.GetHeader();
+}
+lyFrame* lyAction::GetTailFrame()
+{
+    return m_ObjFrames.GetTail();
 }

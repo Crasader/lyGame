@@ -9,23 +9,23 @@
 
 USING_NS_CC;
 
-class lyCocosNode :public cocos2d::CCNode
+class lyCocosNode :
+public cocos2d::CCNode
 {
 public:
 	lyCocosNode();
 	~lyCocosNode();
     static lyCocosNode* Create();
+     bool init();
     
 
     virtual void onEnter();
     virtual void onExit();
-    
     virtual void visit(Renderer *renderer, const Mat4 &parentTransform, uint32_t parentFlags) override;
     virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
-    
-	void OnFrame(float fDeltaTime);
-	void OnDraw(float fx,float fy,float fScale,unsigned char alpha);
 
+    
+    
 };
 
 

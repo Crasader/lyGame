@@ -14,7 +14,13 @@
 #include "editor-support/spine/spine-cocos2dx.h"
 
 #include "lyFunc.h"
-
+#include "lyDefFunc.h"
+#include "lyEnum.h"
+#include "lyCommon.h"
+#include "lyChannel.h"
+#include "lyLink.h"
+#include "lyLog.h"
+#include "lyCocosFunc.h"
 
 using namespace tinyxml2;
 using namespace cocos2d;
