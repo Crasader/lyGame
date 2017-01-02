@@ -70,17 +70,7 @@ void lyUIDrag::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     CCLOG("------------------------------------------");
-    /*
-    CCLOG("touches Location x=%f,    y=%f",touches->getLocation().x,touches->getLocation().y);
-    CCLOG("touches LocationInView x=%f,    y=%f",touches->getLocationInView().x,touches->getLocationInView().y);
-    
-    CCLOG("touch Location x=%f,    y=%f",touch.getLocation().x,touch.getLocation().y);
-    CCLOG("touch LocationInView x=%f,    y=%f",touch.getLocationInView().x,touch.getLocationInView().y);
-    CCLOG("touch StartLocation x=%f,    y=%f",touch.getStartLocation().x,touch.getStartLocation().y);
-     //*/
-
-    Touch touch = lyCocosFunc::convertToCurWinCoordinateOnlyGL(this, touches);
-    if (lyCocosFunc::isTouchInWin(this, &touch)) {
+    if (lyCocosFunc::isTouchInWin(this, touches)) {
         m_bIsTouched = true;
         
         return true;
