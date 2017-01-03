@@ -82,6 +82,7 @@ bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     if (m_bIsTouched) {
+        //CCPoint touPoint = this->convertTouchToNodeSpace(touches);
         setPosition(touches->getLocation());
     }
 }
