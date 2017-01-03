@@ -120,6 +120,7 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
      */
     lyUIDrag* pUI = lyUIDrag::Create();
     if (pUI) {
+        //pUI->setAnchorPoint(Point(0,0));
         pUI->setContentSize(Size(75,75));
         pUI->InitSpr("images/head/pri_00024_s.png");
         pUI->setPosition(randPosX(), randPosY());

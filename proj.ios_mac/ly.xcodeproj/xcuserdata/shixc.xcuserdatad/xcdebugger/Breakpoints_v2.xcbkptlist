@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
-            timestampString = "504971022.558692"
+            timestampString = "505105209.592567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "battleTopLayer::onClickAction1(cocos2d::Ref *sender)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505062001.157429"
+            timestampString = "505120454.795727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505062001.157429"
+            timestampString = "505120706.381538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "lyUIDrag::InitSpr(const char* str)"
             landmarkType = "7">
          </BreakpointContent>
@@ -144,6 +144,22 @@
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "lyCocosFunc::convertToGL(cocos2d::Node *pNode, cocos2d::Touch *parTouch)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyUI/lyUIDrag.cpp"
+            timestampString = "505120454.795727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

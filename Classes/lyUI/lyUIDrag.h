@@ -46,8 +46,8 @@ public:
     void InitSpr(const char* str);
 
 private:
-    lyFrame* m_pFrame;
-
+    lyFrame*    m_pFrame;
+    CCPoint     m_TouchBeginPoint;
 
 };
 

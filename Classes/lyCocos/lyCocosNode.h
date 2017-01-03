@@ -6,11 +6,13 @@
 #define _lyCocosNode_H_
 
 #include "lyInclude.h"
+#include "lyTouchElement.h"
 
 USING_NS_CC;
 
 class lyCocosNode :
 public cocos2d::CCNode
+,public lyTouchElement
 {
 public:
 	lyCocosNode();
@@ -24,7 +26,10 @@ public:
     virtual void visit(Renderer *renderer, const Mat4 &parentTransform, uint32_t parentFlags) override;
     virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
 
-    
+    virtual bool onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
 };
 

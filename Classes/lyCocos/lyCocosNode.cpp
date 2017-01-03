@@ -66,5 +66,23 @@ void lyCocosNode::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags
     Node::draw(renderer, transform, flags);
 }
 
+bool lyCocosNode::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+    CCLOG("--------------------------------------lyCocosNode::onTouchBegan");
+    return false;
+}
 
+void lyCocosNode::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+
+}
+
+void lyCocosNode::onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+
+}
+void lyCocosNode::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+    
+}
 

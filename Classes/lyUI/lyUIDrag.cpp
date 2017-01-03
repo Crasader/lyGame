@@ -8,6 +8,8 @@ bool gShowTestCollition = true;
 
 lyUIDrag::lyUIDrag()
 :lyUIBase()
+,m_pFrame(nullptr)
+,m_TouchBeginPoint(CCPoint(0,0))
 {
 
 }
@@ -26,17 +28,7 @@ lyUIDrag* lyUIDrag::Create()
 }
 bool lyUIDrag::init()
 {
-    //*
-    auto dispatcher = Director::getInstance()->getEventDispatcher();
-    auto touchListener = EventListenerTouchOneByOne::create();
-    //touchListener->setSwallowTouches(true);
-    touchListener->onTouchBegan = CC_CALLBACK_2(lyUIDrag::onTouchBegan, this);
-    touchListener->onTouchMoved = CC_CALLBACK_2(lyUIDrag::onTouchMoved, this);
-    touchListener->onTouchEnded = CC_CALLBACK_2(lyUIDrag::onTouchEnded, this);
-    touchListener->onTouchCancelled = CC_CALLBACK_2(lyUIDrag::onTouchCancelled, this);
-    
-    dispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-    //*/
+    setTouchEnabled(true);
     return true;
 }
 
@@ -70,20 +62,35 @@ void lyUIDrag::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     CCLOG("------------------------------------------");
+    CCPoint touchesPoint = touches->getLocation();
+    CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
+    CCPoint NodePoint = this->getPosition();
+    //CCLOG("onTouchBegan touchesPoint x=%f, y=%f",touchesPoint.x,touchesPoint.y);
+    CCLOG("onTouchBegan touchNodePoint x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
+    //CCLOG("onTouchBegan NodePoint    x=%f, y=%f",NodePoint.x,NodePoint.y);
+
     if (lyCocosFunc::isTouchInWin(this, touches)) {
         m_bIsTouched = true;
-        
+        m_TouchBeginPoint = touchNodePoint;
+        CCLOG("lyUIDrag 点中了");
+        CCLOG("------------------------------------------");
         return true;
     }
-    
+    CCLOG("------------------------------------------");
     return false;
 }
 
 void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     if (m_bIsTouched) {
-        //CCPoint touPoint = this->convertTouchToNodeSpace(touches);
-        setPosition(touches->getLocation());
+        CCLOG("****************************************");
+        CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
+        CCLOG("touchNodePoint  x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
+        CCPoint diffNodePoint = touchNodePoint - m_TouchBeginPoint;
+        CCLOG("diffNodePoint  x=%f, y=%f",diffNodePoint.x,diffNodePoint.y);
+        CCLOG("****************************************");
+        this->setPosition(this->getPosition()+diffNodePoint);
+        //this->setPosition(<#const cocos2d::Vec2 &position#>)
     }
 }
 

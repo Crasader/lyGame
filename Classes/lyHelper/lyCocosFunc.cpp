@@ -28,7 +28,7 @@ bool lyCocosFunc::isTouchInWin(Node* pNode, Touch* pTouch)
     {
         CCPoint touPoint = pNode->convertTouchToNodeSpace(pTouch);
         Size nodeSize = pNode->getContentSize();
-        CCLOG("Touch x=%f, y=%f",touPoint.x,touPoint.y);
+        CCLOG("isTouchInWin Touch x=%f, y=%f",touPoint.x,touPoint.y);
         if(touPoint.x > -(nodeSize.width/2) && touPoint.x < (nodeSize.width/2)
            && touPoint.y > -(nodeSize.height/2)  && touPoint.y < (nodeSize.height/2)
            )

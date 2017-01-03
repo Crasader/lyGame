@@ -37,6 +37,12 @@ public:
     virtual void visit(Renderer *renderer, const Mat4 &parentTransform, uint32_t parentFlags) override;
     virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
     
+    virtual bool onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
+    
+    void setTouchEnabled(bool bTouch);
     
 	void SetCtrlName(const char* strCtrlName);
 	long GetObjID();
@@ -49,6 +55,8 @@ protected:
 
 	bool    m_bIsCtrlVisible;
 	bool    m_bIsTouched;
+    bool    m_bTouchEnabled;
+    EventListenerTouchOneByOne* m_touchListener;
 	bool    m_bCtrlEnable;
 	bool    m_bAdjustCtrlSpr;
 	char	m_szCtrlName[CTRL_NAME_SIZE];
