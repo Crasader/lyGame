@@ -14,6 +14,7 @@ lyUIBase::lyUIBase()
 ,m_bAdjustCtrlSpr(false)
 ,m_szCtrlName("")
 ,m_bTouchEnabled(false)
+,m_TouchBeginPoint(CCPoint(0,0))
 {
 }
 

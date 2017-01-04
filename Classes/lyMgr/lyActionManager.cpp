@@ -37,8 +37,9 @@ lyActionManager* lyActionManager::GetInstance()
 void lyActionManager::LoadActionGroupLibrary()
 {
     std::map<std::string, int> newMap;
-    newMap.insert(std::pair<std::string, int>("TextureP/Role/houzi01/standby",19));
-    newMap.insert(std::pair<std::string, int>("TextureP/Role/houzi01/act",12));
+    newMap.insert(std::pair<std::string, int>("TextureP/Role/Jingzhang/GC1",4));
+    newMap.insert(std::pair<std::string, int>("TextureP/Role/Jingzhang/standby",19));
+    
 
     this->LoadOneAction(newMap, 0);
 }

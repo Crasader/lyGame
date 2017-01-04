@@ -52,7 +52,7 @@ public:
     bool isTouched(Node* desWin, Touch* pTouch);
 
 protected:
-
+    CCPoint     m_TouchBeginPoint;
 	bool    m_bIsCtrlVisible;
 	bool    m_bIsTouched;
     bool    m_bTouchEnabled;

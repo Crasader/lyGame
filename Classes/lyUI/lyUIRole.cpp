@@ -27,9 +27,17 @@ lyUIRole::~lyUIRole()
 
 lyUIRole* lyUIRole::Create()
 {
-	return new lyUIRole();
+    lyUIRole* pCtrl = new lyUIRole();
+    if (pCtrl && pCtrl->init()) {
+        return pCtrl;
+    }
+    return NULL;
 }
-
+bool lyUIRole::init()
+{
+    setTouchEnabled(true);
+    return true;
+}
 void lyUIRole::onEnter()
 {
     lyUIBase::onEnter();
@@ -131,3 +139,48 @@ void lyUIRole::updateNextAction()
     }
 }
 
+bool lyUIRole::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+    CCLOG("------------------------------------------");
+    CCPoint touchesPoint = touches->getLocation();
+    CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
+    CCPoint NodePoint = this->getPosition();
+    //CCLOG("onTouchBegan touchesPoint x=%f, y=%f",touchesPoint.x,touchesPoint.y);
+    CCLOG("onTouchBegan touchNodePoint x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
+    CCLOG("onTouchBegan NodePoint    x=%f, y=%f",NodePoint.x,NodePoint.y);
+    
+    if (lyCocosFunc::isTouchInWin(this, touches)) {
+        m_bIsTouched = true;
+        m_TouchBeginPoint = touchNodePoint;
+        CCLOG("lyUIDrag 点中了");
+        CCLOG("------------------------------------------");
+        return true;
+    }
+    CCLOG("------------------------------------------");
+    return false;
+}
+
+void lyUIRole::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+    if (m_bIsTouched) {
+        CCLOG("****************************************");
+        CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
+        CCLOG("touchNodePoint  x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
+        CCPoint diffNodePoint = touchNodePoint - m_TouchBeginPoint;
+        CCLOG("diffNodePoint  x=%f, y=%f",diffNodePoint.x,diffNodePoint.y);
+        CCLOG("****************************************");
+        this->setPosition(this->getPosition()+diffNodePoint);
+    }
+}
+
+void lyUIRole::onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+    if (!m_bIsTouched) {
+        return;
+    }
+    m_bIsTouched = false;
+}
+void lyUIRole::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event)
+{
+    
+}

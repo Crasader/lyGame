@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505120454.795727"
+            timestampString = "505191525.953625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505120706.381538"
+            timestampString = "505191525.953625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "lyUIDrag::InitSpr(const char* str)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,12 +154,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505120454.795727"
+            timestampString = "505191525.953625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyUI/lyUIRole.cpp"
+            timestampString = "505191620.367736"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "lyUIRole::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

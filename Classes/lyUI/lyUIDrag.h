@@ -47,7 +47,7 @@ public:
 
 private:
     lyFrame*    m_pFrame;
-    CCPoint     m_TouchBeginPoint;
+    
 
 };
 

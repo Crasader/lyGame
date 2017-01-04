@@ -145,7 +145,7 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
      if (_roleArea && m_pMyRole) {
          m_pMyRole->setRoleId(0);
          m_pMyRole->setGroupId(0);
-         m_pMyRole->setContentSize(Size(10,10));
+         m_pMyRole->setContentSize(Size(800,800));
          m_pMyRole->setPosition(randPosX(), randPosY());
          m_pMyRole->setTag(UIROLE_INDEX);
          CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);

@@ -9,7 +9,6 @@ bool gShowTestCollition = true;
 lyUIDrag::lyUIDrag()
 :lyUIBase()
 ,m_pFrame(nullptr)
-,m_TouchBeginPoint(CCPoint(0,0))
 {
 
 }
@@ -90,7 +89,6 @@ void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
         CCLOG("diffNodePoint  x=%f, y=%f",diffNodePoint.x,diffNodePoint.y);
         CCLOG("****************************************");
         this->setPosition(this->getPosition()+diffNodePoint);
-        //this->setPosition(<#const cocos2d::Vec2 &position#>)
     }
 }
 

@@ -19,14 +19,18 @@ public:
 	lyUIRole();
 	~lyUIRole();
 	static lyUIRole* Create();
-
+    bool init();
     virtual void onEnter() override;
     virtual void onExit() override;
     virtual void update(float delta) override;
     virtual void visit(Renderer *renderer, const Mat4 &parentTransform, uint32_t parentFlags) override;
     virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
     
- 
+    virtual bool onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
+    virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
+    
 	void setRoleId(unsigned int nRoleId);
 	unsigned int getRoleId(void);
 	void setGroupId(unsigned int Id);
