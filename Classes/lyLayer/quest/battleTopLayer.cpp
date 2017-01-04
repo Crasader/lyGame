@@ -42,8 +42,13 @@ void battleTopLayer::completedAnimationSequenceNamed(const char *name)
 void battleTopLayer::onEnter()
 {
     lyBaseLayer::onEnter();
+    this->schedule(schedule_selector(battleTopLayer::checkTestCollision), 0.2f);
 }
-
+void battleTopLayer::onExit()
+{
+    lyBaseLayer::onExit();
+    this->unschedule(schedule_selector(battleTopLayer::checkTestCollision));
+}
 bool battleTopLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_roleArea", cocos2d::Node*, _roleArea);
@@ -97,7 +102,6 @@ void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
     }
 }
 
-#include "lyUIDrag.h"
 
 void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 {
@@ -126,6 +130,15 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
         pUI->setPosition(randPosX(), randPosY());
         CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
         _roleArea->addChild(pUI);
+        
+        int nInt = lyRandInt(0,3);
+        if (1 == nInt) {
+            m_lyLMTeam1.pushBack(pUI);
+        }
+        else
+        {
+            m_lyLMTeam2.pushBack(pUI);
+        }
     }
 
     
@@ -188,4 +201,29 @@ int battleTopLayer::randPosY()
     nPosY = lyRandInt(fStartY,fEndY);
     CCLOG("randPosY=%d",nPosY);
     return nPosY;
+}
+void battleTopLayer::checkTestCollision(float dt)
+{
+    //CCLOG("-------checkCollision");
+    
+    Size sizeT = this->getContentSize();
+    float fMax = lyMax(sizeT.width, sizeT.height);
+    float fMin = lyMin(sizeT.width, sizeT.height);
+    
+    
+    for (auto childTeam1 : m_lyLMTeam1)
+    {
+        for (auto childTeam2 : m_lyLMTeam2)
+        {
+            bool bColl = childTeam1->checkCollision(childTeam2);
+            if (bColl) {
+                CCLOG("-------碰撞了");
+            }
+            else
+            {
+                //CCLOG("-------");
+            }
+        }
+    }
+    
 }

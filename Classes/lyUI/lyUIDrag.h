@@ -45,6 +45,9 @@ public:
 
     void InitSpr(const char* str);
 
+    
+     bool checkCollision(lyUIDrag* temp);
+    
 private:
     lyFrame*    m_pFrame;
     

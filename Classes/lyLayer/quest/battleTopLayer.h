@@ -19,6 +19,7 @@
 #include "ApplicationManager.h"
 
 #include "lyUIRole.h"
+#include "lyUIDrag.h"
 
 class battleTopLayerParameter : public SceneParameter
 {
@@ -46,7 +47,7 @@ public:
 
     void setSceneParameter(battleTopLayerParameter *param);
     virtual void onEnter();
-    
+    virtual void onExit();
     
     void onClickMenuItem01(cocos2d::Ref *sender);
     void onClickDecRole(cocos2d::Ref *sender);
@@ -55,6 +56,7 @@ public:
     void onClickActionSkill(cocos2d::Ref *sender);
     
    
+    void checkTestCollision(float dt);
     
 private:
     int randPosX();
@@ -65,6 +67,9 @@ private:
     bool            _isMoving;
     cocos2d::Node*  _roleArea;
     lyUIRole*       m_pMyRole;
+    
+    Vector<lyUIDrag*>    m_lyLMTeam1;
+    Vector<lyUIDrag*>    m_lyLMTeam2;
 };
 
 

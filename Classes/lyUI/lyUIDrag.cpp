@@ -28,6 +28,7 @@ lyUIDrag* lyUIDrag::Create()
 bool lyUIDrag::init()
 {
     setTouchEnabled(true);
+    //this->schedule(schedule_selector(lyUIDrag::checkCollision), 0.1f);
     return true;
 }
 
@@ -64,30 +65,28 @@ bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
     CCPoint touchesPoint = touches->getLocation();
     CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
     CCPoint NodePoint = this->getPosition();
-    //CCLOG("onTouchBegan touchesPoint x=%f, y=%f",touchesPoint.x,touchesPoint.y);
-    CCLOG("onTouchBegan touchNodePoint x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
-    //CCLOG("onTouchBegan NodePoint    x=%f, y=%f",NodePoint.x,NodePoint.y);
+    //CCLOG("onTouchBegan touchNodePoint x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
 
     if (lyCocosFunc::isTouchInWin(this, touches)) {
         m_bIsTouched = true;
         m_TouchBeginPoint = touchNodePoint;
-        CCLOG("lyUIDrag 点中了");
-        CCLOG("------------------------------------------");
+        //CCLOG("lyUIDrag 点中了");
+        //CCLOG("------------------------------------------");
         return true;
     }
-    CCLOG("------------------------------------------");
+   // CCLOG("------------------------------------------");
     return false;
 }
 
 void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     if (m_bIsTouched) {
-        CCLOG("****************************************");
+        //CCLOG("****************************************");
         CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
-        CCLOG("touchNodePoint  x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
+       // CCLOG("touchNodePoint  x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
         CCPoint diffNodePoint = touchNodePoint - m_TouchBeginPoint;
-        CCLOG("diffNodePoint  x=%f, y=%f",diffNodePoint.x,diffNodePoint.y);
-        CCLOG("****************************************");
+       // CCLOG("diffNodePoint  x=%f, y=%f",diffNodePoint.x,diffNodePoint.y);
+       // CCLOG("****************************************");
         this->setPosition(this->getPosition()+diffNodePoint);
     }
 }
@@ -115,6 +114,22 @@ void lyUIDrag::InitSpr(const char* str)
         m_pFrame->setPosition(0,0);
         this->addChild(m_pFrame);
     }
+}
 
-    
+bool lyUIDrag::checkCollision(lyUIDrag* temp)
+{
+    //CCLOG("-------checkCollision");
+    if(!temp)
+    {
+        return false;
+    }
+    if (this->getPosition().x + this->getContentSize().width < temp->getPosition().x
+        || temp->getPosition().x + temp->getContentSize().width < this->getPosition().x
+        || this->getPosition().y + this->getContentSize().height < temp->getPosition().y
+        || temp->getPosition().y + temp->getContentSize().height < this->getPosition().y
+        
+        ) {
+        return false;
+    }
+    return true;
 }

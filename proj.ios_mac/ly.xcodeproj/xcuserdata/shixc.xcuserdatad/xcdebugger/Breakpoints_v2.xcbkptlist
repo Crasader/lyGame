@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
-            timestampString = "505105209.592567"
+            timestampString = "505241264.245458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "battleTopLayer::onClickAction1(cocos2d::Ref *sender)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505191525.953625"
+            timestampString = "505241375.735331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505191525.953625"
+            timestampString = "505241375.735331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "lyUIDrag::InitSpr(const char* str)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "505191525.953625"
+            timestampString = "505241375.735331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>
@@ -176,6 +176,54 @@
             startingLineNumber = "152"
             endingLineNumber = "152"
             landmarkName = "lyUIRole::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
+            timestampString = "505241264.245458"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "battleTopLayer::checkTestCollision(float dt)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyUI/lyUIDrag.cpp"
+            timestampString = "505241399.026241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "lyUIDrag::checkCollision(lyUIDrag* temp)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyUI/lyUIDrag.cpp"
+            timestampString = "505241400.169844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "lyUIDrag::checkCollision(lyUIDrag* temp)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
