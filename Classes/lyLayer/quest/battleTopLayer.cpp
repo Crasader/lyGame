@@ -17,6 +17,7 @@
 #include "lySoundID.h"
 #include "lyActionManager.h"
 #include "lyCSVReader.h"
+#include "lyUIBullet.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -46,6 +47,11 @@ void battleTopLayer::onEnter()
     this->schedule(schedule_selector(battleTopLayer::checkTestCollision), 0.2f);
     
     
+    CCLOG("=====_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
+    CCLOG("=====_roleArea w=%f, h=%f",_roleArea->getContentSize().width,_roleArea->getContentSize().height);
+
+    
+    
     //int nNum = lyTableLines("Table/TexturePlist.csv");
     //const MAP_MUTI_LINE* szlines = lyCSVReader::getInstance()->getOneFile("Table/TexturePlist.csv");
     
@@ -58,6 +64,7 @@ void battleTopLayer::onExit()
 }
 bool battleTopLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_roleArea", cocos2d::Node*, _roleArea);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_roleArea", cocos2d::Node*, _roleArea);
     return false;
 }
@@ -115,22 +122,22 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickAddRole");
 
-    lyUIDrag* pUI = lyUIDrag::Create();
-    if (pUI) {
-        pUI->setAnchorPoint(Point(0.5,0.5));
-        pUI->setContentSize(Size(75,75));
-        pUI->InitSpritePath("images/head/pri_00024_s.png");
-        pUI->setPosition(randPosX(), randPosY());
-        CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
-        _roleArea->addChild(pUI);
+    lyUIDrag* pDrag = lyUIDrag::Create();
+    if (pDrag) {
+        
+        pDrag->setContentSize(Size(75,75));
+        pDrag->setSpritePath("images/head/pri_00024_s.png");
+        pDrag->setAnchorPoint(Point(0.0,0.0));
+        pDrag->setPosition(randPosX(), randPosY());
+        _roleArea->addChild(pDrag);
         
         int nInt = lyRandInt(0,3);
         if (1 == nInt) {
-            m_lyLMTeam1.pushBack(pUI);
+            m_lyLMTeam1.pushBack(pDrag);
         }
         else
         {
-            m_lyLMTeam2.pushBack(pUI);
+            m_lyLMTeam2.pushBack(pDrag);
         }
     }
 
@@ -159,6 +166,15 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
          _roleArea->addChild(m_pMyRole);
      }
      */
+    
+    
+    lyUIBullet* pBullet = lyUIBullet::Create();
+    if (pBullet) {
+        pBullet->setPosition(randPosX(), randPosY());
+        //pBullet->InitPoint(Vec2(120,180 ), Vec2(200, 800));
+        pBullet->InitBulletPath("images/head/pri_00024_s.png");
+        _roleArea->addChild(pBullet);
+    }
 
 }
 void battleTopLayer::onClickActionSkill(cocos2d::Ref *sender)

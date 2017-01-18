@@ -47,12 +47,14 @@ public:
 	void SetCtrlName(const char* strCtrlName);
 	long GetObjID();
     
+    void setBulletId(int nId)
+    {
+        m_nBulletId = nId;
+    }
     
     Touch convertToCurWinCoordinateOnlyGL(Node* desWin, Touch* parTouch);    //将坐标系从父坐标系，转换为自身的坐标系(备注：只通过openGL坐标系，不使用屏幕坐标系)
     bool isTouched(Node* desWin, Touch* pTouch);
-
     bool checkCollision(lyUIBase* temp);
-    
     //判断是否在屏幕外
     bool isOutScreen();
 protected:
@@ -64,6 +66,8 @@ protected:
 	bool    m_bCtrlEnable;
 	bool    m_bAdjustCtrlSpr;
 	char	m_szCtrlName[CTRL_NAME_SIZE];
+    
+    int     m_nBulletId;    //0 非发射器，>0 发射器及其id
 
 
 };

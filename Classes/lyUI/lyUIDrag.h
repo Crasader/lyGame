@@ -43,8 +43,8 @@ public:
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
 
-    void InitSpritePath(const char* strPath);
-    void InitSpriteName(const char* strName);
+    void setSpritePath(const char* strPath);
+    void setSpriteName(const char* strName);
 
     
      

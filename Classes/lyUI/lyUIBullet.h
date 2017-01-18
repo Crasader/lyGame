@@ -38,12 +38,27 @@ public:
     virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
-   
+    void setBulletId(int nId)
+    {
+        m_nBulletId = nId;
+       
+    }
+    void InitBulletPath(const char* strPath);
+    
+    void InitPoint(CCPoint pointStart, CCPoint pointEnd)
+    {
+        m_pointS = pointStart;
+        m_pointE = pointEnd;
+    }
+    
+    void doFly();
+    void flyEnd(Node* pNode);
 private:
+    lyFrame*    m_pBulletFrame;
     int         m_nBulletId;    //id
     Vec2        m_pointS;       //起始point
     Vec2        m_pointE;       //终结point
-    
+    float       m_fSpeed;       //移动速度
     
     
 };

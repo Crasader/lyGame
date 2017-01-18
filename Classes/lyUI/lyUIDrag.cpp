@@ -61,10 +61,10 @@ void lyUIDrag::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 
 bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
-    Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
+    
     if (lyCocosFunc::isTouchInWin(this, touches)) {
         m_bIsTouched = true;
-        m_TouchBeginPoint = touchNodePoint;
+        m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
         return true;
     }
     return false;
@@ -76,7 +76,7 @@ void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
         Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
         Vec2 diffNodePoint = touchNodePoint - m_TouchBeginPoint;
         this->setPosition(this->getPosition()+diffNodePoint);
-        this->isOutScreen();
+        //this->isOutScreen();
     }
 }
 
@@ -92,27 +92,27 @@ void lyUIDrag::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event)
 
 }
 
-void lyUIDrag::InitSpritePath(const char* strPath)
+void lyUIDrag::setSpritePath(const char* strPath)
 {
     m_pFrame = lyFrame::createWithSpritePath(strPath);
     if (m_pFrame) {
         m_pFrame->retain();
         m_pFrame->setScaleX(this->getContentSize().width/m_pFrame->getContentSize().width);
         m_pFrame->setScaleY(this->getContentSize().height/m_pFrame->getContentSize().height);
-        //m_pFrame->setContentSize(this->getContentSize());
+        m_pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
         m_pFrame->setPosition(0,0);
         this->addChild(m_pFrame);
     }
 }
 
-void lyUIDrag::InitSpriteName(const char* strName)
+void lyUIDrag::setSpriteName(const char* strName)
 {
     m_pFrame = lyFrame::createWithSpriteName(strName);
     if (m_pFrame) {
         m_pFrame->retain();
         m_pFrame->setScaleX(this->getContentSize().width/m_pFrame->getContentSize().width);
         m_pFrame->setScaleY(this->getContentSize().height/m_pFrame->getContentSize().height);
-        //m_pFrame->setContentSize(this->getContentSize());
+        m_pFrame->setAnchorPoint(this->getAnchorPoint()); //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
         m_pFrame->setPosition(0,0);
         this->addChild(m_pFrame);
     }

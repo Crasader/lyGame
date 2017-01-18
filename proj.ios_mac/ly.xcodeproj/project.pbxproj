@@ -59,7 +59,6 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		792031F11E03D3AB00D476FA /* TransitionFadeCustom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 792031EF1E03D3AB00D476FA /* TransitionFadeCustom.cpp */; };
 		79489C981E2F14A4001BE7B2 /* lyAndLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79489C961E2F14A4001BE7B2 /* lyAndLog.cpp */; };
-		79489C9B1E2F1CB5001BE7B2 /* lyUILauncher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79489C991E2F1CB5001BE7B2 /* lyUILauncher.cpp */; };
 		79489C9E1E2F36AE001BE7B2 /* lyUIBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79489C9C1E2F36AE001BE7B2 /* lyUIBullet.cpp */; };
 		794AD6851DED227D00EA3CF5 /* lyWebInterfaceiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 794AD6831DED227D00EA3CF5 /* lyWebInterfaceiOS.mm */; };
 		794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 794AD6841DED227D00EA3CF5 /* lyWebView.mm */; };
@@ -248,8 +247,6 @@
 		792031F01E03D3AB00D476FA /* TransitionFadeCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionFadeCustom.h; path = lyBase/TransitionFadeCustom.h; sourceTree = "<group>"; };
 		79489C961E2F14A4001BE7B2 /* lyAndLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyAndLog.cpp; path = lyHelper/lyAndLog.cpp; sourceTree = "<group>"; };
 		79489C971E2F14A4001BE7B2 /* lyAndLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyAndLog.h; path = lyHelper/lyAndLog.h; sourceTree = "<group>"; };
-		79489C991E2F1CB5001BE7B2 /* lyUILauncher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUILauncher.cpp; path = lyUI/lyUILauncher.cpp; sourceTree = "<group>"; };
-		79489C9A1E2F1CB5001BE7B2 /* lyUILauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyUILauncher.h; path = lyUI/lyUILauncher.h; sourceTree = "<group>"; };
 		79489C9C1E2F36AE001BE7B2 /* lyUIBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUIBullet.cpp; path = lyUI/lyUIBullet.cpp; sourceTree = "<group>"; };
 		79489C9D1E2F36AE001BE7B2 /* lyUIBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyUIBullet.h; path = lyUI/lyUIBullet.h; sourceTree = "<group>"; };
 		794AD6821DED227D00EA3CF5 /* lyWebInterfaceiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyWebInterfaceiOS.h; path = ios/lyWeb/lyWebInterfaceiOS.h; sourceTree = SOURCE_ROOT; };
@@ -860,8 +857,6 @@
 			children = (
 				79489C9C1E2F36AE001BE7B2 /* lyUIBullet.cpp */,
 				79489C9D1E2F36AE001BE7B2 /* lyUIBullet.h */,
-				79489C991E2F1CB5001BE7B2 /* lyUILauncher.cpp */,
-				79489C9A1E2F1CB5001BE7B2 /* lyUILauncher.h */,
 				79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */,
 				79E352D51E18FE400071CFD3 /* lyUIDrag.h */,
 				79E352D61E18FE400071CFD3 /* lyUIEffect.cpp */,
@@ -1261,7 +1256,6 @@
 				795D2ECF1E1003B0001AEEF4 /* lyUIBase.cpp in Sources */,
 				795D2F0E1E117BB5001AEEF4 /* lyCocosSprite.cpp in Sources */,
 				79489C981E2F14A4001BE7B2 /* lyAndLog.cpp in Sources */,
-				79489C9B1E2F1CB5001BE7B2 /* lyUILauncher.cpp in Sources */,
 				79CC9BD41DDDA78C00CD7FB6 /* LocalizedString.cpp in Sources */,
 				79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */,
 				79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */,
