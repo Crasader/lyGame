@@ -8,8 +8,10 @@
 #include "lyResourceUtil.h"
 #include "lyChannel.h"
 #include "lyActionManager.h"
+#include "lyPlistManager.h"
 
 //#include "PlatformUtils.h"
+#include "lyAndLog.h"
 
 USING_NS_CC;
 
@@ -123,8 +125,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         //sceneMgr->_isFade = false;
 #endif
-        lyActionManager::GetInstance()->LoadActionGroupLibrary();
-
+        
+        
+        //lyActionManager::GetInstance()->LoadActionGroupLibrary();
+        lyPlistManager::getInstance()->loadTexturePlist("Jingzhang_standby");
+        lyPlistManager::getInstance()->loadTexturePlist("Jingzhang_skill1");
+        
+        
 #ifdef APP_TEST
         ApplicationManager::getInstance()->runWithScene(SCENE_TEST_SCENE);
 #else

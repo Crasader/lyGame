@@ -25,7 +25,8 @@ public:
     lyFrame();
     ~lyFrame();
 
-    static lyFrame* create(const std::string& filename);
+    static lyFrame* createWithSpritePath(const std::string& filepath);
+    static lyFrame* createWithSpriteName(const std::string& filename);
     
     virtual void update(float delta) override;
 

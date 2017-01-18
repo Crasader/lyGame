@@ -1,0 +1,7 @@
+#,#,0,1,2,3
+DTD,#,STRING,WORD,WORD,WORD
+NAM,#,PlistName,MaxId,Width,Height
+#,备注,名字,最大帧id（0--x）,宽,高
+RAN,#,"[0,0]","[0,65500]","[0,65500]","[0,65500]"
+0,警长待机,Jingzhang_standby,19,200,250
+1,警长技能1,Jingzhang_skill1,15,200,250

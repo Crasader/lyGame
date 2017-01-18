@@ -61,33 +61,22 @@ void lyUIDrag::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 
 bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
-    CCLOG("------------------------------------------");
-    CCPoint touchesPoint = touches->getLocation();
-    CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
-    CCPoint NodePoint = this->getPosition();
-    //CCLOG("onTouchBegan touchNodePoint x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
-
+    Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
     if (lyCocosFunc::isTouchInWin(this, touches)) {
         m_bIsTouched = true;
         m_TouchBeginPoint = touchNodePoint;
-        //CCLOG("lyUIDrag 点中了");
-        //CCLOG("------------------------------------------");
         return true;
     }
-   // CCLOG("------------------------------------------");
     return false;
 }
 
 void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     if (m_bIsTouched) {
-        //CCLOG("****************************************");
-        CCPoint touchNodePoint = this->convertTouchToNodeSpace(touches);
-       // CCLOG("touchNodePoint  x=%f, y=%f",touchNodePoint.x,touchNodePoint.y);
-        CCPoint diffNodePoint = touchNodePoint - m_TouchBeginPoint;
-       // CCLOG("diffNodePoint  x=%f, y=%f",diffNodePoint.x,diffNodePoint.y);
-       // CCLOG("****************************************");
+        Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
+        Vec2 diffNodePoint = touchNodePoint - m_TouchBeginPoint;
         this->setPosition(this->getPosition()+diffNodePoint);
+        this->isOutScreen();
     }
 }
 
@@ -103,9 +92,9 @@ void lyUIDrag::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event)
 
 }
 
-void lyUIDrag::InitSpr(const char* str)
+void lyUIDrag::InitSpritePath(const char* strPath)
 {
-    m_pFrame = lyFrame::create(str);
+    m_pFrame = lyFrame::createWithSpritePath(strPath);
     if (m_pFrame) {
         m_pFrame->retain();
         m_pFrame->setScaleX(this->getContentSize().width/m_pFrame->getContentSize().width);
@@ -116,20 +105,15 @@ void lyUIDrag::InitSpr(const char* str)
     }
 }
 
-bool lyUIDrag::checkCollision(lyUIDrag* temp)
+void lyUIDrag::InitSpriteName(const char* strName)
 {
-    //CCLOG("-------checkCollision");
-    if(!temp)
-    {
-        return false;
+    m_pFrame = lyFrame::createWithSpriteName(strName);
+    if (m_pFrame) {
+        m_pFrame->retain();
+        m_pFrame->setScaleX(this->getContentSize().width/m_pFrame->getContentSize().width);
+        m_pFrame->setScaleY(this->getContentSize().height/m_pFrame->getContentSize().height);
+        //m_pFrame->setContentSize(this->getContentSize());
+        m_pFrame->setPosition(0,0);
+        this->addChild(m_pFrame);
     }
-    if (this->getPosition().x + this->getContentSize().width < temp->getPosition().x
-        || temp->getPosition().x + temp->getContentSize().width < this->getPosition().x
-        || this->getPosition().y + this->getContentSize().height < temp->getPosition().y
-        || temp->getPosition().y + temp->getContentSize().height < this->getPosition().y
-        
-        ) {
-        return false;
-    }
-    return true;
 }

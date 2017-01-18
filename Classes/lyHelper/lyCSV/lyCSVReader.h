@@ -33,7 +33,7 @@ public:
     //获取某行某列的值
     const std::string getValue(std::string strCSVPath, int nRowId, const std::string &strColumn);
     
-private:
+
     //获取内容map
     const MAP_MUTI_LINE* getOneFile(std::string strCSVPath);
     //获取某一行value

@@ -19,7 +19,7 @@
 #include "lyCommon.h"
 #include "lyChannel.h"
 #include "lyLink.h"
-#include "lyLog.h"
+#include "lyAndLog.h"
 #include "lyCocosFunc.h"
 
 using namespace tinyxml2;

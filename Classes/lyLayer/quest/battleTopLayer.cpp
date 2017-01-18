@@ -16,6 +16,7 @@
 #include "lyDefFunc.h"
 #include "lySoundID.h"
 #include "lyActionManager.h"
+#include "lyCSVReader.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -43,6 +44,12 @@ void battleTopLayer::onEnter()
 {
     lyBaseLayer::onEnter();
     this->schedule(schedule_selector(battleTopLayer::checkTestCollision), 0.2f);
+    
+    
+    //int nNum = lyTableLines("Table/TexturePlist.csv");
+    //const MAP_MUTI_LINE* szlines = lyCSVReader::getInstance()->getOneFile("Table/TexturePlist.csv");
+    
+   
 }
 void battleTopLayer::onExit()
 {
@@ -91,6 +98,7 @@ void battleTopLayer::onClickMenuItem01(cocos2d::Ref *sender)
 void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickDecRole");
+
     if (_roleArea) {
         if (_roleArea->getChildren().size()) {
             for(const auto& child: _roleArea->getChildren())
@@ -106,27 +114,12 @@ void battleTopLayer::onClickDecRole(cocos2d::Ref *sender)
 void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 {
     CCLOG("onClickAddRole");
-    
-    //playSe(SE_TOUCH);
-    /*
-    lyUIBase* pUI = lyUIBase::Create();
-    if (pUI) {
-        lyFrame* pSpr = lyFrame::create("images/head/pri_00024_s.png");
-        if (pSpr) {
-            pSpr->retain();
-            pSpr->setPosition(0,0);
-            pUI->addChild(pSpr);
-        }
-        pUI->setContentSize(Size(10,10));
-        pUI->setPosition(randPosX(), randPosY());
-        _roleArea->addChild(pUI);
-    }
-     */
+
     lyUIDrag* pUI = lyUIDrag::Create();
     if (pUI) {
-        //pUI->setAnchorPoint(Point(0,0));
+        pUI->setAnchorPoint(Point(0.5,0.5));
         pUI->setContentSize(Size(75,75));
-        pUI->InitSpr("images/head/pri_00024_s.png");
+        pUI->InitSpritePath("images/head/pri_00024_s.png");
         pUI->setPosition(randPosX(), randPosY());
         CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
         _roleArea->addChild(pUI);
@@ -146,6 +139,7 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
 {
     CCLOG("onClickAction1");
+    /*
     if (m_pMyRole)
     {
         m_pMyRole->setAction(0);
@@ -164,14 +158,18 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
          CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
          _roleArea->addChild(m_pMyRole);
      }
+     */
 
 }
 void battleTopLayer::onClickActionSkill(cocos2d::Ref *sender)
 {
+    
     CCLOG("onClickActionSkill");
+    /*
     if (m_pMyRole) {
         m_pMyRole->setAction(1);
     }
+     */
 }
 int battleTopLayer::randPosX()
 {

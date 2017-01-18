@@ -123,3 +123,47 @@ void lyUIBase::setTouchEnabled(bool bTouch)
         CC_SAFE_RELEASE_NULL(m_touchListener);
     }
 }
+//检测碰撞
+bool lyUIBase::checkCollision(lyUIBase* temp)
+{
+    if(!temp)
+    {
+        return false;
+    }
+    if (this->getPosition().x + this->getContentSize().width < temp->getPosition().x
+        || temp->getPosition().x + temp->getContentSize().width < this->getPosition().x
+        || this->getPosition().y + this->getContentSize().height < temp->getPosition().y
+        || temp->getPosition().y + temp->getContentSize().height < this->getPosition().y
+        
+        ) {
+        return false;
+    }
+    return true;
+}
+bool lyUIBase::isOutScreen()
+{
+    bool bOut = true;
+    Vec2 anchorPoint = this->getAnchorPoint();
+    CCLOG("anchorPoint==========%f,%f",anchorPoint.x,anchorPoint.y);
+    Size sizeWin = Director::getInstance()->getOpenGLView()->getFrameSize();
+    CCLOG("sizeWin==========%f,%f",sizeWin.width,sizeWin.height);
+    Point pointLD = Vec2(this->getPosition().x,this->getPosition().y);    //左下
+    CCLOG("pointLD==========%f,%f",pointLD.x,pointLD.y);
+    Point pointLU = Vec2(this->getPosition().x,this->getPosition().y + this->getContentSize().height);  //左上角
+    Point pointRD = Vec2(this->getPosition().x + this->getContentSize().width, this->getPosition().y);  //右下角
+    Point pointRU = Vec2(this->getPosition().x + this->getContentSize().width, this->getPosition().y + this->getContentSize().height);  //右上角
+    //判断四个坐标，有一个坐标在屏幕内就是false
+    if ( ( pointLD.x > 0 && pointLD.x < sizeWin.width && pointLD.y > 0 && pointLD.y < sizeWin.height )
+       // || ( pointLU.x > 0 && pointLU.x < sizeWin.width && pointLU.y > 0 && pointLU.y < sizeWin.height )
+        //|| ( pointRD.x > 0 && pointRD.x < sizeWin.width && pointRD.y > 0 && pointRD.y < sizeWin.height )
+        //|| ( pointRU.x > 0 && pointRU.x < sizeWin.width && pointRU.y > 0 && pointRU.y < sizeWin.height )
+        ) {
+        bOut = false;
+    }
+    if (bOut) {
+        CCLOG("out" );
+    }
+    else
+        CCLOG("in" );
+    return bOut;
+}

@@ -21,9 +21,13 @@ lyFrame::lyFrame()
 lyFrame::~lyFrame()
 {
 }
-lyFrame* lyFrame::create(const std::string& filename)
+lyFrame* lyFrame::createWithSpritePath(const std::string& filepath)
 {
-    return (lyFrame*)CCSprite::create(filename);
+    return (lyFrame*)CCSprite::create(filepath);
+}
+lyFrame* lyFrame::createWithSpriteName(const std::string& filename)
+{
+    return (lyFrame*)CCSprite::createWithSpriteFrameName(filename);
 }
 void lyFrame::update(float delta)
 {

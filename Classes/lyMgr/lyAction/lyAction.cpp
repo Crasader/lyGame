@@ -32,7 +32,7 @@ lyAction* lyAction::Create()
 
 void lyAction::AddFrame( const char* pszImg )
 {
-    lyFrame* pFrame = lyFrame::create(pszImg);
+    lyFrame* pFrame = lyFrame::createWithSpritePath(pszImg);
     if (pFrame)
     {
         pFrame->retain();

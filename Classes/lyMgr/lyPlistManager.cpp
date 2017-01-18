@@ -31,6 +31,14 @@ lyPlistManager::~lyPlistManager()
 }
 
 
+
+void lyPlistManager::loadTexturePlist(std::string textureName)
+{
+    if(textureName.empty() || "" == textureName)
+        return;
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("TexturePlist/"+textureName+".plist");
+}
+
 void lyPlistManager::loadMapPlist(std::string textureName)
 {
     if(textureName.empty() || "" == textureName)

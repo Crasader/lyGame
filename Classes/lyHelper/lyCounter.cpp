@@ -1,6 +1,6 @@
 #include "lyCounter.h"
 #include <assert.h>
-#include "lyLog.h"
+#include "lyAndLog.h"
 
 lyCounterData::lyCounterData(const char *pName)
 {

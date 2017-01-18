@@ -43,10 +43,11 @@ public:
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
 
-    void InitSpr(const char* str);
+    void InitSpritePath(const char* strPath);
+    void InitSpriteName(const char* strName);
 
     
-     bool checkCollision(lyUIDrag* temp);
+     
     
 private:
     lyFrame*    m_pFrame;

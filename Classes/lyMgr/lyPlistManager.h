@@ -23,6 +23,7 @@ public:
     void loadMapPlist(std::string textureName);
     void loadRolePlist(std::string textureName);
     void loadActionPlist(std::string texPath);
+    void loadTexturePlist(std::string textureName);
     
     
 };
