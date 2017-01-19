@@ -76,7 +76,7 @@ void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
         Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
         Vec2 diffNodePoint = touchNodePoint - m_TouchBeginPoint;
         this->setPosition(this->getPosition()+diffNodePoint);
-        lyEventManager::ExecuteEventCPP(XEventType::XCTRL_TOUCH_DOWN, this->GetObjID(),0);
+        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
         //this->isOutScreen();
     }
 }

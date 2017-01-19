@@ -129,7 +129,7 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
         pDrag->setContentSize(Size(75,75));
         pDrag->setSpritePath("images/head/pri_00024_s.png");
         pDrag->setPosition(randPosX(), randPosY());
-        lyEventManager::RegEventCPP(XEventType::XCTRL_TOUCH_DOWN, battleTopLayer::BornOneBullet, pDrag->GetObjID());
+        lyEventManager::RegEventCPP(UIEventType::UI_TOUCH_DOWN, battleTopLayer::BornOneBullet, pDrag->GetObjID());
         _roleArea->addChild(pDrag);
         
         int nInt = lyRandInt(0,3);

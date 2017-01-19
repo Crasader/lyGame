@@ -21,8 +21,8 @@ public:
 
     static lyEventManager* ShareInstance();
     
-    static void RegEventCPP(XEventType byType,XEventCallBack pCallBackFunc, long dwObjID );
-    static void ExecuteEventCPP(XEventType byType, long dwObjID ,long dwParam = 0 );
+    static void RegEventCPP(UIEventType byType,XEventCallBack pCallBackFunc, long dwObjID );
+    static void ExecuteEventCPP(UIEventType byType, long dwObjID ,long dwParam = 0 );
     
     static void ClearEvents(int eventID, long objGuid);
     

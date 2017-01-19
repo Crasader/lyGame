@@ -14,17 +14,13 @@
 #include "lyLink.h"
 
 
-enum XEventType
+enum UIEventType
 {
-    XCTRL_TOUCH_DOWN,
-    XCTRL_TOUCH_UP,
-    XCTRL_TOUCH_CLICK,
-    XCTRL_TOUCH_CHG,		//checkboxºÍradiobutton Ñ¡ÖÐ×´Ì¬¸üÐÂ
-    XCTRL_PROBAR_CHG_END,
-    XCTRL_PROBAR_CHG_TEST,
-    
-    
-    XCTRL_EVT_CNT
+    UI_TOUCH_DOWN,
+    UI_TOUCH_UP,
+    UI_TOUCH_CLICK,
+
+    UI_EVENT_CNT
 };
 
 typedef void (*XEventCallBack)( long dwObjID );

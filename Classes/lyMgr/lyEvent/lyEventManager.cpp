@@ -38,7 +38,7 @@ lyEventManager* lyEventManager::ShareInstance()
     }
     return m_EventInstance;
 }
-void lyEventManager::RegEventCPP( XEventType byType,XEventCallBack pCallBackFunc, long dwObjID )
+void lyEventManager::RegEventCPP( UIEventType byType,XEventCallBack pCallBackFunc, long dwObjID )
 {
     
     lyEvent* pEvent = lyEvent::Create();
@@ -51,7 +51,7 @@ void lyEventManager::RegEventCPP( XEventType byType,XEventCallBack pCallBackFunc
     }
     
 }
-void lyEventManager::ExecuteEventCPP( XEventType byType, long dwObjID ,long dwParam /*= 0 */ )
+void lyEventManager::ExecuteEventCPP( UIEventType byType, long dwObjID ,long dwParam /*= 0 */ )
 {
     lyEvent* pEvent = m_objEventMgr.GetHeader();
     while (1)
