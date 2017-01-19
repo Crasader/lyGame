@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
-            timestampString = "506422667.385796"
+            timestampString = "506500561.750906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "battleTopLayer::checkTestCollision(float dt)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIBullet.h"
-            timestampString = "506417095.473845"
+            timestampString = "506429581.975048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "InitPoint(CCPoint pointStart, CCPoint pointEnd)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,12 +234,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIBullet.cpp"
-            timestampString = "506420144.872565"
+            timestampString = "506499952.857829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "lyUIBullet::InitBulletPath(const char* strPath)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyUI/lyUIBullet.cpp"
+            timestampString = "506429037.023664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "lyUIBullet::onEnter()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

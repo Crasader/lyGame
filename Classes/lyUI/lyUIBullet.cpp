@@ -55,10 +55,6 @@ void lyUIBullet::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t
     {
         return;
     }
-    if (m_pBulletFrame) {
-        m_pBulletFrame->lyVisit();
-    }
-    
 }
 void lyUIBullet::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 {
@@ -91,20 +87,7 @@ void lyUIBullet::InitBulletPath(const char* strPath)
         m_pBulletFrame->setScaleX(this->getContentSize().width/m_pBulletFrame->getContentSize().width);
         m_pBulletFrame->setScaleY(this->getContentSize().height/m_pBulletFrame->getContentSize().height);
         m_pBulletFrame->setPosition(0,0);
+        m_pBulletFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
         this->addChild(m_pBulletFrame);
     }
-}
-void lyUIBullet::doFly()
-{
-    auto actionMove = MoveTo::create(200,m_pointE);
-    
-    auto actionDone = CallFuncN::create(
-                                        CC_CALLBACK_1(lyUIBullet::flyEnd, this));
-    
-    Sequence* sequence = Sequence::create(actionMove, actionDone, NULL);
-    this->runAction(sequence);
-}
-void lyUIBullet::flyEnd(Node* pNode)
-{
-    
 }

@@ -20,6 +20,8 @@
 
 #include "lyUIRole.h"
 #include "lyUIDrag.h"
+#include "lyUIBullet.h"
+
 
 class battleTopLayerParameter : public SceneParameter
 {
@@ -57,7 +59,7 @@ public:
     
    
     void checkTestCollision(float dt);
-    
+    void checkBullet(float dt);
 private:
     int randPosX();
     int randPosY();
@@ -70,6 +72,7 @@ private:
     
     Vector<lyUIDrag*>    m_lyLMTeam1;
     Vector<lyUIDrag*>    m_lyLMTeam2;
+    Vector<lyUIBullet*>    m_lyLMBullet;
 };
 
 

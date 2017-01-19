@@ -17,7 +17,7 @@
 #include "lySoundID.h"
 #include "lyActionManager.h"
 #include "lyCSVReader.h"
-#include "lyUIBullet.h"
+
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -127,7 +127,7 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
         
         pDrag->setContentSize(Size(75,75));
         pDrag->setSpritePath("images/head/pri_00024_s.png");
-        pDrag->setAnchorPoint(Point(0.0,0.0));
+        //pDrag->setAnchorPoint(Point(0.0,0.0));
         pDrag->setPosition(randPosX(), randPosY());
         _roleArea->addChild(pDrag);
         
@@ -170,12 +170,32 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
     
     lyUIBullet* pBullet = lyUIBullet::Create();
     if (pBullet) {
+        pBullet->setContentSize(Size(75,75));
         pBullet->setPosition(randPosX(), randPosY());
-        //pBullet->InitPoint(Vec2(120,180 ), Vec2(200, 800));
+        pBullet->InitPoint(Vec2(120,180 ), Vec2(200, 800));
         pBullet->InitBulletPath("images/head/pri_00024_s.png");
         _roleArea->addChild(pBullet);
+        this->schedule(schedule_selector(battleTopLayer::checkBullet), 0.1f);
+        
+        m_lyLMBullet.pushBack(pBullet);
     }
 
+}
+void battleTopLayer::checkBullet(float dt)
+{
+    for(auto &info : m_lyLMBullet)
+    {
+        if (info->isOutScreen()) {
+            m_lyLMBullet.eraseObject(info);
+        }
+        else
+        {
+            Vec2 currPoint = info->getPosition();
+            Vec2 diffPoint = info->getDiffPoint();
+            info->setPosition(currPoint+diffPoint);
+        }
+        
+    }
 }
 void battleTopLayer::onClickActionSkill(cocos2d::Ref *sender)
 {

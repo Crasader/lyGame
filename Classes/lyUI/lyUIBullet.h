@@ -43,21 +43,40 @@ public:
         m_nBulletId = nId;
        
     }
+    void setTime(int nMS)
+    {
+        m_nMillisecond = nMS;
+    }
     void InitBulletPath(const char* strPath);
     
     void InitPoint(CCPoint pointStart, CCPoint pointEnd)
     {
         m_pointS = pointStart;
         m_pointE = pointEnd;
+        m_diffPoint = (m_pointE-m_pointS)/20;
+        CCLOG("======================m_diffPoint %f,%f",m_diffPoint.x,m_diffPoint.y);
     }
     
-    void doFly();
-    void flyEnd(Node* pNode);
+    Vec2 getPointS()
+    {
+        return m_pointS;
+    }
+    Vec2 getPointE()
+    {
+        return m_pointE;
+    }
+    Vec2 getDiffPoint()
+    {
+        return m_diffPoint;
+    }
+    
 private:
     lyFrame*    m_pBulletFrame;
     int         m_nBulletId;    //id
     Vec2        m_pointS;       //起始point
     Vec2        m_pointE;       //终结point
+    Vec2        m_diffPoint;
+    int         m_nMillisecond; //时间
     float       m_fSpeed;       //移动速度
     
     
