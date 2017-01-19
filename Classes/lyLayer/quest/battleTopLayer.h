@@ -59,6 +59,8 @@ public:
     
    
     void checkTestCollision(float dt);
+    
+    static void BornOneBullet(long nObjId);
     void checkBullet(float dt);
 private:
     int randPosX();

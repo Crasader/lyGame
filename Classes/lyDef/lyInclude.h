@@ -21,6 +21,7 @@
 #include "lyLink.h"
 #include "lyAndLog.h"
 #include "lyCocosFunc.h"
+#include "lyEventManager.h"
 
 using namespace tinyxml2;
 using namespace cocos2d;

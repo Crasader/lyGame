@@ -1470,6 +1470,7 @@
 					"$(SRCROOT)/../Classes/lyHelper",
 					"$(SRCROOT)/../Classes/lyUtils",
 					"$(SRCROOT)/../Classes/lyLayer",
+					"$(SRCROOT)/../Classes/lyMgr/lyEvent",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1512,6 +1513,7 @@
 					"$(SRCROOT)/../Classes/lyHelper",
 					"$(SRCROOT)/../Classes/lyUtils",
 					"$(SRCROOT)/../Classes/lyLayer",
+					"$(SRCROOT)/../Classes/lyMgr/lyEvent",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;

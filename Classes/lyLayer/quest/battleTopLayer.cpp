@@ -18,6 +18,7 @@
 #include "lyActionManager.h"
 #include "lyCSVReader.h"
 
+#include "lyEventManager.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -127,8 +128,8 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
         
         pDrag->setContentSize(Size(75,75));
         pDrag->setSpritePath("images/head/pri_00024_s.png");
-        //pDrag->setAnchorPoint(Point(0.0,0.0));
         pDrag->setPosition(randPosX(), randPosY());
+        lyEventManager::RegEventCPP(XEventType::XCTRL_TOUCH_DOWN, battleTopLayer::BornOneBullet, pDrag->GetObjID());
         _roleArea->addChild(pDrag);
         
         int nInt = lyRandInt(0,3);
@@ -143,31 +144,13 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 
     
 }
+void battleTopLayer::BornOneBullet(long nObjId)
+{
+    CCLOG("BornOneBullet nObjId=%d",nObjId);
+}
 void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
 {
-    CCLOG("onClickAction1");
-    /*
-    if (m_pMyRole)
-    {
-        m_pMyRole->setAction(0);
-        return;
-    }
-    else
-    {
-        m_pMyRole = lyUIRole::Create();
-    }
-     if (_roleArea && m_pMyRole) {
-         m_pMyRole->setRoleId(0);
-         m_pMyRole->setGroupId(0);
-         m_pMyRole->setContentSize(Size(800,800));
-         m_pMyRole->setPosition(randPosX(), randPosY());
-         m_pMyRole->setTag(UIROLE_INDEX);
-         CCLOG("_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
-         _roleArea->addChild(m_pMyRole);
-     }
-     */
-    
-    
+    CCLOG("onClickAction1");    
     lyUIBullet* pBullet = lyUIBullet::Create();
     if (pBullet) {
         pBullet->setContentSize(Size(75,75));
@@ -181,6 +164,7 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
     }
 
 }
+
 void battleTopLayer::checkBullet(float dt)
 {
     for(auto &info : m_lyLMBullet)
@@ -243,7 +227,6 @@ void battleTopLayer::checkTestCollision(float dt)
     Size sizeT = this->getContentSize();
     float fMax = lyMax(sizeT.width, sizeT.height);
     float fMin = lyMin(sizeT.width, sizeT.height);
-    
     
     for (auto childTeam1 : m_lyLMTeam1)
     {
