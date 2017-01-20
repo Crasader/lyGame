@@ -23,6 +23,7 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
+bool battleTopLayer::_canBorn = false;
 
 battleTopLayer::battleTopLayer()
 : _isMoving(false)
@@ -47,7 +48,7 @@ void battleTopLayer::onEnter()
     lyBaseLayer::onEnter();
     this->schedule(schedule_selector(battleTopLayer::checkTestCollision), 0.2f);
     
-    
+    this->schedule(schedule_selector(battleTopLayer::StartBorn), 0.2f);
     CCLOG("=====_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
     CCLOG("=====_roleArea w=%f, h=%f",_roleArea->getContentSize().width,_roleArea->getContentSize().height);
 
@@ -62,6 +63,7 @@ void battleTopLayer::onExit()
 {
     lyBaseLayer::onExit();
     this->unschedule(schedule_selector(battleTopLayer::checkTestCollision));
+    this->unschedule(schedule_selector(battleTopLayer::StartBorn));
 }
 bool battleTopLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
@@ -129,11 +131,13 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
         pDrag->setContentSize(Size(75,75));
         pDrag->setSpritePath("images/head/pri_00024_s.png");
         pDrag->setPosition(randPosX(), randPosY());
-        lyEventManager::RegEventCPP(UIEventType::UI_TOUCH_DOWN, battleTopLayer::BornOneBullet, pDrag->GetObjID());
+        lyEventManager::RegEventCPP(UIEventType::UI_TOUCH_DOWN, battleTopLayer::BornDown, pDrag->GetObjID());
+        lyEventManager::RegEventCPP(UIEventType::UI_TOUCH_UP, battleTopLayer::BornUp, pDrag->GetObjID());
         _roleArea->addChild(pDrag);
         
         int nInt = lyRandInt(0,3);
-        if (1 == nInt) {
+        //if (1 == nInt) {
+        if (true) {
             m_lyLMTeam1.pushBack(pDrag);
         }
         else
@@ -144,13 +148,37 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
 
     
 }
-void battleTopLayer::BornOneBullet(long nObjId)
+void battleTopLayer::BornDown(long nObjId)
 {
-    CCLOG("BornOneBullet nObjId=%d",nObjId);
+    CCLOG("BornDown nObjId=%ld",nObjId);
+    _canBorn = true;
+}
+void battleTopLayer::BornUp(long nObjId)
+{
+    CCLOG("BornUp nObjId=%ld",nObjId);
+    _canBorn = false;
+}
+void battleTopLayer::StartBorn(float dt)
+{
+    if (_canBorn) {
+        lyUIBullet* pBullet = lyUIBullet::Create();
+        if (pBullet) {
+            pBullet->setContentSize(Size(75,75));
+            pBullet->setPosition( Vec2(lyRandInt(0,500),lyRandInt(0,100)) );
+            pBullet->InitPoint( Vec2(lyRandInt(0,500),lyRandInt(0,100)) , Vec2(200, 800));
+            pBullet->InitBulletPath("images/head/pri_00024_s.png");
+            _roleArea->addChild(pBullet);
+            this->schedule(schedule_selector(battleTopLayer::checkBullet), 0.1f);
+            
+            m_lyLMBullet.pushBack(pBullet);
+        }
+    }
+    
 }
 void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
 {
-    CCLOG("onClickAction1");    
+    CCLOG("onClickAction1");
+    /*
     lyUIBullet* pBullet = lyUIBullet::Create();
     if (pBullet) {
         pBullet->setContentSize(Size(75,75));
@@ -162,7 +190,7 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
         
         m_lyLMBullet.pushBack(pBullet);
     }
-
+     */
 }
 
 void battleTopLayer::checkBullet(float dt)

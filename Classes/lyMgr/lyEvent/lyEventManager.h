@@ -19,7 +19,7 @@ public:
     lyEventManager();
     ~lyEventManager();
 
-    static lyEventManager* ShareInstance();
+    static lyEventManager* getInstance();
     
     static void RegEventCPP(UIEventType byType,XEventCallBack pCallBackFunc, long dwObjID );
     static void ExecuteEventCPP(UIEventType byType, long dwObjID ,long dwParam = 0 );

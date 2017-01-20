@@ -60,7 +60,10 @@ public:
    
     void checkTestCollision(float dt);
     
-    static void BornOneBullet(long nObjId);
+    static void BornDown(long nObjId);
+    static void BornUp(long nObjId);
+    void StartBorn(float dt);
+    
     void checkBullet(float dt);
 private:
     int randPosX();
@@ -68,6 +71,7 @@ private:
  
     
 private:
+    static bool     _canBorn;
     bool            _isMoving;
     cocos2d::Node*  _roleArea;
     lyUIRole*       m_pMyRole;

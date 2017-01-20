@@ -86,6 +86,8 @@ void lyUIDrag::onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event)
     if (!m_bIsTouched) {
         return;
     }
+    lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_UP, this->GetObjID(),0);
+    
     m_bIsTouched = false;
 }
 void lyUIDrag::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event)

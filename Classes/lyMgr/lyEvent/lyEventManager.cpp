@@ -30,7 +30,7 @@ lyEventManager* lyEventManager::m_EventInstance = 0;
 lyLinkMgr<lyEvent> lyEventManager::m_objEventMgr;
 
 
-lyEventManager* lyEventManager::ShareInstance()
+lyEventManager* lyEventManager::getInstance()
 {
     if (!m_EventInstance)
     {
