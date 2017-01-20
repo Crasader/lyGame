@@ -62,9 +62,14 @@ public:
     
     static void BornDown(long nObjId);
     static void BornUp(long nObjId);
+    static void BornClick(long nObjId);
+    
     void StartBorn(float dt);
+    void StartRain(float dt);
     
     void checkBullet(float dt);
+    void RainDowning(float dt);
+    
 private:
     int randPosX();
     int randPosY();
@@ -79,6 +84,8 @@ private:
     Vector<lyUIDrag*>    m_lyLMTeam1;
     Vector<lyUIDrag*>    m_lyLMTeam2;
     Vector<lyUIBullet*>    m_lyLMBullet;
+    
+    Vector<lyUIBullet*>    m_lyLMRain;
 };
 
 

@@ -65,6 +65,8 @@ bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
     if (lyCocosFunc::isTouchInWin(this, touches)) {
         m_bIsTouched = true;
         m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
+        
+        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
         return true;
     }
     return false;
@@ -76,7 +78,8 @@ void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
         Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
         Vec2 diffNodePoint = touchNodePoint - m_TouchBeginPoint;
         this->setPosition(this->getPosition()+diffNodePoint);
-        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
+        
+        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_MOVED, this->GetObjID(),0);
         //this->isOutScreen();
     }
 }
@@ -87,6 +90,7 @@ void lyUIDrag::onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event)
         return;
     }
     lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_UP, this->GetObjID(),0);
+
     
     m_bIsTouched = false;
 }

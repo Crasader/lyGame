@@ -18,6 +18,7 @@ enum UIEventType
 {
     UI_TOUCH_DOWN,
     UI_TOUCH_UP,
+    UI_TOUCH_MOVED,
     UI_TOUCH_CLICK,
 
     UI_EVENT_CNT

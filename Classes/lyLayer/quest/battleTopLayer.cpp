@@ -48,7 +48,10 @@ void battleTopLayer::onEnter()
     lyBaseLayer::onEnter();
     this->schedule(schedule_selector(battleTopLayer::checkTestCollision), 0.2f);
     
-    this->schedule(schedule_selector(battleTopLayer::StartBorn), 0.2f);
+    this->schedule(schedule_selector(battleTopLayer::StartBorn), 0.1f);
+    
+    this->schedule(schedule_selector(battleTopLayer::StartRain), 0.4f);
+    
     CCLOG("=====_roleArea x=%f, y=%f",_roleArea->getPosition().x,_roleArea->getPosition().y);
     CCLOG("=====_roleArea w=%f, h=%f",_roleArea->getContentSize().width,_roleArea->getContentSize().height);
 
@@ -64,6 +67,7 @@ void battleTopLayer::onExit()
     lyBaseLayer::onExit();
     this->unschedule(schedule_selector(battleTopLayer::checkTestCollision));
     this->unschedule(schedule_selector(battleTopLayer::StartBorn));
+    this->unschedule(schedule_selector(battleTopLayer::StartRain));
 }
 bool battleTopLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
@@ -133,7 +137,7 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
         pDrag->setPosition(randPosX(), randPosY());
         lyEventManager::RegEventCPP(UIEventType::UI_TOUCH_DOWN, battleTopLayer::BornDown, pDrag->GetObjID());
         lyEventManager::RegEventCPP(UIEventType::UI_TOUCH_UP, battleTopLayer::BornUp, pDrag->GetObjID());
-        _roleArea->addChild(pDrag);
+         _roleArea->addChild(pDrag);
         
         int nInt = lyRandInt(0,3);
         //if (1 == nInt) {
@@ -147,6 +151,11 @@ void battleTopLayer::onClickAddRole(cocos2d::Ref *sender)
     }
 
     
+}
+void battleTopLayer::BornClick(long nObjId)
+{
+    CCLOG("BornClick nObjId=%ld",nObjId);
+    //_canBorn = false;
 }
 void battleTopLayer::BornDown(long nObjId)
 {
@@ -166,7 +175,7 @@ void battleTopLayer::StartBorn(float dt)
             pBullet->setContentSize(Size(75,75));
             pBullet->setPosition( Vec2(lyRandInt(0,500),lyRandInt(0,100)) );
             pBullet->InitPoint( Vec2(lyRandInt(0,500),lyRandInt(0,100)) , Vec2(200, 800));
-            pBullet->InitBulletPath("images/head/pri_00024_s.png");
+            pBullet->InitBulletPath("images/btn/btn_00097.png");
             _roleArea->addChild(pBullet);
             this->schedule(schedule_selector(battleTopLayer::checkBullet), 0.1f);
             
@@ -175,6 +184,22 @@ void battleTopLayer::StartBorn(float dt)
     }
     
 }
+//随机生成敌人 下落
+void battleTopLayer::StartRain(float dt)
+{
+    lyUIBullet* pRain = lyUIBullet::Create();
+    if (pRain) {
+        pRain->setContentSize(Size(66,66));
+        pRain->setPosition( Vec2(lyRandInt(0,300),500) );
+        pRain->InitPoint( Vec2(lyRandInt(0,300),500) , Vec2(lyRandInt(0,300), 0));
+        pRain->InitBulletPath("images/btn/btn_00097.png");
+        _roleArea->addChild(pRain);
+        this->schedule(schedule_selector(battleTopLayer::RainDowning), 0.1f);
+        m_lyLMRain.pushBack(pRain);
+    }
+
+}
+
 void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
 {
     CCLOG("onClickAction1");
@@ -192,7 +217,22 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
     }
      */
 }
-
+void battleTopLayer::RainDowning(float dt)
+{
+    for(auto &info : m_lyLMRain)
+    {
+        if (info->isOutScreen()) {
+            m_lyLMRain.eraseObject(info);
+        }
+        else
+        {
+            Vec2 currPoint = info->getPosition();
+            Vec2 diffPoint = info->getDiffPoint();
+            info->setPosition(currPoint+diffPoint);
+        }
+        
+    }
+}
 void battleTopLayer::checkBullet(float dt)
 {
     for(auto &info : m_lyLMBullet)
@@ -251,16 +291,11 @@ int battleTopLayer::randPosY()
 void battleTopLayer::checkTestCollision(float dt)
 {
     //CCLOG("-------checkCollision");
-    
-    Size sizeT = this->getContentSize();
-    float fMax = lyMax(sizeT.width, sizeT.height);
-    float fMin = lyMin(sizeT.width, sizeT.height);
-    
-    for (auto childTeam1 : m_lyLMTeam1)
+    for (auto oneBullet : m_lyLMBullet)
     {
-        for (auto childTeam2 : m_lyLMTeam2)
+        for (auto oneRain : m_lyLMRain)
         {
-            bool bColl = childTeam1->checkCollision(childTeam2);
+            bool bColl = oneBullet->checkCollision(oneRain);
             if (bColl) {
                 CCLOG("-------碰撞了");
             }
