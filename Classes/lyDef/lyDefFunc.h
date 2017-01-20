@@ -21,9 +21,11 @@ using namespace std;
 //通过table取得数据
 #define lyTableValue(strCSVPath, nId, strKey)   lyCSVReader::getInstance()->getValue(strCSVPath, nId, strKey)
 
+//通过table取得数据
+#define lyTableOneLine(strCSVPath, nId)   lyCSVReader::getInstance()->getOneLine(strCSVPath, nId)
+
 //通过table取得数据条数
 #define lyTableLines(strCSVPath)    lyCSVReader::getInstance()->getLineNum(strCSVPath)
-
 
 
 #define playBgm(soundId)                lySoundManager::getInstance()->playBGM(soundId)

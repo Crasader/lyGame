@@ -69,12 +69,16 @@ int lyCSVReader::getLineNum(std::string strCSVPath)
 const std::string lyCSVReader::getValue(std::string strCSVPath, int nRowId, const std::string &strColumn)
 {
     const MAP_ONE_LINE* line = getOneLine(strCSVPath, nRowId);
+    
     if(line && line->find(strColumn) != line->end())
     {
         return line->find(strColumn)->second;
     }
     return "";
 }
+
+
+
 void lyCSVReader::Parse(std::string strCSVPath)
 {
     m_mapOneFile.clear();       //首先进行清理

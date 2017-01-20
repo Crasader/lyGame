@@ -187,18 +187,40 @@ void battleTopLayer::StartBorn(float dt)
 //随机生成敌人 下落
 void battleTopLayer::StartRain(float dt)
 {
-    lyUIBullet* pRain = lyUIBullet::Create();
-    if (pRain) {
-        pRain->setContentSize(Size(66,66));
-        pRain->setPosition( Vec2(lyRandInt(0,300),500) );
-        pRain->InitPoint( Vec2(lyRandInt(0,300),500) , Vec2(lyRandInt(0,300), 0));
-        pRain->InitBulletPath("images/btn/btn_00097.png");
-        _roleArea->addChild(pRain);
-        this->schedule(schedule_selector(battleTopLayer::RainDowning), 0.1f);
-        m_lyLMRain.pushBack(pRain);
-    }
+    //const MAP_MUTI_LINE* szlines = lyCSVReader::getInstance()->getOneFile);
+    
+    const MAP_ONE_LINE* szlines = lyCSVReader::getInstance()->getOneLine("Table/Role.csv",1);
+    
+    
+    string strRainW = lyTableValue("Table/Role.csv",1,"Width");
+    const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/Role.csv",1);
+    CCLOG("strRainW=%s",strRainW.c_str());
+    if(szOneLine)
+    {
+        if (szOneLine->find("Width") != szOneLine->end() ) {
+            CCLOG("Width=%s",szOneLine->find("Width")->second.c_str());
+        }
+        if (szOneLine->find("BornXs") != szOneLine->end() ) {
+            CCLOG("BornXs=%s",szOneLine->find("BornXs")->second.c_str());
+        }
+        
+        //*
+        lyUIBullet* pRain = lyUIBullet::Create();
+        if (pRain) {
+            pRain->setContentSize(Size(66,66));
+            pRain->setPosition( Vec2(lyRandInt(0,300),500) );
+            pRain->InitPoint( Vec2(lyRandInt(0,300),500) , Vec2(lyRandInt(0,300), 0));
+            pRain->InitBulletPath("images/btn/btn_00097.png");
+            _roleArea->addChild(pRain);
+            this->schedule(schedule_selector(battleTopLayer::RainDowning), 0.1f);
+            m_lyLMRain.pushBack(pRain);
+        }
+        // */
 
-}
+    }
+    
+    
+   }
 
 void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
 {

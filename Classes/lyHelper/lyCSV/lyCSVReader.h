@@ -38,7 +38,9 @@ public:
     const MAP_MUTI_LINE* getOneFile(std::string strCSVPath);
     //获取某一行value
     const MAP_ONE_LINE* getOneLine(std::string strCSVPath, int code);
-   
+    
+    
+
 private:
     //读取csv的一行
     void readCSVLine(const char *line, int index);
