@@ -158,5 +158,13 @@ inline double lyRandFloat()
     return ((rand())/(RAND_MAX+1.0));
 }
 
+inline int lyStrToInt(const char* str)
+{
+    std::istringstream iss(str);
+    int val = 0;
+    iss >> val;
+    return val;
+}
+
 
 #endif  //__lyGame__lyFunc__

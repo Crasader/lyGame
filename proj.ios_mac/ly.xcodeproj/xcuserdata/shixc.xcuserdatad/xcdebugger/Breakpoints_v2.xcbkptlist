@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
-            timestampString = "506589244.517081"
+            timestampString = "506769741.609478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "battleTopLayer::onClickAction1(cocos2d::Ref *sender)"
             landmarkType = "7">
          </BreakpointContent>

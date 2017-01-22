@@ -203,14 +203,26 @@ void battleTopLayer::StartRain(float dt)
         if (szOneLine->find("BornXs") != szOneLine->end() ) {
             CCLOG("BornXs=%s",szOneLine->find("BornXs")->second.c_str());
         }
-        
+        ;
         //*
         lyUIBullet* pRain = lyUIBullet::Create();
         if (pRain) {
-            pRain->setContentSize(Size(66,66));
-            pRain->setPosition( Vec2(lyRandInt(0,300),500) );
-            pRain->InitPoint( Vec2(lyRandInt(0,300),500) , Vec2(lyRandInt(0,300), 0));
-            pRain->InitBulletPath("images/btn/btn_00097.png");
+            int nWidth = lyStrToInt(szOneLine->find("Width")->second.c_str());
+            int nHeight = lyStrToInt(szOneLine->find("Height")->second.c_str());
+            int nBornXs = lyStrToInt(szOneLine->find("BornXs")->second.c_str());
+            int nBornXe = lyStrToInt(szOneLine->find("BornXe")->second.c_str());
+            int nBornYs = lyStrToInt(szOneLine->find("BornYs")->second.c_str());
+            int nBornYe = lyStrToInt(szOneLine->find("BornYe")->second.c_str());
+           
+            int nEndXs = lyStrToInt(szOneLine->find("EndXs")->second.c_str());
+            int nEndXe = lyStrToInt(szOneLine->find("EndXe")->second.c_str());
+            int nEndYs = lyStrToInt(szOneLine->find("EndYs")->second.c_str());
+            int nEndYe = lyStrToInt(szOneLine->find("EndYe")->second.c_str());
+            
+            pRain->setContentSize(Size(nWidth,nHeight));
+            pRain->setPosition( Vec2(lyRandInt(nBornXs,nBornXe),lyRandInt(nBornYs,nBornYe)) );
+            pRain->InitPoint( Vec2( lyRandInt(nBornXs,nBornXe),lyRandInt(nBornYs,nBornYe)) , Vec2( lyRandInt(nEndXs,nEndXe), lyRandInt(nEndYs,nEndYe) ));
+            pRain->InitBulletPath("images/ui/yudi.png");
             _roleArea->addChild(pRain);
             this->schedule(schedule_selector(battleTopLayer::RainDowning), 0.1f);
             m_lyLMRain.pushBack(pRain);
