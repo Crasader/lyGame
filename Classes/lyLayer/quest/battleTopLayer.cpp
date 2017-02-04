@@ -110,7 +110,7 @@ void battleTopLayer::onClickPause(cocos2d::Ref *sender)
     CCLOG("onClickPause");
     m_bPause = !m_bPause;
     if (m_pPlane) {
-        m_pPlane->setCanDrag(m_bPause);
+        m_pPlane->setPause(m_bPause);
     }
 }
 int battleTopLayer::randPosX()
@@ -152,7 +152,7 @@ void battleTopLayer::checkCollision(float dt)
         bool bColl = m_pPlane->checkCollision(oneRain);
         if (bColl) {
             CCLOG("-------碰撞了");
-            oneRain->playMissEffect();
+            oneRain->playMissAction();
             m_verEnemy.eraseObject(oneRain);
         }
         else
@@ -170,8 +170,8 @@ void battleTopLayer::BornOnePlane()
     m_pPlane = lyUIDrag::Create();
     if (m_pPlane) {
         
-        m_pPlane->setContentSize(Size(75,75));
-        m_pPlane->setSpritePath("images/head/pri_00024_s.png");
+        m_pPlane->setContentSize(Size(102,126));
+        m_pPlane->setSpritePath("images/ui/plane.png");
         m_pPlane->setPosition(200, 0);
         _roleArea->addChild(m_pPlane);
     }
@@ -185,7 +185,7 @@ void battleTopLayer::EnemyStartMove(float dt)
     {
         if (info->isOutScreen())
         {
-            info->playMissEffect();
+            info->playMissAction();
             m_verEnemy.eraseObject(info);
         }
         else

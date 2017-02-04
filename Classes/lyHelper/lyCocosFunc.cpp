@@ -26,15 +26,15 @@ bool lyCocosFunc::isTouchInWin(Node* pNode, Touch* pTouch)
     bool bIsIn = false;
     if(pNode && pTouch)
     {
-        CCLOG("-------------------------------------");
+        //CCLOG("-------------------------------------");
         Point pointAnchor = pNode->getAnchorPoint();
-        CCLOG("pointAnchor x=%f, y=%f",pointAnchor.x,pointAnchor.y);
+        //CCLOG("pointAnchor x=%f, y=%f",pointAnchor.x,pointAnchor.y);
         Point touPoint = pNode->convertTouchToNodeSpace(pTouch);
         Size nodeSize = pNode->getContentSize();
-        CCLOG("touPoint x=%f, y=%f x=%f, y=%f",touPoint.x,touPoint.y, pTouch->getLocationInView().x,pTouch->getLocationInView().y);
-        CCLOG("touPoint x %f>-%f && %f<%f",touPoint.x ,nodeSize.width*pointAnchor.x,touPoint.x ,nodeSize.width-(nodeSize.width*pointAnchor.x) );
-        CCLOG("touPoint y %f>-%f && %f<%f",touPoint.y ,nodeSize.height*pointAnchor.y,touPoint.y ,nodeSize.height-(nodeSize.height*pointAnchor.y) );
-        CCLOG("-------------------------------------");
+        //CCLOG("touPoint x=%f, y=%f x=%f, y=%f",touPoint.x,touPoint.y, pTouch->getLocationInView().x,pTouch->getLocationInView().y);
+        //CCLOG("touPoint x %f>-%f && %f<%f",touPoint.x ,nodeSize.width*pointAnchor.x,touPoint.x ,nodeSize.width-(nodeSize.width*pointAnchor.x) );
+        //CCLOG("touPoint y %f>-%f && %f<%f",touPoint.y ,nodeSize.height*pointAnchor.y,touPoint.y ,nodeSize.height-(nodeSize.height*pointAnchor.y) );
+        //CCLOG("-------------------------------------");
         if( touPoint.x > 0 && touPoint.x < nodeSize.width
            && touPoint.y > 0  && touPoint.y < nodeSize.height
            )

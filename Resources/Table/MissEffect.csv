@@ -1,7 +1,7 @@
-#,#,0,1,2,3
-DTD,#,STRING,WORD,WORD,WORD
-NAM,#,Path,MaxId,Width,Height
-#,备注,资源路径,最大帧id（0--x）,宽,高
-RAN,#,"[0,0]","[0,65500]","[0,65500]","[0,65500]"
-1,消失特效,Effect_dilei_%d%s,7,20,20
-2,消失特效,TexturePlist/Effect_dilei_%d%s,7,20,20
+#,#,0,1,2,3,4
+DTD,#,STRING,WORD,WORD,WORD,STRING
+NAM,#,Path,MaxId,Width,Height,Sound
+#,备注,资源路径,最大帧id（0--x）,宽,高,声音
+RAN,#,"[0,0]","[0,65500]","[0,65500]","[0,65500]","[0,0]"
+1,消失特效,Effect_dilei_%d%s,7,20,20,sounds/ios/shoot.wav
+2,消失特效,TexturePlist/Effect_dilei_%d%s,7,20,20,sounds/shoot.wav

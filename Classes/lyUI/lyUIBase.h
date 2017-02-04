@@ -63,9 +63,9 @@ public:
     
     void Clear();
     
-    void setCanDrag(bool can)
+    void setPause(bool pause)
     {
-        m_bCanDrag = can;
+        m_bPause = pause;
     }
 protected:
     Vec2    m_TouchBeginPoint;
@@ -82,7 +82,7 @@ protected:
     
     unsigned char		m_byInterval;
     unsigned char		m_byCurrInterval;
-    bool                m_bCanDrag;
+    bool                m_bPause;
 
 };
 

@@ -54,7 +54,7 @@ public:
         m_pointS = pointStart;
         m_pointE = pointEnd;
         m_diffPoint = (m_pointE-m_pointS)/20;
-        CCLOG("======================m_diffPoint %f,%f",m_diffPoint.x,m_diffPoint.y);
+        //CCLOG("======================m_diffPoint %f,%f",m_diffPoint.x,m_diffPoint.y);
     }
     
     Vec2 getPointS()
@@ -71,7 +71,9 @@ public:
     }
     //移动结束后，播放消失特效，播放完毕后释放本资源，如果没有消失特效，直接释放
     void setMissEffectId(int missId);
-    void playMissEffect();
+    void setMissSoundId(int missId);
+    void playMissAction();
+    void playMissEffect(const MAP_ONE_LINE* missData);
     
     void Clear();
     
@@ -88,7 +90,7 @@ private:
     //消失相关属性
     unsigned char		m_byMissInterval;
     bool        m_bPlayMiss;
-    int         m_nMissEffectId;
+    int         m_nMissEffectId; 
     lyAction*   m_pMissAction;
     lyFrame*    m_pMissFrame;
     

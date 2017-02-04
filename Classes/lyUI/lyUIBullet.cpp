@@ -11,7 +11,6 @@ lyUIBullet::lyUIBullet()
 :lyUIBase()
 {
     m_nMissEffectId = 0;
-   
     m_pButtleAction = NULL;
     m_pButtleFrame = NULL;
     
@@ -24,7 +23,6 @@ lyUIBullet::lyUIBullet()
 lyUIBullet::~lyUIBullet()
 {
     m_nMissEffectId = 0;
-    
     m_pButtleAction = NULL;
     m_pButtleFrame = NULL;
     
@@ -69,6 +67,9 @@ void lyUIBullet::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t
     lyUIBase::visit(renderer, parentTransform, parentFlags);
     if (!_visible)
     {
+        return;
+    }
+    if (m_bPause) {
         return;
     }
     
@@ -187,50 +188,59 @@ void lyUIBullet::setMissEffectId(int missId)
 {
     m_nMissEffectId = missId;
 }
-void lyUIBullet::playMissEffect()
+
+void lyUIBullet::playMissAction()
 {
+    m_nMissEffectId=1;
     if (m_pButtleFrame) {
         m_pButtleFrame->setVisible(false);
     }
-    m_nMissEffectId=1;
+    
     if (m_nMissEffectId)
     {
-        if(m_pMissAction)
-        {
-            m_pMissAction->Clear();
-            m_pMissAction = nullptr;
+        const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/MissEffect.csv",m_nMissEffectId);
+        if (szOneLine) {
+            playMissEffect(szOneLine);
+            //lySoundManager::getInstance()->playSE(szOneLine->find("Sound")->second.c_str());
         }
-        m_pMissAction = lyAction::Create();
-        if(m_pMissAction)
-        {
-            const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/MissEffect.csv",m_nMissEffectId);
-            if(szOneLine)
-            {
-                int nMaxId = lyStrToInt(szOneLine->find("MaxId")->second.c_str());
-                string strPath = szOneLine->find("Path")->second.c_str();
-                
-                lyPlistManager::getInstance()->loadTexturePlist("Effect_dilei");
-                
-                for(char byIndex = 0; byIndex <= nMaxId; byIndex++ )
-                {
-                    std::string strFramePath = StringUtils::format(strPath.c_str(), byIndex,RES_EXT);
-                    lyFrame* pFrame = lyFrame::createWithSpriteName(strFramePath);
-                    if (pFrame) {
-                        pFrame->retain();
-                        pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
-                        pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
-                        pFrame->setPosition(0,0);
-                        pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
-                        m_pMissAction->AddFrame(pFrame);
-                    }
-                }
-                m_pMissFrame = m_pMissAction->GetHeaderFrame();
-            }
-        }
+        
     }
     else
     {
-        this->Clear();
+        Clear();
     }
-    
+}
+
+
+void lyUIBullet::playMissEffect(const MAP_ONE_LINE* missData)
+{
+    if(m_pMissAction)
+    {
+        m_pMissAction->Clear();
+        m_pMissAction = nullptr;
+    }
+    //播放特效
+    m_pMissAction = lyAction::Create();
+    if(m_pMissAction)
+    {
+        int nMaxId = lyStrToInt(missData->find("MaxId")->second.c_str());
+        string strPath = missData->find("Path")->second.c_str();
+        
+        lyPlistManager::getInstance()->loadTexturePlist("Effect_dilei");
+        
+        for(char byIndex = 0; byIndex <= nMaxId; byIndex++ )
+        {
+            std::string strFramePath = StringUtils::format(strPath.c_str(), byIndex,RES_EXT);
+            lyFrame* pFrame = lyFrame::createWithSpriteName(strFramePath);
+            if (pFrame) {
+                pFrame->retain();
+                pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
+                pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
+                pFrame->setPosition(0,0);
+                pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
+                m_pMissAction->AddFrame(pFrame);
+            }
+        }
+        m_pMissFrame = m_pMissAction->GetHeaderFrame();
+    }
 }

@@ -18,7 +18,7 @@ lyUIBase::lyUIBase()
 ,m_nBulletId(0)
 ,m_byInterval(4)
 ,m_byCurrInterval(0)
-,m_bCanDrag(false)
+,m_bPause(false)
 {
 }
 
