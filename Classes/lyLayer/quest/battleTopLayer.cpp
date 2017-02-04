@@ -151,7 +151,7 @@ void battleTopLayer::checkCollision(float dt)
     {
         bool bColl = m_pPlane->checkCollision(oneRain);
         if (bColl) {
-            CCLOG("-------碰撞了");
+            //CCLOG("-------碰撞了");
             oneRain->playMissAction();
             m_verEnemy.eraseObject(oneRain);
         }
@@ -170,9 +170,10 @@ void battleTopLayer::BornOnePlane()
     m_pPlane = lyUIDrag::Create();
     if (m_pPlane) {
         
-        m_pPlane->setContentSize(Size(102,126));
+        m_pPlane->setContentSize(Size(50,62));
         m_pPlane->setSpritePath("images/ui/plane.png");
         m_pPlane->setPosition(200, 0);
+        m_pPlane->setSpan(0, 260, -50, 50);
         _roleArea->addChild(m_pPlane);
     }
 }
@@ -211,19 +212,13 @@ void battleTopLayer::BornOneEnemy(float dt)
             string strPath = szOneLine->find("Path")->second.c_str();
             int nWidth = lyStrToInt(szOneLine->find("Width")->second.c_str());
             int nHeight = lyStrToInt(szOneLine->find("Height")->second.c_str());
-            int nBornXs = lyStrToInt(szOneLine->find("BornXs")->second.c_str());
-            int nBornXe = lyStrToInt(szOneLine->find("BornXe")->second.c_str());
-            int nBornYs = lyStrToInt(szOneLine->find("BornYs")->second.c_str());
-            int nBornYe = lyStrToInt(szOneLine->find("BornYe")->second.c_str());
             
-            int nEndXs = lyStrToInt(szOneLine->find("EndXs")->second.c_str());
-            int nEndXe = lyStrToInt(szOneLine->find("EndXe")->second.c_str());
-            int nEndYs = lyStrToInt(szOneLine->find("EndYs")->second.c_str());
-            int nEndYe = lyStrToInt(szOneLine->find("EndYe")->second.c_str());
-            
+            Size visibleSize = Director::getInstance()->getVisibleSize();
+        
             pRain->setContentSize(Size(nWidth,nHeight));
-            pRain->setPosition( Vec2(lyRandInt(nBornXs,nBornXe),lyRandInt(nBornYs,nBornYe)) );
-            pRain->InitPoint( Vec2( lyRandInt(nBornXs,nBornXe),lyRandInt(nBornYs,nBornYe)) , Vec2( lyRandInt(nEndXs,nEndXe), lyRandInt(nEndYs,nEndYe) ));
+            pRain->setPosition( Vec2(lyRandInt(0,visibleSize.width),visibleSize.height) );
+            
+            pRain->InitPoint( Vec2( lyRandInt(0,visibleSize.width),visibleSize.height) , Vec2( lyRandInt(0,visibleSize.width), 0 ));
             pRain->setButtlePath(strPath,0);
             _roleArea->addChild(pRain);
             this->schedule(schedule_selector(battleTopLayer::EnemyStartMove), 0.1f);

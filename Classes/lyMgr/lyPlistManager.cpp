@@ -43,14 +43,16 @@ void lyPlistManager::loadMapPlist(std::string textureName)
 {
     if(textureName.empty() || "" == textureName)
         return;
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Texture/Map/Texture_Map_"+textureName+".plist");
+    CCLOG("【错误】没有Texture目录");
+    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Texture/Map/Texture_Map_"+textureName+".plist");
 }
 
 void lyPlistManager::loadRolePlist(std::string textureName)
 {
     if(textureName.empty() || "" == textureName)
         return;
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Texture/Role/Texture_Role_"+textureName+".plist");
+    CCLOG("【错误】没有Texture目录");
+    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Texture/Role/Texture_Role_"+textureName+".plist");
 }
 
 void lyPlistManager::loadActionPlist(std::string texPath)

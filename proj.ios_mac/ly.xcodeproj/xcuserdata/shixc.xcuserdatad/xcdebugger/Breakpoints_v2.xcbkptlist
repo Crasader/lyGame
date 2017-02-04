@@ -330,12 +330,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/lyUI/lyUIDrag.cpp"
-            timestampString = "507879741.453647"
+            timestampString = "507886834.306421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyUI/lyUIDrag.cpp"
+            timestampString = "507886894.52546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/lyLayer/quest/battleTopLayer.cpp"
+            timestampString = "507887790.264045"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "battleTopLayer::BornOneEnemy(float dt)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

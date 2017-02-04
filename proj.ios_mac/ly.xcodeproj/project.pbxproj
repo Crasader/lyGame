@@ -11,8 +11,6 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
-		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
@@ -80,7 +78,6 @@
 		795D2E7D1E0EAA8D001AEEF4 /* lyEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E791E0EAA8D001AEEF4 /* lyEvent.cpp */; };
 		795D2E7E1E0EAA8D001AEEF4 /* lyEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E7B1E0EAA8D001AEEF4 /* lyEventManager.cpp */; };
 		795D2E8C1E0EBEC0001AEEF4 /* Table in Resources */ = {isa = PBXBuildFile; fileRef = 795D2E8B1E0EBEC0001AEEF4 /* Table */; };
-		795D2E8E1E0EBF33001AEEF4 /* Texture in Resources */ = {isa = PBXBuildFile; fileRef = 795D2E8D1E0EBF33001AEEF4 /* Texture */; };
 		795D2E911E0F6402001AEEF4 /* lyCSVReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E8F1E0F6402001AEEF4 /* lyCSVReader.cpp */; };
 		795D2E941E0F6410001AEEF4 /* lyResourceUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E921E0F6410001AEEF4 /* lyResourceUtil.cpp */; };
 		795D2E9B1E0F644A001AEEF4 /* lyCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E961E0F644A001AEEF4 /* lyCounter.cpp */; };
@@ -110,10 +107,8 @@
 		79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BCC1DDDA78C00CD7FB6 /* ScrollingUtil.cpp */; };
 		79CC9BD71DDDA78C00CD7FB6 /* StrUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BCF1DDDA78C00CD7FB6 /* StrUtil.cpp */; };
 		79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BD11DDDA78C00CD7FB6 /* TimeUtil.cpp */; };
-		79CC9C761DDDAA8600CD7FB6 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C751DDDAA8600CD7FB6 /* ui */; };
 		79CC9C781DDDAA8D00CD7FB6 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C771DDDAA8D00CD7FB6 /* Published-iOS */; };
 		79CC9C7A1DDDAA9300CD7FB6 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C791DDDAA9300CD7FB6 /* sounds */; };
-		79CC9C7C1DDDAA9A00CD7FB6 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C7B1DDDAA9A00CD7FB6 /* images */; };
 		79E352D81E18FE400071CFD3 /* lyUIDrag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */; };
 		79E352D91E18FE400071CFD3 /* lyUIEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352D61E18FE400071CFD3 /* lyUIEffect.cpp */; };
 		79E352DC1E1902E20071CFD3 /* lyTouchElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352DA1E1902E20071CFD3 /* lyTouchElement.cpp */; };
@@ -199,7 +194,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		46880B7A19C43A67006E1F66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -300,7 +294,6 @@
 		795D2E7C1E0EAA8D001AEEF4 /* lyEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyEventManager.h; path = lyMgr/lyEvent/lyEventManager.h; sourceTree = "<group>"; };
 		795D2E831E0EBB6D001AEEF4 /* lyDefFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyDefFunc.h; path = lyDef/lyDefFunc.h; sourceTree = "<group>"; };
 		795D2E8B1E0EBEC0001AEEF4 /* Table */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Table; sourceTree = "<group>"; };
-		795D2E8D1E0EBF33001AEEF4 /* Texture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Texture; sourceTree = "<group>"; };
 		795D2E8F1E0F6402001AEEF4 /* lyCSVReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyCSVReader.cpp; path = lyHelper/lyCSV/lyCSVReader.cpp; sourceTree = "<group>"; };
 		795D2E901E0F6402001AEEF4 /* lyCSVReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyCSVReader.h; path = lyHelper/lyCSV/lyCSVReader.h; sourceTree = "<group>"; };
 		795D2E921E0F6410001AEEF4 /* lyResourceUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyResourceUtil.cpp; path = lyHelper/lyResourceUtil.cpp; sourceTree = "<group>"; };
@@ -371,10 +364,8 @@
 		79CC9BD01DDDA78C00CD7FB6 /* StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StrUtil.h; path = lyUtils/StrUtil.h; sourceTree = "<group>"; };
 		79CC9BD11DDDA78C00CD7FB6 /* TimeUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeUtil.cpp; path = lyUtils/TimeUtil.cpp; sourceTree = "<group>"; };
 		79CC9BD21DDDA78C00CD7FB6 /* TimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeUtil.h; path = lyUtils/TimeUtil.h; sourceTree = "<group>"; };
-		79CC9C751DDDAA8600CD7FB6 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		79CC9C771DDDAA8D00CD7FB6 /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-iOS"; sourceTree = "<group>"; };
 		79CC9C791DDDAA9300CD7FB6 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
-		79CC9C7B1DDDAA9A00CD7FB6 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUIDrag.cpp; path = lyUI/lyUIDrag.cpp; sourceTree = "<group>"; };
 		79E352D51E18FE400071CFD3 /* lyUIDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyUIDrag.h; path = lyUI/lyUIDrag.h; sourceTree = "<group>"; };
 		79E352D61E18FE400071CFD3 /* lyUIEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUIEffect.cpp; path = lyUI/lyUIEffect.cpp; sourceTree = "<group>"; };
@@ -581,14 +572,10 @@
 			children = (
 				79E7BC2C1E1F3A61002C2584 /* TexturePlist */,
 				79EA27E31E137CEA001F742F /* TextureP */,
-				795D2E8D1E0EBF33001AEEF4 /* Texture */,
 				795D2E8B1E0EBEC0001AEEF4 /* Table */,
-				79CC9C7B1DDDAA9A00CD7FB6 /* images */,
 				79CC9C791DDDAA9300CD7FB6 /* sounds */,
 				79CC9C771DDDAA8D00CD7FB6 /* Published-iOS */,
-				79CC9C751DDDAA8600CD7FB6 /* ui */,
 				521A8EA819F11F5000D177D7 /* fonts */,
-				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
@@ -1158,7 +1145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC9C7C1DDDAA9A00CD7FB6 /* images in Resources */,
 				79CC9C7A1DDDAA9300CD7FB6 /* sounds in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
@@ -1175,14 +1161,11 @@
 				795D2E8C1E0EBEC0001AEEF4 /* Table in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
-				795D2E8E1E0EBF33001AEEF4 /* Texture in Resources */,
 				79EA27E41E137CEA001F742F /* TextureP in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
-				79CC9C761DDDAA8600CD7FB6 /* ui in Resources */,
 				79CC9C781DDDAA8D00CD7FB6 /* Published-iOS in Resources */,
-				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
@@ -1198,7 +1181,6 @@
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,

@@ -45,12 +45,18 @@ public:
 
     void setSpritePath(const char* strPath);
     void setSpriteName(const char* strName);
+    
+    void setSpan(int minX, int maxX,int minY, int maxY);
 
     void Clear();
   
 private:
     lyFrame*    m_pFrame;
-
+    bool    m_bHadSpan;
+    int     m_nMinX;
+    int     m_nMinY;
+    int     m_nMaxX;
+    int     m_nMaxY;
 };
 
 

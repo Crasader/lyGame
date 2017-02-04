@@ -11,6 +11,7 @@ lyUIDrag::lyUIDrag()
 ,m_pFrame(nullptr)
 {
     m_bPause = false;
+    m_bHadSpan = false;
 }
 
 lyUIDrag::~lyUIDrag()
@@ -65,16 +66,18 @@ void lyUIDrag::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 
 bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
-    if (!m_bPause) {
-        if (lyCocosFunc::isTouchInWin(this, touches)) {
-            m_bIsTouched = true;
-            m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
-            
-            lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
-            return true;
-        }
+    if (m_bPause) {
+        return false;
     }
     
+    if (lyCocosFunc::isTouchInWin(this, touches)) {
+        m_bIsTouched = true;
+        m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
+        CCLOG("x=======%f,y========%f",this->getPosition().x, this->getPosition().y);
+        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
+        return true;
+    }
+
     return false;
 }
 
@@ -82,11 +85,26 @@ void lyUIDrag::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     if (m_bIsTouched) {
         Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
-        Vec2 diffNodePoint = touchNodePoint - m_TouchBeginPoint;
-        this->setPosition(this->getPosition()+diffNodePoint);
+        
+        Vec2 targetPoint = this->getPosition() + touchNodePoint - m_TouchBeginPoint;
+        if (m_bHadSpan) {
+            if (targetPoint.x < m_nMinX) {
+                targetPoint.x = m_nMinX;
+            }
+            if (targetPoint.y < m_nMinY) {
+                targetPoint.y = m_nMinY;
+            }
+            if (targetPoint.x > m_nMaxX) {
+                targetPoint.x = m_nMaxX;
+            }
+            if (targetPoint.y > m_nMaxY) {
+                targetPoint.y = m_nMaxY;
+            }
+        }
+        
+        this->setPosition(targetPoint);
         
         lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_MOVED, this->GetObjID(),0);
-        //this->isOutScreen();
     }
 }
 
@@ -129,4 +147,12 @@ void lyUIDrag::setSpriteName(const char* strName)
         m_pFrame->setPosition(0,0);
         this->addChild(m_pFrame);
     }
+}
+void lyUIDrag::setSpan(int minX, int maxX,int minY, int maxY)
+{
+    m_bHadSpan = true;
+    m_nMinX = minX;
+    m_nMinY = minY;
+    m_nMaxX = maxX;
+    m_nMaxY = maxY;
 }
