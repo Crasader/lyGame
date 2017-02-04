@@ -217,8 +217,8 @@ void lyUIBullet::playMissEffect()
                     lyFrame* pFrame = lyFrame::createWithSpriteName(strFramePath);
                     if (pFrame) {
                         pFrame->retain();
-                        //pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
-                        //pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
+                        pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
+                        pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
                         pFrame->setPosition(0,0);
                         pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
                         m_pMissAction->AddFrame(pFrame);
