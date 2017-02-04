@@ -52,24 +52,13 @@ public:
     virtual void onExit();
     
     void onClickMenuItem01(cocos2d::Ref *sender);
-    void onClickDecRole(cocos2d::Ref *sender);
-    void onClickAddRole(cocos2d::Ref *sender);
-    void onClickAction1(cocos2d::Ref *sender);
-    void onClickActionSkill(cocos2d::Ref *sender);
+    //暂停游戏
+    void onClickPause(cocos2d::Ref *sender);
     
-   
-    void checkTestCollision(float dt);
-    
-    static void BornDown(long nObjId);
-    static void BornUp(long nObjId);
-    static void BornClick(long nObjId);
-    
-    void StartBorn(float dt);
-    void StartRain(float dt);
-    
-    void checkBullet(float dt);
-    void missEffect(float dt);
-    void RainDowning(float dt);
+    void BornOnePlane();
+    void BornOneEnemy(float dt);
+    void EnemyStartMove(float dt);
+    void checkCollision(float dt);
     
 private:
     int randPosX();
@@ -80,13 +69,13 @@ private:
     static bool     _canBorn;
     bool            _isMoving;
     cocos2d::Node*  _roleArea;
-    lyUIRole*       m_pMyRole;
+ 
+ 
+    Vector<lyUIBullet*>     m_verEnemy;
+    lyUIDrag*               m_pPlane;
     
-    Vector<lyUIDrag*>    m_lyLMTeam1;
-    Vector<lyUIDrag*>    m_lyLMTeam2;
-    Vector<lyUIBullet*>    m_lyLMBullet;
+    bool                    m_bPause;
     
-    Vector<lyUIBullet*>    m_lyLMRain;
 };
 
 

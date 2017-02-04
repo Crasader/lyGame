@@ -47,11 +47,9 @@ public:
     void setSpriteName(const char* strName);
 
     void Clear();
-     
-    
+  
 private:
     lyFrame*    m_pFrame;
-    
 
 };
 

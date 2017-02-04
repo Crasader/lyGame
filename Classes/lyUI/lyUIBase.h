@@ -62,6 +62,11 @@ public:
     bool isOutScreen();
     
     void Clear();
+    
+    void setCanDrag(bool can)
+    {
+        m_bCanDrag = can;
+    }
 protected:
     Vec2    m_TouchBeginPoint;
 	bool    m_bIsCtrlVisible;
@@ -77,7 +82,7 @@ protected:
     
     unsigned char		m_byInterval;
     unsigned char		m_byCurrInterval;
-
+    bool                m_bCanDrag;
 
 };
 

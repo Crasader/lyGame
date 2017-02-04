@@ -10,7 +10,7 @@ lyUIDrag::lyUIDrag()
 :lyUIBase()
 ,m_pFrame(nullptr)
 {
-
+    m_bCanDrag = true;
 }
 
 lyUIDrag::~lyUIDrag()
@@ -65,14 +65,16 @@ void lyUIDrag::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 
 bool lyUIDrag::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
-    
-    if (lyCocosFunc::isTouchInWin(this, touches)) {
-        m_bIsTouched = true;
-        m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
-        
-        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
-        return true;
+    if (m_bCanDrag) {
+        if (lyCocosFunc::isTouchInWin(this, touches)) {
+            m_bIsTouched = true;
+            m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
+            
+            lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
+            return true;
+        }
     }
+    
     return false;
 }
 

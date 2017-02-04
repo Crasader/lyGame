@@ -18,6 +18,7 @@ lyUIBase::lyUIBase()
 ,m_nBulletId(0)
 ,m_byInterval(4)
 ,m_byCurrInterval(0)
+,m_bCanDrag(false)
 {
 }
 
@@ -156,9 +157,9 @@ bool lyUIBase::isOutScreen()
     //Vec2 anchorPoint = this->getAnchorPoint();
     //CCLOG("anchorPoint==========%f,%f",anchorPoint.x,anchorPoint.y);
     Size sizeWin = Director::getInstance()->getOpenGLView()->getFrameSize();
-    CCLOG("sizeWin==========%f,%f",sizeWin.width,sizeWin.height);
+    //CCLOG("sizeWin==========%f,%f",sizeWin.width,sizeWin.height);
     Point pointLD = Vec2(this->getPosition().x,this->getPosition().y);    //左下
-    CCLOG("pointLD==========%f,%f",pointLD.x,pointLD.y);
+    //CCLOG("pointLD==========%f,%f",pointLD.x,pointLD.y);
     Point pointLU = Vec2(this->getPosition().x,this->getPosition().y + this->getContentSize().height);  //左上角
     Point pointRD = Vec2(this->getPosition().x + this->getContentSize().width, this->getPosition().y);  //右下角
     Point pointRU = Vec2(this->getPosition().x + this->getContentSize().width, this->getPosition().y + this->getContentSize().height);  //右上角
@@ -171,9 +172,9 @@ bool lyUIBase::isOutScreen()
         bOut = false;
     }
     if (bOut) {
-        CCLOG("out" );
+        //CCLOG("out" );
     }
     else
-        CCLOG("in" );
+        //CCLOG("in" );
     return bOut;
 }
