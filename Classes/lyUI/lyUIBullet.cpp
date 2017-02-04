@@ -2,20 +2,36 @@
 #include "lyUIBullet.h"
 #include "lyActionGroup.h"
 #include "lyActionManager.h"
-
+#include "lyPlistManager.h"
 
 
 
 
 lyUIBullet::lyUIBullet()
 :lyUIBase()
-,m_pBulletFrame(nullptr)
 {
+    m_nMissEffectId = 0;
+   
+    m_pButtleAction = NULL;
+    m_pButtleFrame = NULL;
+    
+    m_bPlayMiss = false;
+    m_pMissFrame = NULL;
+    m_pMissAction = NULL;
+    m_byMissInterval = 0;
 }
 
 lyUIBullet::~lyUIBullet()
 {
-
+    m_nMissEffectId = 0;
+    
+    m_pButtleAction = NULL;
+    m_pButtleFrame = NULL;
+    
+    m_bPlayMiss = false;
+    m_pMissFrame = NULL;
+    m_pMissAction = NULL;
+    m_byMissInterval = 0;
 }
 
 lyUIBullet* lyUIBullet::Create()
@@ -55,10 +71,50 @@ void lyUIBullet::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t
     {
         return;
     }
+    
+    if (m_pMissFrame)
+    {
+        m_pButtleFrame->setVisible(false);
+        
+        bool bClear = false;
+        if (m_pMissFrame == m_pMissAction->GetTailFrame() )
+        {
+            bClear = true;
+        }
+        if (0 == m_byMissInterval%m_byInterval)
+        {
+            m_pMissFrame = m_pMissAction->GetNextFrame(m_pMissFrame);
+            m_byMissInterval = 0;
+        }
+        m_byMissInterval = m_byMissInterval + 1;
+        if (bClear) {
+            this->Clear();
+        }
+    }
+    else
+    {
+        if (m_pButtleFrame)
+        {
+            if (0 == m_byCurrInterval%m_byInterval)
+            {
+                m_pButtleFrame = m_pButtleAction->GetNextFrame(m_pButtleFrame);
+                m_byCurrInterval = 0;
+            }
+            m_byCurrInterval = m_byCurrInterval + 1;
+        }
+    }
+    
 }
 void lyUIBullet::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 {
     lyUIBase::draw(renderer, transform, flags);
+    
+    if (m_pButtleFrame) {
+        m_pButtleFrame->lyVisit();
+    }
+    if (m_pMissFrame) {
+        m_pMissFrame->lyVisit();
+    }
 }
 
 
@@ -79,15 +135,102 @@ void lyUIBullet::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event
 {
     
 }
-void lyUIBullet::InitBulletPath(const char* strPath)
+void lyUIBullet::setButtlePath(std::string strPath, char byMaxId/*=0*/)
 {
-    m_pBulletFrame = lyFrame::createWithSpritePath(strPath);
-    if (m_pBulletFrame) {
-        m_pBulletFrame->retain();
-        m_pBulletFrame->setScaleX(this->getContentSize().width/m_pBulletFrame->getContentSize().width);
-        m_pBulletFrame->setScaleY(this->getContentSize().height/m_pBulletFrame->getContentSize().height);
-        m_pBulletFrame->setPosition(0,0);
-        m_pBulletFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
-        this->addChild(m_pBulletFrame);
+    if(m_pButtleAction)
+    {
+        m_pButtleAction->Clear();
+        m_pButtleAction = nullptr;
     }
+    m_pButtleAction = lyAction::Create();
+    if(m_pButtleAction)
+    {
+        for(char byIndex = 0; byIndex <= byMaxId; byIndex++ )
+        {
+            std::string strFramePath = StringUtils::format(strPath.c_str(), byIndex,RES_EXT);
+            lyFrame* pFrame = lyFrame::createWithSpritePath(strFramePath);
+            if (pFrame) {
+                pFrame->retain();
+                pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
+                pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
+                pFrame->setPosition(0,0);
+                pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
+                m_pButtleAction->AddFrame(pFrame);
+            }
+        }
+        m_pButtleFrame = m_pButtleAction->GetHeaderFrame();
+    }
+}
+void lyUIBullet::Clear()
+{
+    lyUIBase::Clear();
+    
+    if (m_pButtleFrame) {
+        m_pButtleFrame->cleanup();
+        m_pButtleFrame = NULL;
+    }
+    if (m_pMissFrame) {
+        m_pMissFrame->cleanup();
+        m_pMissFrame = NULL;
+    }
+    if (m_pButtleAction) {
+        m_pButtleAction->Clear();
+        m_pButtleAction = NULL;
+    }
+    if (m_pMissAction) {
+        m_pMissAction->Clear();
+        m_pMissAction = NULL;
+    }
+}
+
+void lyUIBullet::setMissEffectId(int missId)
+{
+    m_nMissEffectId = missId;
+}
+void lyUIBullet::playMissEffect()
+{
+    if (m_pButtleFrame) {
+        m_pButtleFrame->setVisible(false);
+    }
+    m_nMissEffectId=1;
+    if (m_nMissEffectId)
+    {
+        if(m_pMissAction)
+        {
+            m_pMissAction->Clear();
+            m_pMissAction = nullptr;
+        }
+        m_pMissAction = lyAction::Create();
+        if(m_pMissAction)
+        {
+            const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/MissEffect.csv",m_nMissEffectId);
+            if(szOneLine)
+            {
+                int nMaxId = lyStrToInt(szOneLine->find("MaxId")->second.c_str());
+                string strPath = szOneLine->find("Path")->second.c_str();
+                
+                lyPlistManager::getInstance()->loadTexturePlist("Effect_dilei");
+                
+                for(char byIndex = 0; byIndex <= nMaxId; byIndex++ )
+                {
+                    std::string strFramePath = StringUtils::format(strPath.c_str(), byIndex,RES_EXT);
+                    lyFrame* pFrame = lyFrame::createWithSpriteName(strFramePath);
+                    if (pFrame) {
+                        pFrame->retain();
+                        //pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
+                        //pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
+                        pFrame->setPosition(0,0);
+                        pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
+                        m_pMissAction->AddFrame(pFrame);
+                    }
+                }
+                m_pMissFrame = m_pMissAction->GetHeaderFrame();
+            }
+        }
+    }
+    else
+    {
+        this->Clear();
+    }
+    
 }

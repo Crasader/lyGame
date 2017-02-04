@@ -39,6 +39,13 @@ void lyAction::AddFrame( const char* pszImg )
         m_ObjFrames.AddLinkItem(pFrame);
     }
 }
+void lyAction::AddFrame(lyFrame* pFrame)
+{
+    if (pFrame)
+    {
+        m_ObjFrames.AddLinkItem(pFrame);
+    }
+}
 
 lyFrame* lyAction::GetNextFrame( lyFrame* pSpr )
 {

@@ -9,8 +9,6 @@
 
 lyUIRole::lyUIRole()
 :lyUIBase()
-,m_byInterval(4)
-,m_byCurrInterval(0)
 ,m_pCurrFrame(nullptr)
 ,m_pAction(nullptr)
 ,m_nActionGroupId(0)
@@ -37,6 +35,10 @@ bool lyUIRole::init()
 {
     setTouchEnabled(true);
     return true;
+}
+void lyUIRole::Clear()
+{
+    
 }
 void lyUIRole::onEnter()
 {

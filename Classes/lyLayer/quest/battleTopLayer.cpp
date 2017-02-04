@@ -169,13 +169,14 @@ void battleTopLayer::BornUp(long nObjId)
 }
 void battleTopLayer::StartBorn(float dt)
 {
+    _canBorn = false;
     if (_canBorn) {
         lyUIBullet* pBullet = lyUIBullet::Create();
         if (pBullet) {
             pBullet->setContentSize(Size(75,75));
             pBullet->setPosition( Vec2(lyRandInt(0,500),lyRandInt(0,100)) );
             pBullet->InitPoint( Vec2(lyRandInt(0,500),lyRandInt(0,100)) , Vec2(200, 800));
-            pBullet->InitBulletPath("images/btn/btn_00097.png");
+            pBullet->setButtlePath("images/btn/btn_00097.png");
             _roleArea->addChild(pBullet);
             this->schedule(schedule_selector(battleTopLayer::checkBullet), 0.1f);
             
@@ -193,8 +194,9 @@ void battleTopLayer::StartRain(float dt)
     
     
     string strRainW = lyTableValue("Table/Role.csv",1,"Width");
-    const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/Role.csv",1);
     CCLOG("strRainW=%s",strRainW.c_str());
+    
+    const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/Role.csv",1);
     if(szOneLine)
     {
         if (szOneLine->find("Width") != szOneLine->end() ) {
@@ -207,6 +209,7 @@ void battleTopLayer::StartRain(float dt)
         //*
         lyUIBullet* pRain = lyUIBullet::Create();
         if (pRain) {
+            string strPath = szOneLine->find("Path")->second.c_str();
             int nWidth = lyStrToInt(szOneLine->find("Width")->second.c_str());
             int nHeight = lyStrToInt(szOneLine->find("Height")->second.c_str());
             int nBornXs = lyStrToInt(szOneLine->find("BornXs")->second.c_str());
@@ -222,7 +225,8 @@ void battleTopLayer::StartRain(float dt)
             pRain->setContentSize(Size(nWidth,nHeight));
             pRain->setPosition( Vec2(lyRandInt(nBornXs,nBornXe),lyRandInt(nBornYs,nBornYe)) );
             pRain->InitPoint( Vec2( lyRandInt(nBornXs,nBornXe),lyRandInt(nBornYs,nBornYe)) , Vec2( lyRandInt(nEndXs,nEndXe), lyRandInt(nEndYs,nEndYe) ));
-            pRain->InitBulletPath("images/ui/yudi.png");
+            
+            pRain->setButtlePath(strPath,0);
             _roleArea->addChild(pRain);
             this->schedule(schedule_selector(battleTopLayer::RainDowning), 0.1f);
             m_lyLMRain.pushBack(pRain);
@@ -243,7 +247,7 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
         pBullet->setContentSize(Size(75,75));
         pBullet->setPosition(randPosX(), randPosY());
         pBullet->InitPoint(Vec2(120,180 ), Vec2(200, 800));
-        pBullet->InitBulletPath("images/head/pri_00024_s.png");
+        pBullet->setButtlePath("images/head/pri_00024_s.png");
         _roleArea->addChild(pBullet);
         this->schedule(schedule_selector(battleTopLayer::checkBullet), 0.1f);
         
@@ -253,9 +257,12 @@ void battleTopLayer::onClickAction1(cocos2d::Ref *sender)
 }
 void battleTopLayer::RainDowning(float dt)
 {
-    for(auto &info : m_lyLMRain)
+
+    for(auto &info : m_lyLMRain )
     {
-        if (info->isOutScreen()) {
+        if (info->isOutScreen())
+        {
+            info->playMissEffect();
             m_lyLMRain.eraseObject(info);
         }
         else
@@ -266,6 +273,10 @@ void battleTopLayer::RainDowning(float dt)
         }
         
     }
+}
+void battleTopLayer::missEffect(float dt)
+{
+    
 }
 void battleTopLayer::checkBullet(float dt)
 {

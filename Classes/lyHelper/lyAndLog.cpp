@@ -40,12 +40,12 @@ void lyAndLog::resetAttr()
     memset(m_szBuffLog, '\0', sizeof(m_szBuffLog));
     
     
-    _szAccountid = (char*)malloc(sizeof(char)*LOG_NAME_LEN);
+    _strFileName = (char*)malloc(sizeof(char)*LOG_NAME_LEN);
 }
 
 
 
-bool lyAndLog::initLog(const char* accountid)
+bool lyAndLog::initLog(const char* filename)
 {
     //1、登录成功调用此接口，初始化log文件
     //2、每次登录要重新创建该文件，每个account用户，只保存本次登录log
@@ -55,7 +55,7 @@ bool lyAndLog::initLog(const char* accountid)
 
     char log_name[256] = {0};
     //snprintf(log_name, 255, "/mnt/sdcard/%d_%02d_%02d_%s",my_tm.tm_year+1900, my_tm.tm_mon+1, my_tm.tm_mday, accountid);
-    snprintf(log_name, 255, "%s%s%s", LOG_PATH,accountid,LOG_EXT);
+    snprintf(log_name, 255, "%s%s%s", LOG_PATH,filename,LOG_EXT);
     //m_pLog = fopen(log_name, "a+"); //不存在就创建，存在追加内容
     m_pLog = fopen(log_name, "w+");    //不存在就创建，存在清空内容
     
@@ -65,7 +65,7 @@ bool lyAndLog::initLog(const char* accountid)
         return false;
     }
     _bExitLogFile = true;
-    strcpy(_szAccountid,accountid);
+    strcpy(_strFileName,filename);
     cocos2d::log("log_name=%s open right!",log_name);
     return true;
 }
@@ -78,8 +78,8 @@ void lyAndLog::addLog(const char* format, ...)
     cocos2d::log("Log Item=%d",_nLogItem);
     //*
     if (_nLogItem >= LOG_MAX_ITEM) {
-        cocos2d::log("重新创建log文件  Accountid=%s",_szAccountid);
-        initLog(_szAccountid);
+        cocos2d::log("重新创建log文件  _strFileName=%s",_strFileName);
+        initLog(_strFileName);
     }
     //*/
     if (!_bExitLogFile)

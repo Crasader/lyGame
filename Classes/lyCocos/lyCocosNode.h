@@ -31,6 +31,11 @@ public:
     virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
+    virtual void Clear()
+    {
+        
+    }
+    
 };
 
 

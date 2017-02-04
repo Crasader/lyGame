@@ -24,6 +24,7 @@ public:
 
  
     void AddFrame(const char* pszImg);
+    void AddFrame(lyFrame* pFrame);
  
     lyFrame* GetNextFrame(lyFrame* pSpr);
     lyFrame* GetHeaderFrame();
@@ -43,6 +44,10 @@ public:
     {
         return m_bDelay;
     };
+    void Clear()
+    {
+        
+    }
 private:
     lyLinkMgr<lyFrame>  m_ObjFrames;
     bool                m_bDelay;   //true 播放完当前动作才能播放下一个动作，false，立即切换动作

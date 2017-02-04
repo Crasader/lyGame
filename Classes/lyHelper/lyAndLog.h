@@ -28,7 +28,7 @@ public:
         return &instance;
     }
     
-    bool initLog(const char* accountid);
+    bool initLog(const char* filename);
     void addLog(const char* format, ...);
 
 
@@ -39,7 +39,7 @@ private:
     char*   m_szBuffLog;
     bool    _bExitLogFile;
     int     _nLogItem;
-    char*   _szAccountid;
+    char*   _strFileName;
 };
 
 

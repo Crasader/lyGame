@@ -15,6 +15,9 @@ USING_NS_CC;
 
 #define CTRL_NAME_SIZE 16
 
+#define RES_EXT     ".png"
+
+
 #define TEST_COLLISION
 #ifdef TEST_COLLISION
 extern bool gShowTestCollition;
@@ -57,6 +60,8 @@ public:
     bool checkCollision(lyUIBase* temp);
     //判断是否在屏幕外
     bool isOutScreen();
+    
+    void Clear();
 protected:
     Vec2    m_TouchBeginPoint;
 	bool    m_bIsCtrlVisible;
@@ -68,6 +73,10 @@ protected:
 	char	m_szCtrlName[CTRL_NAME_SIZE];
     
     int     m_nBulletId;    //0 非发射器，>0 发射器及其id
+    
+    
+    unsigned char		m_byInterval;
+    unsigned char		m_byCurrInterval;
 
 
 };

@@ -132,10 +132,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
         lyPlistManager::getInstance()->loadTexturePlist("Jingzhang_skill1");
         
         
+        
 #ifdef APP_TEST
         ApplicationManager::getInstance()->runWithScene(SCENE_TEST_SCENE);
 #else
-        ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN);
+        //ApplicationManager::getInstance()->runWithScene(SCENE_LOGIN);
+        ApplicationManager::getInstance()->runWithScene(SCENE_MAIN_TOP);
+        
 #endif
     }
     else

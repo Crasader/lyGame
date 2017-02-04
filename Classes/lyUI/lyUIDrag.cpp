@@ -31,6 +31,10 @@ bool lyUIDrag::init()
     //this->schedule(schedule_selector(lyUIDrag::checkCollision), 0.1f);
     return true;
 }
+void lyUIDrag::Clear()
+{
+    
+}
 
 void lyUIDrag::onEnter()
 {

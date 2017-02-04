@@ -46,7 +46,7 @@ public:
     void setSpritePath(const char* strPath);
     void setSpriteName(const char* strName);
 
-    
+    void Clear();
      
     
 private:

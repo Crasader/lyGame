@@ -68,6 +68,7 @@ public:
     void StartRain(float dt);
     
     void checkBullet(float dt);
+    void missEffect(float dt);
     void RainDowning(float dt);
     
 private:

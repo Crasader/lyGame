@@ -16,6 +16,8 @@ lyUIBase::lyUIBase()
 ,m_bTouchEnabled(false)
 ,m_TouchBeginPoint(CCPoint(0,0))
 ,m_nBulletId(0)
+,m_byInterval(4)
+,m_byCurrInterval(0)
 {
 }
 
@@ -37,7 +39,10 @@ bool lyUIBase::init()
 
     return true;
 }
-
+void lyUIBase::Clear()
+{
+    
+}
 long lyUIBase::GetObjID()
 {
 	return (long)this;

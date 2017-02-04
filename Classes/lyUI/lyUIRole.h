@@ -36,7 +36,8 @@ public:
 	void setGroupId(unsigned int Id);
 	void setAction( unsigned char byState );
     void updateNextAction();
-
+    
+    void Clear();
 
 protected:
 
@@ -47,8 +48,7 @@ private:
 	unsigned int        m_nActionGroupId;
 	lyAction*           m_pAction;
 	lyFrame*            m_pCurrFrame;
-	unsigned char		m_byInterval;
-	unsigned char		m_byCurrInterval;
+
     int                 m_nCurrState;
     int                 m_nNextState;
 	//end*/

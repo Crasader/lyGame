@@ -47,7 +47,7 @@ public:
     {
         m_nMillisecond = nMS;
     }
-    void InitBulletPath(const char* strPath);
+    void setButtlePath(std::string strPath, char byMaxId = 0);
     
     void InitPoint(CCPoint pointStart, CCPoint pointEnd)
     {
@@ -69,15 +69,28 @@ public:
     {
         return m_diffPoint;
     }
+    //移动结束后，播放消失特效，播放完毕后释放本资源，如果没有消失特效，直接释放
+    void setMissEffectId(int missId);
+    void playMissEffect();
+    
+    void Clear();
     
 private:
-    lyFrame*    m_pBulletFrame;
+    lyAction*   m_pButtleAction;
+    lyFrame*    m_pButtleFrame;
     int         m_nBulletId;    //id
     Vec2        m_pointS;       //起始point
     Vec2        m_pointE;       //终结point
     Vec2        m_diffPoint;
     int         m_nMillisecond; //时间
     float       m_fSpeed;       //移动速度
+    
+    //消失相关属性
+    unsigned char		m_byMissInterval;
+    bool        m_bPlayMiss;
+    int         m_nMissEffectId;
+    lyAction*   m_pMissAction;
+    lyFrame*    m_pMissFrame;
     
     
 };
