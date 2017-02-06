@@ -1,7 +1,0 @@
-#,#,0,1,2,3,12
-DTD,#,STRING,WORD,WORD,WORD,WORD
-NAM,#,Path,MaxId,Width,Height,EndEffectId
-#,备注,资源路径,最大帧id（0--x）,宽,高,结束播放特效id
-RAN,#,"[0,0]","[0,65500]","[0,65500]","[0,65500]","[0,65500]"
-1,雨滴,images/ui/yudi_%d%s,0,30,30,0
-2,雨滴,images/ui/yudi_%d%s,0,30,30,0

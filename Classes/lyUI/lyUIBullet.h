@@ -38,24 +38,14 @@ public:
     virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
-    void setBulletId(int nId)
-    {
-        m_nBulletId = nId;
-       
-    }
+    void setBulletId(int nId);
     void setTime(int nMS)
     {
         m_nMillisecond = nMS;
     }
-    void setButtlePath(std::string strPath, char byMaxId = 0);
     
-    void InitPoint(CCPoint pointStart, CCPoint pointEnd)
-    {
-        m_pointS = pointStart;
-        m_pointE = pointEnd;
-        m_diffPoint = (m_pointE-m_pointS)/20;
-        //CCLOG("======================m_diffPoint %f,%f",m_diffPoint.x,m_diffPoint.y);
-    }
+    
+    
     
     Vec2 getPointS()
     {
@@ -76,23 +66,38 @@ public:
     void playMissEffect(const MAP_ONE_LINE* missData);
     
     void Clear();
+    //计算伤害值
+    bool isDead();
+    int calcHurt();
+    int calcAttack();
+    
+private:
+    void setButtlePath(std::string strPath, char byMaxId = 0);
+    void InitPoint(CCPoint pointStart, CCPoint pointEnd);
+   
     
 private:
     lyAction*   m_pButtleAction;
     lyFrame*    m_pButtleFrame;
     int         m_nBulletId;    //id
+    
+    //相关属性
+    unsigned char		m_byMissInterval;
+    bool        m_bPlayMiss;
+    int         m_nMissEffectId; 
+    lyAction*   m_pMissAction;
+    lyFrame*    m_pMissFrame;
+    
+    //ui界面相关
     Vec2        m_pointS;       //起始point
     Vec2        m_pointE;       //终结point
     Vec2        m_diffPoint;
     int         m_nMillisecond; //时间
     float       m_fSpeed;       //移动速度
     
-    //消失相关属性
-    unsigned char		m_byMissInterval;
-    bool        m_bPlayMiss;
-    int         m_nMissEffectId; 
-    lyAction*   m_pMissAction;
-    lyFrame*    m_pMissFrame;
+    
+    //攻击 伤害相关
+    
     
     
 };

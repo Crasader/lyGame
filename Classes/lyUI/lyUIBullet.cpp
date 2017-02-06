@@ -136,6 +136,28 @@ void lyUIBullet::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event
 {
     
 }
+void lyUIBullet::setBulletId(int nId)
+{
+    m_nBulletId = nId;
+    
+    //读表设置属性
+    const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/RoleAction.csv",m_nBulletId);
+    if(szOneLine)
+    {
+        string strPath = szOneLine->find("Path")->second.c_str();
+        int nWidth = lyStrToInt(szOneLine->find("Width")->second.c_str());
+        int nHeight = lyStrToInt(szOneLine->find("Height")->second.c_str());
+        int nMaxid = lyStrToInt(szOneLine->find("MaxId")->second.c_str());
+        
+        Size visibleSize = Director::getInstance()->getVisibleSize();
+        
+        setContentSize(Size(nWidth,nHeight));
+        setPosition( Vec2(lyRandInt(0,visibleSize.width),visibleSize.height) );
+        InitPoint( Vec2( lyRandInt(0,visibleSize.width),visibleSize.height) , Vec2( lyRandInt(0,visibleSize.width), 0 ));
+        setButtlePath(strPath,nMaxid);
+    }
+    
+}
 void lyUIBullet::setButtlePath(std::string strPath, char byMaxId/*=0*/)
 {
     if(m_pButtleAction)
@@ -161,6 +183,12 @@ void lyUIBullet::setButtlePath(std::string strPath, char byMaxId/*=0*/)
         }
         m_pButtleFrame = m_pButtleAction->GetHeaderFrame();
     }
+}
+void lyUIBullet::InitPoint(CCPoint pointStart, CCPoint pointEnd)
+{
+    m_pointS = pointStart;
+    m_pointE = pointEnd;
+    m_diffPoint = (m_pointE-m_pointS)/20;
 }
 void lyUIBullet::Clear()
 {
@@ -244,3 +272,30 @@ void lyUIBullet::playMissEffect(const MAP_ONE_LINE* missData)
         m_pMissFrame = m_pMissAction->GetHeaderFrame();
     }
 }
+bool lyUIBullet::isDead()
+{
+    return true;
+}
+int lyUIBullet::calcHurt()
+{
+    //普通伤害计算
+    
+    //技能伤害计算
+    
+    //得有一个系数值
+    
+    //测试
+    return 10;
+}
+int lyUIBullet::calcAttack()
+{
+    //普通伤害计算
+    
+    //技能伤害计算
+    
+    //得有一个系数值
+    
+    //根据id读取数据，计算伤害
+    return 10;
+}
+

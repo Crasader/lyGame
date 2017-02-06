@@ -59,6 +59,8 @@ public:
     void BornOneEnemy(float dt);
     void EnemyStartMove(float dt);
     void checkCollision(float dt);
+    void pauseGame();
+    void resumeGame();
     
 private:
     int randPosX();
@@ -75,6 +77,7 @@ private:
     lyUIDrag*               m_pPlane;
     
     bool                    m_bPause;
+    bool                    m_bGameEnd;
     
 };
 

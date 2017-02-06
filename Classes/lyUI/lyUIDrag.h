@@ -10,7 +10,7 @@
 
 #include "lyInclude.h"
 #include "lyUIBase.h"
-
+#include "lyUIBullet.h"
 #include "lyFrame.h"
 USING_NS_CC;
 
@@ -30,7 +30,8 @@ public:
 
 	static lyUIDrag* Create();
     bool init();
-
+    void Clear();
+    
     virtual void onEnter() override;
     virtual void onExit() override;
     virtual void update(float delta) override;
@@ -43,20 +44,35 @@ public:
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
 
-    void setSpritePath(const char* strPath);
-    void setSpriteName(const char* strName);
+    void setSpritePath(const char* strPath, int byMaxId = 0);
+    void setSpriteName(const char* strName, int byMaxId = 0);
     
-    void setSpan(int minX, int maxX,int minY, int maxY);
+    void setDragSpan(int minX, int maxX,int minY, int maxY);
 
-    void Clear();
-  
+    
+    //属性计算
+    void setMaxBlood(int max)
+    {
+        m_nCurrBlood = max;
+        m_nMaxBlood = max;
+    }
+    bool isDead();
+    int calcHurt(lyUIBullet* pBullet);
+    int calcAttack();
+    void setRoleId(int nid);
 private:
-    lyFrame*    m_pFrame;
+    lyAction*   m_pPlaneAction;
+    lyFrame*    m_pPlaneFrame;
     bool    m_bHadSpan;
     int     m_nMinX;
     int     m_nMinY;
     int     m_nMaxX;
     int     m_nMaxY;
+    
+    // 属性相关
+    int     m_nRoleId;
+    int     m_nCurrBlood;
+    int     m_nMaxBlood;
 };
 
 

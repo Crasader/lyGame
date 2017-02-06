@@ -31,6 +31,7 @@ battleTopLayer::battleTopLayer()
 {
     m_pPlane = nullptr;
     m_bPause = false;
+    m_bGameEnd = false;
 }
 
 battleTopLayer::~battleTopLayer()
@@ -50,6 +51,7 @@ void battleTopLayer::onEnter()
     lyBaseLayer::onEnter();
 
     m_bPause = false;
+    m_bGameEnd = false;
     //创建飞机
     BornOnePlane();
     
@@ -108,7 +110,26 @@ void battleTopLayer::onClickMenuItem01(cocos2d::Ref *sender)
 void battleTopLayer::onClickPause(cocos2d::Ref *sender)
 {
     CCLOG("onClickPause");
-    m_bPause = !m_bPause;
+    if (m_bGameEnd) {
+        CCLOG("是否充值继续游戏？");
+        return;
+    }
+    if (m_bPause) {
+        resumeGame();
+    }
+    else
+        pauseGame();
+}
+void battleTopLayer::pauseGame()
+{
+    m_bPause = true;
+    if (m_pPlane) {
+        m_pPlane->setPause(m_bPause);
+    }
+}
+void battleTopLayer::resumeGame()
+{
+    m_bPause = false;
     if (m_pPlane) {
         m_pPlane->setPause(m_bPause);
     }
@@ -150,10 +171,22 @@ void battleTopLayer::checkCollision(float dt)
     for (auto oneRain : m_verEnemy)
     {
         bool bColl = m_pPlane->checkCollision(oneRain);
-        if (bColl) {
+        if (bColl)
+        {
             //CCLOG("-------碰撞了");
-            oneRain->playMissAction();
-            m_verEnemy.eraseObject(oneRain);
+            //如果子弹血量0 则释放资源
+            if (oneRain->isDead()) {
+                oneRain->playMissAction();
+                m_verEnemy.eraseObject(oneRain);
+            }
+            //计算伤害
+            m_pPlane->calcHurt(oneRain);
+            
+            //如果飞机血量0 则停止游戏
+            if (m_pPlane->isDead()) {
+                m_bGameEnd = true;
+                pauseGame();
+            }
         }
         else
         {
@@ -169,11 +202,9 @@ void battleTopLayer::BornOnePlane()
 {
     m_pPlane = lyUIDrag::Create();
     if (m_pPlane) {
-        
-        m_pPlane->setContentSize(Size(50,62));
-        m_pPlane->setSpritePath("images/ui/plane.png");
-        m_pPlane->setPosition(200, 0);
-        m_pPlane->setSpan(0, 260, -50, 50);
+
+        m_pPlane->setDragSpan(0, 260, -50, 50);
+        m_pPlane->setRoleId(15);
         _roleArea->addChild(m_pPlane);
     }
 }
@@ -186,7 +217,7 @@ void battleTopLayer::EnemyStartMove(float dt)
     {
         if (info->isOutScreen())
         {
-            info->playMissAction();
+            info->Clear();
             m_verEnemy.eraseObject(info);
         }
         else
@@ -203,26 +234,12 @@ void battleTopLayer::BornOneEnemy(float dt)
     if (m_bPause) {
         return;
     }
-    const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/Role.csv",1);
-    if(szOneLine)
+    lyUIBullet* pRain = lyUIBullet::Create();
+    if (pRain)
     {
-        lyUIBullet* pRain = lyUIBullet::Create();
-        if (pRain)
-        {
-            string strPath = szOneLine->find("Path")->second.c_str();
-            int nWidth = lyStrToInt(szOneLine->find("Width")->second.c_str());
-            int nHeight = lyStrToInt(szOneLine->find("Height")->second.c_str());
-            
-            Size visibleSize = Director::getInstance()->getVisibleSize();
-        
-            pRain->setContentSize(Size(nWidth,nHeight));
-            pRain->setPosition( Vec2(lyRandInt(0,visibleSize.width),visibleSize.height) );
-            
-            pRain->InitPoint( Vec2( lyRandInt(0,visibleSize.width),visibleSize.height) , Vec2( lyRandInt(0,visibleSize.width), 0 ));
-            pRain->setButtlePath(strPath,0);
-            _roleArea->addChild(pRain);
-            this->schedule(schedule_selector(battleTopLayer::EnemyStartMove), 0.1f);
-            m_verEnemy.pushBack(pRain);
-        }
+        pRain->setBulletId( lyRandInt(1, 15) );
+        _roleArea->addChild(pRain);
+        this->schedule(schedule_selector(battleTopLayer::EnemyStartMove), 0.1f);
+        m_verEnemy.pushBack(pRain);
     }
 }

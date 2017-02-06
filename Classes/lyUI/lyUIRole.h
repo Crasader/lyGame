@@ -39,10 +39,6 @@ public:
     
     void Clear();
 
-protected:
-
-private:
-
 private:
 	unsigned int        m_nRoleId;
 	unsigned int        m_nActionGroupId;

@@ -110,7 +110,6 @@
 		79CC9C781DDDAA8D00CD7FB6 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C771DDDAA8D00CD7FB6 /* Published-iOS */; };
 		79CC9C7A1DDDAA9300CD7FB6 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C791DDDAA9300CD7FB6 /* sounds */; };
 		79E352D81E18FE400071CFD3 /* lyUIDrag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */; };
-		79E352D91E18FE400071CFD3 /* lyUIEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352D61E18FE400071CFD3 /* lyUIEffect.cpp */; };
 		79E352DC1E1902E20071CFD3 /* lyTouchElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352DA1E1902E20071CFD3 /* lyTouchElement.cpp */; };
 		79E352E01E1920620071CFD3 /* lyCocosFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352DF1E1920620071CFD3 /* lyCocosFunc.cpp */; };
 		79E7BC2D1E1F3A61002C2584 /* TexturePlist in Resources */ = {isa = PBXBuildFile; fileRef = 79E7BC2C1E1F3A61002C2584 /* TexturePlist */; };
@@ -368,8 +367,6 @@
 		79CC9C791DDDAA9300CD7FB6 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUIDrag.cpp; path = lyUI/lyUIDrag.cpp; sourceTree = "<group>"; };
 		79E352D51E18FE400071CFD3 /* lyUIDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyUIDrag.h; path = lyUI/lyUIDrag.h; sourceTree = "<group>"; };
-		79E352D61E18FE400071CFD3 /* lyUIEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUIEffect.cpp; path = lyUI/lyUIEffect.cpp; sourceTree = "<group>"; };
-		79E352D71E18FE400071CFD3 /* lyUIEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyUIEffect.h; path = lyUI/lyUIEffect.h; sourceTree = "<group>"; };
 		79E352DA1E1902E20071CFD3 /* lyTouchElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyTouchElement.cpp; path = lyBase/lyTouchElement.cpp; sourceTree = "<group>"; };
 		79E352DB1E1902E20071CFD3 /* lyTouchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyTouchElement.h; path = lyBase/lyTouchElement.h; sourceTree = "<group>"; };
 		79E352DD1E19046D0071CFD3 /* lyMemoryPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyMemoryPool.h; path = lyMgr/lyMemory/lyMemoryPool.h; sourceTree = "<group>"; };
@@ -846,8 +843,6 @@
 				79489C9D1E2F36AE001BE7B2 /* lyUIBullet.h */,
 				79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */,
 				79E352D51E18FE400071CFD3 /* lyUIDrag.h */,
-				79E352D61E18FE400071CFD3 /* lyUIEffect.cpp */,
-				79E352D71E18FE400071CFD3 /* lyUIEffect.h */,
 				79EA27DF1E13780D001F742F /* lyUIRole.cpp */,
 				79EA27E01E13780D001F742F /* lyUIRole.h */,
 				795D2ECD1E1003B0001AEEF4 /* lyUIBase.cpp */,
@@ -1214,7 +1209,6 @@
 				79EA27E11E13780D001F742F /* lyUIRole.cpp in Sources */,
 				79E9645C1DFDC2640091A060 /* ActivityIndicator_objc.mm in Sources */,
 				795D2E781E0EAA82001AEEF4 /* lyFrame.cpp in Sources */,
-				79E352D91E18FE400071CFD3 /* lyUIEffect.cpp in Sources */,
 				795D2E2A1E0EA848001AEEF4 /* Observer.cpp in Sources */,
 				795D2EAB1E0F9F71001AEEF4 /* lyMemory.cpp in Sources */,
 				795D2E471E0EA961001AEEF4 /* lyBaseLayer.cpp in Sources */,
