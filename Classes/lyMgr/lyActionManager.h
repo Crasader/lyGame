@@ -20,7 +20,7 @@ public:
     virtual ~lyActionManager();
     
     static lyActionManager* GetInstance();
-    void LoadActionGroupLibrary();
+    void loadAllAction();
     
     //先构造动作组，再添加到管理类中
     void AddGroup( lyActionGroup* pActGroup, unsigned int nGroupId );

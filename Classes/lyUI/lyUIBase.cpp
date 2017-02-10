@@ -5,6 +5,7 @@
 bool gShowTestCollition = true;
 #endif
 
+using namespace cocos2d;
 
 lyUIBase::lyUIBase()
 :lyCocosNode()
@@ -15,11 +16,11 @@ lyUIBase::lyUIBase()
 ,m_szCtrlName("")
 ,m_bTouchEnabled(false)
 ,m_TouchBeginPoint(CCPoint(0,0))
-,m_nBulletId(0)
 ,m_byInterval(4)
 ,m_byCurrInterval(0)
 ,m_bPause(false)
 {
+    m_bHadSpan = false;
 }
 
 lyUIBase::~lyUIBase()
@@ -59,7 +60,6 @@ void lyUIBase::SetCtrlName( const char* strCtrlName )
 void lyUIBase::onEnter()
 {
     lyCocosNode::onEnter();
-    m_nBulletId = 0;
 }
 
 void lyUIBase::onExit()
@@ -78,24 +78,51 @@ void lyUIBase::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t p
 void lyUIBase::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 {
     lyCocosNode::draw(renderer, transform, flags);
+
+
 }
 bool lyUIBase::onTouchBegan(cocos2d::Touch *touches, cocos2d::Event *event)
 {
-    CCLOG("---------------------------------------%ld",GetObjID());
-    CCPoint touchesPoint = touches->getLocation();
-    CCPoint touNodeSpace = this->convertTouchToNodeSpace(touches);
-    CCLOG("lyUIBase touchesPoint x=%f, y=%f",touchesPoint.x,touchesPoint.y);
-    CCLOG("lyUIBase touNodeSpace x=%f, y=%f",touNodeSpace.x,touNodeSpace.y);
-    return true;
+    if (m_bPause) {
+        return false;
+    }
+    
+    if (lyCocosFunc::isTouchInWin(this, touches)) {
+        m_bIsTouched = true;
+        m_TouchBeginPoint = this->convertTouchToNodeSpace(touches);
+        CCLOG("x=======%f,y========%f",this->getPosition().x, this->getPosition().y);
+        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_DOWN, this->GetObjID(),0);
+        return true;
+    }
+    
+    return false;
+
 }
 
 void lyUIBase::onTouchMoved(cocos2d::Touch *touches, cocos2d::Event *event)
 {
     if (m_bIsTouched) {
-        //setPosition(touches->getLocation());
-        if (m_nBulletId) {
-            //从此坐标 发射出一个子弹
+        Vec2 touchNodePoint = this->convertTouchToNodeSpace(touches);
+        
+        Vec2 targetPoint = this->getPosition() + touchNodePoint - m_TouchBeginPoint;
+        if (m_bHadSpan) {
+            if (targetPoint.x < m_nMinX) {
+                targetPoint.x = m_nMinX;
+            }
+            if (targetPoint.y < m_nMinY) {
+                targetPoint.y = m_nMinY;
+            }
+            if (targetPoint.x > m_nMaxX) {
+                targetPoint.x = m_nMaxX;
+            }
+            if (targetPoint.y > m_nMaxY) {
+                targetPoint.y = m_nMaxY;
+            }
         }
+        
+        this->setPosition(targetPoint);
+        
+        lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_MOVED, this->GetObjID(),0);
     }
 }
 
@@ -104,6 +131,9 @@ void lyUIBase::onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event)
     if (!m_bIsTouched) {
         return;
     }
+    lyEventManager::ExecuteEventCPP(UIEventType::UI_TOUCH_UP, this->GetObjID(),0);
+    
+    
     m_bIsTouched = false;
 }
 void lyUIBase::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event)
@@ -153,6 +183,7 @@ bool lyUIBase::checkCollision(lyUIBase* temp)
 }
 bool lyUIBase::isOutScreen()
 {
+    
     bool bOut = true;
     //Vec2 anchorPoint = this->getAnchorPoint();
     //CCLOG("anchorPoint==========%f,%f",anchorPoint.x,anchorPoint.y);
@@ -172,9 +203,17 @@ bool lyUIBase::isOutScreen()
         bOut = false;
     }
     if (bOut) {
-        //CCLOG("out" );
+        CCLOG("out" );
     }
     else
         //CCLOG("in" );
     return bOut;
+}
+void lyUIBase::setDragSpan(int minX, int maxX,int minY, int maxY)
+{
+    m_bHadSpan = true;
+    m_nMinX = minX;
+    m_nMinY = minY;
+    m_nMaxX = maxX;
+    m_nMaxY = maxY;
 }

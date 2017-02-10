@@ -19,7 +19,7 @@ public:
     ~lyPlistManager();
     
     static lyPlistManager* getInstance();
-    
+    void loadAllPlist();
     void loadMapPlist(std::string textureName);
     void loadRolePlist(std::string textureName);
     void loadActionPlist(std::string texPath);

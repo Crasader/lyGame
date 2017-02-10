@@ -704,7 +704,7 @@ std::string PartsBaseObj::longToStringWithComma(int64_t val, bool addSymbol)
 void PartsBaseObj::dispValueMap(const cocos2d::ValueMap& valueMap)
 {
 #if COCOS2D_DEBUG >= 1
-    char* str = lyJsonConverter::getInstance()->strFrom(valueMap);
+    char* str = lyJsonConverter::getInstance()->getString(valueMap);
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     __android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info",  "%s", str);
 #else

@@ -60,6 +60,19 @@
 		79489C9E1E2F36AE001BE7B2 /* lyUIBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79489C9C1E2F36AE001BE7B2 /* lyUIBullet.cpp */; };
 		794AD6851DED227D00EA3CF5 /* lyWebInterfaceiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 794AD6831DED227D00EA3CF5 /* lyWebInterfaceiOS.mm */; };
 		794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 794AD6841DED227D00EA3CF5 /* lyWebView.mm */; };
+		795238BE1E4C1AFC005395CA /* GestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238BC1E4C1AFC005395CA /* GestureRecognizer.cpp */; };
+		795238D51E4C5B21005395CA /* DictUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238C41E4C5B21005395CA /* DictUtil.cpp */; };
+		795238D61E4C5B21005395CA /* LocalizedString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238C71E4C5B21005395CA /* LocalizedString.cpp */; };
+		795238D71E4C5B21005395CA /* RandomUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238CB1E4C5B21005395CA /* RandomUtil.cpp */; };
+		795238D81E4C5B21005395CA /* ScrollingUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238CD1E4C5B21005395CA /* ScrollingUtil.cpp */; };
+		795238D91E4C5B21005395CA /* StrUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238D01E4C5B21005395CA /* StrUtil.cpp */; };
+		795238DA1E4C5B21005395CA /* TimeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238D21E4C5B21005395CA /* TimeUtil.cpp */; };
+		795238E41E4C5B58005395CA /* lyJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238DE1E4C5B58005395CA /* lyJson.cpp */; };
+		795238E51E4C5B58005395CA /* lyJsonConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238E01E4C5B58005395CA /* lyJsonConverter.cpp */; };
+		795238EF1E4C5B84005395CA /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238E71E4C5B84005395CA /* CCCrypto.cpp */; };
+		795238F01E4C5B84005395CA /* libb64.c in Sources */ = {isa = PBXBuildFile; fileRef = 795238E91E4C5B84005395CA /* libb64.c */; };
+		795238F11E4C5B84005395CA /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 795238EB1E4C5B84005395CA /* md5.c */; };
+		795238F21E4C5B84005395CA /* sha1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795238ED1E4C5B84005395CA /* sha1.cpp */; };
 		795D2E291E0EA848001AEEF4 /* Caption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E1F1E0EA848001AEEF4 /* Caption.cpp */; };
 		795D2E2A1E0EA848001AEEF4 /* Observer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E211E0EA848001AEEF4 /* Observer.cpp */; };
 		795D2E2B1E0EA848001AEEF4 /* ObserverController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2E231E0EA848001AEEF4 /* ObserverController.cpp */; };
@@ -93,30 +106,17 @@
 		795D2EEC1E101CF8001AEEF4 /* lyCCBSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EE71E101CF8001AEEF4 /* lyCCBSprite.cpp */; };
 		795D2EEF1E101D05001AEEF4 /* CoreLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EED1E101D05001AEEF4 /* CoreLayer.cpp */; };
 		795D2EFA1E111431001AEEF4 /* mainTopLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EF81E111431001AEEF4 /* mainTopLayer.cpp */; };
-		795D2EFD1E111439001AEEF4 /* battleTopLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EFB1E111439001AEEF4 /* battleTopLayer.cpp */; };
+		795D2EFD1E111439001AEEF4 /* questHitPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EFB1E111439001AEEF4 /* questHitPlane.cpp */; };
 		795D2F001E1117D2001AEEF4 /* lySceneManger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2EFE1E1117D2001AEEF4 /* lySceneManger.cpp */; };
 		795D2F0D1E117BB5001AEEF4 /* lyCocosNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2F091E117BB5001AEEF4 /* lyCocosNode.cpp */; };
 		795D2F0E1E117BB5001AEEF4 /* lyCocosSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 795D2F0B1E117BB5001AEEF4 /* lyCocosSprite.cpp */; };
-		79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BAC1DDDA73000CD7FB6 /* CCCrypto.cpp */; };
-		79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB21DDDA75D00CD7FB6 /* sha1.cpp */; };
-		79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB51DDDA76900CD7FB6 /* md5.c */; };
-		79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BB81DDDA77600CD7FB6 /* libb64.c */; };
-		79CC9BD31DDDA78C00CD7FB6 /* DictUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BC31DDDA78C00CD7FB6 /* DictUtil.cpp */; };
-		79CC9BD41DDDA78C00CD7FB6 /* LocalizedString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BC61DDDA78C00CD7FB6 /* LocalizedString.cpp */; };
-		79CC9BD51DDDA78C00CD7FB6 /* RandomUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BCA1DDDA78C00CD7FB6 /* RandomUtil.cpp */; };
-		79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BCC1DDDA78C00CD7FB6 /* ScrollingUtil.cpp */; };
-		79CC9BD71DDDA78C00CD7FB6 /* StrUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BCF1DDDA78C00CD7FB6 /* StrUtil.cpp */; };
-		79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79CC9BD11DDDA78C00CD7FB6 /* TimeUtil.cpp */; };
 		79CC9C781DDDAA8D00CD7FB6 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C771DDDAA8D00CD7FB6 /* Published-iOS */; };
 		79CC9C7A1DDDAA9300CD7FB6 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 79CC9C791DDDAA9300CD7FB6 /* sounds */; };
-		79E352D81E18FE400071CFD3 /* lyUIDrag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */; };
 		79E352DC1E1902E20071CFD3 /* lyTouchElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352DA1E1902E20071CFD3 /* lyTouchElement.cpp */; };
 		79E352E01E1920620071CFD3 /* lyCocosFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E352DF1E1920620071CFD3 /* lyCocosFunc.cpp */; };
 		79E7BC2D1E1F3A61002C2584 /* TexturePlist in Resources */ = {isa = PBXBuildFile; fileRef = 79E7BC2C1E1F3A61002C2584 /* TexturePlist */; };
 		79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963DA1DFDABB10091A060 /* PartsBase.cpp */; };
 		79E963E21DFDABC30091A060 /* testLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963DE1DFDABC30091A060 /* testLayer.cpp */; };
-		79E963EB1DFDABF50091A060 /* lyJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963E51DFDABF50091A060 /* lyJson.cpp */; };
-		79E963EC1DFDABF50091A060 /* lyJsonConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E963E71DFDABF50091A060 /* lyJsonConverter.cpp */; };
 		79E964311DFDB1920091A060 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964301DFDB1920091A060 /* AudioToolbox.framework */; };
 		79E964331DFDB1EC0091A060 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964321DFDB1EC0091A060 /* MediaPlayer.framework */; };
 		79E964371DFDB2CA0091A060 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E964361DFDB2CA0091A060 /* CoreGraphics.framework */; };
@@ -245,6 +245,39 @@
 		794AD6821DED227D00EA3CF5 /* lyWebInterfaceiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyWebInterfaceiOS.h; path = ios/lyWeb/lyWebInterfaceiOS.h; sourceTree = SOURCE_ROOT; };
 		794AD6831DED227D00EA3CF5 /* lyWebInterfaceiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = lyWebInterfaceiOS.mm; path = ios/lyWeb/lyWebInterfaceiOS.mm; sourceTree = SOURCE_ROOT; };
 		794AD6841DED227D00EA3CF5 /* lyWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = lyWebView.mm; path = ios/lyWeb/lyWebView.mm; sourceTree = SOURCE_ROOT; };
+		795238BC1E4C1AFC005395CA /* GestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GestureRecognizer.cpp; path = lyTouch/GestureRecognizer.cpp; sourceTree = "<group>"; };
+		795238BD1E4C1AFC005395CA /* GestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureRecognizer.h; path = lyTouch/GestureRecognizer.h; sourceTree = "<group>"; };
+		795238C41E4C5B21005395CA /* DictUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictUtil.cpp; path = lyHelper/DictUtil.cpp; sourceTree = "<group>"; };
+		795238C51E4C5B21005395CA /* DictUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictUtil.h; path = lyHelper/DictUtil.h; sourceTree = "<group>"; };
+		795238C61E4C5B21005395CA /* ListUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUtil.h; path = lyHelper/ListUtil.h; sourceTree = "<group>"; };
+		795238C71E4C5B21005395CA /* LocalizedString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LocalizedString.cpp; path = lyHelper/LocalizedString.cpp; sourceTree = "<group>"; };
+		795238C81E4C5B21005395CA /* LocalizedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizedString.h; path = lyHelper/LocalizedString.h; sourceTree = "<group>"; };
+		795238C91E4C5B21005395CA /* LotteryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryUtil.h; path = lyHelper/LotteryUtil.h; sourceTree = "<group>"; };
+		795238CA1E4C5B21005395CA /* PositionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PositionUtil.h; path = lyHelper/PositionUtil.h; sourceTree = "<group>"; };
+		795238CB1E4C5B21005395CA /* RandomUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RandomUtil.cpp; path = lyHelper/RandomUtil.cpp; sourceTree = "<group>"; };
+		795238CC1E4C5B21005395CA /* RandomUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomUtil.h; path = lyHelper/RandomUtil.h; sourceTree = "<group>"; };
+		795238CD1E4C5B21005395CA /* ScrollingUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScrollingUtil.cpp; path = lyHelper/ScrollingUtil.cpp; sourceTree = "<group>"; };
+		795238CE1E4C5B21005395CA /* ScrollingUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingUtil.h; path = lyHelper/ScrollingUtil.h; sourceTree = "<group>"; };
+		795238CF1E4C5B21005395CA /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtils.h; path = lyHelper/StringUtils.h; sourceTree = "<group>"; };
+		795238D01E4C5B21005395CA /* StrUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StrUtil.cpp; path = lyHelper/StrUtil.cpp; sourceTree = "<group>"; };
+		795238D11E4C5B21005395CA /* StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StrUtil.h; path = lyHelper/StrUtil.h; sourceTree = "<group>"; };
+		795238D21E4C5B21005395CA /* TimeUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeUtil.cpp; path = lyHelper/TimeUtil.cpp; sourceTree = "<group>"; };
+		795238D31E4C5B21005395CA /* TimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeUtil.h; path = lyHelper/TimeUtil.h; sourceTree = "<group>"; };
+		795238DC1E4C5B36005395CA /* lyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyWebView.h; path = lyHelper/lyWeb/lyWebView.h; sourceTree = "<group>"; };
+		795238DE1E4C5B58005395CA /* lyJson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyJson.cpp; path = lyHelper/lyJson/lyJson.cpp; sourceTree = "<group>"; };
+		795238DF1E4C5B58005395CA /* lyJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyJson.h; path = lyHelper/lyJson/lyJson.h; sourceTree = "<group>"; };
+		795238E01E4C5B58005395CA /* lyJsonConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyJsonConverter.cpp; path = lyHelper/lyJson/lyJsonConverter.cpp; sourceTree = "<group>"; };
+		795238E11E4C5B58005395CA /* lyJsonConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyJsonConverter.h; path = lyHelper/lyJson/lyJsonConverter.h; sourceTree = "<group>"; };
+		795238E21E4C5B58005395CA /* lyJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyJsonData.h; path = lyHelper/lyJson/lyJsonData.h; sourceTree = "<group>"; };
+		795238E31E4C5B58005395CA /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = picojson.h; path = lyHelper/lyJson/picojson.h; sourceTree = "<group>"; };
+		795238E71E4C5B84005395CA /* CCCrypto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCCrypto.cpp; path = lyHelper/crypto/CCCrypto.cpp; sourceTree = "<group>"; };
+		795238E81E4C5B84005395CA /* CCCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCrypto.h; path = lyHelper/crypto/CCCrypto.h; sourceTree = "<group>"; };
+		795238E91E4C5B84005395CA /* libb64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libb64.c; path = lyHelper/crypto/libb64.c; sourceTree = "<group>"; };
+		795238EA1E4C5B84005395CA /* libb64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libb64.h; path = lyHelper/crypto/libb64.h; sourceTree = "<group>"; };
+		795238EB1E4C5B84005395CA /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = md5.c; path = lyHelper/crypto/md5.c; sourceTree = "<group>"; };
+		795238EC1E4C5B84005395CA /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md5.h; path = lyHelper/crypto/md5.h; sourceTree = "<group>"; };
+		795238ED1E4C5B84005395CA /* sha1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sha1.cpp; path = lyHelper/crypto/sha1.cpp; sourceTree = "<group>"; };
+		795238EE1E4C5B84005395CA /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = lyHelper/crypto/sha1.h; sourceTree = "<group>"; };
 		795D2E1F1E0EA848001AEEF4 /* Caption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Caption.cpp; path = lyBase/Caption.cpp; sourceTree = "<group>"; };
 		795D2E201E0EA848001AEEF4 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Caption.h; path = lyBase/Caption.h; sourceTree = "<group>"; };
 		795D2E211E0EA848001AEEF4 /* Observer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Observer.cpp; path = lyBase/Observer.cpp; sourceTree = "<group>"; };
@@ -328,8 +361,8 @@
 		795D2EEE1E101D05001AEEF4 /* CoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreLayer.h; path = lyLayer/CoreLayer.h; sourceTree = "<group>"; };
 		795D2EF81E111431001AEEF4 /* mainTopLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mainTopLayer.cpp; path = lyLayer/main/mainTopLayer.cpp; sourceTree = "<group>"; };
 		795D2EF91E111431001AEEF4 /* mainTopLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mainTopLayer.h; path = lyLayer/main/mainTopLayer.h; sourceTree = "<group>"; };
-		795D2EFB1E111439001AEEF4 /* battleTopLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = battleTopLayer.cpp; path = lyLayer/quest/battleTopLayer.cpp; sourceTree = "<group>"; };
-		795D2EFC1E111439001AEEF4 /* battleTopLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = battleTopLayer.h; path = lyLayer/quest/battleTopLayer.h; sourceTree = "<group>"; };
+		795D2EFB1E111439001AEEF4 /* questHitPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = questHitPlane.cpp; path = lyLayer/quest/questHitPlane.cpp; sourceTree = "<group>"; };
+		795D2EFC1E111439001AEEF4 /* questHitPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = questHitPlane.h; path = lyLayer/quest/questHitPlane.h; sourceTree = "<group>"; };
 		795D2EFE1E1117D2001AEEF4 /* lySceneManger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lySceneManger.cpp; path = lyMgr/lySceneManger.cpp; sourceTree = "<group>"; };
 		795D2EFF1E1117D2001AEEF4 /* lySceneManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lySceneManger.h; path = lyMgr/lySceneManger.h; sourceTree = "<group>"; };
 		795D2F091E117BB5001AEEF4 /* lyCocosNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyCocosNode.cpp; path = lyCocos/lyCocosNode.cpp; sourceTree = "<group>"; };
@@ -339,34 +372,8 @@
 		79CC9B7C1DDDA66A00CD7FB6 /* lyChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyChannel.h; path = lyDef/lyChannel.h; sourceTree = "<group>"; };
 		79CC9B7D1DDDA66A00CD7FB6 /* lyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyCommon.h; path = lyDef/lyCommon.h; sourceTree = "<group>"; };
 		79CC9B7E1DDDA66A00CD7FB6 /* lyInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyInclude.h; path = lyDef/lyInclude.h; sourceTree = "<group>"; };
-		79CC9BAC1DDDA73000CD7FB6 /* CCCrypto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCCrypto.cpp; path = lyUtils/crypto/CCCrypto.cpp; sourceTree = "<group>"; };
-		79CC9BAD1DDDA73000CD7FB6 /* CCCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCrypto.h; path = lyUtils/crypto/CCCrypto.h; sourceTree = "<group>"; };
-		79CC9BB21DDDA75D00CD7FB6 /* sha1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sha1.cpp; path = lyUtils/crypto/sha1/sha1.cpp; sourceTree = "<group>"; };
-		79CC9BB31DDDA75D00CD7FB6 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = lyUtils/crypto/sha1/sha1.h; sourceTree = "<group>"; };
-		79CC9BB51DDDA76900CD7FB6 /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = md5.c; path = lyUtils/crypto/md5/md5.c; sourceTree = "<group>"; };
-		79CC9BB61DDDA76900CD7FB6 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md5.h; path = lyUtils/crypto/md5/md5.h; sourceTree = "<group>"; };
-		79CC9BB81DDDA77600CD7FB6 /* libb64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libb64.c; path = lyUtils/crypto/base64/libb64.c; sourceTree = "<group>"; };
-		79CC9BB91DDDA77600CD7FB6 /* libb64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libb64.h; path = lyUtils/crypto/base64/libb64.h; sourceTree = "<group>"; };
-		79CC9BC31DDDA78C00CD7FB6 /* DictUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictUtil.cpp; path = lyUtils/DictUtil.cpp; sourceTree = "<group>"; };
-		79CC9BC41DDDA78C00CD7FB6 /* DictUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictUtil.h; path = lyUtils/DictUtil.h; sourceTree = "<group>"; };
-		79CC9BC51DDDA78C00CD7FB6 /* ListUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListUtil.h; path = lyUtils/ListUtil.h; sourceTree = "<group>"; };
-		79CC9BC61DDDA78C00CD7FB6 /* LocalizedString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LocalizedString.cpp; path = lyUtils/LocalizedString.cpp; sourceTree = "<group>"; };
-		79CC9BC71DDDA78C00CD7FB6 /* LocalizedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizedString.h; path = lyUtils/LocalizedString.h; sourceTree = "<group>"; };
-		79CC9BC81DDDA78C00CD7FB6 /* LotteryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryUtil.h; path = lyUtils/LotteryUtil.h; sourceTree = "<group>"; };
-		79CC9BC91DDDA78C00CD7FB6 /* PositionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PositionUtil.h; path = lyUtils/PositionUtil.h; sourceTree = "<group>"; };
-		79CC9BCA1DDDA78C00CD7FB6 /* RandomUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RandomUtil.cpp; path = lyUtils/RandomUtil.cpp; sourceTree = "<group>"; };
-		79CC9BCB1DDDA78C00CD7FB6 /* RandomUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomUtil.h; path = lyUtils/RandomUtil.h; sourceTree = "<group>"; };
-		79CC9BCC1DDDA78C00CD7FB6 /* ScrollingUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScrollingUtil.cpp; path = lyUtils/ScrollingUtil.cpp; sourceTree = "<group>"; };
-		79CC9BCD1DDDA78C00CD7FB6 /* ScrollingUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingUtil.h; path = lyUtils/ScrollingUtil.h; sourceTree = "<group>"; };
-		79CC9BCE1DDDA78C00CD7FB6 /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtils.h; path = lyUtils/StringUtils.h; sourceTree = "<group>"; };
-		79CC9BCF1DDDA78C00CD7FB6 /* StrUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StrUtil.cpp; path = lyUtils/StrUtil.cpp; sourceTree = "<group>"; };
-		79CC9BD01DDDA78C00CD7FB6 /* StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StrUtil.h; path = lyUtils/StrUtil.h; sourceTree = "<group>"; };
-		79CC9BD11DDDA78C00CD7FB6 /* TimeUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeUtil.cpp; path = lyUtils/TimeUtil.cpp; sourceTree = "<group>"; };
-		79CC9BD21DDDA78C00CD7FB6 /* TimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeUtil.h; path = lyUtils/TimeUtil.h; sourceTree = "<group>"; };
 		79CC9C771DDDAA8D00CD7FB6 /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Published-iOS"; sourceTree = "<group>"; };
 		79CC9C791DDDAA9300CD7FB6 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
-		79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyUIDrag.cpp; path = lyUI/lyUIDrag.cpp; sourceTree = "<group>"; };
-		79E352D51E18FE400071CFD3 /* lyUIDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyUIDrag.h; path = lyUI/lyUIDrag.h; sourceTree = "<group>"; };
 		79E352DA1E1902E20071CFD3 /* lyTouchElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyTouchElement.cpp; path = lyBase/lyTouchElement.cpp; sourceTree = "<group>"; };
 		79E352DB1E1902E20071CFD3 /* lyTouchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyTouchElement.h; path = lyBase/lyTouchElement.h; sourceTree = "<group>"; };
 		79E352DD1E19046D0071CFD3 /* lyMemoryPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyMemoryPool.h; path = lyMgr/lyMemory/lyMemoryPool.h; sourceTree = "<group>"; };
@@ -377,13 +384,6 @@
 		79E963DB1DFDABB10091A060 /* PartsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartsBase.h; path = lyBase/PartsBase.h; sourceTree = "<group>"; };
 		79E963DE1DFDABC30091A060 /* testLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testLayer.cpp; path = lyTest/testLayer.cpp; sourceTree = "<group>"; };
 		79E963DF1DFDABC30091A060 /* testLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testLayer.h; path = lyTest/testLayer.h; sourceTree = "<group>"; };
-		79E963E51DFDABF50091A060 /* lyJson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyJson.cpp; path = lyUtils/lyJSON/lyJson.cpp; sourceTree = "<group>"; };
-		79E963E61DFDABF50091A060 /* lyJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyJson.h; path = lyUtils/lyJSON/lyJson.h; sourceTree = "<group>"; };
-		79E963E71DFDABF50091A060 /* lyJsonConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lyJsonConverter.cpp; path = lyUtils/lyJSON/lyJsonConverter.cpp; sourceTree = "<group>"; };
-		79E963E81DFDABF50091A060 /* lyJsonConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyJsonConverter.h; path = lyUtils/lyJSON/lyJsonConverter.h; sourceTree = "<group>"; };
-		79E963E91DFDABF50091A060 /* lyJsonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyJsonData.h; path = lyUtils/lyJSON/lyJsonData.h; sourceTree = "<group>"; };
-		79E963EA1DFDABF50091A060 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = picojson.h; path = lyUtils/lyJSON/picojson.h; sourceTree = "<group>"; };
-		79E9642D1DFDACDF0091A060 /* lyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lyWebView.h; path = lyUtils/lyWeb/lyWebView.h; sourceTree = "<group>"; };
 		79E964301DFDB1920091A060 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		79E964321DFDB1EC0091A060 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		79E964341DFDB23F0091A060 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
@@ -584,6 +584,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				795238BA1E4C1AF0005395CA /* lyTouch */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -596,7 +597,6 @@
 				795D2E2E1E0EA852001AEEF4 /* lyMgr */,
 				79CC9B581DDDA49600CD7FB6 /* lyTest */,
 				795D2EB31E0FAA07001AEEF4 /* lyUI */,
-				79CC9B591DDDA49F00CD7FB6 /* lyUtils */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -657,6 +657,51 @@
 				794AD6841DED227D00EA3CF5 /* lyWebView.mm */,
 			);
 			name = lyWeb;
+			sourceTree = "<group>";
+		};
+		795238BA1E4C1AF0005395CA /* lyTouch */ = {
+			isa = PBXGroup;
+			children = (
+				795238BC1E4C1AFC005395CA /* GestureRecognizer.cpp */,
+				795238BD1E4C1AFC005395CA /* GestureRecognizer.h */,
+			);
+			name = lyTouch;
+			sourceTree = "<group>";
+		};
+		795238DB1E4C5B25005395CA /* lyWeb */ = {
+			isa = PBXGroup;
+			children = (
+				795238DC1E4C5B36005395CA /* lyWebView.h */,
+			);
+			name = lyWeb;
+			sourceTree = "<group>";
+		};
+		795238DD1E4C5B3A005395CA /* lyJson */ = {
+			isa = PBXGroup;
+			children = (
+				795238DE1E4C5B58005395CA /* lyJson.cpp */,
+				795238DF1E4C5B58005395CA /* lyJson.h */,
+				795238E01E4C5B58005395CA /* lyJsonConverter.cpp */,
+				795238E11E4C5B58005395CA /* lyJsonConverter.h */,
+				795238E21E4C5B58005395CA /* lyJsonData.h */,
+				795238E31E4C5B58005395CA /* picojson.h */,
+			);
+			name = lyJson;
+			sourceTree = "<group>";
+		};
+		795238E61E4C5B67005395CA /* crypto */ = {
+			isa = PBXGroup;
+			children = (
+				795238E71E4C5B84005395CA /* CCCrypto.cpp */,
+				795238E81E4C5B84005395CA /* CCCrypto.h */,
+				795238E91E4C5B84005395CA /* libb64.c */,
+				795238EA1E4C5B84005395CA /* libb64.h */,
+				795238EB1E4C5B84005395CA /* md5.c */,
+				795238EC1E4C5B84005395CA /* md5.h */,
+				795238ED1E4C5B84005395CA /* sha1.cpp */,
+				795238EE1E4C5B84005395CA /* sha1.h */,
+			);
+			name = crypto;
 			sourceTree = "<group>";
 		};
 		795D2E2E1E0EA852001AEEF4 /* lyMgr */ = {
@@ -798,6 +843,25 @@
 		795D2E7F1E0EB206001AEEF4 /* lyHelper */ = {
 			isa = PBXGroup;
 			children = (
+				795238E61E4C5B67005395CA /* crypto */,
+				795238DD1E4C5B3A005395CA /* lyJson */,
+				795238DB1E4C5B25005395CA /* lyWeb */,
+				795238C41E4C5B21005395CA /* DictUtil.cpp */,
+				795238C51E4C5B21005395CA /* DictUtil.h */,
+				795238C61E4C5B21005395CA /* ListUtil.h */,
+				795238C71E4C5B21005395CA /* LocalizedString.cpp */,
+				795238C81E4C5B21005395CA /* LocalizedString.h */,
+				795238C91E4C5B21005395CA /* LotteryUtil.h */,
+				795238CA1E4C5B21005395CA /* PositionUtil.h */,
+				795238CB1E4C5B21005395CA /* RandomUtil.cpp */,
+				795238CC1E4C5B21005395CA /* RandomUtil.h */,
+				795238CD1E4C5B21005395CA /* ScrollingUtil.cpp */,
+				795238CE1E4C5B21005395CA /* ScrollingUtil.h */,
+				795238CF1E4C5B21005395CA /* StringUtils.h */,
+				795238D01E4C5B21005395CA /* StrUtil.cpp */,
+				795238D11E4C5B21005395CA /* StrUtil.h */,
+				795238D21E4C5B21005395CA /* TimeUtil.cpp */,
+				795238D31E4C5B21005395CA /* TimeUtil.h */,
 				79489C961E2F14A4001BE7B2 /* lyAndLog.cpp */,
 				79489C971E2F14A4001BE7B2 /* lyAndLog.h */,
 				79E352DF1E1920620071CFD3 /* lyCocosFunc.cpp */,
@@ -841,8 +905,6 @@
 			children = (
 				79489C9C1E2F36AE001BE7B2 /* lyUIBullet.cpp */,
 				79489C9D1E2F36AE001BE7B2 /* lyUIBullet.h */,
-				79E352D41E18FE400071CFD3 /* lyUIDrag.cpp */,
-				79E352D51E18FE400071CFD3 /* lyUIDrag.h */,
 				79EA27DF1E13780D001F742F /* lyUIRole.cpp */,
 				79EA27E01E13780D001F742F /* lyUIRole.h */,
 				795D2ECD1E1003B0001AEEF4 /* lyUIBase.cpp */,
@@ -865,8 +927,8 @@
 		795D2EF51E11141A001AEEF4 /* quest */ = {
 			isa = PBXGroup;
 			children = (
-				795D2EFB1E111439001AEEF4 /* battleTopLayer.cpp */,
-				795D2EFC1E111439001AEEF4 /* battleTopLayer.h */,
+				795D2EFB1E111439001AEEF4 /* questHitPlane.cpp */,
+				795D2EFC1E111439001AEEF4 /* questHitPlane.h */,
 			);
 			name = quest;
 			sourceTree = "<group>";
@@ -923,92 +985,6 @@
 				79E963DF1DFDABC30091A060 /* testLayer.h */,
 			);
 			name = lyTest;
-			sourceTree = "<group>";
-		};
-		79CC9B591DDDA49F00CD7FB6 /* lyUtils */ = {
-			isa = PBXGroup;
-			children = (
-				79E9642C1DFDACD20091A060 /* lyWeb */,
-				79CC9B5B1DDDA4AB00CD7FB6 /* crypto */,
-				79CC9BC31DDDA78C00CD7FB6 /* DictUtil.cpp */,
-				79CC9BC41DDDA78C00CD7FB6 /* DictUtil.h */,
-				79CC9BC51DDDA78C00CD7FB6 /* ListUtil.h */,
-				79CC9BC61DDDA78C00CD7FB6 /* LocalizedString.cpp */,
-				79CC9BC71DDDA78C00CD7FB6 /* LocalizedString.h */,
-				79CC9BC81DDDA78C00CD7FB6 /* LotteryUtil.h */,
-				79E963E41DFDABED0091A060 /* lyJSON */,
-				79CC9BC91DDDA78C00CD7FB6 /* PositionUtil.h */,
-				79CC9BCA1DDDA78C00CD7FB6 /* RandomUtil.cpp */,
-				79CC9BCB1DDDA78C00CD7FB6 /* RandomUtil.h */,
-				79CC9BCC1DDDA78C00CD7FB6 /* ScrollingUtil.cpp */,
-				79CC9BCD1DDDA78C00CD7FB6 /* ScrollingUtil.h */,
-				79CC9BCE1DDDA78C00CD7FB6 /* StringUtils.h */,
-				79CC9BCF1DDDA78C00CD7FB6 /* StrUtil.cpp */,
-				79CC9BD01DDDA78C00CD7FB6 /* StrUtil.h */,
-				79CC9BD11DDDA78C00CD7FB6 /* TimeUtil.cpp */,
-				79CC9BD21DDDA78C00CD7FB6 /* TimeUtil.h */,
-			);
-			name = lyUtils;
-			sourceTree = "<group>";
-		};
-		79CC9B5B1DDDA4AB00CD7FB6 /* crypto */ = {
-			isa = PBXGroup;
-			children = (
-				79CC9BB11DDDA75100CD7FB6 /* sha1 */,
-				79CC9BB01DDDA74800CD7FB6 /* md5 */,
-				79CC9BAF1DDDA73F00CD7FB6 /* base64 */,
-				79CC9BAC1DDDA73000CD7FB6 /* CCCrypto.cpp */,
-				79CC9BAD1DDDA73000CD7FB6 /* CCCrypto.h */,
-			);
-			name = crypto;
-			sourceTree = "<group>";
-		};
-		79CC9BAF1DDDA73F00CD7FB6 /* base64 */ = {
-			isa = PBXGroup;
-			children = (
-				79CC9BB81DDDA77600CD7FB6 /* libb64.c */,
-				79CC9BB91DDDA77600CD7FB6 /* libb64.h */,
-			);
-			name = base64;
-			sourceTree = "<group>";
-		};
-		79CC9BB01DDDA74800CD7FB6 /* md5 */ = {
-			isa = PBXGroup;
-			children = (
-				79CC9BB51DDDA76900CD7FB6 /* md5.c */,
-				79CC9BB61DDDA76900CD7FB6 /* md5.h */,
-			);
-			name = md5;
-			sourceTree = "<group>";
-		};
-		79CC9BB11DDDA75100CD7FB6 /* sha1 */ = {
-			isa = PBXGroup;
-			children = (
-				79CC9BB21DDDA75D00CD7FB6 /* sha1.cpp */,
-				79CC9BB31DDDA75D00CD7FB6 /* sha1.h */,
-			);
-			name = sha1;
-			sourceTree = "<group>";
-		};
-		79E963E41DFDABED0091A060 /* lyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				79E963E51DFDABF50091A060 /* lyJson.cpp */,
-				79E963E61DFDABF50091A060 /* lyJson.h */,
-				79E963E71DFDABF50091A060 /* lyJsonConverter.cpp */,
-				79E963E81DFDABF50091A060 /* lyJsonConverter.h */,
-				79E963E91DFDABF50091A060 /* lyJsonData.h */,
-				79E963EA1DFDABF50091A060 /* picojson.h */,
-			);
-			name = lyJSON;
-			sourceTree = "<group>";
-		};
-		79E9642C1DFDACD20091A060 /* lyWeb */ = {
-			isa = PBXGroup;
-			children = (
-				79E9642D1DFDACDF0091A060 /* lyWebView.h */,
-			);
-			name = lyWeb;
 			sourceTree = "<group>";
 		};
 		79E964521DFDC24A0091A060 /* Platform */ = {
@@ -1190,24 +1166,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				794AD6861DED227D00EA3CF5 /* lyWebView.mm in Sources */,
+				795238D61E4C5B21005395CA /* LocalizedString.cpp in Sources */,
+				795238D71E4C5B21005395CA /* RandomUtil.cpp in Sources */,
 				795D2E3E1E0EA94B001AEEF4 /* loginLayer.cpp in Sources */,
-				79CC9BD61DDDA78C00CD7FB6 /* ScrollingUtil.cpp in Sources */,
 				79E964571DFDC25A0091A060 /* PlatformUtils.cpp in Sources */,
 				795D2F0D1E117BB5001AEEF4 /* lyCocosNode.cpp in Sources */,
-				79CC9BB71DDDA76900CD7FB6 /* md5.c in Sources */,
+				795238F01E4C5B84005395CA /* libb64.c in Sources */,
 				79E9645D1DFDC2640091A060 /* ActivityIndicator.mm in Sources */,
-				79CC9BBA1DDDA77600CD7FB6 /* libb64.c in Sources */,
 				795D2EEC1E101CF8001AEEF4 /* lyCCBSprite.cpp in Sources */,
-				795D2EFD1E111439001AEEF4 /* battleTopLayer.cpp in Sources */,
+				795D2EFD1E111439001AEEF4 /* questHitPlane.cpp in Sources */,
 				795D2E291E0EA848001AEEF4 /* Caption.cpp in Sources */,
 				79E963E21DFDABC30091A060 /* testLayer.cpp in Sources */,
+				795238D91E4C5B21005395CA /* StrUtil.cpp in Sources */,
 				795D2EBC1E0FB00D001AEEF4 /* lyActionManager.cpp in Sources */,
 				795D2EE91E101CF8001AEEF4 /* lyCCBInterface.cpp in Sources */,
 				795D2EEF1E101D05001AEEF4 /* CoreLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				79CC9BB41DDDA75D00CD7FB6 /* sha1.cpp in Sources */,
 				79EA27E11E13780D001F742F /* lyUIRole.cpp in Sources */,
 				79E9645C1DFDC2640091A060 /* ActivityIndicator_objc.mm in Sources */,
+				795238D51E4C5B21005395CA /* DictUtil.cpp in Sources */,
 				795D2E781E0EAA82001AEEF4 /* lyFrame.cpp in Sources */,
 				795D2E2A1E0EA848001AEEF4 /* Observer.cpp in Sources */,
 				795D2EAB1E0F9F71001AEEF4 /* lyMemory.cpp in Sources */,
@@ -1216,15 +1193,14 @@
 				79E9645E1DFDC2640091A060 /* PlatformUtils_objc.mm in Sources */,
 				795D2E7D1E0EAA8D001AEEF4 /* lyEvent.cpp in Sources */,
 				794AD6851DED227D00EA3CF5 /* lyWebInterfaceiOS.mm in Sources */,
+				795238D81E4C5B21005395CA /* ScrollingUtil.cpp in Sources */,
 				795D2E7E1E0EAA8D001AEEF4 /* lyEventManager.cpp in Sources */,
 				795D2E3A1E0EA933001AEEF4 /* lySoundManager.cpp in Sources */,
-				79CC9BD71DDDA78C00CD7FB6 /* StrUtil.cpp in Sources */,
 				79E352E01E1920620071CFD3 /* lyCocosFunc.cpp in Sources */,
-				79E352D81E18FE400071CFD3 /* lyUIDrag.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				79E963EB1DFDABF50091A060 /* lyJson.cpp in Sources */,
 				795D2E2C1E0EA848001AEEF4 /* ObserverNode.cpp in Sources */,
 				795D2EA71E0F77C6001AEEF4 /* lyStringOper.cpp in Sources */,
+				795238F21E4C5B84005395CA /* sha1.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				795D2EFA1E111431001AEEF4 /* mainTopLayer.cpp in Sources */,
 				79E352DC1E1902E20071CFD3 /* lyTouchElement.cpp in Sources */,
@@ -1232,26 +1208,26 @@
 				795D2ECF1E1003B0001AEEF4 /* lyUIBase.cpp in Sources */,
 				795D2F0E1E117BB5001AEEF4 /* lyCocosSprite.cpp in Sources */,
 				79489C981E2F14A4001BE7B2 /* lyAndLog.cpp in Sources */,
-				79CC9BD41DDDA78C00CD7FB6 /* LocalizedString.cpp in Sources */,
-				79CC9BAE1DDDA73000CD7FB6 /* CCCrypto.cpp in Sources */,
-				79CC9BD81DDDA78C00CD7FB6 /* TimeUtil.cpp in Sources */,
+				795238BE1E4C1AFC005395CA /* GestureRecognizer.cpp in Sources */,
 				795D2E6D1E0EA9A3001AEEF4 /* ApplicationManager.cpp in Sources */,
+				795238EF1E4C5B84005395CA /* CCCrypto.cpp in Sources */,
 				795D2E421E0EA95A001AEEF4 /* loadingText.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				795238F11E4C5B84005395CA /* md5.c in Sources */,
 				795D2E2B1E0EA848001AEEF4 /* ObserverController.cpp in Sources */,
 				795D2E6E1E0EA9A3001AEEF4 /* lyBaseScene.cpp in Sources */,
 				795D2E481E0EA961001AEEF4 /* lyBaseLayerModule.cpp in Sources */,
+				795238E51E4C5B58005395CA /* lyJsonConverter.cpp in Sources */,
 				795D2EBF1E0FB01A001AEEF4 /* lyActionGroup.cpp in Sources */,
 				795D2E761E0EAA82001AEEF4 /* lyAction.cpp in Sources */,
 				795D2E911E0F6402001AEEF4 /* lyCSVReader.cpp in Sources */,
-				79E963EC1DFDABF50091A060 /* lyJsonConverter.cpp in Sources */,
 				795D2E9B1E0F644A001AEEF4 /* lyCounter.cpp in Sources */,
 				795D2F001E1117D2001AEEF4 /* lySceneManger.cpp in Sources */,
-				79CC9BD51DDDA78C00CD7FB6 /* RandomUtil.cpp in Sources */,
 				795D2EC31E0FB9F5001AEEF4 /* lyPlistManager.cpp in Sources */,
 				79E963DD1DFDABB10091A060 /* PartsBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				79CC9BD31DDDA78C00CD7FB6 /* DictUtil.cpp in Sources */,
+				795238DA1E4C5B21005395CA /* TimeUtil.cpp in Sources */,
+				795238E41E4C5B58005395CA /* lyJson.cpp in Sources */,
 				795D2E941E0F6410001AEEF4 /* lyResourceUtil.cpp in Sources */,
 				79489C9E1E2F36AE001BE7B2 /* lyUIBullet.cpp in Sources */,
 				792031F11E03D3AB00D476FA /* TransitionFadeCustom.cpp in Sources */,

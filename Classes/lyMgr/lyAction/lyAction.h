@@ -23,8 +23,12 @@ public:
     static lyAction* Create();
 
  
-    void AddFrame(const char* pszImg);
+    void AddFrameByPath(const char* path);
+    void AddFrameByName(const char* name);
+    
     void AddFrame(lyFrame* pFrame);
+    
+    void initbyPlist(const char* plistname, int startIndex, int indexNum);
  
     lyFrame* GetNextFrame(lyFrame* pSpr);
     lyFrame* GetHeaderFrame();

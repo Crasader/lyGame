@@ -30,7 +30,14 @@ lyPlistManager::~lyPlistManager()
 	// TODO: auto generated code
 }
 
-
+void lyPlistManager::loadAllPlist()
+{
+    loadTexturePlist("Jingzhang_standby");
+    loadTexturePlist("Jingzhang_skill1");
+    loadTexturePlist("Role_Jingzhang_GC");
+    loadTexturePlist("ca01fukong2");
+    
+}
 
 void lyPlistManager::loadTexturePlist(std::string textureName)
 {

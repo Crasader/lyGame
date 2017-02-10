@@ -57,9 +57,6 @@ void testLayer::onExit()
 
 bool testLayer::onAssignCCBMemberVariable(Ref *pTarget, const char *pMemberVariableName, Node *pNode)
 {
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_nameLabel", cocos2d::Label*, _nameLabel);
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_rolelayer", cocos2d::Layer*, _rolelayer);
-    
     //CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "_sprtest", cocos2d::Sprite *, _sprtest);
     return false;
 }
@@ -71,7 +68,8 @@ cocos2d::extension::Control::Handler testLayer::onResolveCCBCCControlSelector(Re
 }
 cocos2d::SEL_MenuHandler testLayer::onResolveCCBCCMenuItemSelector(cocos2d::Ref * pTarget, const char* pSelectorName)
 {
-    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressMenuButton", testLayer::onClickedMenuButton);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressBack", testLayer::onPressBack);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "onPressStart", testLayer::onPressStart);
     return nullptr;
 }
 
@@ -90,62 +88,21 @@ void testLayer::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event)
   
 }
 
-void testLayer::onClickedMenuButton(cocos2d::Ref *sender)
+void testLayer::onPressBack(cocos2d::Ref *sender)
 {
-    CCLOG("onClickedMenuButton");
-    ApplicationManager::getInstance()->changeScene(SCENE_LOGIN);
+    CCLOG("onPressBack");
+    ApplicationManager::getInstance()->changeScene(SCENE_MAIN_TOP);
 }
-
-
-
+void testLayer::onPressStart(cocos2d::Ref *sender)
+{
+    CCLOG("onPressStart");
+    
+    
+    
+    
+}
 void testLayer::onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent)
 {
-    //CCLOG("onPressCtrlButton");
-    //csv表格读取测试
-    
-    std::string strPath1 = lyTableValue("Table/Map.csv", 2, "MSPath");
-    CCLOG("------------------------------");
-    CCLOG("strPath1=%s",strPath1.c_str());
-    
-    std::string SprId = lyTableValue(strPath1, 0, "SprId");
-    CCLOG("SprId=%s",SprId.c_str());
-    
-    int Line1 = lyTableLines("Table/Map.csv");
-    CCLOG("Map Line1=%d",Line1);
-    
-    int Line2 = lyTableLines(strPath1);
-    CCLOG("strPath1=%s,Line2=%d",strPath1.c_str(),Line2);
-    
-    
-    lyPlistManager::getInstance()->loadRolePlist("ant");
-    /*
-    lyActionGroup* pActGroup = lyActionGroup::Create();
-    if ( pActGroup )
-    {
-        lyAction* pAction = lyAction::Create();
-        if (pAction)
-        {
-            for ( unsigned char byIndex = 0; byIndex < 10; byIndex++ )
-            {
-                char szName[50];
-                memset(szName, 0, sizeof(char)*50 );
-                sprintf(szName, "Role/1/Stand/%03d.png",byIndex);
-                pAction->AddFrame(szName);
-            }
-            pActGroup->AddAction(pAction, 0);
-        }
-        lyActionManager::GetInstance()->AddGroup(pActGroup, 1);
-    }
-    
-    lyUIRole* pRole = lyUIRole::Create();
-    if (_myRole && pRole) {
-        
-        pRole->setRoleId(0);
-        pRole->setGroupId(0);
-        pRole->SetPosition(100, 100);
-        _myRole->addChild(pRole);
-    }
-    //*/
-    
+    ApplicationManager::getInstance()->changeScene(SCENE_MAIN_TOP);
 }
 

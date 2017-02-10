@@ -20,6 +20,16 @@ const double   QuarterPi = Pi / 4;
 #define SAFE_DELETE_ARRAY(p)		if(p){ delete[] (p); (p) = NULL;}
 /*** ***---------------------------------------------------------------*** ***/
 
+float fNowTick = 0;
+unsigned long GetMillisecondNow()
+{
+    return (unsigned long)fNowTick;
+}
+
+void AddMillisecondTime(float nDelta)
+{
+    fNowTick += nDelta * 1000;
+}
 
 /*** ***---------------------------------------------------------------*** ***/
 inline bool IsPng(const char* strName)

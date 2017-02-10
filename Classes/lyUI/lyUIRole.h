@@ -20,6 +20,7 @@ public:
 	~lyUIRole();
 	static lyUIRole* Create();
     bool init();
+    void Clear();
     virtual void onEnter() override;
     virtual void onExit() override;
     virtual void update(float delta) override;
@@ -31,23 +32,42 @@ public:
     virtual void onTouchEnded(cocos2d::Touch *touches, cocos2d::Event *event);
     virtual void onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event);
     
-	void setRoleId(unsigned int nRoleId);
-	unsigned int getRoleId(void);
-	void setGroupId(unsigned int Id);
-	void setAction( unsigned char byState );
+    void setRoleIdXLS( int nRoleId );
+    
+    int getRoleId(void);
+	void setGroupId(  int Id);
+	void setAction(   char byState );
     void updateNextAction();
     
-    void Clear();
-
-private:
-	unsigned int        m_nRoleId;
-	unsigned int        m_nActionGroupId;
-	lyAction*           m_pAction;
-	lyFrame*            m_pCurrFrame;
+    void initRolebyName(const char* plistname, int startIndex, int indexNum);
+    //属性计算
+    void setMaxBlood(int max)
+    {
+        m_nCurrBlood = max;
+        m_nMaxBlood = max;
+        
+    }
+    bool isDead();
+    int calcHurt(lyUIRole* pUIBase);
+    int calcAttack();
+    
+   
+protected:
+    lyFrame*            m_pCurrFrame;
+    int                 m_nActionGroupId;
+    lyAction*           m_pAction;
 
     int                 m_nCurrState;
     int                 m_nNextState;
+private:
+	  
 	//end*/
+    
+    
+    // 属性相关
+    int     m_nRoleId;
+    int     m_nCurrBlood;
+    int     m_nMaxBlood;
 
 };
 

@@ -49,9 +49,12 @@ public:
     virtual void onExit();
     
     
-    void onClickedMenuButton(cocos2d::Ref *sender);
+    void onPressBack(cocos2d::Ref *sender);
+    void onPressStart(cocos2d::Ref *sender);
     void onPressCtrlButton(cocos2d::Ref *sender, cocos2d::extension::Control::EventType pControlEvent);
     
+    
+    void checkCollision(float dt);
 private:
     
     bool _isMoving;

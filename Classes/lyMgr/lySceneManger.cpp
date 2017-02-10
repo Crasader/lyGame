@@ -16,7 +16,7 @@
 #include "loginLayer.h"
 #include "loadingText.h"
 #include "mainTopLayer.h"
-#include "battleTopLayer.h"
+#include "questHitPlane.h"
 
 
 
@@ -165,8 +165,8 @@ cocos2d::Layer* lySceneManger::createTopLayer(SceneID sid, SceneParameter* param
             break;
         case SCENE_BATTLE_TOP:
         {
-            topLayer = loginLayer::createWithcocosbuilderFile("ccbi/quest/battleTopLayer", nullptr, Director::getInstance()->getWinSize());
-            PARAM_TYPE_CHECK(params, battleTopLayerParameter);
+            topLayer = loginLayer::createWithcocosbuilderFile("ccbi/quest/questHitPlane", nullptr, Director::getInstance()->getWinSize());
+            PARAM_TYPE_CHECK(params, questHitPlaneParameter);
         }
             break;
         /*

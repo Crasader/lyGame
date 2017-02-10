@@ -111,7 +111,9 @@ void lyCSVReader::Parse(std::string strCSVPath)
             pl = line;
         }
         else if (*data == '\r')
-        {}
+        {
+            
+        }
         else
         {
             //任何一个字段能留空
@@ -166,7 +168,7 @@ void lyCSVReader::readCSVLine(const char *line, int index)
     
     //临时数组
     std::vector<std::pair<std::string, int>> tVector;
-    for (int i=0; i<count; ++i)
+    for (int i=0; i < count; ++i)
     {
         tVector.push_back(std::pair<std::string, int>(pv[i], i));
     }
@@ -184,7 +186,8 @@ void lyCSVReader::readCSVLine(const char *line, int index)
         {
             tmp.insert(std::map<string, string>::value_type(m_VectorColumnName[i].first, tVector[i].first));
         }
-        m_mapOneFile.insert(std::map<int, MAP_ONE_LINE>::value_type(atoi(tVector[0].first.c_str()), tmp));
+        int nTest = atoi(tVector[0].first.c_str());
+        m_mapOneFile.insert(std::map<int, MAP_ONE_LINE>::value_type(nTest, tmp));
     }
 }
 

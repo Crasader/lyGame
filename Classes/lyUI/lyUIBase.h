@@ -50,10 +50,6 @@ public:
 	void SetCtrlName(const char* strCtrlName);
 	long GetObjID();
     
-    void setBulletId(int nId)
-    {
-        m_nBulletId = nId;
-    }
     
     Touch convertToCurWinCoordinateOnlyGL(Node* desWin, Touch* parTouch);    //将坐标系从父坐标系，转换为自身的坐标系(备注：只通过openGL坐标系，不使用屏幕坐标系)
     bool isTouched(Node* desWin, Touch* pTouch);
@@ -67,6 +63,9 @@ public:
     {
         m_bPause = pause;
     }
+    void setDragSpan(int minX, int maxX,int minY, int maxY);
+    
+    void setAttrVisible(bool bVisible){}
 protected:
     Vec2    m_TouchBeginPoint;
 	bool    m_bIsCtrlVisible;
@@ -77,12 +76,16 @@ protected:
 	bool    m_bAdjustCtrlSpr;
 	char	m_szCtrlName[CTRL_NAME_SIZE];
     
-    int     m_nBulletId;    //0 非发射器，>0 发射器及其id
-    
-    
+  
     unsigned char		m_byInterval;
     unsigned char		m_byCurrInterval;
     bool                m_bPause;
+    
+    bool    m_bHadSpan;
+    int     m_nMinX;
+    int     m_nMinY;
+    int     m_nMaxX;
+    int     m_nMaxY;
 
 };
 

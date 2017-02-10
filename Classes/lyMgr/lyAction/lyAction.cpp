@@ -30,9 +30,18 @@ lyAction* lyAction::Create()
     return new lyAction();
 }
 
-void lyAction::AddFrame( const char* pszImg )
+void lyAction::AddFrameByPath( const char* path )
 {
-    lyFrame* pFrame = lyFrame::createWithSpritePath(pszImg);
+    lyFrame* pFrame = lyFrame::createWithSpritePath(path);
+    if (pFrame)
+    {
+        pFrame->retain();
+        m_ObjFrames.AddLinkItem(pFrame);
+    }
+}
+void lyAction::AddFrameByName( const char* name )
+{
+    lyFrame* pFrame = lyFrame::createWithSpriteName(name);
     if (pFrame)
     {
         pFrame->retain();
@@ -71,4 +80,14 @@ lyFrame* lyAction::GetHeaderFrame()
 lyFrame* lyAction::GetTailFrame()
 {
     return m_ObjFrames.GetTail();
+}
+
+void lyAction::initbyPlist(const char* plistname, int startIndex, int indexNum)
+{
+
+    for ( unsigned char byIndex = 0; byIndex < indexNum; byIndex++ )
+    {
+        std::string strFrame = StringUtils::format("%s%d%s", plistname,startIndex+byIndex,".png");
+        AddFrameByName(strFrame.c_str());
+    }
 }

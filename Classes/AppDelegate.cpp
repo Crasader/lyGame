@@ -126,10 +126,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
         //sceneMgr->_isFade = false;
 #endif
         
+        lyPlistManager::getInstance()->loadAllPlist();
         
-        //lyActionManager::GetInstance()->LoadActionGroupLibrary();
-        lyPlistManager::getInstance()->loadTexturePlist("Jingzhang_standby");
-        lyPlistManager::getInstance()->loadTexturePlist("Jingzhang_skill1");
+        
+        lyActionManager::GetInstance()->loadAllAction();
+       
         
         
         

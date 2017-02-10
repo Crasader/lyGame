@@ -76,9 +76,6 @@ enum
 	enActState_Run,			//奔跑状态
 	enActState_Fly,			//飞状态
 	enActState_GC1,			//GC1招式
-	enActState_GC2,			//GC2招式
-	enActState_GC3,			//GC3招式
-	enActState_GC4,			//GC4招式
 	enActState_Skill1,		//技能招式
 
 

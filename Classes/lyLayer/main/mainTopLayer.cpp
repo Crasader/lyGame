@@ -74,7 +74,7 @@ void mainTopLayer::onTouchEnded(cocos2d::Touch* touches, cocos2d::Event* event)
 void mainTopLayer::onClickMenuItem01(cocos2d::Ref *sender)
 {
     CCLOG("onClickMenuItem01");
-    
+    ApplicationManager::getInstance()->changeScene(SCENE_TEST_SCENE);
 }
 void mainTopLayer::onClickMenuItem02(cocos2d::Ref *sender)
 {

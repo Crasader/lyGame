@@ -9,6 +9,7 @@
 
 #include "lyActionManager.h"
 #include "cocos2d.h"
+#include "lyInclude.h"
 
 USING_NS_CC;
 
@@ -34,14 +35,69 @@ lyActionManager* lyActionManager::GetInstance()
     return m_pInstance;
 }
 
-void lyActionManager::LoadActionGroupLibrary()
+void lyActionManager::loadAllAction()
 {
-    std::map<std::string, int> newMap;
-    newMap.insert(std::pair<std::string, int>("TextureP/Role/Jingzhang/GC1",4));
-    newMap.insert(std::pair<std::string, int>("TextureP/Role/Jingzhang/standby",19));
+    //加载所有动作组到内存中
+    int nLineNum = lyTableLines("Table/RoleGroup.csv");
     
-
-    this->LoadOneAction(newMap, 0);
+    for (int nGroupId = 1; nGroupId <= nLineNum; nGroupId++) {
+        
+        const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/RoleGroup.csv",nGroupId);
+        if(szOneLine)
+        {
+            lyActionGroup* pNewGroup = lyActionGroup::Create();
+            if (pNewGroup)
+            {
+                for (int nStatusIndex = 0; nStatusIndex < 5; nStatusIndex++) {
+                    std::string strActionIndex = StringUtils::format("ActionId%d", nStatusIndex);
+                    
+                    int nActionId = lyStrToInt(szOneLine->find(strActionIndex)->second.c_str());
+                    if (nActionId == 0) {
+                        break;
+                    }
+                    lyAction* pOneAction = lyAction::Create();
+                    if (pOneAction)
+                    {
+                        const MAP_ONE_LINE* szOneActionLine = lyTableOneLine("Table/RoleAction.csv", nActionId);
+                        if(szOneActionLine)
+                        {
+                            int nActionMaxId = lyStrToInt(szOneActionLine->find("MaxId")->second.c_str());
+                            std::string strActionPath = szOneActionLine->find("Path")->second.c_str();
+                            int nWidth = lyStrToInt(szOneActionLine->find("Width")->second.c_str());
+                            int nHeight = lyStrToInt(szOneActionLine->find("Height")->second.c_str());
+                            int isPath = lyStrToInt(szOneActionLine->find("isPath")->second.c_str());
+        
+                            for ( unsigned char byIndex = 0; byIndex <= nActionMaxId; byIndex++ )
+                            {
+                                
+                                std::string strFramePath = StringUtils::format(strActionPath.c_str(), byIndex,".png");
+                                lyFrame* pFrame = NULL;
+                                if (isPath) {
+                                    pFrame = lyFrame::createWithSpritePath(strFramePath);
+                                    if (pFrame) {
+                                        pFrame->setAnchorPoint(Vec2(0,0));
+                                        pFrame->setContentSize(Size(nWidth, nHeight));
+                                        pOneAction->AddFrameByPath(strFramePath.c_str());
+                                    }
+                                }
+                                else
+                                {
+                                    pFrame = lyFrame::createWithSpriteName(strFramePath);
+                                    if (pFrame) {
+                                        pFrame->setAnchorPoint(Vec2(0,0));
+                                        pFrame->setContentSize(Size(nWidth, nHeight));
+                                        pOneAction->AddFrameByName(strFramePath.c_str());
+                                    }
+                                }
+                            }
+                        }
+                        pNewGroup->AddAction(pOneAction, nStatusIndex);
+                    }
+                }
+                lyActionManager::GetInstance()->AddGroup(pNewGroup, nGroupId);
+            }
+        }
+    }
 }
 
 void lyActionManager::AddGroup( lyActionGroup* pActGroup, unsigned int nGroupId )
@@ -62,7 +118,7 @@ void lyActionManager::AddGroup(int nGroupId)
                 char szName[50];
                 memset(szName, 0, sizeof(char)*50 );
                 sprintf(szName, "TextureP/Role/Jingzhang/run/%03d.png",byIndex);
-                pAction->AddFrame(szName);
+                pAction->AddFrameByPath(szName);
             }
             pNewGroup->AddAction(pAction, 0);
         }
@@ -74,7 +130,7 @@ void lyActionManager::AddGroup(int nGroupId)
                 char szName[50];
                 memset(szName, 0, sizeof(char)*50 );
                 sprintf(szName, "TextureP/Role/Jingzhang/skill1/%03d.png",byIndex);
-                pAction2->AddFrame(szName);
+                pAction2->AddFrameByPath(szName);
             }
             pNewGroup->AddAction(pAction2, 1);
         }
@@ -98,7 +154,7 @@ void lyActionManager::LoadOneAction(std::map<std::string,int> map, int nId)
                     char szName[50];
                     memset(szName, 0, sizeof(char)*50 );
                     sprintf(szName, "%s/%03d.png",iter->first.c_str(),byIndex);
-                    pOneAction->AddFrame(szName);
+                    pOneAction->AddFrameByPath(szName);
                 }
                 //默认state是待机动作，可以立即切换成别的状态，其他默认均不可，看需求
                 if (nState)

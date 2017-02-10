@@ -8,12 +8,9 @@
 
 
 lyUIBullet::lyUIBullet()
-:lyUIBase()
+:lyUIRole()
 {
     m_nMissEffectId = 0;
-    m_pButtleAction = NULL;
-    m_pButtleFrame = NULL;
-    
     m_bPlayMiss = false;
     m_pMissFrame = NULL;
     m_pMissAction = NULL;
@@ -23,9 +20,7 @@ lyUIBullet::lyUIBullet()
 lyUIBullet::~lyUIBullet()
 {
     m_nMissEffectId = 0;
-    m_pButtleAction = NULL;
-    m_pButtleFrame = NULL;
-    
+
     m_bPlayMiss = false;
     m_pMissFrame = NULL;
     m_pMissAction = NULL;
@@ -47,36 +42,32 @@ bool lyUIBullet::init()
 }
 void lyUIBullet::onEnter()
 {
-    lyUIBase::onEnter();
+    lyUIRole::onEnter();
    
-    //doFly();
 }
 
 void lyUIBullet::onExit()
 {
-    lyUIBase::onExit();
+    lyUIRole::onExit();
 }
 
 void lyUIBullet::update(float delta)
 {
-    lyUIBase::update(delta);
+    lyUIRole::update(delta);
   
 }
 void lyUIBullet::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t parentFlags)
 {
-    lyUIBase::visit(renderer, parentTransform, parentFlags);
-    if (!_visible)
-    {
-        return;
-    }
+    lyUIRole::visit(renderer, parentTransform, parentFlags);
     if (m_bPause) {
         return;
     }
     
     if (m_pMissFrame)
     {
-        m_pButtleFrame->setVisible(false);
-        
+        if (m_pCurrFrame) {
+            //m_pCurrFrame->setVisible(false);
+        }
         bool bClear = false;
         if (m_pMissFrame == m_pMissAction->GetTailFrame() )
         {
@@ -94,25 +85,13 @@ void lyUIBullet::visit(Renderer* renderer, const Mat4 &parentTransform, uint32_t
     }
     else
     {
-        if (m_pButtleFrame)
-        {
-            if (0 == m_byCurrInterval%m_byInterval)
-            {
-                m_pButtleFrame = m_pButtleAction->GetNextFrame(m_pButtleFrame);
-                m_byCurrInterval = 0;
-            }
-            m_byCurrInterval = m_byCurrInterval + 1;
-        }
     }
     
 }
 void lyUIBullet::draw(Renderer* renderer, const Mat4 &transform, uint32_t flags)
 {
-    lyUIBase::draw(renderer, transform, flags);
-    
-    if (m_pButtleFrame) {
-        m_pButtleFrame->lyVisit();
-    }
+    lyUIRole::draw(renderer, transform, flags);
+
     if (m_pMissFrame) {
         m_pMissFrame->lyVisit();
     }
@@ -136,75 +115,21 @@ void lyUIBullet::onTouchCancelled(cocos2d::Touch *touches, cocos2d::Event *event
 {
     
 }
-void lyUIBullet::setBulletId(int nId)
+void lyUIBullet::setRoute()
 {
-    m_nBulletId = nId;
-    
-    //读表设置属性
-    const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/RoleAction.csv",m_nBulletId);
-    if(szOneLine)
-    {
-        string strPath = szOneLine->find("Path")->second.c_str();
-        int nWidth = lyStrToInt(szOneLine->find("Width")->second.c_str());
-        int nHeight = lyStrToInt(szOneLine->find("Height")->second.c_str());
-        int nMaxid = lyStrToInt(szOneLine->find("MaxId")->second.c_str());
-        
-        Size visibleSize = Director::getInstance()->getVisibleSize();
-        
-        setContentSize(Size(nWidth,nHeight));
-        setPosition( Vec2(lyRandInt(0,visibleSize.width),visibleSize.height) );
-        InitPoint( Vec2( lyRandInt(0,visibleSize.width),visibleSize.height) , Vec2( lyRandInt(0,visibleSize.width), 0 ));
-        setButtlePath(strPath,nMaxid);
-    }
-    
-}
-void lyUIBullet::setButtlePath(std::string strPath, char byMaxId/*=0*/)
-{
-    if(m_pButtleAction)
-    {
-        m_pButtleAction->Clear();
-        m_pButtleAction = nullptr;
-    }
-    m_pButtleAction = lyAction::Create();
-    if(m_pButtleAction)
-    {
-        for(char byIndex = 0; byIndex <= byMaxId; byIndex++ )
-        {
-            std::string strFramePath = StringUtils::format(strPath.c_str(), byIndex,RES_EXT);
-            lyFrame* pFrame = lyFrame::createWithSpritePath(strFramePath);
-            if (pFrame) {
-                pFrame->retain();
-                pFrame->setScaleX(this->getContentSize().width/pFrame->getContentSize().width);
-                pFrame->setScaleY(this->getContentSize().height/pFrame->getContentSize().height);
-                pFrame->setPosition(0,0);
-                pFrame->setAnchorPoint(this->getAnchorPoint());  //必须设置和本控件一样，因为Node和Sprite的默认热点不一样！！！！
-                m_pButtleAction->AddFrame(pFrame);
-            }
-        }
-        m_pButtleFrame = m_pButtleAction->GetHeaderFrame();
-    }
-}
-void lyUIBullet::InitPoint(CCPoint pointStart, CCPoint pointEnd)
-{
-    m_pointS = pointStart;
-    m_pointE = pointEnd;
-    m_diffPoint = (m_pointE-m_pointS)/20;
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    int randX = lyRandInt(0,visibleSize.width);
+    m_pointS = Vec2( randX,visibleSize.height) ;
+    m_pointE = Vec2( randX, 0 );
+    m_MoveVector = (m_pointE-m_pointS)/50;
 }
 void lyUIBullet::Clear()
 {
-    lyUIBase::Clear();
+    lyUIRole::Clear();
     
-    if (m_pButtleFrame) {
-        m_pButtleFrame->cleanup();
-        m_pButtleFrame = NULL;
-    }
     if (m_pMissFrame) {
         m_pMissFrame->cleanup();
         m_pMissFrame = NULL;
-    }
-    if (m_pButtleAction) {
-        m_pButtleAction->Clear();
-        m_pButtleAction = NULL;
     }
     if (m_pMissAction) {
         m_pMissAction->Clear();
@@ -220,12 +145,11 @@ void lyUIBullet::setMissEffectId(int missId)
 void lyUIBullet::playMissAction()
 {
     m_nMissEffectId=1;
-    if (m_pButtleFrame) {
-        m_pButtleFrame->setVisible(false);
-    }
-    
     if (m_nMissEffectId)
     {
+        if (m_pCurrFrame) {
+            //m_pCurrFrame->setVisible(false);
+        }
         const MAP_ONE_LINE* szOneLine = lyTableOneLine("Table/MissEffect.csv",m_nMissEffectId);
         if (szOneLine) {
             playMissEffect(szOneLine);
@@ -272,30 +196,3 @@ void lyUIBullet::playMissEffect(const MAP_ONE_LINE* missData)
         m_pMissFrame = m_pMissAction->GetHeaderFrame();
     }
 }
-bool lyUIBullet::isDead()
-{
-    return true;
-}
-int lyUIBullet::calcHurt()
-{
-    //普通伤害计算
-    
-    //技能伤害计算
-    
-    //得有一个系数值
-    
-    //测试
-    return 10;
-}
-int lyUIBullet::calcAttack()
-{
-    //普通伤害计算
-    
-    //技能伤害计算
-    
-    //得有一个系数值
-    
-    //根据id读取数据，计算伤害
-    return 10;
-}
-
